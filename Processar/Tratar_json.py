@@ -104,7 +104,7 @@ def trata_json(self,caminho_countries, retorno_api):
     for pessoa, detalhe in zip(pessoas, detalhes):
         lista_paises = pessoa.get('nationalities') or []
         nomes_paises = [mapa.get(pais, pais) for pais in lista_paises]
-        pais_limpo = ' '.join(nomes_paises) if nomes_paises else "Nenhuma nacionalidade encontrada"
+        pais_limpo = ','.join(nomes_paises) if nomes_paises else "N/I"
 
         sexo = detalhe.get('sex_id') if detalhe else None
         # crime =  [remover_acentos(warrant.get('charge')).strip() for warrant in detalhe.get('arrest_warrants', [])] if detalhe else None
