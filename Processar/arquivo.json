@@ -185,7 +185,7 @@
       },
       {
         "date_of_birth": "1990/12/28",
-        "nationalities": ["FR"],
+        "nationalities": ["FR","BR"],
         "entity_id": "2026/15322",
         "forename": "BEMBA",
         "name": "TOURE",

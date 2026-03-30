@@ -2,7 +2,7 @@ import threading
 from datetime import datetime
 import time
 from Logs import ClassLogger
-from Processar.Process_api import Process_api
+from Processar.Process_api import process_api
 from Conexao import ConectionClass
 
 
@@ -14,11 +14,14 @@ class Processor:
         # self.idProcesso = idProcesso
         self.servidor = 'https://ws-public.interpol.int/notices/v1/red'
         self.servidor_nationality = 'https://ws-public.interpol.int/notices/v1/red?nationality'  #busca por pais gama maior de resultados  o resultado da api mostra no maximo 160 por api 
+        self.servidor_push_expecifg_id= 'https://ws-public.interpol.int/notices/v1/'   # ESTA URL PASSANDO O ID DO DA INTERPOL (entity_id "2026-15452")  ELE TRAZ DADOS ESPECIFICOS EXEMPLO "TIPO DO CRIME, PAIS DE ACUSACAO, LINGUAS QUE FALA,"
+        self.servidor_headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
         self.batch_counter_status1 = 0
         self.batch_counter_status2 = 0
         self.batch_counter_status4 = 0
         self.qtPage = 160 # resultado na tela e apresentado somente 160 registros 
         self.indicePage = 1
+        self.time_sleps = 5
         self.lock = threading.Lock()
 
     def executar(self):
@@ -30,7 +33,7 @@ class Processor:
 
         try:
             
-            total_processados = Process_api(self)
+            total_processados = process_api(self)
 
             ClassLogger.logger.info(f"minha quantidade de dados processados :  {total_processados}")
           

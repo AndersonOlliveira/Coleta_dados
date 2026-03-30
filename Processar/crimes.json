@@ -1,0 +1,76 @@
+[
+  {
+    "date_of_birth": "1999/03/14",
+    "distinguishing_marks": null,
+    "weight": null,
+    "nationalities": ["DZ"],
+    "entity_id": "2026/20532",
+    "eyes_colors_id": null,
+    "sex_id": "M",
+    "place_of_birth": "Bouhachana",
+    "forename": "HOSAYN",
+    "arrest_warrants": [
+      {
+        "charge": "-ARRESTATION, ENLÈVEMENT, SÉQUESTRATION OU DÉTENTION ARBITRAIRE DE PLUSIEURS PERSONNES SUIVI DE LIBÉRATION AVANT LE 7ᵉ JOUR\r\n-VIOLENCE COMMISE EN RÉUNION SANS INCAPACITÉ",
+        "issuing_country_id": "FR",
+        "charge_translation": null
+      }
+    ],
+    "country_of_birth_id": "DZ",
+    "hairs_id": null,
+    "name": "BOUAFIA",
+    "languages_spoken_ids": ["FRE"],
+    "height": null,
+    "_embedded": {
+      "links": []
+    },
+    "_links": {
+      "self": {
+        "href": "https://ws-public.interpol.int/notices/v1/red/2026-20532"
+      },
+      "images": {
+        "href": "https://ws-public.interpol.int/notices/v1/red/2026-20532/images"
+      },
+      "thumbnail": {
+        "href": "https://ws-public.interpol.int/notices/v1/red/2026-20532/images/63850936"
+      }
+    }
+  },
+  {
+    "date_of_birth": "1980/12/25",
+    "distinguishing_marks": null,
+    "weight": null,
+    "nationalities": ["IN"],
+    "entity_id": "2026/13563",
+    "eyes_colors_id": null,
+    "sex_id": "M",
+    "place_of_birth": null,
+    "forename": "FAISAL",
+    "arrest_warrants": [
+      {
+        "charge": "Section 420 of Indian Penal Code- deals with Chetaing and dishonestly inducing delivery of property.",
+        "issuing_country_id": "IN",
+        "charge_translation": null
+      }
+    ],
+    "country_of_birth_id": "IN",
+    "hairs_id": null,
+    "name": "MUHAMMED KUNJU",
+    "languages_spoken_ids": ["ENG"],
+    "height": null,
+    "_embedded": {
+      "links": []
+    },
+    "_links": {
+      "self": {
+        "href": "https://ws-public.interpol.int/notices/v1/red/2026-13563"
+      },
+      "images": {
+        "href": "https://ws-public.interpol.int/notices/v1/red/2026-13563/images"
+      },
+      "thumbnail": {
+        "href": "https://ws-public.interpol.int/notices/v1/red/2026-13563/images/63824071"
+      }
+    }
+  }
+]

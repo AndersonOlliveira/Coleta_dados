@@ -11,11 +11,11 @@ from pathlib import Path
 
 
 
-def Process_api(self):
+def process_api(self):
     
     #envio a lista de paises para busca
     # caminho_countres = os.path.join(os.path.dirname(__file__), 'Arquivos/countries.json')
-    caminho_countries = Path('Arquivos/countries.json')
+    caminho_countries = Path('Arquivos/countries_poucos.json')
 
     print(f"meu caminho : {caminho_countries}")
 
@@ -28,18 +28,22 @@ def Process_api(self):
         ClassLogger.logger.info(f"ESTOU SAINDO AQUI PARA FAZER A CONSULTA {self.batch_size}")
             
             #para chamar a api e exeturar os dados
-        # retorno_api = push_request(self,caminho_countries)
+        retorno_api = push_request(self,caminho_countries)
 
         # with open(caminho_countries) as countries:
         #      dados_decoficados = json.load(countries)
             
 
         #      print(dados_decoficados)
+        # 
+        lista_retorno = tratar = trata_json(self,caminho_countries,retorno_api)
+        
+        
+        # ClassLogger.logger.info(f"minha linhas ....")
 
+
+        # print(lista_retorno)
  
-
-    tratar = trata_json()
-
 
     
 
