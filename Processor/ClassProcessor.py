@@ -4,6 +4,12 @@ import time
 from Logs import ClassLogger
 from Processar.Process_api import process_api
 from Conexao import ConectionClass
+# from Conexao.ConectionTrheaddeConectionPoll import ConectionClass as t
+from Mail.ClassMail import enviar_email_all
+from Model.ClassModel import buscar_teste, search_data_interpol
+from psycopg2.pool import ThreadedConnectionPool
+from dataclasses import asdict
+
 
 
 class Processor:
@@ -22,12 +28,19 @@ class Processor:
         self.qtPage = 160 # resultado na tela e apresentado somente 160 registros 
         self.indicePage = 1
         self.time_sleps = 5
+        self.periodo = 'SEMANAL'
+        self.true = True
+        self.false =False
         self.lock = threading.Lock()
+        self.pool = ThreadedConnectionPool(
+            minconn=1, 
+            maxconn=self.max_workers, 
+           **asdict(self.config) )
 
     def executar(self):
         inicio = datetime.now()
         ClassLogger.logger.info("=" * 80)
-        ClassLogger.logger.info(f"Iniciando Progestor - Consulta Proscore - {inicio}")
+        ClassLogger.logger.info(f"Iniciando Interpol - Consulta Proscore - {inicio}")
         time.sleep(2)
         ClassLogger.logger.info("=" * 80)
 
@@ -49,8 +62,32 @@ class Processor:
 
         finally:
              ClassLogger.logger.error(f"SAINDO NO FINALIY")
+             pass
+
+    def enviar_email(self):
+        desti = 'anderson@proscore.com.br'
+        assunto = 'Teste de Envio de Email'
+        corpo = f"atualizacao da base da interpol,processo finaliazado  {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}"
+        result_email = enviar_email_all(corpo)
+        ClassLogger.logger.info(f"ENVIANDO EMAIL DE TESTE PARA VER SE O SERVIÇO DE EMAIL ESTA FUNCIONANDO")
+        pass
+
+
+    def busca_dados(self): 
+        ClassLogger.logger.info('busca dados')
+        
+        buscar_teste(self)
+        pass
+        
+    def teste_busca_interpol(self): 
+        ClassLogger.logger.info('busca dados')
+        # search_data_interpol
+        search_data_interpol(self,'2012-328264')
 
 
     def executar_ciclo(self):
-        self.executar()   
+        # self.executar()   
+        # self.enviar_email()
+        # self.busca_dados()   
+        self.teste_busca_interpol()   
         ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] Iniciando a consulta")      

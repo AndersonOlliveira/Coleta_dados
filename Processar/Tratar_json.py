@@ -7,89 +7,134 @@ from concurrent.futures import ThreadPoolExecutor
 import unicodedata
 import re
 from pathlib import Path
+from collections import Counter, defaultdict
+from datetime import datetime
+from Mail.ClassMail import enviar_email_all
+from urllib.parse import urlparse, parse_qs
+import sys
+# from collections import defaultdict
+from Conexao import ConectionClass
+from Model.ClassModel import buscar_teste, insert_interpol, update_info_process
+
+
 
 
 # def trata_json(dados):
-def trata_json(self,caminho_countries, retorno_api):
+def trata_json(self,caminho_countries, retorno_api,id_insert_return):
     # print(json.dumps(caminho_countries,  indent=4))
     tratamento = []
     lista = []
+      #imcremetador
+    contador_paises = Counter()
+    dupla_nacionalidade = 0
+    pais_busca = None
+    mapa = {}
+    lista_urls = []
+    lista_paises_unicos = []
+    lista_paises_total_api = {}
+    tabela_atualizar =[]
+    todas_pessoas = []
+    paises_buscas = ''
+    tabela_final = []
+    nome_traduzido = set()
+    grupos_por_pais = defaultdict(list)
+
+
+
     caminho = os.path.join(os.path.dirname(__file__), 'arquivo_registros.json')
     caminho_countress = Path('Arquivos/countries.json')
-   
-    # print("Files in current directory:", os.listdir(os.getcwd()))
-    # print("acchei?", caminho)
-    # with open(caminho) as arquivo:
-    #     # 2. Carregar o conteúdo
-    #     # dados = json.load(arquivo)
-
-    #     # print(json.dumps(dados,  indent=4))
-    #     dados_decoficados = json.load(arquivo)
-
-    #     tratamento = dados_decoficados
-
-
-    #     print('como fica a visualizacao dos meus dados')
-   # NESTE _LINKS ele e o acesso por pagina dos dados, pois o resultado e de 20 resultado por pagina
-   # COMO O RESULTADO E 160 REGISTRO POR AI, DEFINI JÁ PASASNDO OS DADOS DENTRO 
-    # print(tratamento.get('_links'))
-    # print(len(tratamento.get('_links')))
-
-
-    # if len(tratamento.get('_links') > 0):
-    #     print(f"a lista esta vazia!")
-        # AQUI ACESSO O LINKS DAS PAGINA PARA QUE EU PASSA CONSULTAR OS OUTROS RETORNOS SO E LISTADO 160 RESULTADO POR PAGINA
-    mapa = {
-    # "DZ": "Argélia",
-    # "IN": "Índia",
-    # "RU": "Rússia",
-    # "UA": "Ucrânia",
-    # "FR": "FRANCA",
-    # "BR": "BRASIL",
-    }
-
-   
-    print("como vem o retorno da api?")
-    print(type(retorno_api))
-    print(json.dumps(retorno_api,  indent=4))
-
-    # dados_decoficados = list(json.load(retorno_api))
-    # print("meu dados_decoficados da api\n")
-    # print(dados_decoficados)
-
-    # tratamento = dados_decoficados
-
+    
     tratamento = retorno_api
+
+    # print(f"MEU ID DA INSERCAO RETORNADO {id_insert_return[0]}")
+    # print(id_insert_return)
+
+    # return 
     # lista_coutries = caminho_countries
     lista_coutries = caminho_countress
             
     with open(lista_coutries) as lista_coutrie:
          lista_decodificadas = json.load(lista_coutrie)
-         print(lista_decodificadas)
+        #  print(lista_decodificadas)
          for pais in lista_decodificadas:
              codigo_pais = pais.get('value')
              nome_pais = pais.get('name')
              mapa[codigo_pais] = nome_pais
 
 
-    print('meu lista de mapa')         
-    print(mapa)         
+    print(f"MEU TRATAMENTO RETORNO API {json.dumps(tratamento, indent=4)}")
+    for bloco in tratamento:
+        pessoas = bloco.get('_embedded', {}).get('notices', [])
+        link = bloco.get('_links').get('self', {}).get('href', {})
+        total_api = bloco.get('total')
+        # print(f"meu total? {total_api}")
+        if pessoas:
+            for pessoa in pessoas:
+                # print(f"Minha pessoa : {json.dumps(pessoa, indent=4)}")
+                pessoa['link_busca'] = link
+                pessoa['total_api'] = total_api
+                if link not in lista_paises_unicos:
+                   s = urlparse(link)
+                   params = parse_qs(s.query)
+
+                #    print(f"meus params {params}")
+                
+                   lista_paises_unicos.append(params.get('nationality'))
+                   list_teste = params.get('nationality')
+        
+
+                for result_pais in list_teste:
+                    lista_paises_total_api[result_pais] = total_api
+        else: 
+            s = urlparse(link)
+            params = parse_qs(s.query)
+
+            # print(f"meus params {params}")
+                
+            lista_paises_unicos.append(params.get('nationality'))
+            list_teste = params.get('nationality')
+            # lista_paises_unicos.append(params.get('nationality'))
+
+            for result_pais in list_teste:
+                lista_paises_total_api[result_pais] = total_api
+            
+            # lista_paises_total_api[params.get('nationality')] = total_api
+
+            # lista_paises_total_api.append((params.get('nationality'), total_api))
+
+        todas_pessoas.extend(pessoas)
+            
+   
+    print(lista_paises_total_api)
+    print(json.dumps(todas_pessoas,indent=4))
+
+    alter_status(self, id_insert_return[0])
+
+    return 
+
+   # PEGO OS PAISEIS QUE FORAM SOLITADOS NA BUSCA , REMOVO AS DUPLICATAS PARA REALIZAR A CONTAGEM E APRESENTAR NA TABELA FINAL
+    lista_paises_unicos = list(dict.fromkeys(sub[0].strip() for sub in lista_paises_unicos))
+    # lista_paises_total_api = list(dict.fromkeys(info_api.strip() for info_api in lista_paises_total_api))
+    nome_traduzido.update([mapa.get(s, s) for s in lista_paises_total_api])
+   
+    
+    # lista_urls = set(lista_urls)
+    # print(lista_paises_total_api)
+    # print(json.dumps(todas_pessoas,  indent=4))
+    # return 
 
 
-    
-    
-    
-    
-    lista_urls = []
-    pessoas = tratamento[0].get('_embedded', {}).get('notices', [])
-    
-    for pessoa in pessoas:
+
+  
+   
+
+    for pessoa in todas_pessoas:
         lista_url = pessoa.get('_links', {}).get('self', {}).get('href')
-        print(f"Minha lista de url individual {lista_url}")
+        # print(f"Minha lista de url individual primeira chamada {lista_url}")
     
         if lista_url:
            lista_urls.append(lista_url)
-           
+    #CHAMO A API QUE VEM NO RETORNO DA CHAMADA DA PAIS, NELE JA ME ROTANA O LINK COM O ID INDIVIDUAL PARA A PESSOA , COLOCANDO O RESULTANDO DENTRO DE DETALHES PARA POPULAR ABAIXO
     with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
         detalhes = list(executor.map(
         lambda url: push_new_resquests(url, self.time_sleps),
@@ -98,18 +143,86 @@ def trata_json(self,caminho_countries, retorno_api):
     
 
 
-    print(f"Minha lista de url individual {detalhes}")
+    # print(f"Minha lista de url individual {detalhes}")
     pd.set_option('display.max_colwidth', None) # PARA VISUALIZAR EM ESCALA GRANDE 
 
-    for pessoa, detalhe in zip(pessoas, detalhes):
+   
+    
+    for pessoa in todas_pessoas:
+       
+        url_busca = pessoa.get('link_busca', "")
+        s = urlparse(url_busca)
+        params = parse_qs(s.query)
+            #  sigla (ex: 'AM') ou 'Desconhecido'
+        sigla_buscas = params.get('nationality', ['Desconhecido'])[0]
+            
+            # Guarda a pessoa no grupo desse país
+        grupos_por_pais[sigla_buscas].append(pessoa)
+
+      
+        # print(f"quais sao os grupos_por_pais apresentados? {grupos_por_pais} ")
+    for sigla_busca in lista_paises_unicos:
+    # for sigla_busca, pessoas_do_grupo in grupos_por_pais.items():
+        paises_encontrados = set()
+        pessoas_do_grupo = grupos_por_pais.get(sigla_busca, [])
+        total_dupla = 0
+            
+            # print(f"quais sao os sigla_busca apresentados? {sigla_busca} ")
+            # print(f"quais sao os pessoas_do_grupo apresentados? {pessoas_do_grupo} ")
+            # print(grupos_por_pais)
+
+
+
+        for p in pessoas_do_grupo:
+            nacionalidades = p.get('nationalities') or []
+                # Traduz siglas para nomes usando seu mapa
+            nomes = [mapa.get(s, s) for s in nacionalidades]
+            # list_total = [mapa.get(s, s) for s in lista_paises_total_api]
+           
+            paises_encontrados.update(nomes)
+                
+            if len(nacionalidades) > 1:
+                  total_dupla += 1
+
+
+       
+        total_por_sigla =  lista_paises_total_api.get(sigla_busca, 0)
+        nome_sigla_traduzido = mapa.get(sigla_busca, sigla_busca)
+       
+        print(f"minha lista totals {nome_traduzido}")
+
+        print(f"quais sao os sigla_busca apresentados? {sigla_busca} - Total por sigla: {total_por_sigla}") 
+        linha_tabela = {
+                'DATA CAPTURA': datetime.now().strftime("%d/%m/%Y %H:%M"),
+                'PAIS BUSCADO': sigla_busca,
+                'TOTAL ENCONTRADO': len(pessoas_do_grupo),
+                'COM DUPLA NACIONALIDADE': total_dupla,
+                'PAISES NA LISTA': nome_sigla_traduzido if not paises_encontrados else ", ".join(sorted(paises_encontrados)), 
+                'valor_total_retorno_api': total_por_sigla
+                }
+
+        tabela_atualizar.append(linha_tabela)
+
+    # minha_tabela_montada = pd.DataFrame(tabela_atualizar)
+
+    # # print(f"Minha quantidade processada {len(df)}")
+    # # print(df)
+
+    # print(f"MINHA TABELA MONTADA")
+    # print(f"{minha_tabela_montada}")
+ 
+     ## PARA DEBUG
+     
+    # return
+    
+    for pessoa, detalhe in zip(todas_pessoas, detalhes):
         lista_paises = pessoa.get('nationalities') or []
         nomes_paises = [mapa.get(pais, pais) for pais in lista_paises]
         pais_limpo = ','.join(nomes_paises) if nomes_paises else "N/I"
-
+        
         sexo = detalhe.get('sex_id') if detalhe else None
         # crime =  [remover_acentos(warrant.get('charge')).strip() for warrant in detalhe.get('arrest_warrants', [])] if detalhe else None
-        crime_lista = [remover_acentos(warrant.get('charge', '')).strip() for warrant in (detalhe.get('arrest_warrants') or [])
-]
+        crime_lista = [remover_acentos(warrant.get('charge', '')).strip() for warrant in (detalhe.get('arrest_warrants') or [])]
         crime = ", ".join(crime_lista) if crime_lista else "N/I"
         # idiona = [remover_conhetes(lang) for lang in detalhe.get('languages_spoken_ids', [])] if detalhe else None
         idiona = ", ".join(item.strip("[] ").strip() for item in detalhe.get('languages_spoken_ids', []) or []) if detalhe and detalhe.get('languages_spoken_ids') else "N/I"
@@ -117,7 +230,8 @@ def trata_json(self,caminho_countries, retorno_api):
         # idiona = ", ".join(item.strip("[] ").strip() for item in detalhe.get('languages_spoken_ids', []) or []) if detalhe else None
 
 
-      
+        #faco uma busca para ver se o id não esta inserido já
+        
 
         print(f"crime localizado?: {crime}")
         print(type(idiona))
@@ -130,10 +244,11 @@ def trata_json(self,caminho_countries, retorno_api):
             'nacionalidade': pais_limpo.upper(),
             'id_interpol': pessoa.get('entity_id').replace('/','-') if pessoa.get('entity_id') else None,
             'sexo': sexo, 
-            'acusacao': crime,
+            # 'acusacao': crime,
             'idiona': idiona,
-            'thumbnail': pessoa.get('_links', {}).get('thumbnail', {}).get('href')
+            # 'thumbnail': pessoa.get('_links', {}).get('thumbnail', {}).get('href') #COMENTEADO PARA NAÓ APRESENTAR EM TELA 
         })
+
 
 
 
@@ -145,9 +260,21 @@ def trata_json(self,caminho_countries, retorno_api):
 
 
     df = pd.DataFrame(lista)
+    minha_tabela_montada = pd.DataFrame(tabela_atualizar)
 
     print(f"Minha quantidade processada {len(df)}")
-    print(f"{df}")
+    if len(df) > 0:
+
+        update_info_process(self, id_insert_return[0])
+    print(df)
+
+    print(f"{minha_tabela_montada}")
+    # if minha_tabela_montada:
+    convertida =  minha_tabela_montada.to_html(index=False, border=1, justify='center')
+    corpo = f"Captura dos dados interpol {datetime.now().strftime("%Y-%m-%d %H:%M:%S")} <br><br> {convertida}"
+    enviar_email_all(corpo)
+
+       
 
 
 
@@ -221,6 +348,11 @@ def trata_json(self,caminho_countries, retorno_api):
 
 
 def remover_acentos(texto):
+    
+    if texto is None:
+        texto = ''
+    else:
+        texto = str(texto)
     # Normaliza o texto para NFD
     texto_normalizado = unicodedata.normalize('NFD', texto)
     # Codifica para ascii, ignora erros e decodifica de volta para utf-8
@@ -232,3 +364,16 @@ def remover_conhetes(texto):
    
    return  re.sub(r'[\[\]]', '', texto)
 
+
+
+def alter_status(self, id):
+
+
+     with ConectionClass.DbConnect(self.config, auto_commit=False) as conn_status:
+             cursor_initil = conn_status.cursor()
+             lista_update = {'status': self.true, 'alter_id': id} 
+
+             update_info_process(self,lista_update,cursor_initil,conn_status)
+             conn_status.commit()
+             cursor_initil.close()
+           

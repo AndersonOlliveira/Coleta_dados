@@ -7,6 +7,9 @@ import json
 from curl_cffi import requests
 from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor
+from Mail.ClassMail import enviar_email_all
+from Conexao import ConectionClass
+from Model.ClassModel import buscar_teste, insert_interpol
 
 
 
@@ -15,7 +18,7 @@ def push_request(self,countries = None, url_new = None):
     links_interpol = []
     url_completa = []
     tempo_chamada = self.time_sleps
-
+    id_insert_return = []
 
     # print(f"ESTOU ACESSANDO OS DADOS")
     # print(f"tipo: {type(countries)}")
@@ -32,6 +35,7 @@ def push_request(self,countries = None, url_new = None):
         url_servidor_nationality = self.servidor_nationality
         
         params = f"&resultPerPage={self.qtPage}&page={self.indicePage}"
+
         
         ClassLogger.logger.info(f"Minha Url chamada no Countries: {url_servidor_nationality}")
         
@@ -54,16 +58,43 @@ def push_request(self,countries = None, url_new = None):
 
 
             todas_temporaria_siglas.sort()
+
+        print(f"minha lista de siglas : {todas_temporaria_siglas}")
+        tratar_singlas = [sigla for sigla in todas_temporaria_siglas if sigla.strip()]
+        print(f"minha lista de siglas : {', '.join(tratar_singlas)}")
+        print(f"URL CHAMADA: {url_servidor_nationality}")
+
     
+        with ConectionClass.DbConnect(self.config, auto_commit=False) as conn_status:
+             cursor_initil = conn_status.cursor()
+             lista_insert = {'periodizacao': self.periodo ,'siglas' : (', '.join(tratar_singlas)) , 'url': url_servidor_nationality, 'data_captura': datetime.now().strftime("%Y-%m-%d")} 
+            # print(lista_insert.get('siglas'))'
+
+            #  id_insert_return.add(insert_interpol(self,lista_insert,cursor_initil,conn_status))
+             id_insert_return.append(insert_interpol(self,lista_insert,cursor_initil,conn_status))
+             
+           
+
+             conn_status.commit()
+            #  cursor.lastrowid
+             cursor_initil.close()
+             time.sleep(0.5)
+
+
         for list_siglas in todas_temporaria_siglas:
         
             if list_siglas:
+                #passando uma letra a mais ele passar por pardao pegar tudo 
                 url_completa = f"{url_servidor_nationality}={list_siglas}{params}"
                 links_interpol.append(url_completa)
+                print(f"País: {list_siglas} | Link API: {url_completa}")
                 # print(f"País: {list_siglas} | Link API: {url_completa}")
-
-
-   
+                # info_lista_singlas = ", " .join(list_siglas)
+                # print(f"País: {info_lista_singlas}")
+                # print(f"Url: {url_servidor_nationality}")
+                
+            
+            # return   
     if links_interpol:
         print(f" minha quantidade de url : {len(links_interpol)}")
         print(f"Link API: {links_interpol}")
@@ -74,9 +105,19 @@ def push_request(self,countries = None, url_new = None):
                 links_interpol
             ))
 
-        # print(f"Finalizado : {resultados}")
+            print(f"meu id geral {id_insert_return}")
 
-        return resultados
+            id_pai = id_insert_return[0] if id_insert_return else None
+
+            # Percorre a lista e injeta o ID em cada dicionário retornado
+            for item in resultados:
+                if isinstance(item, dict):
+                    item['id_geral_'] = id_pai
+
+        # print(f"Finalizado : {resultados}")
+        # return
+
+        return resultados, id_insert_return
 
 
 def push_new_resquest(url, time_sleps):
@@ -97,28 +138,73 @@ def push_new_resquest(url, time_sleps):
 
 def push_new_resquests(url, time_sleps):
     
+        servidor_headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
         resposta = ""
+        erro = False
 
 
         try:
                 
                 response = requests.get(url, impersonate="chrome110", timeout=(30))
+                # response = requests.get(url, headers=servidor_headers, timeout=(30))
                 agora = datetime.now()
                 print(f"Agora: {agora}")
-                print(f"Chamada a cada : dd{agora}")
-                print(f"TTempo de parada a cada chamada:  {time_sleps}")
+                print(f" Chamada a cada  X TEMPO: {agora}")
+                print(f" Tempo de parada a cada chamada:  {time_sleps}")
                 time.sleep(time_sleps)
                 response.raise_for_status()
                 resposta = response.json()
+
+
+
+                # if isinstance(resposta, list):
+                #     resposta.append({'pais_buscado': url})
+                # elif isinstance(resposta, dict):
+                #     resposta['url_pesquisada'] = url
         except requests.exceptions.Timeout:
-                retorno_interpol = "TIMEOUT: Requisição excedeu 5 minutos"
+                resposta = f"TIMEOUT: Requisição excedeu 5 minutos {url}"
                 erro = True
                 ClassLogger.logger.error(f"Timeout na requisição: {url}")
-        except requests.exceptions.RequestException as e:
-                retorno_interpol = f"ERRO: {str(e)}"
-                erro = True
-                ClassLogger.logger.error(f"Erro na requisição: {str(e)}")
+        except requests.exceptions.HTTPError as e:
+    # Tenta extrair o corpo da resposta do erro (ex: {"error": "token_expired"})
+            try:
+                detalhes_servidor = e.response.json()
+            except:
+                detalhes_servidor = e.response.text
 
+            status = e.response.status_code
+            msg_custom = f"Erro HTTP {status}: {detalhes_servidor}"
+            
+            if status == 403:
+                msg_custom = f"Acesso Negado (403). Verifique permissões ou Headers. Detalhes: {url}"
+            elif status == 404:
+                msg_custom = f"Recurso não encontrado (404). Verifique a URL: {url}"
+
+            resposta = f"ERRO: {msg_custom}"
+            erro = True
+            ClassLogger.logger.error(f"Erro na requisição: {msg_custom}")
+
+        except requests.exceptions.ConnectionError:
+            resposta = f"ERRO: Falha de conexão. Verifique sua internet ou o status do servidor. URL: {url}"
+            erro = True
+            ClassLogger.logger.error(f"Erro de Conexão: Verifique o host. URL: {url}")
+
+        except requests.exceptions.RequestException as e:
+          
+            resposta = f"ERRO GENÉRICO: {str(e)}"
+            erro = True
+            ClassLogger.logger.error(f"Erro inesperado: {str(e)}")
+
+
+        # print(f"MINHA RESPOSTA {resposta}") 
+        # print(f"tenho o info do erro {erro}") 
+
+        if erro:
+             enviar_email_all(resposta)
+        #  print(f"tenho o info do erro {e}") 
+
+
+        # print(f"Resposta da API: {resposta}")
         return resposta
 
 def rest_interpol_id(url):

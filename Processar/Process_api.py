@@ -28,15 +28,23 @@ def process_api(self):
         ClassLogger.logger.info(f"ESTOU SAINDO AQUI PARA FAZER A CONSULTA {self.batch_size}")
             
             #para chamar a api e exeturar os dados
-        retorno_api = push_request(self,caminho_countries)
+        retorno_api , id_insert_return = push_request(self,caminho_countries)
 
+
+        # print(json.dumps(retorno_api , indent=4))
+        # print(id_insert_return )
+
+        # return
+
+
+        # print(f"meu retorno da api : {retorno_api}")
         # with open(caminho_countries) as countries:
         #      dados_decoficados = json.load(countries)
             
 
         #      print(dados_decoficados)
         # 
-        lista_retorno = tratar = trata_json(self,caminho_countries,retorno_api)
+        lista_retorno = tratar = trata_json(self,caminho_countries,retorno_api,id_insert_return)
         
         
         # ClassLogger.logger.info(f"minha linhas ....")
