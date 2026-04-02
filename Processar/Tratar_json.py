@@ -14,7 +14,7 @@ from urllib.parse import urlparse, parse_qs
 import sys
 # from collections import defaultdict
 from Conexao import ConectionClass,ConectionPool
-from Model.ClassModel import buscar_teste, insert_interpol, update_info_process,search_data_interpol,exists_by_name
+from Model.ClassModel import buscar_teste, insert_interpol, update_info_process,search_data_interpol,exists_by_name,insert_base_interpol
 
 
 
@@ -39,9 +39,10 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
     nome_traduzido = set()
     grupos_por_pais = defaultdict(list)
     contador_por_pais = defaultdict(lambda: {
-    "atualizados": 0,
-    "nao_atualizados": 0
+    "INSERT": 0,
+    "NA": 0
     })
+   
 
 
 
@@ -227,15 +228,14 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
 
     # return
   
-
-
+    
     with self.db.get_connection() as conn:
         for pessoa, detalhe in zip(todas_pessoas, detalhes):
 
             # print()
 
             entity_id = pessoa.get('entity_id').replace('/','-') if pessoa.get('entity_id') else None
-            name_person = remover_acentos("{} {}".format(pessoa.get('name'), pessoa.get('forename'))).strip()
+            name_person = remover_acentos("{} {}".format(pessoa.get('forename'), pessoa.get('name'))).strip()
             lista_paises_chaves = pessoa.get('nationalities') or []
 
             #controlador de status 
@@ -260,57 +260,52 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
            
             if not exist_id and not exist_name:
                 print(f"VOU INSEIR O ID {entity_id} | nome: {name_person}")
-                # 
-                contador_por_pais[person_singla]["IN"] += 1
+                 
+                contador_por_pais[person_singla]["INSERT"] += 1
                 print(f"VOU INSEIR O ID {entity_id} | nome: {name_person} + {person_singla}")
                 
                 # novos_registros +=1
+                lista_paises = pessoa.get('nationalities') or []
+                print(f"{lista_paises} MEUS DADOSSS")
+                nomes_paises = [mapa.get(pais, pais) for pais in lista_paises]
+                print(f"{nomes_paises} depois do get?")
+                pais_limpo = ','.join(nomes_paises) if nomes_paises else "N/I"
+                sexo = detalhe.get('sex_id') if detalhe else None
+                # crime =  [remover_acentos(warrant.get('charge')).strip() for warrant in detalhe.get('arrest_warrants', [])] if detalhe else None
+                crime_lista = [remover_acentos(warrant.get('charge', '')).strip() for warrant in (detalhe.get('arrest_warrants') or [])]
+                crime = ", ".join(crime_lista) if crime_lista else "N/I"
+                # idiona = [remover_conhetes(lang) for lang in detalhe.get('languages_spoken_ids', [])] if detalhe else None
+                idiona = ", ".join(item.strip("[] ").strip() for item in detalhe.get('languages_spoken_ids', []) or []) if detalhe and detalhe.get('languages_spoken_ids') else "N/I"
+                    
+                # idiona = ", ".join(item.strip("[] ").strip() for item in detalhe.get('languages_spoken_ids', []) or []) if detalhe else None
 
+
+                #faco uma busca para ver se o id não esta inserido já
+                    
+
+                # print(f"crime localizado?: {crime}")
+                # print(type(idiona))
+                lista.append({
+                        # 'primeiro_nome': pessoa.get('name'),
+                        # 'nome_completo': "{} {}".format(pessoa.get('forename'), pessoa.get('name')),
+                        'nome_completo': name_person,
+                        # 'nome_do_meio': pessoa.get('forename'),
+                        'data_nascimento': pessoa.get('date_of_birth').replace('/','-') if pessoa.get('date_of_birth') else None,
+                        'nacionalidade': pais_limpo.upper(),
+                        'id_interpol': entity_id,
+                        'sexo': sexo, 
+                        'acusacao': crime,
+                        'idiona': idiona,
+                        'thumbnail': pessoa.get('_links', {}).get('thumbnail', {}).get('href'), #COMENTEADO PARA NAÓ APRESENTAR EM TELA,
+                        'data_consulta': datetime.now().strftime("%Y-%m-%d"),
+                        'hora_consulta': datetime.now().strftime("%H:%M:%S")
+                })
 
             else:
                 print(f"vou pular {entity_id} || nome: {name_person}  que pais ???{lista_paises_chaves}")
                 print(f"vou pular {entity_id} | nome: {name_person} + {person_singla}")
                 contador_por_pais[person_singla]["NA"] += 1
                 # registros_pulados +=1
-
-
-        
-
-
-            lista_paises = pessoa.get('nationalities') or []
-            print(f"{lista_paises} MEUS DADOSSS")
-            nomes_paises = [mapa.get(pais, pais) for pais in lista_paises]
-            print(f"{nomes_paises} depois do get?")
-            pais_limpo = ','.join(nomes_paises) if nomes_paises else "N/I"
-            
-            sexo = detalhe.get('sex_id') if detalhe else None
-            # crime =  [remover_acentos(warrant.get('charge')).strip() for warrant in detalhe.get('arrest_warrants', [])] if detalhe else None
-            crime_lista = [remover_acentos(warrant.get('charge', '')).strip() for warrant in (detalhe.get('arrest_warrants') or [])]
-            crime = ", ".join(crime_lista) if crime_lista else "N/I"
-            # idiona = [remover_conhetes(lang) for lang in detalhe.get('languages_spoken_ids', [])] if detalhe else None
-            idiona = ", ".join(item.strip("[] ").strip() for item in detalhe.get('languages_spoken_ids', []) or []) if detalhe and detalhe.get('languages_spoken_ids') else "N/I"
-            
-            # idiona = ", ".join(item.strip("[] ").strip() for item in detalhe.get('languages_spoken_ids', []) or []) if detalhe else None
-
-
-            #faco uma busca para ver se o id não esta inserido já
-            
-
-            # print(f"crime localizado?: {crime}")
-            print(type(idiona))
-
-            lista.append({
-                # 'primeiro_nome': pessoa.get('name'),
-                'nome_completo': "{} {}".format(pessoa.get('name'), pessoa.get('forename')),
-                # 'nome_do_meio': pessoa.get('forename'),
-                'data_nascimento': pessoa.get('date_of_birth').replace('/','-') if pessoa.get('date_of_birth') else None,
-                'nacionalidade': pais_limpo.upper(),
-                'id_interpol': entity_id,
-                'sexo': sexo, 
-                # 'acusacao': crime,
-                'idiona': idiona,
-                # 'thumbnail': pessoa.get('_links', {}).get('thumbnail', {}).get('href') #COMENTEADO PARA NAÓ APRESENTAR EM TELA 
-            })
 
     # info_dados_registros = {
     #    "qta_registros_atualizados" :  int(novos_registros),
@@ -321,23 +316,9 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
     for linha in tabela_atualizar:
         pais = linha['PAIS BUSCADO']
 
-        linha['QTA INSERIDOS'] = contador_por_pais[pais]["IN"]
+        linha['QTA INSERIDOS'] = contador_por_pais[pais]["INSERT"]
         linha['QTA J/N BASE'] = contador_por_pais[pais]["NA"]
-
- 
-
         
-        
-        
-      
-
-
-
-    
-    
-    
-
-
     print(f"meu contatodor para insercáo de novos registros {novos_registros}")
     print(f"meu contatodor para dados pulados  {registros_pulados}")
     df = pd.DataFrame(lista)
@@ -347,17 +328,36 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
     minha_tabela_montada = minha_tabela_montada.fillna(0) 
 
     print(f"Minha quantidade processada {len(df)}")
+    inser_new_registro = 0
     if len(df) > 0:
+       
+        falha_ = 0
 
         # update_info_process(self, id_insert_return[0])
         alter_status(self, id_insert_return[0])
-    print(df)
+        with self.db.get_connection() as conn:
+              conn.autocommit = False
+              for registro in lista:
+                sucesso = insert_base_interpol(self,registro,conn)
+                if sucesso:
+                    inser_new_registro +=1
+                else:
+                    falha_ +=1
 
-    print(f"{minha_tabela_montada}")
+
+    
+                conn.commit()
+    else:
+        obs = f"SEM ALTERACAO NOS DADOS {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}"
+        alter_status(self, id_insert_return[0],obs)
+    # print(df)
+
+    # print(f"{minha_tabela_montada}")
+    print(f"TOTAL DE REGISTROS INSERIDOS :::::{inser_new_registro}")
     # if minha_tabela_montada:
     convertida =  minha_tabela_montada.to_html(index=False, border=1, justify='center')
     corpo = f"Captura dos dados interpol {datetime.now().strftime("%Y-%m-%d %H:%M:%S")} <br><br> {convertida}"
-    # enviar_email_all(corpo)
+    enviar_email_all(corpo)
 
        
 
@@ -451,12 +451,15 @@ def remover_conhetes(texto):
 
 
 
-def alter_status(self, id):
+def alter_status(self, id, obs = None):
 
 
      with ConectionClass.DbConnect(self.config, auto_commit=False) as conn_status:
              cursor_initil = conn_status.cursor()
-             lista_update = {'status': self.true, 'alter_id': id} 
+             if obs is None:
+                lista_update = {'status': self.true, 'alter_id': id} 
+             else: 
+                lista_update = {'status': self.true, 'alter_id': id, 'obs' : obs}
 
              update_info_process(self,lista_update,cursor_initil,conn_status)
              conn_status.commit()

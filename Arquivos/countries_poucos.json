@@ -10,5 +10,9 @@
     {
         "name": "Angola",
         "value": "AO"
+    },
+    {
+        "name": "Panama",
+        "value": "PA"
     }
 ]

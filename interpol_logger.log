@@ -9804,3 +9804,991 @@ Encerrando loop por comando do usuário (Ctrl+C).
 2026-04-02 13:26:29,588 - INFO - 
 Encerrando loop por comando do usuário (Ctrl+C).
 2026-04-02 13:26:29,589 - INFO - [13:26:29] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 14:56:56,043 - INFO - ================================================================================
+2026-04-02 14:56:56,055 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 14:56:56.043832
+2026-04-02 14:56:58,141 - INFO - ================================================================================
+2026-04-02 14:56:58,193 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 14:56:58,197 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 14:56:59,241 - INFO - Status atualizado para ::  - id retornado 89 
+2026-04-02 15:01:33,536 - WARNING - [DEBUG SQL] Parâmetros: 2022-9820 
+2026-04-02 15:01:33,589 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:01:34,198 - ERROR - Erro fatal na execução: 'IN'
+Traceback (most recent call last):
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\Processor\ClassProcessor.py", line 48, in executar
+    total_processados = process_api(self)
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\Processar\Process_api.py", line 47, in process_api
+    lista_retorno = tratar = trata_json(self,caminho_countries,retorno_api,id_insert_return)
+                             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\Processar\Tratar_json.py", line 264, in trata_json
+    contador_por_pais[person_singla]["IN"] += 1
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+KeyError: 'IN'
+2026-04-02 15:01:34,306 - ERROR - SAINDO NO FINALIY
+2026-04-02 15:01:34,309 - INFO - [15:01:34] Iniciando a consulta
+2026-04-02 15:01:34,310 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 15:01:34,312 - INFO - [15:01:34] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 15:27:04,030 - INFO - ================================================================================
+2026-04-02 15:27:04,042 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 15:27:04.030003
+2026-04-02 15:27:06,054 - INFO - ================================================================================
+2026-04-02 15:27:06,141 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 15:27:06,233 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 15:27:07,542 - INFO - Status atualizado para ::  - id retornado 90 
+2026-04-02 15:27:52,130 - WARNING - [DEBUG SQL] Parâmetros: 2022-9820 
+2026-04-02 15:27:52,131 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:27:52,690 - ERROR - Erro fatal na execução: 'INSERT'
+Traceback (most recent call last):
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\Processor\ClassProcessor.py", line 48, in executar
+    total_processados = process_api(self)
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\Processar\Process_api.py", line 47, in process_api
+    lista_retorno = tratar = trata_json(self,caminho_countries,retorno_api,id_insert_return)
+                             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\Processar\Tratar_json.py", line 264, in trata_json
+    contador_por_pais[person_singla]["INSERT"] += 1
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 'INSERT'
+2026-04-02 15:27:52,699 - ERROR - SAINDO NO FINALIY
+2026-04-02 15:27:52,699 - INFO - [15:27:52] Iniciando a consulta
+2026-04-02 15:27:52,700 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 15:27:52,702 - INFO - [15:27:52] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 15:29:44,587 - INFO - ================================================================================
+2026-04-02 15:29:44,595 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 15:29:44.587183
+2026-04-02 15:29:46,597 - INFO - ================================================================================
+2026-04-02 15:29:46,602 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 15:29:46,603 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 15:29:47,610 - INFO - Status atualizado para ::  - id retornado 91 
+2026-04-02 15:30:37,139 - WARNING - [DEBUG SQL] Parâmetros: 2022-9820 
+2026-04-02 15:30:37,140 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:30:37,703 - ERROR - Erro fatal na execução: 'INSERT'
+Traceback (most recent call last):
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\Processor\ClassProcessor.py", line 48, in executar
+    total_processados = process_api(self)
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\Processar\Process_api.py", line 47, in process_api
+    lista_retorno = tratar = trata_json(self,caminho_countries,retorno_api,id_insert_return)
+                             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\Processar\Tratar_json.py", line 263, in trata_json
+    contador_por_pais[person_singla]["INSERT"] += 1
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 'INSERT'
+2026-04-02 15:30:37,717 - ERROR - SAINDO NO FINALIY
+2026-04-02 15:30:37,719 - INFO - [15:30:37] Iniciando a consulta
+2026-04-02 15:30:37,720 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 15:30:37,721 - INFO - [15:30:37] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 15:31:56,663 - INFO - ================================================================================
+2026-04-02 15:31:56,664 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 15:31:56.663455
+2026-04-02 15:31:58,665 - INFO - ================================================================================
+2026-04-02 15:31:58,668 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 15:31:58,669 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 15:31:59,631 - INFO - Status atualizado para ::  - id retornado 92 
+2026-04-02 15:32:41,375 - WARNING - [DEBUG SQL] Parâmetros: 2022-9820 
+2026-04-02 15:32:41,376 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:32:41,803 - WARNING - [DEBUG SQL] Parâmetros: 2022-9467 
+2026-04-02 15:32:41,804 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:32:42,101 - WARNING - [DEBUG SQL] Parâmetros: 2017-188060 
+2026-04-02 15:32:42,103 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:32:42,375 - WARNING - [DEBUG SQL] Parâmetros: 2016-78505 
+2026-04-02 15:32:42,377 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:32:42,701 - WARNING - [DEBUG SQL] Parâmetros: 2016-78799 
+2026-04-02 15:32:42,703 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:32:43,021 - WARNING - [DEBUG SQL] Parâmetros: 2016-78540 
+2026-04-02 15:32:43,033 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:32:43,404 - WARNING - [DEBUG SQL] Parâmetros: 2016-73485 
+2026-04-02 15:32:43,408 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:32:43,715 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 15:32:43,716 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:32:43,998 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 15:32:43,999 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:32:44,269 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 15:32:44,270 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:32:44,406 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 15:32:44,406 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:32:45,839 - INFO - Status atualizado do id 92  com o Status True 02/04/2026 15:32 
+2026-04-02 15:32:45,843 - ERROR - falha em inserir os dados na base  - KeyError('periodizacao')
+2026-04-02 15:32:45,844 - ERROR - falha em inserir os dados na base  - KeyError('periodizacao')
+2026-04-02 15:32:45,846 - ERROR - falha em inserir os dados na base  - KeyError('periodizacao')
+2026-04-02 15:32:45,847 - ERROR - falha em inserir os dados na base  - KeyError('periodizacao')
+2026-04-02 15:32:45,848 - ERROR - falha em inserir os dados na base  - KeyError('periodizacao')
+2026-04-02 15:32:45,849 - ERROR - falha em inserir os dados na base  - KeyError('periodizacao')
+2026-04-02 15:32:45,850 - ERROR - falha em inserir os dados na base  - KeyError('periodizacao')
+2026-04-02 15:32:45,850 - ERROR - falha em inserir os dados na base  - KeyError('periodizacao')
+2026-04-02 15:32:45,852 - ERROR - falha em inserir os dados na base  - KeyError('periodizacao')
+2026-04-02 15:32:45,853 - ERROR - falha em inserir os dados na base  - KeyError('periodizacao')
+2026-04-02 15:32:45,854 - ERROR - falha em inserir os dados na base  - KeyError('periodizacao')
+2026-04-02 15:32:47,476 - INFO - minha quantidade de dados processados :  None
+2026-04-02 15:32:47,480 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 15:32:47,480 - INFO - Processamento concluído em 50.82 segundos
+2026-04-02 15:32:47,481 - INFO - Total de registros processados: None
+2026-04-02 15:32:47,481 - ERROR - SAINDO NO FINALIY
+2026-04-02 15:32:47,482 - INFO - [15:32:47] Iniciando a consulta
+2026-04-02 15:32:47,483 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 15:32:47,483 - INFO - [15:32:47] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 15:35:52,229 - INFO - ================================================================================
+2026-04-02 15:35:52,265 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 15:35:52.229143
+2026-04-02 15:35:54,269 - INFO - ================================================================================
+2026-04-02 15:35:54,276 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 15:35:54,279 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 15:35:55,332 - INFO - Status atualizado para ::  - id retornado 93 
+2026-04-02 15:36:38,304 - WARNING - [DEBUG SQL] Parâmetros: 2022-9820 
+2026-04-02 15:36:38,379 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:36:38,894 - WARNING - [DEBUG SQL] Parâmetros: 2022-9467 
+2026-04-02 15:36:38,895 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:36:39,233 - WARNING - [DEBUG SQL] Parâmetros: 2017-188060 
+2026-04-02 15:36:39,259 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:36:39,609 - WARNING - [DEBUG SQL] Parâmetros: 2016-78505 
+2026-04-02 15:36:39,623 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:36:39,956 - WARNING - [DEBUG SQL] Parâmetros: 2016-78799 
+2026-04-02 15:36:39,956 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:36:40,241 - WARNING - [DEBUG SQL] Parâmetros: 2016-78540 
+2026-04-02 15:36:40,243 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:36:40,545 - WARNING - [DEBUG SQL] Parâmetros: 2016-73485 
+2026-04-02 15:36:40,554 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:36:40,896 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 15:36:40,910 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:36:41,407 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 15:36:41,408 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:36:41,699 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 15:36:41,701 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:36:41,870 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 15:36:41,884 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:36:43,478 - INFO - Status atualizado do id 93  com o Status True 02/04/2026 15:36 
+2026-04-02 15:36:43,773 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'CELSO DUARTE MONTEIRO AZEVEDO\', \'M\',...\n                       ^\n')
+2026-04-02 15:36:43,908 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'JOAO DE DEU OLIVEIRA GOMES DOS SANTO...\n                       ^\n')
+2026-04-02 15:36:44,058 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'MARIQUINHAS DOS ANJOS NHAMGA DA COST...\n                       ^\n')
+2026-04-02 15:36:44,195 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'MALAHI IKECHUCWU OBIDIOZOR\', \'M\', \'1...\n                       ^\n')
+2026-04-02 15:36:44,336 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'NWOKORIE ALCACHI STANLEY\', \'M\', \'197...\n                       ^\n')
+2026-04-02 15:36:44,478 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'AKACHI VITUS\', \'M\', \'1984-06-13\', \'A...\n                       ^\n')
+2026-04-02 15:36:44,616 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'JÉSSICA ALEXANDRA ALVES COELHO\', \'F\'...\n                       ^\n')
+2026-04-02 15:36:44,752 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'KUEH KOH ING\', \'F\', \'1975-08-22\', \'M...\n                       ^\n')
+2026-04-02 15:36:44,902 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'SIRUL AZHAR UMAR\', \'M\', \'1971-01-29\'...\n                       ^\n')
+2026-04-02 15:36:45,042 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'LOK SENG TAN\', \'M\', \'1968-02-14\', \'M...\n                       ^\n')
+2026-04-02 15:36:45,194 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'SOON AIK LOO\', \'M\', \'1980-11-20\', \'M...\n                       ^\n')
+2026-04-02 15:36:46,845 - INFO - minha quantidade de dados processados :  None
+2026-04-02 15:36:46,858 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 15:36:46,859 - INFO - Processamento concluído em 54.63 segundos
+2026-04-02 15:36:46,860 - INFO - Total de registros processados: None
+2026-04-02 15:36:46,861 - ERROR - SAINDO NO FINALIY
+2026-04-02 15:36:46,861 - INFO - [15:36:46] Iniciando a consulta
+2026-04-02 15:36:46,867 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 15:36:46,874 - INFO - [15:36:46] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 15:40:02,706 - INFO - ================================================================================
+2026-04-02 15:40:02,753 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 15:40:02.706047
+2026-04-02 15:40:04,778 - INFO - ================================================================================
+2026-04-02 15:40:04,923 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 15:40:04,998 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 15:40:06,179 - INFO - Status atualizado para ::  - id retornado 94 
+2026-04-02 15:40:49,141 - WARNING - [DEBUG SQL] Parâmetros: 2022-9820 
+2026-04-02 15:40:49,142 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:40:49,580 - WARNING - [DEBUG SQL] Parâmetros: 2022-9467 
+2026-04-02 15:40:49,581 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:40:49,857 - WARNING - [DEBUG SQL] Parâmetros: 2017-188060 
+2026-04-02 15:40:49,858 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:40:50,139 - WARNING - [DEBUG SQL] Parâmetros: 2016-78505 
+2026-04-02 15:40:50,139 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:40:50,420 - WARNING - [DEBUG SQL] Parâmetros: 2016-78799 
+2026-04-02 15:40:50,421 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:40:50,711 - WARNING - [DEBUG SQL] Parâmetros: 2016-78540 
+2026-04-02 15:40:50,711 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:40:50,996 - WARNING - [DEBUG SQL] Parâmetros: 2016-73485 
+2026-04-02 15:40:50,996 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:40:51,272 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 15:40:51,273 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:40:51,551 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 15:40:51,552 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:40:51,828 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 15:40:51,830 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:40:51,971 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 15:40:51,972 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:40:53,368 - INFO - Status atualizado do id 94  com o Status True 02/04/2026 15:40 
+2026-04-02 15:40:54,937 - INFO - minha quantidade de dados processados :  None
+2026-04-02 15:40:54,938 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 15:40:54,940 - INFO - Processamento concluído em 52.23 segundos
+2026-04-02 15:40:54,941 - INFO - Total de registros processados: None
+2026-04-02 15:40:54,941 - ERROR - SAINDO NO FINALIY
+2026-04-02 15:40:54,942 - INFO - [15:40:54] Iniciando a consulta
+2026-04-02 15:40:54,943 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 15:40:54,943 - INFO - [15:40:54] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 15:43:52,042 - INFO - ================================================================================
+2026-04-02 15:43:52,044 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 15:43:52.042256
+2026-04-02 15:43:54,045 - INFO - ================================================================================
+2026-04-02 15:43:54,050 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 15:43:54,063 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 15:43:55,029 - INFO - Status atualizado para ::  - id retornado 95 
+2026-04-02 15:44:38,190 - WARNING - [DEBUG SQL] Parâmetros: 2022-9820 
+2026-04-02 15:44:38,191 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:44:38,604 - WARNING - [DEBUG SQL] Parâmetros: 2022-9467 
+2026-04-02 15:44:38,605 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:44:38,905 - WARNING - [DEBUG SQL] Parâmetros: 2017-188060 
+2026-04-02 15:44:38,906 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:44:39,178 - WARNING - [DEBUG SQL] Parâmetros: 2016-78505 
+2026-04-02 15:44:39,178 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:44:39,462 - WARNING - [DEBUG SQL] Parâmetros: 2016-78799 
+2026-04-02 15:44:39,466 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:44:39,754 - WARNING - [DEBUG SQL] Parâmetros: 2016-78540 
+2026-04-02 15:44:39,757 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:44:40,321 - WARNING - [DEBUG SQL] Parâmetros: 2016-73485 
+2026-04-02 15:44:40,328 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:44:40,606 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 15:44:40,606 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:44:40,881 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 15:44:40,882 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:44:41,170 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 15:44:41,172 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:44:41,307 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 15:44:41,307 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:44:42,723 - INFO - Status atualizado do id 95  com o Status True 02/04/2026 15:44 
+2026-04-02 15:44:42,728 - ERROR - falha em inserir os dados na base  - TypeError('not all arguments converted during string formatting')
+2026-04-02 15:44:42,731 - ERROR - falha em inserir os dados na base  - TypeError('not all arguments converted during string formatting')
+2026-04-02 15:44:42,734 - ERROR - falha em inserir os dados na base  - TypeError('not all arguments converted during string formatting')
+2026-04-02 15:44:42,735 - ERROR - falha em inserir os dados na base  - TypeError('not all arguments converted during string formatting')
+2026-04-02 15:44:42,742 - ERROR - falha em inserir os dados na base  - TypeError('not all arguments converted during string formatting')
+2026-04-02 15:44:42,749 - ERROR - falha em inserir os dados na base  - TypeError('not all arguments converted during string formatting')
+2026-04-02 15:44:42,752 - ERROR - falha em inserir os dados na base  - TypeError('not all arguments converted during string formatting')
+2026-04-02 15:44:42,756 - ERROR - falha em inserir os dados na base  - TypeError('not all arguments converted during string formatting')
+2026-04-02 15:44:42,758 - ERROR - falha em inserir os dados na base  - TypeError('not all arguments converted during string formatting')
+2026-04-02 15:44:42,760 - ERROR - falha em inserir os dados na base  - TypeError('not all arguments converted during string formatting')
+2026-04-02 15:44:42,764 - ERROR - falha em inserir os dados na base  - TypeError('not all arguments converted during string formatting')
+2026-04-02 15:44:45,007 - INFO - minha quantidade de dados processados :  None
+2026-04-02 15:44:45,008 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 15:44:45,010 - INFO - Processamento concluído em 52.97 segundos
+2026-04-02 15:44:45,011 - INFO - Total de registros processados: None
+2026-04-02 15:44:45,011 - ERROR - SAINDO NO FINALIY
+2026-04-02 15:44:45,012 - INFO - [15:44:45] Iniciando a consulta
+2026-04-02 15:44:45,013 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 15:44:45,015 - INFO - [15:44:45] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 15:50:28,437 - INFO - ================================================================================
+2026-04-02 15:50:28,441 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 15:50:28.437289
+2026-04-02 15:50:30,452 - INFO - ================================================================================
+2026-04-02 15:50:30,585 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 15:50:30,591 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 15:50:31,561 - INFO - Status atualizado para ::  - id retornado 96 
+2026-04-02 15:51:14,671 - WARNING - [DEBUG SQL] Parâmetros: 2022-9820 
+2026-04-02 15:51:14,675 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:51:15,090 - WARNING - [DEBUG SQL] Parâmetros: 2022-9467 
+2026-04-02 15:51:15,090 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:51:15,360 - WARNING - [DEBUG SQL] Parâmetros: 2017-188060 
+2026-04-02 15:51:15,361 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:51:15,649 - WARNING - [DEBUG SQL] Parâmetros: 2016-78505 
+2026-04-02 15:51:15,650 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:51:15,925 - WARNING - [DEBUG SQL] Parâmetros: 2016-78799 
+2026-04-02 15:51:15,926 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:51:16,200 - WARNING - [DEBUG SQL] Parâmetros: 2016-78540 
+2026-04-02 15:51:16,200 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:51:16,479 - WARNING - [DEBUG SQL] Parâmetros: 2016-73485 
+2026-04-02 15:51:16,480 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:51:16,755 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 15:51:16,756 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:51:17,028 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 15:51:17,029 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:51:17,314 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 15:51:17,314 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:51:17,456 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 15:51:17,456 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:51:18,860 - INFO - Status atualizado do id 96  com o Status True 02/04/2026 15:51 
+2026-04-02 15:51:19,130 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'CELSO DUARTE MONTEIRO AZEVEDO\',\'M\', ...\n                       ^\n')
+2026-04-02 15:51:19,268 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'JOAO DE DEU OLIVEIRA GOMES DOS SANTO...\n                       ^\n')
+2026-04-02 15:51:19,419 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'MARIQUINHAS DOS ANJOS NHAMGA DA COST...\n                       ^\n')
+2026-04-02 15:51:19,558 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'MALAHI IKECHUCWU OBIDIOZOR\',\'M\', \'19...\n                       ^\n')
+2026-04-02 15:51:19,691 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'NWOKORIE ALCACHI STANLEY\',\'M\', \'1972...\n                       ^\n')
+2026-04-02 15:51:19,825 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'AKACHI VITUS\',\'M\', \'1984-06-13\', \'AN...\n                       ^\n')
+2026-04-02 15:51:19,958 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'JESSICA ALEXANDRA ALVES COELHO\',\'F\',...\n                       ^\n')
+2026-04-02 15:51:20,105 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'KUEH KOH ING\',\'F\', \'1975-08-22\', \'MA...\n                       ^\n')
+2026-04-02 15:51:20,242 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'SIRUL AZHAR UMAR\',\'M\', \'1971-01-29\',...\n                       ^\n')
+2026-04-02 15:51:20,384 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'LOK SENG TAN\',\'M\', \'1968-02-14\', \'MA...\n                       ^\n')
+2026-04-02 15:51:20,524 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'SOON AIK LOO\',\'M\', \'1980-11-20\', \'MA...\n                       ^\n')
+2026-04-02 15:51:22,139 - INFO - minha quantidade de dados processados :  None
+2026-04-02 15:51:22,140 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 15:51:22,141 - INFO - Processamento concluído em 53.70 segundos
+2026-04-02 15:51:22,141 - INFO - Total de registros processados: None
+2026-04-02 15:51:22,142 - ERROR - SAINDO NO FINALIY
+2026-04-02 15:51:22,142 - INFO - [15:51:22] Iniciando a consulta
+2026-04-02 15:51:22,143 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 15:51:22,144 - INFO - [15:51:22] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 15:57:43,591 - INFO - ================================================================================
+2026-04-02 15:57:43,711 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 15:57:43.591516
+2026-04-02 15:57:45,780 - INFO - ================================================================================
+2026-04-02 15:57:45,818 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 15:57:45,831 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 15:57:46,813 - INFO - Status atualizado para ::  - id retornado 97 
+2026-04-02 15:58:30,021 - WARNING - [DEBUG SQL] Parâmetros: 2022-9820 
+2026-04-02 15:58:30,023 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:58:30,438 - WARNING - [DEBUG SQL] Parâmetros: 2022-9467 
+2026-04-02 15:58:30,439 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:58:30,712 - WARNING - [DEBUG SQL] Parâmetros: 2017-188060 
+2026-04-02 15:58:30,713 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:58:30,981 - WARNING - [DEBUG SQL] Parâmetros: 2016-78505 
+2026-04-02 15:58:30,982 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:58:31,257 - WARNING - [DEBUG SQL] Parâmetros: 2016-78799 
+2026-04-02 15:58:31,258 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:58:31,526 - WARNING - [DEBUG SQL] Parâmetros: 2016-78540 
+2026-04-02 15:58:31,527 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:58:31,807 - WARNING - [DEBUG SQL] Parâmetros: 2016-73485 
+2026-04-02 15:58:31,807 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:58:32,076 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 15:58:32,077 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:58:32,352 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 15:58:32,352 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:58:32,625 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 15:58:32,626 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:58:32,767 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 15:58:32,768 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 15:58:34,335 - INFO - Status atualizado do id 97  com o Status True 02/04/2026 15:58 
+2026-04-02 15:58:34,635 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'CELSO DUARTE MONTEIRO AZEVEDO\',\'M\', ...\n                       ^\n')
+2026-04-02 15:58:34,772 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'JOAO DE DEU OLIVEIRA GOMES DOS SANTO...\n                       ^\n')
+2026-04-02 15:58:34,924 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'MARIQUINHAS DOS ANJOS NHAMGA DA COST...\n                       ^\n')
+2026-04-02 15:58:35,064 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'MALAHI IKECHUCWU OBIDIOZOR\',\'M\', \'19...\n                       ^\n')
+2026-04-02 15:58:35,210 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'NWOKORIE ALCACHI STANLEY\',\'M\', \'1972...\n                       ^\n')
+2026-04-02 15:58:35,364 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'AKACHI VITUS\',\'M\', \'1984-06-13\', \'AN...\n                       ^\n')
+2026-04-02 15:58:35,527 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'JESSICA ALEXANDRA ALVES COELHO\',\'F\',...\n                       ^\n')
+2026-04-02 15:58:35,686 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'KUEH KOH ING\',\'F\', \'1975-08-22\', \'MA...\n                       ^\n')
+2026-04-02 15:58:35,836 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'SIRUL AZHAR UMAR\',\'M\', \'1971-01-29\',...\n                       ^\n')
+2026-04-02 15:58:35,974 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'LOK SENG TAN\',\'M\', \'1968-02-14\', \'MA...\n                       ^\n')
+2026-04-02 15:58:36,109 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'SOON AIK LOO\',\'M\', \'1980-11-20\', \'MA...\n                       ^\n')
+2026-04-02 15:58:38,411 - INFO - minha quantidade de dados processados :  None
+2026-04-02 15:58:38,412 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 15:58:38,412 - INFO - Processamento concluído em 54.82 segundos
+2026-04-02 15:58:38,414 - INFO - Total de registros processados: None
+2026-04-02 15:58:38,414 - ERROR - SAINDO NO FINALIY
+2026-04-02 15:58:38,415 - INFO - [15:58:38] Iniciando a consulta
+2026-04-02 15:58:38,416 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 15:58:38,417 - INFO - [15:58:38] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 16:13:28,234 - INFO - ================================================================================
+2026-04-02 16:13:28,236 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 16:13:28.234559
+2026-04-02 16:13:30,236 - INFO - ================================================================================
+2026-04-02 16:13:30,240 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 16:13:30,241 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 16:13:31,193 - INFO - Status atualizado para ::  - id retornado 98 
+2026-04-02 16:14:17,445 - WARNING - [DEBUG SQL] Parâmetros: 2022-9820 
+2026-04-02 16:14:17,456 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:14:17,903 - WARNING - [DEBUG SQL] Parâmetros: 2022-9467 
+2026-04-02 16:14:17,904 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:14:18,205 - WARNING - [DEBUG SQL] Parâmetros: 2017-188060 
+2026-04-02 16:14:18,208 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:14:18,484 - WARNING - [DEBUG SQL] Parâmetros: 2016-78505 
+2026-04-02 16:14:18,485 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:14:18,754 - WARNING - [DEBUG SQL] Parâmetros: 2016-78799 
+2026-04-02 16:14:18,755 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:14:19,038 - WARNING - [DEBUG SQL] Parâmetros: 2016-78540 
+2026-04-02 16:14:19,040 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:14:19,320 - WARNING - [DEBUG SQL] Parâmetros: 2016-73485 
+2026-04-02 16:14:19,322 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:14:19,605 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 16:14:19,607 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:14:19,904 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 16:14:19,905 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:14:20,214 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 16:14:20,215 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:14:20,355 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 16:14:20,356 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:14:21,814 - INFO - Status atualizado do id 98  com o Status True 02/04/2026 16:14 
+2026-04-02 16:14:22,105 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'CELSO DUARTE MONTEIRO AZEVEDO\',\'M\', ...\n                       ^\n')
+2026-04-02 16:14:22,251 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'JOAO DE DEU OLIVEIRA GOMES DOS SANTO...\n                       ^\n')
+2026-04-02 16:14:22,397 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'MARIQUINHAS DOS ANJOS NHAMGA DA COST...\n                       ^\n')
+2026-04-02 16:14:22,554 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'MALAHI IKECHUCWU OBIDIOZOR\',\'M\', \'19...\n                       ^\n')
+2026-04-02 16:14:22,702 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'NWOKORIE ALCACHI STANLEY\',\'M\', \'1972...\n                       ^\n')
+2026-04-02 16:14:22,844 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'AKACHI VITUS\',\'M\', \'1984-06-13\', \'AN...\n                       ^\n')
+2026-04-02 16:14:23,030 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'JESSICA ALEXANDRA ALVES COELHO\',\'F\',...\n                       ^\n')
+2026-04-02 16:14:23,177 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'KUEH KOH ING\',\'F\', \'1975-08-22\', \'MA...\n                       ^\n')
+2026-04-02 16:14:23,347 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'SIRUL AZHAR UMAR\',\'M\', \'1971-01-29\',...\n                       ^\n')
+2026-04-02 16:14:23,486 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'LOK SENG TAN\',\'M\', \'1968-02-14\', \'MA...\n                       ^\n')
+2026-04-02 16:14:23,648 - ERROR - falha em inserir os dados na base  - SyntaxError('syntax error at or near "VALUES"\nLINE 5:                VALUES (\'SOON AIK LOO\',\'M\', \'1980-11-20\', \'MA...\n                       ^\n')
+2026-04-02 16:14:25,596 - INFO - minha quantidade de dados processados :  None
+2026-04-02 16:14:25,599 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 16:14:25,600 - INFO - Processamento concluído em 57.37 segundos
+2026-04-02 16:14:25,601 - INFO - Total de registros processados: None
+2026-04-02 16:14:25,602 - ERROR - SAINDO NO FINALIY
+2026-04-02 16:14:25,603 - INFO - [16:14:25] Iniciando a consulta
+2026-04-02 16:14:25,603 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 16:14:25,604 - INFO - [16:14:25] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 16:20:37,036 - INFO - ================================================================================
+2026-04-02 16:20:37,039 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 16:20:37.036512
+2026-04-02 16:20:39,040 - INFO - ================================================================================
+2026-04-02 16:20:39,049 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 16:20:39,057 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 16:20:40,072 - INFO - Status atualizado para ::  - id retornado 99 
+2026-04-02 16:21:25,819 - WARNING - [DEBUG SQL] Parâmetros: 2022-9820 
+2026-04-02 16:21:25,826 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:21:26,375 - WARNING - [DEBUG SQL] Parâmetros: 2022-9467 
+2026-04-02 16:21:26,376 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:21:26,687 - WARNING - [DEBUG SQL] Parâmetros: 2017-188060 
+2026-04-02 16:21:26,690 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:21:26,991 - WARNING - [DEBUG SQL] Parâmetros: 2016-78505 
+2026-04-02 16:21:26,993 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:21:27,272 - WARNING - [DEBUG SQL] Parâmetros: 2016-78799 
+2026-04-02 16:21:27,273 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:21:27,555 - WARNING - [DEBUG SQL] Parâmetros: 2016-78540 
+2026-04-02 16:21:27,555 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:21:27,835 - WARNING - [DEBUG SQL] Parâmetros: 2016-73485 
+2026-04-02 16:21:27,836 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:21:28,116 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 16:21:28,117 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:21:28,386 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 16:21:28,387 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:21:28,661 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 16:21:28,662 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:21:28,797 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 16:21:28,798 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:21:30,150 - INFO - Status atualizado do id 99  com o Status True 02/04/2026 16:21 
+2026-04-02 16:21:33,415 - INFO - minha quantidade de dados processados :  None
+2026-04-02 16:21:33,415 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 16:21:33,416 - INFO - Processamento concluído em 56.38 segundos
+2026-04-02 16:21:33,416 - INFO - Total de registros processados: None
+2026-04-02 16:21:33,417 - ERROR - SAINDO NO FINALIY
+2026-04-02 16:21:33,417 - INFO - [16:21:33] Iniciando a consulta
+2026-04-02 16:21:33,417 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 16:21:33,418 - INFO - [16:21:33] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 16:25:26,608 - INFO - ================================================================================
+2026-04-02 16:25:26,613 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 16:25:26.608280
+2026-04-02 16:25:28,632 - INFO - ================================================================================
+2026-04-02 16:25:28,693 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 16:25:28,727 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 16:25:29,713 - INFO - Status atualizado para ::  - id retornado 100 
+2026-04-02 16:26:13,527 - WARNING - [DEBUG SQL] Parâmetros: 2022-9820 
+2026-04-02 16:26:13,531 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:26:13,805 - WARNING - [DEBUG SQL] Parâmetros: 2022-9467 
+2026-04-02 16:26:13,805 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:26:13,944 - WARNING - [DEBUG SQL] Parâmetros: 2017-188060 
+2026-04-02 16:26:13,945 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:26:14,086 - WARNING - [DEBUG SQL] Parâmetros: 2016-78505 
+2026-04-02 16:26:14,087 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:26:14,227 - WARNING - [DEBUG SQL] Parâmetros: 2016-78799 
+2026-04-02 16:26:14,228 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:26:14,428 - WARNING - [DEBUG SQL] Parâmetros: 2016-78540 
+2026-04-02 16:26:14,430 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:26:15,096 - WARNING - [DEBUG SQL] Parâmetros: 2016-73485 
+2026-04-02 16:26:15,097 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:26:15,261 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 16:26:15,262 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:26:15,419 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 16:26:15,427 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:26:15,636 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 16:26:15,647 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:26:15,852 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 16:26:15,853 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:26:17,121 - INFO - Status atualizado do id 100  com o Status True 02/04/2026 16:26 
+2026-04-02 16:26:23,915 - INFO - minha quantidade de dados processados :  None
+2026-04-02 16:26:23,915 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 16:26:23,916 - INFO - Processamento concluído em 57.31 segundos
+2026-04-02 16:26:23,917 - INFO - Total de registros processados: None
+2026-04-02 16:26:23,917 - ERROR - SAINDO NO FINALIY
+2026-04-02 16:26:23,918 - INFO - [16:26:23] Iniciando a consulta
+2026-04-02 16:26:23,918 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 16:26:23,919 - INFO - [16:26:23] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 16:38:30,569 - INFO - ================================================================================
+2026-04-02 16:38:30,649 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 16:38:30.569897
+2026-04-02 16:38:32,806 - INFO - ================================================================================
+2026-04-02 16:38:32,978 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 16:38:33,105 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 16:38:34,341 - INFO - Status atualizado para ::  - id retornado 101 
+2026-04-02 16:39:18,350 - WARNING - [DEBUG SQL] Parâmetros: 2022-9820 
+2026-04-02 16:39:18,351 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:39:18,662 - WARNING - [DEBUG SQL] Parâmetros: 2022-9467 
+2026-04-02 16:39:18,665 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:39:18,813 - WARNING - [DEBUG SQL] Parâmetros: 2017-188060 
+2026-04-02 16:39:18,814 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:39:18,951 - WARNING - [DEBUG SQL] Parâmetros: 2016-78505 
+2026-04-02 16:39:18,951 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:39:19,094 - WARNING - [DEBUG SQL] Parâmetros: 2016-78799 
+2026-04-02 16:39:19,094 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:39:19,232 - WARNING - [DEBUG SQL] Parâmetros: 2016-78540 
+2026-04-02 16:39:19,233 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:39:19,381 - WARNING - [DEBUG SQL] Parâmetros: 2016-73485 
+2026-04-02 16:39:19,382 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:39:19,513 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 16:39:19,514 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:39:19,651 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 16:39:19,651 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:39:19,785 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 16:39:19,786 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:39:19,922 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 16:39:19,923 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:39:20,263 - ERROR - Erro fatal na execução: cannot access local variable 'inser_new_registro' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\Processor\ClassProcessor.py", line 48, in executar
+    total_processados = process_api(self)
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\Processar\Process_api.py", line 47, in process_api
+    lista_retorno = tratar = trata_json(self,caminho_countries,retorno_api,id_insert_return)
+                             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\Processar\Tratar_json.py", line 366, in trata_json
+    print(f"TOTAL DE REGISTROS INSERIDOS :::::{inser_new_registro}")
+                                               ^^^^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'inser_new_registro' where it is not associated with a value
+2026-04-02 16:39:20,287 - ERROR - SAINDO NO FINALIY
+2026-04-02 16:39:20,287 - INFO - [16:39:20] Iniciando a consulta
+2026-04-02 16:39:20,288 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 16:39:20,288 - INFO - [16:39:20] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 16:44:48,321 - INFO - ================================================================================
+2026-04-02 16:44:48,341 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 16:44:48.321893
+2026-04-02 16:44:50,342 - INFO - ================================================================================
+2026-04-02 16:44:50,690 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 16:44:51,168 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 16:44:52,854 - INFO - Status atualizado para ::  - id retornado 102 
+2026-04-02 16:45:37,477 - WARNING - [DEBUG SQL] Parâmetros: 2022-9820 
+2026-04-02 16:45:37,477 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:45:37,770 - WARNING - [DEBUG SQL] Parâmetros: 2022-9467 
+2026-04-02 16:45:37,771 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:45:38,146 - WARNING - [DEBUG SQL] Parâmetros: 2017-188060 
+2026-04-02 16:45:38,146 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:45:38,280 - WARNING - [DEBUG SQL] Parâmetros: 2016-78505 
+2026-04-02 16:45:38,281 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:45:38,417 - WARNING - [DEBUG SQL] Parâmetros: 2016-78799 
+2026-04-02 16:45:38,417 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:45:38,553 - WARNING - [DEBUG SQL] Parâmetros: 2016-78540 
+2026-04-02 16:45:38,553 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:45:38,692 - WARNING - [DEBUG SQL] Parâmetros: 2016-73485 
+2026-04-02 16:45:38,693 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:45:38,825 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 16:45:38,827 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:45:38,959 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 16:45:38,959 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:45:39,093 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 16:45:39,094 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:45:39,228 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 16:45:39,228 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 16:45:41,412 - INFO - minha quantidade de dados processados :  None
+2026-04-02 16:45:41,412 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 16:45:41,413 - INFO - Processamento concluído em 53.09 segundos
+2026-04-02 16:45:41,413 - INFO - Total de registros processados: None
+2026-04-02 16:45:41,413 - ERROR - SAINDO NO FINALIY
+2026-04-02 16:45:41,414 - INFO - [16:45:41] Iniciando a consulta
+2026-04-02 16:45:41,414 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 16:45:41,414 - INFO - [16:45:41] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 17:02:39,068 - INFO - ================================================================================
+2026-04-02 17:02:39,527 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 17:02:39.068598
+2026-04-02 17:02:41,765 - INFO - ================================================================================
+2026-04-02 17:02:42,027 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 17:02:42,144 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 17:02:43,554 - INFO - Status atualizado para ::  - id retornado 103 
+2026-04-02 17:03:29,024 - WARNING - [DEBUG SQL] Parâmetros: 2022-9820 
+2026-04-02 17:03:29,025 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 17:03:29,444 - WARNING - [DEBUG SQL] Parâmetros: 2022-9467 
+2026-04-02 17:03:29,445 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 17:03:29,721 - WARNING - [DEBUG SQL] Parâmetros: 2017-188060 
+2026-04-02 17:03:29,722 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 17:03:29,995 - WARNING - [DEBUG SQL] Parâmetros: 2016-78505 
+2026-04-02 17:03:29,996 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 17:03:30,268 - WARNING - [DEBUG SQL] Parâmetros: 2016-78799 
+2026-04-02 17:03:30,269 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 17:03:30,536 - WARNING - [DEBUG SQL] Parâmetros: 2016-78540 
+2026-04-02 17:03:30,537 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 17:03:30,813 - WARNING - [DEBUG SQL] Parâmetros: 2016-73485 
+2026-04-02 17:03:30,814 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 17:03:31,089 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 17:03:31,089 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 17:03:31,356 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 17:03:31,357 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 17:03:31,624 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 17:03:31,625 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 17:03:31,761 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 17:03:31,762 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 17:03:33,209 - INFO - Status atualizado do id 103  com o Status True 02/04/2026 17:03 
+2026-04-02 17:03:39,213 - INFO - minha quantidade de dados processados :  None
+2026-04-02 17:03:39,214 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 17:03:39,215 - INFO - Processamento concluído em 60.15 segundos
+2026-04-02 17:03:39,216 - INFO - Total de registros processados: None
+2026-04-02 17:03:39,216 - ERROR - SAINDO NO FINALIY
+2026-04-02 17:03:39,217 - INFO - [17:03:39] Iniciando a consulta
+2026-04-02 17:03:39,217 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 17:03:39,218 - INFO - [17:03:39] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 17:04:20,245 - INFO - ================================================================================
+2026-04-02 17:04:20,297 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 17:04:20.245101
+2026-04-02 17:04:22,303 - INFO - ================================================================================
+2026-04-02 17:04:22,374 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 17:04:22,421 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 17:04:23,414 - INFO - Status atualizado para ::  - id retornado 104 
+2026-04-02 17:05:04,766 - WARNING - [DEBUG SQL] Parâmetros: 2022-9820 
+2026-04-02 17:05:04,767 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 17:05:05,046 - WARNING - [DEBUG SQL] Parâmetros: 2022-9467 
+2026-04-02 17:05:05,046 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 17:05:05,186 - WARNING - [DEBUG SQL] Parâmetros: 2017-188060 
+2026-04-02 17:05:05,186 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 17:05:05,340 - WARNING - [DEBUG SQL] Parâmetros: 2016-78505 
+2026-04-02 17:05:05,341 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 17:05:05,486 - WARNING - [DEBUG SQL] Parâmetros: 2016-78799 
+2026-04-02 17:05:05,487 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 17:05:05,621 - WARNING - [DEBUG SQL] Parâmetros: 2016-78540 
+2026-04-02 17:05:05,622 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 17:05:05,768 - WARNING - [DEBUG SQL] Parâmetros: 2016-73485 
+2026-04-02 17:05:05,769 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 17:05:05,903 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 17:05:05,904 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 17:05:06,040 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 17:05:06,041 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 17:05:06,177 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 17:05:06,178 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 17:05:06,315 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 17:05:06,315 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 17:05:07,947 - INFO - minha quantidade de dados processados :  None
+2026-04-02 17:05:07,949 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 17:05:07,949 - INFO - Processamento concluído em 47.70 segundos
+2026-04-02 17:05:07,956 - INFO - Total de registros processados: None
+2026-04-02 17:05:07,957 - ERROR - SAINDO NO FINALIY
+2026-04-02 17:05:07,958 - INFO - [17:05:07] Iniciando a consulta
+2026-04-02 17:05:07,959 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 17:05:07,961 - INFO - [17:05:07] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 17:16:37,821 - INFO - ================================================================================
+2026-04-02 17:16:37,847 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 17:16:37.821229
+2026-04-02 17:16:39,863 - INFO - ================================================================================
+2026-04-02 17:16:39,988 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 17:16:39,989 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 17:16:40,970 - INFO - Status atualizado para ::  - id retornado 1 
+2026-04-02 17:17:24,002 - WARNING - [DEBUG SQL] Parâmetros: 2022-9820 
+2026-04-02 17:17:24,002 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 17:17:24,277 - WARNING - [DEBUG SQL] Parâmetros: 2022-9467 
+2026-04-02 17:17:24,277 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 17:17:24,410 - WARNING - [DEBUG SQL] Parâmetros: 2017-188060 
+2026-04-02 17:17:24,410 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 17:17:24,544 - WARNING - [DEBUG SQL] Parâmetros: 2016-78505 
+2026-04-02 17:17:24,544 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 17:17:24,677 - WARNING - [DEBUG SQL] Parâmetros: 2016-78799 
+2026-04-02 17:17:24,678 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 17:17:24,813 - WARNING - [DEBUG SQL] Parâmetros: 2016-78540 
+2026-04-02 17:17:24,813 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 17:17:24,947 - WARNING - [DEBUG SQL] Parâmetros: 2016-73485 
+2026-04-02 17:17:24,948 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 17:17:25,081 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 17:17:25,081 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 17:17:25,215 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 17:17:25,216 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 17:17:25,349 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 17:17:25,349 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 17:17:25,483 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 17:17:25,484 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 17:17:26,711 - INFO - Status atualizado do id 1  com o Status True 02/04/2026 17:17 
+2026-04-02 17:17:56,371 - INFO - minha quantidade de dados processados :  None
+2026-04-02 17:17:56,371 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 17:17:56,371 - INFO - Processamento concluído em 78.55 segundos
+2026-04-02 17:17:56,372 - INFO - Total de registros processados: None
+2026-04-02 17:17:56,372 - ERROR - SAINDO NO FINALIY
+2026-04-02 17:17:56,372 - INFO - [17:17:56] Iniciando a consulta
+2026-04-02 17:17:56,373 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 17:17:56,373 - INFO - [17:17:56] Erro inesperado: . Continuará em 30 segundos.

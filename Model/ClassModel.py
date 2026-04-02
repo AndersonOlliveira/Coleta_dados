@@ -63,6 +63,71 @@ def insert_interpol(self,registro: Dict, cursor, connection):
      ClassLogger.logger.error(f"Erro ao atualizar status para ::  - {str(e)}")
 
 
+#inserir o lote dos registos
+def insert_base_interpol(self, registro: dict, conn):
+
+
+
+    # print(registro['nome_completo'])
+    # return 
+
+
+
+    query = """
+           INSERT INTO public.interpol_dados 
+               (nome, sexo, nascimento,nacionalidade,idioma,acusacao,foto,data_consulta_fonte,hora_consulta_fonte,nome_buscado)
+           VALUES  (%s,%s, %s, %s, %s, %s, %s, %s, %s, %s) """
+
+    print(f"Registro a ser inserido: {registro}")
+    print(f"{registro['nome_completo']}")
+    print(f"{registro['sexo']}")
+    print(f"{registro['data_nascimento']}")
+    print(f"{registro['nacionalidade']}")
+    print(f"{registro['idiona']}")
+    print(f"{registro['acusacao']}")
+    print(f"{registro['thumbnail']}")
+    print(f"{registro['data_consulta']}")
+    print(f"{registro['hora_consulta']}")
+    print(f"{registro['id_interpol']}")
+
+    print(query)
+    print((
+    registro['nome_completo'],
+    registro['sexo'],
+    registro['data_nascimento'],
+    registro['nacionalidade'],
+    registro['idiona'],
+    registro['acusacao'],
+    registro['thumbnail'],
+    registro['data_consulta'],
+    registro['hora_consulta'],
+    registro['id_interpol']
+))
+    
+    # return
+    try:
+       with conn.cursor() as cursor:
+            cursor.execute(query, (
+                registro['nome_completo'],
+                registro['sexo'],
+                registro['data_nascimento'],
+                registro['nacionalidade'],
+                registro['idiona'],
+                registro['acusacao'],
+                registro['thumbnail'],
+                registro['data_consulta'],
+                registro['hora_consulta'],
+                registro['id_interpol']
+            ))
+
+            return cursor.rowcount > 0
+            
+            ClassLogger.logger.info(f"Status atualizado par ")
+    except Exception as e:
+       ClassLogger.logger.error(f"falha em inserir os dados na base  - {repr(e)}")
+       return False
+
+
 def update_info_process(self,registro: Dict, cursor, connection):
 
 
@@ -72,11 +137,18 @@ def update_info_process(self,registro: Dict, cursor, connection):
 
     print(f"Registro a ser inserido: {registro}")
     # return
+
+
+    set_parts = ["processado = %s"]
+    params = [registro['status']]
+    if registro['obs'] is not None:
+        set_parts.append("obs = %s")
+        params.append(registro['obs'])
+    query = f"UPDATE fontes_download.interpol_download SET {', '.join(set_parts)} WHERE id = %s"
+    params.append(registro['alter_id'])
+    
     try:
-        cursor.execute(query, (
-            registro['status'],
-            registro['alter_id']
-        ))
+        cursor.execute(query, tuple(params))
      
         
        
