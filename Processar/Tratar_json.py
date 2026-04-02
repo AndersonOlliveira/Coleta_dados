@@ -13,8 +13,8 @@ from Mail.ClassMail import enviar_email_all
 from urllib.parse import urlparse, parse_qs
 import sys
 # from collections import defaultdict
-from Conexao import ConectionClass
-from Model.ClassModel import buscar_teste, insert_interpol, update_info_process
+from Conexao import ConectionClass,ConectionPool
+from Model.ClassModel import buscar_teste, insert_interpol, update_info_process,search_data_interpol,exists_by_name
 
 
 
@@ -38,6 +38,10 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
     tabela_final = []
     nome_traduzido = set()
     grupos_por_pais = defaultdict(list)
+    contador_por_pais = defaultdict(lambda: {
+    "atualizados": 0,
+    "nao_atualizados": 0
+    })
 
 
 
@@ -105,12 +109,12 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
         todas_pessoas.extend(pessoas)
             
    
-    print(lista_paises_total_api)
-    print(json.dumps(todas_pessoas,indent=4))
+    # print(lista_paises_total_api)
+    # print(json.dumps(todas_pessoas,indent=4))
 
-    alter_status(self, id_insert_return[0])
+    # alter_status(self, id_insert_return[0])
 
-    return 
+    # return 
 
    # PEGO OS PAISEIS QUE FORAM SOLITADOS NA BUSCA , REMOVO AS DUPLICATAS PARA REALIZAR A CONTAGEM E APRESENTAR NA TABELA FINAL
     lista_paises_unicos = list(dict.fromkeys(sub[0].strip() for sub in lista_paises_unicos))
@@ -196,9 +200,9 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
                 'DATA CAPTURA': datetime.now().strftime("%d/%m/%Y %H:%M"),
                 'PAIS BUSCADO': sigla_busca,
                 'TOTAL ENCONTRADO': len(pessoas_do_grupo),
-                'COM DUPLA NACIONALIDADE': total_dupla,
-                'PAISES NA LISTA': nome_sigla_traduzido if not paises_encontrados else ", ".join(sorted(paises_encontrados)), 
-                'valor_total_retorno_api': total_por_sigla
+                #'COM DUPLA NACIONALIDADE': total_dupla,
+                # 'PAISES NA LISTA': nome_sigla_traduzido if not paises_encontrados else ", ".join(sorted(paises_encontrados)), 
+                'TOTAL RETORNO API': total_por_sigla
                 }
 
         tabela_atualizar.append(linha_tabela)
@@ -214,42 +218,118 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
      ## PARA DEBUG
      
     # return
-    
-    for pessoa, detalhe in zip(todas_pessoas, detalhes):
-        lista_paises = pessoa.get('nationalities') or []
-        nomes_paises = [mapa.get(pais, pais) for pais in lista_paises]
-        pais_limpo = ','.join(nomes_paises) if nomes_paises else "N/I"
+    result_busca = []
+    novos_registros = 0
+    registros_pulados = 0
+
+    # print(json.dumps(todas_pessoas, indent=4))
+    # print(grupos_por_pais)
+
+    # return
+  
+
+
+    with self.db.get_connection() as conn:
+        for pessoa, detalhe in zip(todas_pessoas, detalhes):
+
+            # print()
+
+            entity_id = pessoa.get('entity_id').replace('/','-') if pessoa.get('entity_id') else None
+            name_person = remover_acentos("{} {}".format(pessoa.get('name'), pessoa.get('forename'))).strip()
+            lista_paises_chaves = pessoa.get('nationalities') or []
+
+            #controlador de status 
+            exist_id = False
+            exist_name = False
+            
+            # print(f"meu nome para busca {name_person}")
+
+            # return
+             #pego os ids da interpol para verificar só que vou ter uma dupla verificacao, pelo o id e pelo o nome
+            person_singla = next((p for p in lista_paises_chaves if p in lista_paises_unicos), 'N/I')
+            # person_singla = list(set(lista_paises_chaves) & set(lista_paises_unicos)) #COM O METODO SET
+            if entity_id:
+            #    dados_busca = search_data_interpol(conn,entity_id)
+                exist_id = search_data_interpol(conn,entity_id)
+                print(f"QUAL E MEU RESULADO AQUI? {exist_id}")
+
+            if not exist_id:
+                print(f"QUAIS OS IDS BUSCADO {entity_id} ||| nome: {name_person}")
+                exist_name = exists_by_name(conn,name_person)
+
+           
+            if not exist_id and not exist_name:
+                print(f"VOU INSEIR O ID {entity_id} | nome: {name_person}")
+                # 
+                contador_por_pais[person_singla]["IN"] += 1
+                print(f"VOU INSEIR O ID {entity_id} | nome: {name_person} + {person_singla}")
+                
+                # novos_registros +=1
+
+
+            else:
+                print(f"vou pular {entity_id} || nome: {name_person}  que pais ???{lista_paises_chaves}")
+                print(f"vou pular {entity_id} | nome: {name_person} + {person_singla}")
+                contador_por_pais[person_singla]["NA"] += 1
+                # registros_pulados +=1
+
+
         
-        sexo = detalhe.get('sex_id') if detalhe else None
-        # crime =  [remover_acentos(warrant.get('charge')).strip() for warrant in detalhe.get('arrest_warrants', [])] if detalhe else None
-        crime_lista = [remover_acentos(warrant.get('charge', '')).strip() for warrant in (detalhe.get('arrest_warrants') or [])]
-        crime = ", ".join(crime_lista) if crime_lista else "N/I"
-        # idiona = [remover_conhetes(lang) for lang in detalhe.get('languages_spoken_ids', [])] if detalhe else None
-        idiona = ", ".join(item.strip("[] ").strip() for item in detalhe.get('languages_spoken_ids', []) or []) if detalhe and detalhe.get('languages_spoken_ids') else "N/I"
+
+
+            lista_paises = pessoa.get('nationalities') or []
+            print(f"{lista_paises} MEUS DADOSSS")
+            nomes_paises = [mapa.get(pais, pais) for pais in lista_paises]
+            print(f"{nomes_paises} depois do get?")
+            pais_limpo = ','.join(nomes_paises) if nomes_paises else "N/I"
+            
+            sexo = detalhe.get('sex_id') if detalhe else None
+            # crime =  [remover_acentos(warrant.get('charge')).strip() for warrant in detalhe.get('arrest_warrants', [])] if detalhe else None
+            crime_lista = [remover_acentos(warrant.get('charge', '')).strip() for warrant in (detalhe.get('arrest_warrants') or [])]
+            crime = ", ".join(crime_lista) if crime_lista else "N/I"
+            # idiona = [remover_conhetes(lang) for lang in detalhe.get('languages_spoken_ids', [])] if detalhe else None
+            idiona = ", ".join(item.strip("[] ").strip() for item in detalhe.get('languages_spoken_ids', []) or []) if detalhe and detalhe.get('languages_spoken_ids') else "N/I"
+            
+            # idiona = ", ".join(item.strip("[] ").strip() for item in detalhe.get('languages_spoken_ids', []) or []) if detalhe else None
+
+
+            #faco uma busca para ver se o id não esta inserido já
+            
+
+            # print(f"crime localizado?: {crime}")
+            print(type(idiona))
+
+            lista.append({
+                # 'primeiro_nome': pessoa.get('name'),
+                'nome_completo': "{} {}".format(pessoa.get('name'), pessoa.get('forename')),
+                # 'nome_do_meio': pessoa.get('forename'),
+                'data_nascimento': pessoa.get('date_of_birth').replace('/','-') if pessoa.get('date_of_birth') else None,
+                'nacionalidade': pais_limpo.upper(),
+                'id_interpol': entity_id,
+                'sexo': sexo, 
+                # 'acusacao': crime,
+                'idiona': idiona,
+                # 'thumbnail': pessoa.get('_links', {}).get('thumbnail', {}).get('href') #COMENTEADO PARA NAÓ APRESENTAR EM TELA 
+            })
+
+    # info_dados_registros = {
+    #    "qta_registros_atualizados" :  int(novos_registros),
+    #     "qta_registro_nao_atualizados" : int(registros_pulados) 
+    #  }
+    
+    # tabela_atualizar.append(info_dados_registros)
+    for linha in tabela_atualizar:
+        pais = linha['PAIS BUSCADO']
+
+        linha['QTA INSERIDOS'] = contador_por_pais[pais]["IN"]
+        linha['QTA J/N BASE'] = contador_por_pais[pais]["NA"]
+
+ 
+
         
-        # idiona = ", ".join(item.strip("[] ").strip() for item in detalhe.get('languages_spoken_ids', []) or []) if detalhe else None
-
-
-        #faco uma busca para ver se o id não esta inserido já
         
-
-        print(f"crime localizado?: {crime}")
-        print(type(idiona))
-
-        lista.append({
-            # 'primeiro_nome': pessoa.get('name'),
-            'nome_completo': "{} {}".format(pessoa.get('name'), pessoa.get('forename')),
-            # 'nome_do_meio': pessoa.get('forename'),
-            'data_nascimento': pessoa.get('date_of_birth').replace('/','-') if pessoa.get('date_of_birth') else None,
-            'nacionalidade': pais_limpo.upper(),
-            'id_interpol': pessoa.get('entity_id').replace('/','-') if pessoa.get('entity_id') else None,
-            'sexo': sexo, 
-            # 'acusacao': crime,
-            'idiona': idiona,
-            # 'thumbnail': pessoa.get('_links', {}).get('thumbnail', {}).get('href') #COMENTEADO PARA NAÓ APRESENTAR EM TELA 
-        })
-
-
+        
+      
 
 
 
@@ -258,21 +338,26 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
     
 
 
-
+    print(f"meu contatodor para insercáo de novos registros {novos_registros}")
+    print(f"meu contatodor para dados pulados  {registros_pulados}")
     df = pd.DataFrame(lista)
     minha_tabela_montada = pd.DataFrame(tabela_atualizar)
+
+    
+    minha_tabela_montada = minha_tabela_montada.fillna(0) 
 
     print(f"Minha quantidade processada {len(df)}")
     if len(df) > 0:
 
-        update_info_process(self, id_insert_return[0])
+        # update_info_process(self, id_insert_return[0])
+        alter_status(self, id_insert_return[0])
     print(df)
 
     print(f"{minha_tabela_montada}")
     # if minha_tabela_montada:
     convertida =  minha_tabela_montada.to_html(index=False, border=1, justify='center')
     corpo = f"Captura dos dados interpol {datetime.now().strftime("%Y-%m-%d %H:%M:%S")} <br><br> {convertida}"
-    enviar_email_all(corpo)
+    # enviar_email_all(corpo)
 
        
 
@@ -376,4 +461,23 @@ def alter_status(self, id):
              update_info_process(self,lista_update,cursor_initil,conn_status)
              conn_status.commit()
              cursor_initil.close()
-           
+
+# def busca_singlas(links):
+#         grupos_por_pais
+
+#         url_busca = links
+#         s = urlparse(url_busca)
+#         params = parse_qs(s.query)
+#             #  sigla (ex: 'AM') ou 'Desconhecido'
+#         sigla_buscas = params.get('nationality', ['Desconhecido'])[0]
+            
+#             # Guarda a pessoa no grupo desse país
+#         grupos_por_pais[sigla_buscas].append(pessoa)
+
+      
+#         # print(f"quais sao os grupos_por_pais apresentados? {grupos_por_pais} ")
+#     for sigla_busca in lista_paises_unicos:
+#     # for sigla_busca, pessoas_do_grupo in grupos_por_pais.items():
+#         paises_encontrados = set()
+#         pessoas_do_grupo = grupos_por_pais.get(sigla_busca, [])
+#         total_dupla = 0

@@ -3,12 +3,14 @@ from datetime import datetime
 import time
 from Logs import ClassLogger
 from Processar.Process_api import process_api
-from Conexao import ConectionClass
+from Conexao import ConectionClass, ConectionPool
+# from db_poll import DbPool
 # from Conexao.ConectionTrheaddeConectionPoll import ConectionClass as t
 from Mail.ClassMail import enviar_email_all
 from Model.ClassModel import buscar_teste, search_data_interpol
 from psycopg2.pool import ThreadedConnectionPool
 from dataclasses import asdict
+
 
 
 
@@ -32,10 +34,7 @@ class Processor:
         self.true = True
         self.false =False
         self.lock = threading.Lock()
-        self.pool = ThreadedConnectionPool(
-            minconn=1, 
-            maxconn=self.max_workers, 
-           **asdict(self.config) )
+        self.db = ConectionPool.DbPool(maxconn=self.max_workers)
 
     def executar(self):
         inicio = datetime.now()
@@ -82,12 +81,14 @@ class Processor:
     def teste_busca_interpol(self): 
         ClassLogger.logger.info('busca dados')
         # search_data_interpol
-        search_data_interpol(self,'2012-328264')
+        id_busca = "2012-328264"
+        print(f"qual o meu tipo da variavel ? {type(id_busca)}")
+        search_data_interpol(self,id_busca)
 
 
     def executar_ciclo(self):
-        # self.executar()   
+        self.executar()   
         # self.enviar_email()
         # self.busca_dados()   
-        self.teste_busca_interpol()   
+        # self.teste_busca_interpol()   
         ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] Iniciando a consulta")      

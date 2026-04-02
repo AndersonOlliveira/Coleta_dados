@@ -7984,3 +7984,1823 @@ Encerrando loop por comando do usuário (Ctrl+C).
 2026-04-01 17:10:45,136 - INFO - 
 Encerrando loop por comando do usuário (Ctrl+C).
 2026-04-01 17:10:45,336 - INFO - [17:10:45] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 08:52:22,551 - INFO - busca dados
+2026-04-02 08:52:22,554 - WARNING - [DEBUG SQL] Parâmetros: ['2012-328264'] 
+2026-04-02 08:52:22,555 - WARNING - [DEBUG SQL] query: SELECT * FROM public.interpol_dados WHERE nome_buscado = %s 
+2026-04-02 08:52:23,505 - ERROR - Falha em caputrar os dados - syntax error at or near "%"
+LINE 1: SELECT * FROM public.interpol_dados WHERE nome_buscado = %s
+                                                                 ^
+
+2026-04-02 08:52:23,506 - INFO - [08:52:23] Iniciando a consulta
+2026-04-02 08:52:23,506 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 08:52:23,507 - INFO - [08:52:23] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 08:54:24,825 - INFO - busca dados
+2026-04-02 08:54:24,828 - WARNING - [DEBUG SQL] Parâmetros: ['2012-328264'] 
+2026-04-02 08:54:24,829 - WARNING - [DEBUG SQL] query: SELECT * FROM public.interpol_dados WHERE nome_buscado = %s 
+2026-04-02 08:54:25,838 - ERROR - Falha em caputrar os dados - syntax error at or near "%"
+LINE 1: SELECT * FROM public.interpol_dados WHERE nome_buscado = %s
+                                                                 ^
+
+2026-04-02 08:54:25,840 - INFO - [08:54:25] Iniciando a consulta
+2026-04-02 08:54:25,841 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 08:54:25,842 - INFO - [08:54:25] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 08:58:58,364 - INFO - busca dados
+2026-04-02 08:58:58,379 - WARNING - [DEBUG SQL] Parâmetros: ['2', '0', '1', '2', '-', '3', '2', '8', '2', '6', '4'] 
+2026-04-02 08:58:58,380 - WARNING - [DEBUG SQL] query: SELECT * FROM public.interpol_dados  WHERE nome_buscado = %s WHERE nome_buscado = %s WHERE nome_buscado = %s WHERE nome_buscado = %s WHERE nome_buscado = %s WHERE nome_buscado = %s WHERE nome_buscado = %s WHERE nome_buscado = %s WHERE nome_buscado = %s WHERE nome_buscado = %s WHERE nome_buscado = %s 
+2026-04-02 08:58:58,387 - ERROR - Falha em caputrar os dados - 'method' object does not support the context manager protocol
+2026-04-02 08:58:58,397 - INFO - [08:58:58] Iniciando a consulta
+2026-04-02 08:58:58,398 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 08:58:58,411 - INFO - [08:58:58] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 09:03:04,099 - INFO - busca dados
+2026-04-02 09:03:04,104 - WARNING - [DEBUG SQL] Parâmetros: ['2', '0', '1', '2', '-', '3', '2', '8', '2', '6', '4'] 
+2026-04-02 09:03:04,105 - WARNING - [DEBUG SQL] query: SELECT * FROM public.interpol_dados  WHERE nome_buscado IN (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s) 
+2026-04-02 09:03:04,106 - WARNING - [DEBUG SQL] self.db.get_connection: <bound method DbPool.get_connection of <Conexao.ConectionPool.DbPool object at 0x0000014B81B186E0>> 
+2026-04-02 09:03:04,107 - ERROR - Falha em caputrar os dados - 'method' object does not support the context manager protocol
+2026-04-02 09:03:04,108 - INFO - [09:03:04] Iniciando a consulta
+2026-04-02 09:03:04,109 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 09:03:04,110 - INFO - [09:03:04] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 09:07:22,330 - INFO - busca dados
+2026-04-02 09:07:22,338 - WARNING - [DEBUG SQL] Parâmetros: ['2', '0', '1', '2', '-', '3', '2', '8', '2', '6', '4'] 
+2026-04-02 09:07:22,338 - WARNING - [DEBUG SQL] query: SELECT * FROM public.interpol_dados  WHERE nome_buscado IN (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s) 
+2026-04-02 09:07:22,339 - WARNING - [DEBUG SQL] self.db.get_connection: <bound method DbPool.get_connection of <Conexao.ConectionPool.DbPool object at 0x000001B33E9886E0>> 
+2026-04-02 09:07:22,776 - ERROR - Falha em caputrar os dados - syntax error at or near "%"
+LINE 1: ...ROM public.interpol_dados  WHERE nome_buscado IN (%s, %s, %s...
+                                                             ^
+
+2026-04-02 09:07:22,777 - INFO - [09:07:22] Iniciando a consulta
+2026-04-02 09:07:22,778 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 09:07:22,778 - INFO - [09:07:22] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 09:09:51,181 - INFO - busca dados
+2026-04-02 09:09:51,185 - WARNING - [DEBUG SQL] Parâmetros: ['2', '0', '1', '2', '-', '3', '2', '8', '2', '6', '4'] 
+2026-04-02 09:09:51,187 - WARNING - [DEBUG SQL] query: SELECT * FROM public.interpol_dados  WHERE nome_buscado IN (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s) 
+2026-04-02 09:09:51,188 - WARNING - [DEBUG SQL] self.db.get_connection: <bound method DbPool.get_connection of <Conexao.ConectionPool.DbPool object at 0x000001DBBB9886E0>> 
+2026-04-02 09:09:51,472 - INFO - Capturados 0 registros para processamento.
+2026-04-02 09:09:51,609 - INFO - [09:09:51] Iniciando a consulta
+2026-04-02 09:09:51,610 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 09:09:51,610 - INFO - [09:09:51] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 09:11:12,647 - INFO - busca dados
+2026-04-02 09:11:12,650 - WARNING - [DEBUG SQL] Parâmetros: ['2', '0', '1', '2', '-', '3', '2', '8', '2', '6', '4'] 
+2026-04-02 09:11:12,651 - WARNING - [DEBUG SQL] query: SELECT * FROM public.interpol_dados  WHERE nome_buscado IN (2012-328264) 
+2026-04-02 09:11:12,651 - WARNING - [DEBUG SQL] self.db.get_connection: <bound method DbPool.get_connection of <Conexao.ConectionPool.DbPool object at 0x000002D9D26186E0>> 
+2026-04-02 09:11:13,086 - ERROR - Falha em caputrar os dados - operator does not exist: character varying = integer
+LINE 1: ... * FROM public.interpol_dados  WHERE nome_buscado IN (2012-3...
+                                                             ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+2026-04-02 09:11:13,087 - INFO - [09:11:13] Iniciando a consulta
+2026-04-02 09:11:13,087 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 09:11:13,088 - INFO - [09:11:13] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 09:29:02,169 - INFO - busca dados
+2026-04-02 09:29:02,195 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 09:29:02,197 - WARNING - [DEBUG SQL] query: SELECT * FROM public.interpol_dados WHERE nome_buscado = %s 
+2026-04-02 09:29:02,198 - WARNING - [DEBUG SQL] self.db.get_connection: <bound method DbPool.get_connection of <Conexao.ConectionPool.DbPool object at 0x0000022F7B5086E0>> 
+2026-04-02 09:29:02,482 - INFO - Capturados 0 registros para processamento.
+2026-04-02 09:29:02,614 - INFO - [09:29:02] Iniciando a consulta
+2026-04-02 09:29:02,615 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 09:29:03,025 - INFO - [09:29:03] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 09:37:15,199 - INFO - busca dados
+2026-04-02 09:37:15,227 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 09:37:15,228 - WARNING - [DEBUG SQL] query: SELECT * FROM public.interpol_dados WHERE nome_buscado = %s 
+2026-04-02 09:37:15,230 - WARNING - [DEBUG SQL] self.db.get_connection: <bound method DbPool.get_connection of <Conexao.ConectionPool.DbPool object at 0x000002D5E4A05A90>> 
+2026-04-02 09:37:15,524 - INFO - Capturados 0 registros para processamento.
+2026-04-02 09:37:15,675 - INFO - [09:37:15] Iniciando a consulta
+2026-04-02 09:37:15,688 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 09:37:15,688 - INFO - [09:37:15] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 09:37:56,251 - INFO - ================================================================================
+2026-04-02 09:37:56,253 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 09:37:56.251298
+2026-04-02 09:37:58,255 - INFO - ================================================================================
+2026-04-02 09:37:58,263 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 09:37:58,274 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 09:37:59,240 - INFO - Status atualizado para ::  - id retornado 33 
+2026-04-02 09:38:16,006 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 09:38:16,008 - WARNING - [DEBUG SQL] query: SELECT * FROM public.interpol_dados WHERE nome_buscado = %s 
+2026-04-02 09:38:16,015 - WARNING - [DEBUG SQL] self.db.get_connection: <bound method DbPool.get_connection of <Conexao.ConectionPool.DbPool object at 0x00000236BE555A90>> 
+2026-04-02 09:38:16,297 - INFO - Capturados 0 registros para processamento.
+2026-04-02 09:38:16,437 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 09:38:16,439 - WARNING - [DEBUG SQL] query: SELECT * FROM public.interpol_dados WHERE nome_buscado = %s 
+2026-04-02 09:38:16,441 - WARNING - [DEBUG SQL] self.db.get_connection: <bound method DbPool.get_connection of <Conexao.ConectionPool.DbPool object at 0x00000236BE555A90>> 
+2026-04-02 09:38:16,718 - INFO - Capturados 0 registros para processamento.
+2026-04-02 09:38:16,855 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 09:38:16,857 - WARNING - [DEBUG SQL] query: SELECT * FROM public.interpol_dados WHERE nome_buscado = %s 
+2026-04-02 09:38:16,859 - WARNING - [DEBUG SQL] self.db.get_connection: <bound method DbPool.get_connection of <Conexao.ConectionPool.DbPool object at 0x00000236BE555A90>> 
+2026-04-02 09:38:17,174 - INFO - Capturados 0 registros para processamento.
+2026-04-02 09:38:17,312 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 09:38:17,315 - WARNING - [DEBUG SQL] query: SELECT * FROM public.interpol_dados WHERE nome_buscado = %s 
+2026-04-02 09:38:17,318 - WARNING - [DEBUG SQL] self.db.get_connection: <bound method DbPool.get_connection of <Conexao.ConectionPool.DbPool object at 0x00000236BE555A90>> 
+2026-04-02 09:38:17,594 - INFO - Capturados 0 registros para processamento.
+2026-04-02 09:38:18,737 - INFO - Status atualizado do id 33  com o Status True 02/04/2026 09:38 
+2026-04-02 09:38:18,802 - INFO - minha quantidade de dados processados :  None
+2026-04-02 09:38:18,802 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 09:38:18,803 - INFO - Processamento concluído em 22.55 segundos
+2026-04-02 09:38:18,804 - INFO - Total de registros processados: None
+2026-04-02 09:38:18,805 - ERROR - SAINDO NO FINALIY
+2026-04-02 09:38:18,808 - INFO - [09:38:18] Iniciando a consulta
+2026-04-02 09:38:18,810 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 09:38:18,810 - INFO - [09:38:18] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 09:44:44,845 - INFO - ================================================================================
+2026-04-02 09:44:44,855 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 09:44:44.845061
+2026-04-02 09:44:46,856 - INFO - ================================================================================
+2026-04-02 09:44:46,862 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 09:44:46,869 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 09:44:47,980 - INFO - Status atualizado para ::  - id retornado 34 
+2026-04-02 09:45:04,552 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 09:45:04,553 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 09:45:04,554 - WARNING - [DEBUG SQL] self.db.get_connection: <bound method DbPool.get_connection of <Conexao.ConectionPool.DbPool object at 0x000002276A545A90>> 
+2026-04-02 09:45:04,983 - ERROR - Falha em caputrar os dados - 'Processor' object has no attribute 'cursor'
+2026-04-02 09:45:04,987 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 09:45:04,987 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 09:45:04,988 - WARNING - [DEBUG SQL] self.db.get_connection: <bound method DbPool.get_connection of <Conexao.ConectionPool.DbPool object at 0x000002276A545A90>> 
+2026-04-02 09:45:05,473 - ERROR - Falha em caputrar os dados - 'Processor' object has no attribute 'cursor'
+2026-04-02 09:45:05,476 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 09:45:05,478 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 09:45:05,479 - WARNING - [DEBUG SQL] self.db.get_connection: <bound method DbPool.get_connection of <Conexao.ConectionPool.DbPool object at 0x000002276A545A90>> 
+2026-04-02 09:45:05,915 - ERROR - Falha em caputrar os dados - 'Processor' object has no attribute 'cursor'
+2026-04-02 09:45:05,923 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 09:45:05,924 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 09:45:05,925 - WARNING - [DEBUG SQL] self.db.get_connection: <bound method DbPool.get_connection of <Conexao.ConectionPool.DbPool object at 0x000002276A545A90>> 
+2026-04-02 09:45:06,359 - ERROR - Falha em caputrar os dados - 'Processor' object has no attribute 'cursor'
+2026-04-02 09:45:07,315 - INFO - Status atualizado do id 34  com o Status True 02/04/2026 09:45 
+2026-04-02 09:45:07,367 - INFO - minha quantidade de dados processados :  None
+2026-04-02 09:45:07,368 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 09:45:07,369 - INFO - Processamento concluído em 22.52 segundos
+2026-04-02 09:45:07,369 - INFO - Total de registros processados: None
+2026-04-02 09:45:07,369 - ERROR - SAINDO NO FINALIY
+2026-04-02 09:45:07,370 - INFO - [09:45:07] Iniciando a consulta
+2026-04-02 09:45:07,370 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 09:45:07,370 - INFO - [09:45:07] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 09:46:44,671 - INFO - ================================================================================
+2026-04-02 09:46:44,671 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 09:46:44.670968
+2026-04-02 09:46:46,672 - INFO - ================================================================================
+2026-04-02 09:46:46,674 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 09:46:46,674 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 09:46:47,644 - INFO - Status atualizado para ::  - id retornado 35 
+2026-04-02 09:47:03,532 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 09:47:03,533 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 09:47:03,533 - WARNING - [DEBUG SQL] self.db.get_connection: <bound method DbPool.get_connection of <Conexao.ConectionPool.DbPool object at 0x000001EF44FC5A90>> 
+2026-04-02 09:47:03,949 - ERROR - Falha em caputrar os dados o erro vem aqui? - 'Processor' object has no attribute 'cursor'
+2026-04-02 09:47:03,951 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 09:47:03,951 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 09:47:03,952 - WARNING - [DEBUG SQL] self.db.get_connection: <bound method DbPool.get_connection of <Conexao.ConectionPool.DbPool object at 0x000001EF44FC5A90>> 
+2026-04-02 09:47:04,355 - ERROR - Falha em caputrar os dados o erro vem aqui? - 'Processor' object has no attribute 'cursor'
+2026-04-02 09:47:04,359 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 09:47:04,361 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 09:47:04,363 - WARNING - [DEBUG SQL] self.db.get_connection: <bound method DbPool.get_connection of <Conexao.ConectionPool.DbPool object at 0x000001EF44FC5A90>> 
+2026-04-02 09:47:04,773 - ERROR - Falha em caputrar os dados o erro vem aqui? - 'Processor' object has no attribute 'cursor'
+2026-04-02 09:47:04,774 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 09:47:04,775 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 09:47:04,776 - WARNING - [DEBUG SQL] self.db.get_connection: <bound method DbPool.get_connection of <Conexao.ConectionPool.DbPool object at 0x000001EF44FC5A90>> 
+2026-04-02 09:47:05,197 - ERROR - Falha em caputrar os dados o erro vem aqui? - 'Processor' object has no attribute 'cursor'
+2026-04-02 09:47:06,252 - INFO - Status atualizado do id 35  com o Status True 02/04/2026 09:47 
+2026-04-02 09:47:06,290 - INFO - minha quantidade de dados processados :  None
+2026-04-02 09:47:06,292 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 09:47:06,293 - INFO - Processamento concluído em 21.62 segundos
+2026-04-02 09:47:06,293 - INFO - Total de registros processados: None
+2026-04-02 09:47:06,294 - ERROR - SAINDO NO FINALIY
+2026-04-02 09:47:06,295 - INFO - [09:47:06] Iniciando a consulta
+2026-04-02 09:47:06,295 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 09:47:06,295 - INFO - [09:47:06] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 09:57:11,392 - INFO - ================================================================================
+2026-04-02 09:57:11,394 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 09:57:11.392707
+2026-04-02 09:57:13,395 - INFO - ================================================================================
+2026-04-02 09:57:13,396 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 09:57:13,398 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 09:57:14,369 - INFO - Status atualizado para ::  - id retornado 36 
+2026-04-02 09:57:31,003 - ERROR - Erro fatal na execução: 'Processor' object has no attribute 'search_data_interpol'
+Traceback (most recent call last):
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\Processor\ClassProcessor.py", line 48, in executar
+    total_processados = process_api(self)
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\Processar\Process_api.py", line 47, in process_api
+    lista_retorno = tratar = trata_json(self,caminho_countries,retorno_api,id_insert_return)
+                             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\Processar\Tratar_json.py", line 225, in trata_json
+    dados_busca = self.search_data_interpol(conn,entity_id)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Processor' object has no attribute 'search_data_interpol'
+2026-04-02 09:57:31,018 - ERROR - SAINDO NO FINALIY
+2026-04-02 09:57:31,019 - INFO - [09:57:31] Iniciando a consulta
+2026-04-02 09:57:31,020 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 09:57:31,021 - INFO - [09:57:31] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 09:57:49,183 - INFO - ================================================================================
+2026-04-02 09:57:49,183 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 09:57:49.182997
+2026-04-02 09:57:51,184 - INFO - ================================================================================
+2026-04-02 09:57:51,185 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 09:57:51,186 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 09:57:52,156 - INFO - Status atualizado para ::  - id retornado 37 
+2026-04-02 09:58:08,006 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 09:58:08,007 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 09:58:08,008 - WARNING - [DEBUG SQL] self.db.get_connection: <bound method DbPool.get_connection of <Conexao.ConectionPool.DbPool object at 0x0000024AD5225A90>> 
+2026-04-02 09:58:08,285 - ERROR - Falha em caputrar os dados o erro vem aqui? - 'Processor' object has no attribute 'cursor'
+2026-04-02 09:58:08,289 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 09:58:08,292 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 09:58:08,294 - WARNING - [DEBUG SQL] self.db.get_connection: <bound method DbPool.get_connection of <Conexao.ConectionPool.DbPool object at 0x0000024AD5225A90>> 
+2026-04-02 09:58:08,434 - ERROR - Falha em caputrar os dados o erro vem aqui? - 'Processor' object has no attribute 'cursor'
+2026-04-02 09:58:08,438 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 09:58:08,440 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 09:58:08,442 - WARNING - [DEBUG SQL] self.db.get_connection: <bound method DbPool.get_connection of <Conexao.ConectionPool.DbPool object at 0x0000024AD5225A90>> 
+2026-04-02 09:58:08,591 - ERROR - Falha em caputrar os dados o erro vem aqui? - 'Processor' object has no attribute 'cursor'
+2026-04-02 09:58:08,592 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 09:58:08,592 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 09:58:08,592 - WARNING - [DEBUG SQL] self.db.get_connection: <bound method DbPool.get_connection of <Conexao.ConectionPool.DbPool object at 0x0000024AD5225A90>> 
+2026-04-02 09:58:08,729 - ERROR - Falha em caputrar os dados o erro vem aqui? - 'Processor' object has no attribute 'cursor'
+2026-04-02 09:58:09,828 - INFO - Status atualizado do id 37  com o Status True 02/04/2026 09:58 
+2026-04-02 09:58:09,859 - INFO - minha quantidade de dados processados :  None
+2026-04-02 09:58:09,859 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 09:58:09,860 - INFO - Processamento concluído em 20.68 segundos
+2026-04-02 09:58:09,860 - INFO - Total de registros processados: None
+2026-04-02 09:58:09,861 - ERROR - SAINDO NO FINALIY
+2026-04-02 09:58:09,861 - INFO - [09:58:09] Iniciando a consulta
+2026-04-02 09:58:09,862 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 09:58:09,864 - INFO - [09:58:09] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 10:06:31,372 - INFO - ================================================================================
+2026-04-02 10:06:31,382 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 10:06:31.372499
+2026-04-02 10:06:33,383 - INFO - ================================================================================
+2026-04-02 10:06:33,384 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 10:06:33,385 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 10:06:34,339 - INFO - Status atualizado para ::  - id retornado 38 
+2026-04-02 10:06:50,870 - ERROR - Erro fatal na execução: search_data_interpol() takes 2 positional arguments but 3 were given
+Traceback (most recent call last):
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\Processor\ClassProcessor.py", line 48, in executar
+    total_processados = process_api(self)
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\Processar\Process_api.py", line 47, in process_api
+    lista_retorno = tratar = trata_json(self,caminho_countries,retorno_api,id_insert_return)
+                             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\Processar\Tratar_json.py", line 225, in trata_json
+    dados_busca = search_data_interpol(self,conn,entity_id)
+TypeError: search_data_interpol() takes 2 positional arguments but 3 were given
+2026-04-02 10:06:50,875 - ERROR - SAINDO NO FINALIY
+2026-04-02 10:06:50,875 - INFO - [10:06:50] Iniciando a consulta
+2026-04-02 10:06:50,876 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 10:06:50,877 - INFO - [10:06:50] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 10:07:40,069 - INFO - ================================================================================
+2026-04-02 10:07:40,070 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 10:07:40.069590
+2026-04-02 10:07:42,071 - INFO - ================================================================================
+2026-04-02 10:07:42,072 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 10:07:42,073 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 10:07:43,035 - INFO - Status atualizado para ::  - id retornado 39 
+2026-04-02 10:07:58,841 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 10:07:58,842 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 10:07:58,842 - ERROR - Erro fatal na execução: name 'self' is not defined
+Traceback (most recent call last):
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\Processor\ClassProcessor.py", line 48, in executar
+    total_processados = process_api(self)
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\Processar\Process_api.py", line 47, in process_api
+    lista_retorno = tratar = trata_json(self,caminho_countries,retorno_api,id_insert_return)
+                             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\Processar\Tratar_json.py", line 225, in trata_json
+    dados_busca = search_data_interpol(conn,entity_id)
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\Model\ClassModel.py", line 149, in search_data_interpol
+    ClassLogger.logger.warn(f"[DEBUG SQL] self.db.get_connection: {self.db.get_connection} ")
+                                                                   ^^^^
+NameError: name 'self' is not defined
+2026-04-02 10:07:58,852 - ERROR - SAINDO NO FINALIY
+2026-04-02 10:07:58,852 - INFO - [10:07:58] Iniciando a consulta
+2026-04-02 10:07:58,853 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 10:07:58,854 - INFO - [10:07:58] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 10:08:42,733 - INFO - ================================================================================
+2026-04-02 10:08:42,733 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 10:08:42.733140
+2026-04-02 10:08:44,734 - INFO - ================================================================================
+2026-04-02 10:08:44,735 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 10:08:44,736 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 10:08:45,706 - INFO - Status atualizado para ::  - id retornado 40 
+2026-04-02 10:09:01,527 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 10:09:01,528 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 10:09:01,803 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 10:09:01,804 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 10:09:01,948 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 10:09:01,949 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 10:09:02,088 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 10:09:02,089 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 10:09:03,332 - INFO - Status atualizado do id 40  com o Status True 02/04/2026 10:09 
+2026-04-02 10:09:03,393 - INFO - minha quantidade de dados processados :  None
+2026-04-02 10:09:03,394 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 10:09:03,396 - INFO - Processamento concluído em 20.66 segundos
+2026-04-02 10:09:03,397 - INFO - Total de registros processados: None
+2026-04-02 10:09:03,398 - ERROR - SAINDO NO FINALIY
+2026-04-02 10:09:03,399 - INFO - [10:09:03] Iniciando a consulta
+2026-04-02 10:09:03,400 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 10:09:03,400 - INFO - [10:09:03] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 10:26:51,111 - INFO - ================================================================================
+2026-04-02 10:26:51,126 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 10:26:51.111581
+2026-04-02 10:26:53,142 - INFO - ================================================================================
+2026-04-02 10:26:53,169 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 10:26:53,170 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 10:26:55,268 - INFO - Status atualizado para ::  - id retornado 41 
+2026-04-02 10:27:11,948 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 10:27:11,949 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 10:27:12,221 - ERROR - Falha em caputrar os dados o erro vem aqui? - 'RealDictCursor' object has no attribute 'fechone'
+2026-04-02 10:27:12,224 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 10:27:12,224 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 10:27:12,363 - ERROR - Falha em caputrar os dados o erro vem aqui? - 'RealDictCursor' object has no attribute 'fechone'
+2026-04-02 10:27:12,367 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 10:27:12,370 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 10:27:12,510 - ERROR - Falha em caputrar os dados o erro vem aqui? - 'RealDictCursor' object has no attribute 'fechone'
+2026-04-02 10:27:12,515 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 10:27:12,516 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 10:27:12,657 - ERROR - Falha em caputrar os dados o erro vem aqui? - 'RealDictCursor' object has no attribute 'fechone'
+2026-04-02 10:27:13,807 - INFO - Status atualizado do id 41  com o Status True 02/04/2026 10:27 
+2026-04-02 10:27:13,897 - INFO - minha quantidade de dados processados :  None
+2026-04-02 10:27:13,897 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 10:27:13,898 - INFO - Processamento concluído em 22.79 segundos
+2026-04-02 10:27:13,898 - INFO - Total de registros processados: None
+2026-04-02 10:27:13,898 - ERROR - SAINDO NO FINALIY
+2026-04-02 10:27:13,899 - INFO - [10:27:13] Iniciando a consulta
+2026-04-02 10:27:13,899 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 10:27:13,900 - INFO - [10:27:13] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 10:27:39,826 - INFO - ================================================================================
+2026-04-02 10:27:39,827 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 10:27:39.826379
+2026-04-02 10:27:41,827 - INFO - ================================================================================
+2026-04-02 10:27:41,829 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 10:27:41,830 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 10:27:42,778 - INFO - Status atualizado para ::  - id retornado 42 
+2026-04-02 10:27:58,873 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 10:27:58,916 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 10:27:59,238 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 10:27:59,241 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 10:27:59,401 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 10:27:59,401 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 10:27:59,557 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 10:27:59,565 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 10:28:00,830 - INFO - Status atualizado do id 42  com o Status True 02/04/2026 10:28 
+2026-04-02 10:28:00,913 - INFO - minha quantidade de dados processados :  None
+2026-04-02 10:28:00,916 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 10:28:00,917 - INFO - Processamento concluído em 21.09 segundos
+2026-04-02 10:28:00,919 - INFO - Total de registros processados: None
+2026-04-02 10:28:00,928 - ERROR - SAINDO NO FINALIY
+2026-04-02 10:28:00,931 - INFO - [10:28:00] Iniciando a consulta
+2026-04-02 10:28:00,932 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 10:28:00,933 - INFO - [10:28:00] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 10:33:56,438 - INFO - ================================================================================
+2026-04-02 10:33:56,466 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 10:33:56.438537
+2026-04-02 10:33:58,484 - INFO - ================================================================================
+2026-04-02 10:33:58,613 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 10:33:58,628 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 10:34:00,223 - INFO - Status atualizado para ::  - id retornado 43 
+2026-04-02 10:34:16,934 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 10:34:16,935 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 10:34:17,211 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 10:34:17,211 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 10:34:17,354 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 10:34:17,356 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 10:34:17,496 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 10:34:17,496 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 10:34:18,762 - INFO - Status atualizado do id 43  com o Status True 02/04/2026 10:34 
+2026-04-02 10:34:18,850 - INFO - minha quantidade de dados processados :  None
+2026-04-02 10:34:18,851 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 10:34:18,851 - INFO - Processamento concluído em 22.41 segundos
+2026-04-02 10:34:18,852 - INFO - Total de registros processados: None
+2026-04-02 10:34:18,852 - ERROR - SAINDO NO FINALIY
+2026-04-02 10:34:18,852 - INFO - [10:34:18] Iniciando a consulta
+2026-04-02 10:34:18,853 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 10:34:18,853 - INFO - [10:34:18] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 10:37:53,610 - INFO - ================================================================================
+2026-04-02 10:37:53,729 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 10:37:53.610557
+2026-04-02 10:37:55,732 - INFO - ================================================================================
+2026-04-02 10:37:55,737 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 10:37:55,738 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 10:37:56,719 - INFO - Status atualizado para ::  - id retornado 44 
+2026-04-02 10:38:12,623 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 10:38:12,624 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 10:38:12,903 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 10:38:12,904 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 10:38:13,047 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 10:38:13,049 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 10:38:13,192 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 10:38:13,192 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 10:38:14,437 - INFO - Status atualizado do id 44  com o Status True 02/04/2026 10:38 
+2026-04-02 10:38:14,780 - INFO - minha quantidade de dados processados :  None
+2026-04-02 10:38:14,780 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 10:38:14,781 - INFO - Processamento concluído em 21.17 segundos
+2026-04-02 10:38:14,781 - INFO - Total de registros processados: None
+2026-04-02 10:38:14,781 - ERROR - SAINDO NO FINALIY
+2026-04-02 10:38:14,782 - INFO - [10:38:14] Iniciando a consulta
+2026-04-02 10:38:14,782 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 10:38:14,782 - INFO - [10:38:14] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 10:49:06,114 - INFO - ================================================================================
+2026-04-02 10:49:06,144 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 10:49:06.114394
+2026-04-02 10:49:08,146 - INFO - ================================================================================
+2026-04-02 10:49:08,158 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 10:49:08,159 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 10:49:09,196 - INFO - Status atualizado para ::  - id retornado 45 
+2026-04-02 10:49:26,192 - INFO - minha quantidade de dados processados :  None
+2026-04-02 10:49:26,202 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 10:49:26,204 - INFO - Processamento concluído em 20.09 segundos
+2026-04-02 10:49:26,205 - INFO - Total de registros processados: None
+2026-04-02 10:49:26,205 - ERROR - SAINDO NO FINALIY
+2026-04-02 10:49:26,206 - INFO - [10:49:26] Iniciando a consulta
+2026-04-02 10:49:26,206 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 10:49:26,206 - INFO - [10:49:26] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 10:52:59,784 - INFO - ================================================================================
+2026-04-02 10:52:59,786 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 10:52:59.784005
+2026-04-02 10:53:01,792 - INFO - ================================================================================
+2026-04-02 10:53:01,801 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 10:53:01,812 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 10:53:02,813 - INFO - Status atualizado para ::  - id retornado 46 
+2026-04-02 10:53:19,447 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 10:53:19,447 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 10:53:19,863 - ERROR - Falha em caputrar os dados o erro vem aqui? - 0
+2026-04-02 10:53:19,865 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 10:53:19,873 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 10:53:20,143 - ERROR - Falha em caputrar os dados o erro vem aqui? - 0
+2026-04-02 10:53:20,144 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 10:53:20,145 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 10:53:20,278 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 10:53:20,278 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 10:53:20,548 - ERROR - Falha em caputrar os dados o erro vem aqui? - 0
+2026-04-02 10:53:21,685 - INFO - Status atualizado do id 46  com o Status True 02/04/2026 10:53 
+2026-04-02 10:53:21,761 - INFO - minha quantidade de dados processados :  None
+2026-04-02 10:53:21,763 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 10:53:21,764 - INFO - Processamento concluído em 21.98 segundos
+2026-04-02 10:53:21,764 - INFO - Total de registros processados: None
+2026-04-02 10:53:21,775 - ERROR - SAINDO NO FINALIY
+2026-04-02 10:53:21,775 - INFO - [10:53:21] Iniciando a consulta
+2026-04-02 10:53:21,776 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 10:53:21,776 - INFO - [10:53:21] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 10:58:09,689 - INFO - ================================================================================
+2026-04-02 10:58:09,699 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 10:58:09.689192
+2026-04-02 10:58:11,700 - INFO - ================================================================================
+2026-04-02 10:58:11,701 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 10:58:11,702 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 10:58:12,667 - INFO - Status atualizado para ::  - id retornado 47 
+2026-04-02 10:58:29,232 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 10:58:29,232 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 10:58:29,697 - ERROR - Falha em caputrar os dados o erro vem aqui? - 0
+2026-04-02 10:58:29,698 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 10:58:29,698 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 10:58:29,981 - ERROR - Falha em caputrar os dados o erro vem aqui? - 0
+2026-04-02 10:58:29,982 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 10:58:29,983 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 10:58:30,131 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 10:58:30,131 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 10:58:30,411 - ERROR - Falha em caputrar os dados o erro vem aqui? - 0
+2026-04-02 10:58:31,563 - INFO - Status atualizado do id 47  com o Status True 02/04/2026 10:58 
+2026-04-02 10:58:31,818 - INFO - minha quantidade de dados processados :  None
+2026-04-02 10:58:31,842 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 10:58:31,858 - INFO - Processamento concluído em 22.15 segundos
+2026-04-02 10:58:31,873 - INFO - Total de registros processados: None
+2026-04-02 10:58:31,883 - ERROR - SAINDO NO FINALIY
+2026-04-02 10:58:31,897 - INFO - [10:58:31] Iniciando a consulta
+2026-04-02 10:58:31,908 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 10:58:31,924 - INFO - [10:58:31] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 10:58:52,781 - INFO - ================================================================================
+2026-04-02 10:58:52,782 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 10:58:52.781529
+2026-04-02 10:58:54,783 - INFO - ================================================================================
+2026-04-02 10:58:54,790 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 10:58:54,794 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 10:58:55,765 - INFO - Status atualizado para ::  - id retornado 48 
+2026-04-02 10:59:11,593 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 10:59:11,593 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 10:59:12,003 - ERROR - Falha em caputrar os dados o erro vem aqui? - 0
+2026-04-02 10:59:12,004 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 10:59:12,004 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 10:59:12,272 - ERROR - Falha em caputrar os dados o erro vem aqui? - 0
+2026-04-02 10:59:12,273 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 10:59:12,273 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 10:59:12,408 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 10:59:12,409 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 10:59:12,687 - ERROR - Falha em caputrar os dados o erro vem aqui? - 0
+2026-04-02 10:59:13,800 - INFO - Status atualizado do id 48  com o Status True 02/04/2026 10:59 
+2026-04-02 10:59:13,832 - INFO - minha quantidade de dados processados :  None
+2026-04-02 10:59:13,833 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 10:59:13,833 - INFO - Processamento concluído em 21.05 segundos
+2026-04-02 10:59:13,834 - INFO - Total de registros processados: None
+2026-04-02 10:59:13,835 - ERROR - SAINDO NO FINALIY
+2026-04-02 10:59:13,835 - INFO - [10:59:13] Iniciando a consulta
+2026-04-02 10:59:13,836 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 10:59:13,836 - INFO - [10:59:13] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 11:03:35,454 - INFO - ================================================================================
+2026-04-02 11:03:35,455 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 11:03:35.454901
+2026-04-02 11:03:37,456 - INFO - ================================================================================
+2026-04-02 11:03:37,458 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 11:03:37,458 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 11:03:38,418 - INFO - Status atualizado para ::  - id retornado 49 
+2026-04-02 11:03:54,988 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 11:03:54,988 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:03:55,417 - ERROR - Falha em caputrar os dados o erro vem aqui? - 0
+2026-04-02 11:03:55,419 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 11:03:55,419 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:03:55,700 - ERROR - Falha em caputrar os dados o erro vem aqui? - 0
+2026-04-02 11:03:55,705 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 11:03:55,706 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:03:55,846 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 11:03:55,847 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:03:56,118 - ERROR - Falha em caputrar os dados o erro vem aqui? - 0
+2026-04-02 11:03:57,224 - INFO - Status atualizado do id 49  com o Status True 02/04/2026 11:03 
+2026-04-02 11:03:57,257 - INFO - minha quantidade de dados processados :  None
+2026-04-02 11:03:57,257 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 11:03:57,257 - INFO - Processamento concluído em 21.80 segundos
+2026-04-02 11:03:57,258 - INFO - Total de registros processados: None
+2026-04-02 11:03:57,258 - ERROR - SAINDO NO FINALIY
+2026-04-02 11:03:57,259 - INFO - [11:03:57] Iniciando a consulta
+2026-04-02 11:03:57,259 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 11:03:57,260 - INFO - [11:03:57] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 11:05:41,848 - INFO - ================================================================================
+2026-04-02 11:05:41,849 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 11:05:41.848709
+2026-04-02 11:05:43,850 - INFO - ================================================================================
+2026-04-02 11:05:43,851 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 11:05:43,851 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 11:05:44,846 - INFO - Status atualizado para ::  - id retornado 50 
+2026-04-02 11:06:00,883 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 11:06:00,886 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:06:01,320 - ERROR - Falha em caputrar os dados o erro vem aqui? - 0
+2026-04-02 11:06:01,322 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 11:06:01,322 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:06:01,593 - ERROR - Falha em caputrar os dados o erro vem aqui? - 0
+2026-04-02 11:06:01,596 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 11:06:01,597 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:06:01,732 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 11:06:01,732 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:06:02,008 - ERROR - Falha em caputrar os dados o erro vem aqui? - 0
+2026-04-02 11:06:03,158 - INFO - Status atualizado do id 50  com o Status True 02/04/2026 11:06 
+2026-04-02 11:06:03,193 - INFO - minha quantidade de dados processados :  None
+2026-04-02 11:06:03,194 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 11:06:03,194 - INFO - Processamento concluído em 21.35 segundos
+2026-04-02 11:06:03,194 - INFO - Total de registros processados: None
+2026-04-02 11:06:03,195 - ERROR - SAINDO NO FINALIY
+2026-04-02 11:06:03,196 - INFO - [11:06:03] Iniciando a consulta
+2026-04-02 11:06:03,196 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 11:06:03,197 - INFO - [11:06:03] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 11:06:41,418 - INFO - ================================================================================
+2026-04-02 11:06:41,419 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 11:06:41.418508
+2026-04-02 11:06:43,420 - INFO - ================================================================================
+2026-04-02 11:06:43,421 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 11:06:43,421 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 11:06:44,400 - INFO - Status atualizado para ::  - id retornado 51 
+2026-04-02 11:07:00,279 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 11:07:00,280 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:07:00,702 - ERROR - Falha em caputrar os dados o erro vem aqui? - 0
+2026-04-02 11:07:00,703 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 11:07:00,704 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:07:00,980 - ERROR - Falha em caputrar os dados o erro vem aqui? - 0
+2026-04-02 11:07:00,981 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 11:07:00,981 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:07:01,121 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 11:07:01,122 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:07:01,398 - ERROR - Falha em caputrar os dados o erro vem aqui? - 0
+2026-04-02 11:07:02,498 - INFO - Status atualizado do id 51  com o Status True 02/04/2026 11:07 
+2026-04-02 11:07:02,528 - INFO - minha quantidade de dados processados :  None
+2026-04-02 11:07:02,529 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 11:07:02,529 - INFO - Processamento concluído em 21.11 segundos
+2026-04-02 11:07:02,530 - INFO - Total de registros processados: None
+2026-04-02 11:07:02,530 - ERROR - SAINDO NO FINALIY
+2026-04-02 11:07:02,531 - INFO - [11:07:02] Iniciando a consulta
+2026-04-02 11:07:02,531 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 11:07:02,531 - INFO - [11:07:02] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 11:07:11,200 - INFO - ================================================================================
+2026-04-02 11:07:11,212 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 11:07:11.200865
+2026-04-02 11:07:13,213 - INFO - ================================================================================
+2026-04-02 11:07:13,214 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 11:07:13,214 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 11:07:14,189 - INFO - Status atualizado para ::  - id retornado 52 
+2026-04-02 11:07:30,579 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 11:07:30,579 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:07:31,007 - ERROR - Falha em caputrar os dados o erro vem aqui? - 0
+2026-04-02 11:07:31,008 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 11:07:31,008 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:07:31,281 - ERROR - Falha em caputrar os dados o erro vem aqui? - 0
+2026-04-02 11:07:31,282 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 11:07:31,282 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:07:31,431 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 11:07:31,432 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:07:31,702 - ERROR - Falha em caputrar os dados o erro vem aqui? - 0
+2026-04-02 11:07:32,788 - INFO - Status atualizado do id 52  com o Status True 02/04/2026 11:07 
+2026-04-02 11:07:32,817 - INFO - minha quantidade de dados processados :  None
+2026-04-02 11:07:32,818 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 11:07:32,818 - INFO - Processamento concluído em 21.62 segundos
+2026-04-02 11:07:32,818 - INFO - Total de registros processados: None
+2026-04-02 11:07:32,819 - ERROR - SAINDO NO FINALIY
+2026-04-02 11:07:32,819 - INFO - [11:07:32] Iniciando a consulta
+2026-04-02 11:07:32,819 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 11:07:32,820 - INFO - [11:07:32] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 11:08:03,311 - INFO - ================================================================================
+2026-04-02 11:08:03,312 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 11:08:03.311655
+2026-04-02 11:08:05,312 - INFO - ================================================================================
+2026-04-02 11:08:05,316 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 11:08:05,316 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 11:08:06,351 - INFO - Status atualizado para ::  - id retornado 53 
+2026-04-02 11:08:22,373 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 11:08:22,373 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:08:22,814 - ERROR - Falha em caputrar os dados o erro vem aqui? - 0
+2026-04-02 11:08:22,820 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 11:08:22,821 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:08:23,107 - ERROR - Falha em caputrar os dados o erro vem aqui? - 0
+2026-04-02 11:08:23,109 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 11:08:23,110 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:08:23,254 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 11:08:23,255 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:08:23,548 - ERROR - Falha em caputrar os dados o erro vem aqui? - 0
+2026-04-02 11:08:24,703 - INFO - Status atualizado do id 53  com o Status True 02/04/2026 11:08 
+2026-04-02 11:08:24,759 - INFO - minha quantidade de dados processados :  None
+2026-04-02 11:08:24,760 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 11:08:24,760 - INFO - Processamento concluído em 21.45 segundos
+2026-04-02 11:08:24,760 - INFO - Total de registros processados: None
+2026-04-02 11:08:24,761 - ERROR - SAINDO NO FINALIY
+2026-04-02 11:08:24,761 - INFO - [11:08:24] Iniciando a consulta
+2026-04-02 11:08:24,762 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 11:08:24,762 - INFO - [11:08:24] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 11:15:43,882 - INFO - ================================================================================
+2026-04-02 11:15:43,887 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 11:15:43.882054
+2026-04-02 11:15:45,891 - INFO - ================================================================================
+2026-04-02 11:15:45,964 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 11:15:46,046 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 11:15:47,302 - INFO - Status atualizado para ::  - id retornado 54 
+2026-04-02 11:16:04,869 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 11:16:04,870 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:16:05,348 - ERROR - Falha em caputrar os dados o erro vem aqui? - 0
+2026-04-02 11:16:05,349 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 11:16:05,350 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:16:05,625 - ERROR - Falha em caputrar os dados o erro vem aqui? - 0
+2026-04-02 11:16:05,628 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 11:16:05,629 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:16:05,769 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 11:16:05,769 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:16:06,041 - ERROR - Falha em caputrar os dados o erro vem aqui? - 0
+2026-04-02 11:16:07,151 - INFO - Status atualizado do id 54  com o Status True 02/04/2026 11:16 
+2026-04-02 11:16:07,198 - INFO - minha quantidade de dados processados :  None
+2026-04-02 11:16:07,199 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 11:16:07,199 - INFO - Processamento concluído em 23.32 segundos
+2026-04-02 11:16:07,200 - INFO - Total de registros processados: None
+2026-04-02 11:16:07,201 - ERROR - SAINDO NO FINALIY
+2026-04-02 11:16:07,201 - INFO - [11:16:07] Iniciando a consulta
+2026-04-02 11:16:07,202 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 11:16:07,202 - INFO - [11:16:07] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 11:19:08,367 - INFO - ================================================================================
+2026-04-02 11:19:08,411 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 11:19:08.367324
+2026-04-02 11:19:10,487 - INFO - ================================================================================
+2026-04-02 11:19:10,594 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 11:19:10,718 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 11:19:12,018 - INFO - Status atualizado para ::  - id retornado 55 
+2026-04-02 11:19:28,867 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 11:19:28,870 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:19:29,288 - ERROR - Falha em caputrar os dados o erro vem aqui? - 0
+2026-04-02 11:19:29,290 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 11:19:29,291 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:19:29,565 - ERROR - Falha em caputrar os dados o erro vem aqui? - 0
+2026-04-02 11:19:29,566 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 11:19:29,566 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:19:29,712 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 11:19:29,713 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:19:29,997 - ERROR - Falha em caputrar os dados o erro vem aqui? - 0
+2026-04-02 11:19:31,176 - INFO - Status atualizado do id 55  com o Status True 02/04/2026 11:19 
+2026-04-02 11:19:31,234 - INFO - minha quantidade de dados processados :  None
+2026-04-02 11:19:31,234 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 11:19:31,235 - INFO - Processamento concluído em 22.87 segundos
+2026-04-02 11:19:31,236 - INFO - Total de registros processados: None
+2026-04-02 11:19:31,236 - ERROR - SAINDO NO FINALIY
+2026-04-02 11:19:31,236 - INFO - [11:19:31] Iniciando a consulta
+2026-04-02 11:19:31,237 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 11:19:31,237 - INFO - [11:19:31] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 11:23:14,333 - INFO - ================================================================================
+2026-04-02 11:23:14,335 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 11:23:14.333280
+2026-04-02 11:23:16,337 - INFO - ================================================================================
+2026-04-02 11:23:16,339 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 11:23:16,340 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 11:23:17,319 - INFO - Status atualizado para ::  - id retornado 56 
+2026-04-02 11:23:34,153 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 11:23:34,154 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:23:34,601 - ERROR - Falha em caputrar os dados o erro vem aqui? - 0
+2026-04-02 11:23:34,628 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 11:23:34,629 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:23:34,903 - ERROR - Falha em caputrar os dados o erro vem aqui? - 0
+2026-04-02 11:23:34,904 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 11:23:34,904 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:23:35,037 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 11:23:35,037 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:23:35,304 - ERROR - Falha em caputrar os dados o erro vem aqui? - 0
+2026-04-02 11:23:36,396 - INFO - Status atualizado do id 56  com o Status True 02/04/2026 11:23 
+2026-04-02 11:23:36,456 - INFO - minha quantidade de dados processados :  None
+2026-04-02 11:23:36,473 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 11:23:36,478 - INFO - Processamento concluído em 22.14 segundos
+2026-04-02 11:23:36,479 - INFO - Total de registros processados: None
+2026-04-02 11:23:36,480 - ERROR - SAINDO NO FINALIY
+2026-04-02 11:23:36,480 - INFO - [11:23:36] Iniciando a consulta
+2026-04-02 11:23:36,482 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 11:23:36,483 - INFO - [11:23:36] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 11:25:41,784 - INFO - ================================================================================
+2026-04-02 11:25:41,798 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 11:25:41.784665
+2026-04-02 11:25:43,800 - INFO - ================================================================================
+2026-04-02 11:25:44,058 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 11:25:44,423 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 11:25:45,818 - INFO - Status atualizado para ::  - id retornado 57 
+2026-04-02 11:26:03,136 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 11:26:03,137 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:26:03,543 - ERROR - Falha em caputrar os dados o erro vem aqui? - 0
+2026-04-02 11:26:03,545 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 11:26:03,545 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:26:03,815 - ERROR - Falha em caputrar os dados o erro vem aqui? - 0
+2026-04-02 11:26:03,816 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 11:26:03,816 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:26:03,949 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 11:26:03,950 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:26:04,238 - ERROR - Falha em caputrar os dados o erro vem aqui? - 0
+2026-04-02 11:26:05,472 - INFO - Status atualizado do id 57  com o Status True 02/04/2026 11:26 
+2026-04-02 11:26:05,516 - INFO - minha quantidade de dados processados :  None
+2026-04-02 11:26:05,516 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 11:26:05,517 - INFO - Processamento concluído em 23.73 segundos
+2026-04-02 11:26:05,518 - INFO - Total de registros processados: None
+2026-04-02 11:26:05,519 - ERROR - SAINDO NO FINALIY
+2026-04-02 11:26:05,519 - INFO - [11:26:05] Iniciando a consulta
+2026-04-02 11:26:05,519 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 11:26:05,520 - INFO - [11:26:05] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 11:28:36,514 - INFO - ================================================================================
+2026-04-02 11:28:36,515 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 11:28:36.514896
+2026-04-02 11:28:38,517 - INFO - ================================================================================
+2026-04-02 11:28:38,521 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 11:28:38,523 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 11:28:39,497 - INFO - Status atualizado para ::  - id retornado 58 
+2026-04-02 11:28:56,254 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 11:28:56,264 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:28:56,771 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 11:28:56,772 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:28:57,077 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 11:28:57,087 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:28:57,283 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 11:28:57,292 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:28:58,994 - INFO - Status atualizado do id 58  com o Status True 02/04/2026 11:28 
+2026-04-02 11:28:59,021 - INFO - minha quantidade de dados processados :  None
+2026-04-02 11:28:59,022 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 11:28:59,022 - INFO - Processamento concluído em 22.51 segundos
+2026-04-02 11:28:59,023 - INFO - Total de registros processados: None
+2026-04-02 11:28:59,023 - ERROR - SAINDO NO FINALIY
+2026-04-02 11:28:59,024 - INFO - [11:28:59] Iniciando a consulta
+2026-04-02 11:28:59,024 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 11:28:59,024 - INFO - [11:28:59] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 11:38:52,965 - INFO - ================================================================================
+2026-04-02 11:38:52,970 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 11:38:52.965715
+2026-04-02 11:38:54,976 - INFO - ================================================================================
+2026-04-02 11:38:54,996 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 11:38:55,068 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 11:38:56,084 - INFO - Status atualizado para ::  - id retornado 59 
+2026-04-02 11:39:12,913 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 11:39:12,913 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:39:13,326 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 11:39:13,326 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:39:13,597 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 11:39:13,598 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:39:13,742 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 11:39:13,743 - WARNING - [DEBUG SQL] query: SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s limit 1 
+2026-04-02 11:39:15,166 - INFO - Status atualizado do id 59  com o Status True 02/04/2026 11:39 
+2026-04-02 11:39:15,225 - INFO - minha quantidade de dados processados :  None
+2026-04-02 11:39:15,226 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 11:39:15,228 - INFO - Processamento concluído em 22.26 segundos
+2026-04-02 11:39:15,230 - INFO - Total de registros processados: None
+2026-04-02 11:39:15,230 - ERROR - SAINDO NO FINALIY
+2026-04-02 11:39:15,231 - INFO - [11:39:15] Iniciando a consulta
+2026-04-02 11:39:15,231 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 11:39:15,232 - INFO - [11:39:15] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 11:40:29,287 - INFO - ================================================================================
+2026-04-02 11:40:29,288 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 11:40:29.286994
+2026-04-02 11:40:31,290 - INFO - ================================================================================
+2026-04-02 11:40:31,295 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 11:40:31,304 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 11:40:32,260 - INFO - Status atualizado para ::  - id retornado 60 
+2026-04-02 11:40:48,214 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 11:40:48,215 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                    SELECT 1  FROM public.interpol_dados WHERE nome_buscado = %s) 
+2026-04-02 11:40:48,489 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 11:40:48,489 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                    SELECT 1  FROM public.interpol_dados WHERE nome_buscado = %s) 
+2026-04-02 11:40:48,627 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 11:40:48,627 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                    SELECT 1  FROM public.interpol_dados WHERE nome_buscado = %s) 
+2026-04-02 11:40:48,766 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 11:40:48,767 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                    SELECT 1  FROM public.interpol_dados WHERE nome_buscado = %s) 
+2026-04-02 11:40:49,983 - INFO - Status atualizado do id 60  com o Status True 02/04/2026 11:40 
+2026-04-02 11:40:50,022 - INFO - minha quantidade de dados processados :  None
+2026-04-02 11:40:50,022 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 11:40:50,023 - INFO - Processamento concluído em 20.74 segundos
+2026-04-02 11:40:50,023 - INFO - Total de registros processados: None
+2026-04-02 11:40:50,024 - ERROR - SAINDO NO FINALIY
+2026-04-02 11:40:50,024 - INFO - [11:40:50] Iniciando a consulta
+2026-04-02 11:40:50,027 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 11:40:50,028 - INFO - [11:40:50] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 11:41:06,087 - INFO - ================================================================================
+2026-04-02 11:41:06,088 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 11:41:06.087086
+2026-04-02 11:41:08,090 - INFO - ================================================================================
+2026-04-02 11:41:08,091 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 11:41:08,094 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 11:41:09,089 - INFO - Status atualizado para ::  - id retornado 61 
+2026-04-02 11:41:24,975 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 11:41:24,976 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                    SELECT 1  FROM public.interpol_dados WHERE nome_buscado = %s)) 
+2026-04-02 11:41:25,247 - ERROR - Falha em caputrar os dados o erro vem aqui? - syntax error at or near ")"
+LINE 2: ...M public.interpol_dados WHERE nome_buscado = '2017-142898'))
+                                                                      ^
+
+2026-04-02 11:41:25,383 - ERROR - Falha em caputrar os dados o erro vem aqui? - current transaction is aborted, commands ignored until end of transaction block
+
+2026-04-02 11:41:25,385 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 11:41:25,386 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                    SELECT 1  FROM public.interpol_dados WHERE nome_buscado = %s)) 
+2026-04-02 11:41:25,520 - ERROR - Falha em caputrar os dados o erro vem aqui? - syntax error at or near ")"
+LINE 2: ...ROM public.interpol_dados WHERE nome_buscado = '2015-3364'))
+                                                                      ^
+
+2026-04-02 11:41:25,656 - ERROR - Falha em caputrar os dados o erro vem aqui? - current transaction is aborted, commands ignored until end of transaction block
+
+2026-04-02 11:41:25,657 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 11:41:25,657 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                    SELECT 1  FROM public.interpol_dados WHERE nome_buscado = %s)) 
+2026-04-02 11:41:25,795 - ERROR - Falha em caputrar os dados o erro vem aqui? - syntax error at or near ")"
+LINE 2: ...OM public.interpol_dados WHERE nome_buscado = '2014-56166'))
+                                                                      ^
+
+2026-04-02 11:41:25,929 - ERROR - Falha em caputrar os dados o erro vem aqui? - current transaction is aborted, commands ignored until end of transaction block
+
+2026-04-02 11:41:25,930 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 11:41:25,930 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                    SELECT 1  FROM public.interpol_dados WHERE nome_buscado = %s)) 
+2026-04-02 11:41:26,066 - ERROR - Falha em caputrar os dados o erro vem aqui? - syntax error at or near ")"
+LINE 2: ...M public.interpol_dados WHERE nome_buscado = '2012-328264'))
+                                                                      ^
+
+2026-04-02 11:41:26,203 - ERROR - Falha em caputrar os dados o erro vem aqui? - current transaction is aborted, commands ignored until end of transaction block
+
+2026-04-02 11:41:27,322 - INFO - Status atualizado do id 61  com o Status True 02/04/2026 11:41 
+2026-04-02 11:41:27,362 - INFO - minha quantidade de dados processados :  None
+2026-04-02 11:41:27,364 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 11:41:27,364 - INFO - Processamento concluído em 21.28 segundos
+2026-04-02 11:41:27,365 - INFO - Total de registros processados: None
+2026-04-02 11:41:27,365 - ERROR - SAINDO NO FINALIY
+2026-04-02 11:41:27,366 - INFO - [11:41:27] Iniciando a consulta
+2026-04-02 11:41:27,366 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 11:41:27,367 - INFO - [11:41:27] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 11:44:11,796 - INFO - ================================================================================
+2026-04-02 11:44:11,831 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 11:44:11.796732
+2026-04-02 11:44:13,891 - INFO - ================================================================================
+2026-04-02 11:44:13,941 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 11:44:13,942 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 11:44:14,960 - INFO - Status atualizado para ::  - id retornado 62 
+2026-04-02 11:44:31,614 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 11:44:31,614 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s)
+                      
+2026-04-02 11:44:31,888 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 11:44:31,889 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s)
+                      
+2026-04-02 11:44:32,026 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 11:44:32,027 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s)
+                      
+2026-04-02 11:44:32,160 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 11:44:32,160 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s)
+                      
+2026-04-02 11:44:33,408 - INFO - Status atualizado do id 62  com o Status True 02/04/2026 11:44 
+2026-04-02 11:44:33,454 - INFO - minha quantidade de dados processados :  None
+2026-04-02 11:44:33,454 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 11:44:33,455 - INFO - Processamento concluído em 21.66 segundos
+2026-04-02 11:44:33,455 - INFO - Total de registros processados: None
+2026-04-02 11:44:33,456 - ERROR - SAINDO NO FINALIY
+2026-04-02 11:44:33,456 - INFO - [11:44:33] Iniciando a consulta
+2026-04-02 11:44:33,456 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 11:44:33,457 - INFO - [11:44:33] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 11:48:13,971 - INFO - ================================================================================
+2026-04-02 11:48:13,976 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 11:48:13.971493
+2026-04-02 11:48:15,979 - INFO - ================================================================================
+2026-04-02 11:48:15,980 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 11:48:15,980 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 11:48:16,955 - INFO - Status atualizado para ::  - id retornado 63 
+2026-04-02 11:48:32,896 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 11:48:32,897 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s)
+                      
+2026-04-02 11:48:33,172 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 11:48:33,172 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s)
+                      
+2026-04-02 11:48:33,310 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 11:48:33,311 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s)
+                      
+2026-04-02 11:48:33,447 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 11:48:33,447 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s)
+                      
+2026-04-02 11:48:34,668 - INFO - Status atualizado do id 63  com o Status True 02/04/2026 11:48 
+2026-04-02 11:48:34,701 - INFO - minha quantidade de dados processados :  None
+2026-04-02 11:48:34,702 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 11:48:34,703 - INFO - Processamento concluído em 20.73 segundos
+2026-04-02 11:48:34,705 - INFO - Total de registros processados: None
+2026-04-02 11:48:34,707 - ERROR - SAINDO NO FINALIY
+2026-04-02 11:48:34,707 - INFO - [11:48:34] Iniciando a consulta
+2026-04-02 11:48:34,708 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 11:48:34,708 - INFO - [11:48:34] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 11:51:01,918 - INFO - ================================================================================
+2026-04-02 11:51:01,920 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 11:51:01.918219
+2026-04-02 11:51:03,922 - INFO - ================================================================================
+2026-04-02 11:51:03,928 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 11:51:03,931 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 11:51:04,933 - INFO - Status atualizado para ::  - id retornado 64 
+2026-04-02 11:51:21,499 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 11:51:21,500 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s)
+                      
+2026-04-02 11:51:21,782 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 11:51:21,783 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s)
+                      
+2026-04-02 11:51:21,921 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 11:51:21,921 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s)
+                      
+2026-04-02 11:51:22,083 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 11:51:22,087 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s)
+                      
+2026-04-02 11:51:23,314 - INFO - Status atualizado do id 64  com o Status True 02/04/2026 11:51 
+2026-04-02 11:51:23,350 - INFO - minha quantidade de dados processados :  None
+2026-04-02 11:51:23,350 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 11:51:23,350 - INFO - Processamento concluído em 21.43 segundos
+2026-04-02 11:51:23,351 - INFO - Total de registros processados: None
+2026-04-02 11:51:23,351 - ERROR - SAINDO NO FINALIY
+2026-04-02 11:51:23,352 - INFO - [11:51:23] Iniciando a consulta
+2026-04-02 11:51:23,352 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 11:51:23,352 - INFO - [11:51:23] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 11:53:18,679 - INFO - ================================================================================
+2026-04-02 11:53:18,688 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 11:53:18.679095
+2026-04-02 11:53:20,690 - INFO - ================================================================================
+2026-04-02 11:53:20,691 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 11:53:20,692 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 11:53:21,638 - INFO - Status atualizado para ::  - id retornado 65 
+2026-04-02 11:53:38,241 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 11:53:38,301 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s)
+                      
+2026-04-02 11:53:38,918 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 11:53:38,919 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s)
+                      
+2026-04-02 11:53:39,226 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 11:53:39,231 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s)
+                      
+2026-04-02 11:53:39,408 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 11:53:39,410 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s)
+                      
+2026-04-02 11:53:40,941 - INFO - Status atualizado do id 65  com o Status True 02/04/2026 11:53 
+2026-04-02 11:53:41,092 - INFO - minha quantidade de dados processados :  None
+2026-04-02 11:53:41,099 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 11:53:41,100 - INFO - Processamento concluído em 22.42 segundos
+2026-04-02 11:53:41,110 - INFO - Total de registros processados: None
+2026-04-02 11:53:41,114 - ERROR - SAINDO NO FINALIY
+2026-04-02 11:53:41,115 - INFO - [11:53:41] Iniciando a consulta
+2026-04-02 11:53:41,115 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 11:53:41,116 - INFO - [11:53:41] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 11:54:46,106 - INFO - ================================================================================
+2026-04-02 11:54:46,110 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 11:54:46.106649
+2026-04-02 11:54:48,114 - INFO - ================================================================================
+2026-04-02 11:54:48,121 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 11:54:48,122 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 11:54:49,271 - INFO - Status atualizado para ::  - id retornado 66 
+2026-04-02 11:55:05,182 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 11:55:05,185 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 11:55:05,662 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 11:55:05,662 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 11:55:05,941 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 11:55:05,941 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 11:55:06,076 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 11:55:06,077 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 11:55:07,439 - INFO - Status atualizado do id 66  com o Status True 02/04/2026 11:55 
+2026-04-02 11:55:07,472 - INFO - minha quantidade de dados processados :  None
+2026-04-02 11:55:07,472 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 11:55:07,473 - INFO - Processamento concluído em 21.37 segundos
+2026-04-02 11:55:07,474 - INFO - Total de registros processados: None
+2026-04-02 11:55:07,474 - ERROR - SAINDO NO FINALIY
+2026-04-02 11:55:07,475 - INFO - [11:55:07] Iniciando a consulta
+2026-04-02 11:55:07,475 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 11:55:07,475 - INFO - [11:55:07] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 11:57:26,502 - INFO - ================================================================================
+2026-04-02 11:57:26,608 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 11:57:26.502524
+2026-04-02 11:57:28,624 - INFO - ================================================================================
+2026-04-02 11:57:28,858 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 11:57:28,931 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 11:57:30,134 - INFO - Status atualizado para ::  - id retornado 67 
+2026-04-02 11:57:47,378 - ERROR - Erro fatal na execução: 'list' object has no attribute 'strip'
+Traceback (most recent call last):
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\Processor\ClassProcessor.py", line 48, in executar
+    total_processados = process_api(self)
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\Processar\Process_api.py", line 47, in process_api
+    lista_retorno = tratar = trata_json(self,caminho_countries,retorno_api,id_insert_return)
+                             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\Processar\Tratar_json.py", line 224, in trata_json
+    name_person = [remover_acentos("{} {}".format(pessoa.get('name'), pessoa.get('forename')))].strip()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'strip'
+2026-04-02 11:57:47,386 - ERROR - SAINDO NO FINALIY
+2026-04-02 11:57:47,387 - INFO - [11:57:47] Iniciando a consulta
+2026-04-02 11:57:47,387 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 11:57:47,388 - INFO - [11:57:47] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 11:58:29,812 - INFO - ================================================================================
+2026-04-02 11:58:29,815 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 11:58:29.812010
+2026-04-02 11:58:31,821 - INFO - ================================================================================
+2026-04-02 11:58:31,823 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 11:58:31,824 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 11:58:32,780 - INFO - Status atualizado para ::  - id retornado 68 
+2026-04-02 11:58:48,736 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 11:58:48,737 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 11:58:49,166 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 11:58:49,167 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 11:58:49,446 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 11:58:49,447 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 11:58:49,600 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 11:58:49,600 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 11:58:51,457 - INFO - Status atualizado do id 68  com o Status True 02/04/2026 11:58 
+2026-04-02 11:58:52,764 - INFO - minha quantidade de dados processados :  None
+2026-04-02 11:58:52,887 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 11:58:52,948 - INFO - Processamento concluído em 23.08 segundos
+2026-04-02 11:58:52,971 - INFO - Total de registros processados: None
+2026-04-02 11:58:52,981 - ERROR - SAINDO NO FINALIY
+2026-04-02 11:58:53,004 - INFO - [11:58:53] Iniciando a consulta
+2026-04-02 11:58:53,034 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 11:58:53,215 - INFO - [11:58:53] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 12:11:56,458 - INFO - ================================================================================
+2026-04-02 12:11:56,465 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 12:11:56.458814
+2026-04-02 12:11:58,466 - INFO - ================================================================================
+2026-04-02 12:11:58,469 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 12:11:58,469 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 12:11:59,420 - INFO - Status atualizado para ::  - id retornado 69 
+2026-04-02 12:12:16,113 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 12:12:16,114 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:12:16,534 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 12:12:16,535 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:12:16,810 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 12:12:16,811 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:12:16,945 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 12:12:16,946 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:12:18,309 - INFO - Status atualizado do id 69  com o Status True 02/04/2026 12:12 
+2026-04-02 12:12:18,381 - INFO - minha quantidade de dados processados :  None
+2026-04-02 12:12:18,382 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 12:12:18,382 - INFO - Processamento concluído em 21.92 segundos
+2026-04-02 12:12:18,383 - INFO - Total de registros processados: None
+2026-04-02 12:12:18,383 - ERROR - SAINDO NO FINALIY
+2026-04-02 12:12:18,384 - INFO - [12:12:18] Iniciando a consulta
+2026-04-02 12:12:18,384 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 12:12:18,385 - INFO - [12:12:18] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 12:13:30,848 - INFO - ================================================================================
+2026-04-02 12:13:30,856 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 12:13:30.848297
+2026-04-02 12:13:32,859 - INFO - ================================================================================
+2026-04-02 12:13:32,861 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 12:13:32,863 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 12:13:33,844 - INFO - Status atualizado para ::  - id retornado 70 
+2026-04-02 12:13:49,709 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 12:13:49,710 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:13:50,136 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 12:13:50,136 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:13:50,413 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 12:13:50,414 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:13:50,549 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 12:13:50,549 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:13:50,976 - ERROR - Erro fatal na execução: 'str' object has no attribute 'keys'
+Traceback (most recent call last):
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\Processor\ClassProcessor.py", line 48, in executar
+    total_processados = process_api(self)
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\Processar\Process_api.py", line 47, in process_api
+    lista_retorno = tratar = trata_json(self,caminho_countries,retorno_api,id_insert_return)
+                             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\Processar\Tratar_json.py", line 314, in trata_json
+    minha_tabela_montada = pd.DataFrame(tabela_atualizar)
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\venv\Lib\site-packages\pandas\core\frame.py", line 855, in __init__
+    arrays, columns, index = nested_data_to_arrays(
+                             ~~~~~~~~~~~~~~~~~~~~~^
+        # error: Argument 3 to "nested_data_to_arrays" has incompatible
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        dtype,
+        ^^^^^^
+    )
+    ^
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\venv\Lib\site-packages\pandas\core\internals\construction.py", line 520, in nested_data_to_arrays
+    arrays, columns = to_arrays(data, columns, dtype=dtype)
+                      ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\venv\Lib\site-packages\pandas\core\internals\construction.py", line 837, in to_arrays
+    arr, columns = _list_of_dict_to_arrays(data, columns)
+                   ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\venv\Lib\site-packages\pandas\core\internals\construction.py", line 917, in _list_of_dict_to_arrays
+    pre_cols = lib.fast_unique_multiple_list_gen(gen, sort=sort)
+  File "pandas/_libs/lib.pyx", line 367, in pandas._libs.lib.fast_unique_multiple_list_gen
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\venv\Lib\site-packages\pandas\core\internals\construction.py", line 915, in <genexpr>
+    gen = (list(x.keys()) for x in data)
+                ^^^^^^
+AttributeError: 'str' object has no attribute 'keys'
+2026-04-02 12:13:51,330 - ERROR - SAINDO NO FINALIY
+2026-04-02 12:13:51,330 - INFO - [12:13:51] Iniciando a consulta
+2026-04-02 12:13:51,331 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 12:13:51,331 - INFO - [12:13:51] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 12:16:25,365 - INFO - ================================================================================
+2026-04-02 12:16:25,366 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 12:16:25.365575
+2026-04-02 12:16:27,368 - INFO - ================================================================================
+2026-04-02 12:16:27,373 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 12:16:27,374 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 12:16:28,349 - INFO - Status atualizado para ::  - id retornado 71 
+2026-04-02 12:16:45,021 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 12:16:45,161 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:16:45,826 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 12:16:46,064 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:16:46,739 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 12:16:46,845 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:16:47,120 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 12:16:47,121 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:16:48,528 - INFO - Status atualizado do id 71  com o Status True 02/04/2026 12:16 
+2026-04-02 12:16:51,953 - INFO - minha quantidade de dados processados :  None
+2026-04-02 12:16:51,957 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 12:16:51,957 - INFO - Processamento concluído em 26.59 segundos
+2026-04-02 12:16:51,994 - INFO - Total de registros processados: None
+2026-04-02 12:16:52,013 - ERROR - SAINDO NO FINALIY
+2026-04-02 12:16:52,034 - INFO - [12:16:52] Iniciando a consulta
+2026-04-02 12:16:52,049 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 12:16:52,059 - INFO - [12:16:52] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 12:21:56,502 - INFO - ================================================================================
+2026-04-02 12:21:56,511 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 12:21:56.502512
+2026-04-02 12:21:58,512 - INFO - ================================================================================
+2026-04-02 12:21:58,517 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 12:21:58,517 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 12:21:59,741 - INFO - Status atualizado para ::  - id retornado 72 
+2026-04-02 12:22:16,372 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 12:22:16,373 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:22:16,800 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 12:22:16,800 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:22:17,085 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 12:22:17,088 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:22:17,227 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 12:22:17,228 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:22:18,682 - INFO - Status atualizado do id 72  com o Status True 02/04/2026 12:22 
+2026-04-02 12:22:20,113 - INFO - minha quantidade de dados processados :  None
+2026-04-02 12:22:20,113 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 12:22:20,114 - INFO - Processamento concluído em 23.61 segundos
+2026-04-02 12:22:20,114 - INFO - Total de registros processados: None
+2026-04-02 12:22:20,114 - ERROR - SAINDO NO FINALIY
+2026-04-02 12:22:20,115 - INFO - [12:22:20] Iniciando a consulta
+2026-04-02 12:22:20,115 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 12:22:20,115 - INFO - [12:22:20] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 12:26:13,815 - INFO - ================================================================================
+2026-04-02 12:26:13,821 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 12:26:13.815641
+2026-04-02 12:26:15,823 - INFO - ================================================================================
+2026-04-02 12:26:15,825 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 12:26:15,826 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 12:26:16,777 - INFO - Status atualizado para ::  - id retornado 73 
+2026-04-02 12:26:34,475 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 12:26:34,476 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:26:34,904 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 12:26:34,905 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:26:35,176 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 12:26:35,176 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:26:35,311 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 12:26:35,312 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:26:35,870 - ERROR - Erro fatal na execução: Cannot convert non-finite values (NA or inf) to integer
+Traceback (most recent call last):
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\Processor\ClassProcessor.py", line 48, in executar
+    total_processados = process_api(self)
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\Processar\Process_api.py", line 47, in process_api
+    lista_retorno = tratar = trata_json(self,caminho_countries,retorno_api,id_insert_return)
+                             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\Processar\Tratar_json.py", line 316, in trata_json
+    minha_tabela_montada['qta_registros_atualizados'] = minha_tabela_montada['qta_registros_atualizados'].astype(int)
+                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\venv\Lib\site-packages\pandas\core\generic.py", line 6665, in astype
+    new_data = self._mgr.astype(dtype=dtype, copy=copy, errors=errors)
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\venv\Lib\site-packages\pandas\core\internals\managers.py", line 449, in astype
+    return self.apply(
+           ~~~~~~~~~~^
+        "astype",
+        ^^^^^^^^^
+    ...<3 lines>...
+        using_cow=using_copy_on_write(),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\venv\Lib\site-packages\pandas\core\internals\managers.py", line 363, in apply
+    applied = getattr(b, f)(**kwargs)
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\venv\Lib\site-packages\pandas\core\internals\blocks.py", line 784, in astype
+    new_values = astype_array_safe(values, dtype, copy=copy, errors=errors)
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\venv\Lib\site-packages\pandas\core\dtypes\astype.py", line 237, in astype_array_safe
+    new_values = astype_array(values, dtype, copy=copy)
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\venv\Lib\site-packages\pandas\core\dtypes\astype.py", line 182, in astype_array
+    values = _astype_nansafe(values, dtype, copy=copy)
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\venv\Lib\site-packages\pandas\core\dtypes\astype.py", line 101, in _astype_nansafe
+    return _astype_float_to_int_nansafe(arr, dtype, copy)
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\venv\Lib\site-packages\pandas\core\dtypes\astype.py", line 145, in _astype_float_to_int_nansafe
+    raise IntCastingNaNError(
+        "Cannot convert non-finite values (NA or inf) to integer"
+    )
+pandas.errors.IntCastingNaNError: Cannot convert non-finite values (NA or inf) to integer
+2026-04-02 12:26:37,772 - ERROR - SAINDO NO FINALIY
+2026-04-02 12:26:37,783 - INFO - [12:26:37] Iniciando a consulta
+2026-04-02 12:26:37,787 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 12:26:37,796 - INFO - [12:26:37] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 12:27:19,004 - INFO - ================================================================================
+2026-04-02 12:27:19,004 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 12:27:19.004071
+2026-04-02 12:27:21,005 - INFO - ================================================================================
+2026-04-02 12:27:21,007 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 12:27:21,007 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 12:27:21,982 - INFO - Status atualizado para ::  - id retornado 74 
+2026-04-02 12:27:38,586 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 12:27:38,587 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:27:39,002 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 12:27:39,002 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:27:39,269 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 12:27:39,270 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:27:39,412 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 12:27:39,413 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:27:40,801 - INFO - Status atualizado do id 74  com o Status True 02/04/2026 12:27 
+2026-04-02 12:27:42,691 - INFO - minha quantidade de dados processados :  None
+2026-04-02 12:27:42,694 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 12:27:42,700 - INFO - Processamento concluído em 23.69 segundos
+2026-04-02 12:27:42,706 - INFO - Total de registros processados: None
+2026-04-02 12:27:42,707 - ERROR - SAINDO NO FINALIY
+2026-04-02 12:27:42,707 - INFO - [12:27:42] Iniciando a consulta
+2026-04-02 12:27:42,709 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 12:27:42,712 - INFO - [12:27:42] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 12:33:32,289 - INFO - ================================================================================
+2026-04-02 12:33:32,290 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 12:33:32.289067
+2026-04-02 12:33:34,291 - INFO - ================================================================================
+2026-04-02 12:33:34,293 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 12:33:34,294 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 12:33:35,243 - INFO - Status atualizado para ::  - id retornado 75 
+2026-04-02 12:33:51,888 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 12:33:51,890 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:33:52,305 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 12:33:52,305 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:33:52,584 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 12:33:52,584 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:33:52,729 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 12:33:52,732 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:33:54,117 - INFO - Status atualizado do id 75  com o Status True 02/04/2026 12:33 
+2026-04-02 12:33:55,635 - INFO - minha quantidade de dados processados :  None
+2026-04-02 12:33:55,637 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 12:33:55,637 - INFO - Processamento concluído em 23.35 segundos
+2026-04-02 12:33:55,637 - INFO - Total de registros processados: None
+2026-04-02 12:33:55,638 - ERROR - SAINDO NO FINALIY
+2026-04-02 12:33:55,638 - INFO - [12:33:55] Iniciando a consulta
+2026-04-02 12:33:55,639 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 12:33:55,639 - INFO - [12:33:55] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 12:35:53,216 - INFO - ================================================================================
+2026-04-02 12:35:53,230 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 12:35:53.216861
+2026-04-02 12:35:55,234 - INFO - ================================================================================
+2026-04-02 12:35:55,441 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 12:35:55,590 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 12:35:56,674 - INFO - Status atualizado para ::  - id retornado 76 
+2026-04-02 12:36:12,769 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 12:36:12,769 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:36:13,174 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 12:36:13,174 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:36:13,443 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 12:36:13,443 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:36:13,580 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 12:36:13,581 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:36:14,957 - INFO - Status atualizado do id 76  com o Status True 02/04/2026 12:36 
+2026-04-02 12:36:16,410 - INFO - minha quantidade de dados processados :  None
+2026-04-02 12:36:16,411 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 12:36:16,412 - INFO - Processamento concluído em 23.20 segundos
+2026-04-02 12:36:16,413 - INFO - Total de registros processados: None
+2026-04-02 12:36:16,414 - ERROR - SAINDO NO FINALIY
+2026-04-02 12:36:16,414 - INFO - [12:36:16] Iniciando a consulta
+2026-04-02 12:36:16,415 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 12:36:16,416 - INFO - [12:36:16] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 12:36:57,621 - INFO - ================================================================================
+2026-04-02 12:36:57,627 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 12:36:57.621425
+2026-04-02 12:36:59,652 - INFO - ================================================================================
+2026-04-02 12:37:00,006 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 12:37:00,305 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 12:37:01,687 - INFO - Status atualizado para ::  - id retornado 77 
+2026-04-02 12:37:18,658 - ERROR - Erro fatal na execução: 'list' object has no attribute 'strip'
+Traceback (most recent call last):
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\Processor\ClassProcessor.py", line 48, in executar
+    total_processados = process_api(self)
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\Processar\Process_api.py", line 47, in process_api
+    lista_retorno = tratar = trata_json(self,caminho_countries,retorno_api,id_insert_return)
+                             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\Processar\Tratar_json.py", line 225, in trata_json
+    lista_paises_chaves = pessoa.get('nationalities').strip() or []
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'strip'
+2026-04-02 12:37:18,676 - ERROR - SAINDO NO FINALIY
+2026-04-02 12:37:18,683 - INFO - [12:37:18] Iniciando a consulta
+2026-04-02 12:37:18,688 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 12:37:18,689 - INFO - [12:37:18] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 12:38:21,647 - INFO - ================================================================================
+2026-04-02 12:38:21,657 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 12:38:21.646988
+2026-04-02 12:38:23,664 - INFO - ================================================================================
+2026-04-02 12:38:23,670 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 12:38:23,680 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 12:38:24,683 - INFO - Status atualizado para ::  - id retornado 78 
+2026-04-02 12:38:40,791 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 12:38:40,792 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:38:41,338 - ERROR - Erro fatal na execução: 'list' object has no attribute 'strip'
+Traceback (most recent call last):
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\Processor\ClassProcessor.py", line 48, in executar
+    total_processados = process_api(self)
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\Processar\Process_api.py", line 47, in process_api
+    lista_retorno = tratar = trata_json(self,caminho_countries,retorno_api,id_insert_return)
+                             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\proScore_25\OneDrive - Cheque-Pre.com Tecnologia da Informação Ltda\Área de Trabalho\interpol\Processar\Tratar_json.py", line 251, in trata_json
+    print(f"vou pular {entity_id} || nome: {name_person}  que pais ???{lista_paises_chaves.strip()}")
+                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'strip'
+2026-04-02 12:38:41,342 - ERROR - SAINDO NO FINALIY
+2026-04-02 12:38:41,342 - INFO - [12:38:41] Iniciando a consulta
+2026-04-02 12:38:41,343 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 12:38:41,343 - INFO - [12:38:41] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 12:41:05,665 - INFO - ================================================================================
+2026-04-02 12:41:05,677 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 12:41:05.665185
+2026-04-02 12:41:07,710 - INFO - ================================================================================
+2026-04-02 12:41:07,712 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 12:41:07,713 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 12:41:08,713 - INFO - Status atualizado para ::  - id retornado 79 
+2026-04-02 12:41:24,704 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 12:41:24,706 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:41:25,121 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 12:41:25,122 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:41:25,397 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 12:41:25,398 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:41:25,548 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 12:41:25,548 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:41:26,978 - INFO - Status atualizado do id 79  com o Status True 02/04/2026 12:41 
+2026-04-02 12:41:28,395 - INFO - minha quantidade de dados processados :  None
+2026-04-02 12:41:28,395 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 12:41:28,396 - INFO - Processamento concluído em 22.73 segundos
+2026-04-02 12:41:28,396 - INFO - Total de registros processados: None
+2026-04-02 12:41:28,397 - ERROR - SAINDO NO FINALIY
+2026-04-02 12:41:28,397 - INFO - [12:41:28] Iniciando a consulta
+2026-04-02 12:41:28,397 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 12:41:28,398 - INFO - [12:41:28] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 12:42:05,814 - INFO - ================================================================================
+2026-04-02 12:42:05,816 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 12:42:05.814630
+2026-04-02 12:42:07,817 - INFO - ================================================================================
+2026-04-02 12:42:07,818 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 12:42:07,819 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 12:42:08,784 - INFO - Status atualizado para ::  - id retornado 80 
+2026-04-02 12:42:24,644 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 12:42:24,645 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:42:25,058 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 12:42:25,058 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:42:25,349 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 12:42:25,349 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:42:25,485 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 12:42:25,485 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:42:26,852 - INFO - Status atualizado do id 80  com o Status True 02/04/2026 12:42 
+2026-04-02 12:42:26,872 - INFO - minha quantidade de dados processados :  None
+2026-04-02 12:42:26,873 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 12:42:26,873 - INFO - Processamento concluído em 21.06 segundos
+2026-04-02 12:42:26,874 - INFO - Total de registros processados: None
+2026-04-02 12:42:26,874 - ERROR - SAINDO NO FINALIY
+2026-04-02 12:42:26,874 - INFO - [12:42:26] Iniciando a consulta
+2026-04-02 12:42:26,875 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 12:42:26,875 - INFO - [12:42:26] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 12:44:15,299 - INFO - ================================================================================
+2026-04-02 12:44:15,335 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 12:44:15.299916
+2026-04-02 12:44:17,416 - INFO - ================================================================================
+2026-04-02 12:44:17,417 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 12:44:17,420 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 12:44:18,440 - INFO - Status atualizado para ::  - id retornado 81 
+2026-04-02 12:45:01,337 - WARNING - [DEBUG SQL] Parâmetros: 2022-9820 
+2026-04-02 12:45:01,342 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:45:01,754 - WARNING - [DEBUG SQL] Parâmetros: 2022-9467 
+2026-04-02 12:45:01,754 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:45:02,031 - WARNING - [DEBUG SQL] Parâmetros: 2017-188060 
+2026-04-02 12:45:02,032 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:45:02,308 - WARNING - [DEBUG SQL] Parâmetros: 2016-78505 
+2026-04-02 12:45:02,308 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:45:02,593 - WARNING - [DEBUG SQL] Parâmetros: 2016-78799 
+2026-04-02 12:45:02,594 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:45:02,874 - WARNING - [DEBUG SQL] Parâmetros: 2016-78540 
+2026-04-02 12:45:02,875 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:45:03,154 - WARNING - [DEBUG SQL] Parâmetros: 2016-73485 
+2026-04-02 12:45:03,155 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:45:03,428 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 12:45:03,429 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:45:03,709 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 12:45:03,710 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:45:03,979 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 12:45:03,979 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:45:04,116 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 12:45:04,117 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 12:45:05,622 - INFO - Status atualizado do id 81  com o Status True 02/04/2026 12:45 
+2026-04-02 12:45:05,646 - INFO - minha quantidade de dados processados :  None
+2026-04-02 12:45:05,647 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 12:45:05,647 - INFO - Processamento concluído em 50.35 segundos
+2026-04-02 12:45:05,648 - INFO - Total de registros processados: None
+2026-04-02 12:45:05,648 - ERROR - SAINDO NO FINALIY
+2026-04-02 12:45:05,649 - INFO - [12:45:05] Iniciando a consulta
+2026-04-02 12:45:05,649 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 12:45:05,649 - INFO - [12:45:05] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 12:48:34,848 - INFO - ================================================================================
+2026-04-02 12:48:34,866 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 12:48:34.847936
+2026-04-02 12:48:36,867 - INFO - ================================================================================
+2026-04-02 12:48:36,874 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 12:48:36,885 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 12:48:37,919 - INFO - Status atualizado para ::  - id retornado 82 
+2026-04-02 12:49:19,674 - INFO - minha quantidade de dados processados :  None
+2026-04-02 12:49:19,675 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 12:49:19,675 - INFO - Processamento concluído em 44.83 segundos
+2026-04-02 12:49:19,676 - INFO - Total de registros processados: None
+2026-04-02 12:49:19,677 - ERROR - SAINDO NO FINALIY
+2026-04-02 12:49:19,678 - INFO - [12:49:19] Iniciando a consulta
+2026-04-02 12:49:19,678 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 12:49:19,679 - INFO - [12:49:19] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 12:52:03,366 - INFO - ================================================================================
+2026-04-02 12:52:03,410 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 12:52:03.366363
+2026-04-02 12:52:05,419 - INFO - ================================================================================
+2026-04-02 12:52:05,475 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 12:52:05,504 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 12:52:06,498 - INFO - Status atualizado para ::  - id retornado 83 
+2026-04-02 12:52:49,377 - INFO - minha quantidade de dados processados :  None
+2026-04-02 12:52:49,377 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 12:52:49,378 - INFO - Processamento concluído em 46.01 segundos
+2026-04-02 12:52:49,378 - INFO - Total de registros processados: None
+2026-04-02 12:52:49,378 - ERROR - SAINDO NO FINALIY
+2026-04-02 12:52:49,378 - INFO - [12:52:49] Iniciando a consulta
+2026-04-02 12:52:49,379 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 12:52:49,379 - INFO - [12:52:49] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 13:01:41,284 - INFO - ================================================================================
+2026-04-02 13:01:41,313 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 13:01:41.284266
+2026-04-02 13:01:43,334 - INFO - ================================================================================
+2026-04-02 13:01:43,350 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 13:01:43,351 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 13:01:44,317 - INFO - Status atualizado para ::  - id retornado 84 
+2026-04-02 13:02:27,194 - INFO - minha quantidade de dados processados :  None
+2026-04-02 13:02:27,195 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 13:02:27,195 - INFO - Processamento concluído em 45.91 segundos
+2026-04-02 13:02:27,196 - INFO - Total de registros processados: None
+2026-04-02 13:02:27,196 - ERROR - SAINDO NO FINALIY
+2026-04-02 13:02:27,197 - INFO - [13:02:27] Iniciando a consulta
+2026-04-02 13:02:27,197 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 13:02:27,198 - INFO - [13:02:27] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 13:07:57,124 - INFO - ================================================================================
+2026-04-02 13:07:57,124 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 13:07:57.124262
+2026-04-02 13:07:59,125 - INFO - ================================================================================
+2026-04-02 13:07:59,136 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 13:07:59,138 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 13:08:00,350 - INFO - Status atualizado para ::  - id retornado 85 
+2026-04-02 13:08:43,406 - INFO - minha quantidade de dados processados :  None
+2026-04-02 13:08:43,406 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 13:08:43,407 - INFO - Processamento concluído em 46.28 segundos
+2026-04-02 13:08:43,407 - INFO - Total de registros processados: None
+2026-04-02 13:08:43,407 - ERROR - SAINDO NO FINALIY
+2026-04-02 13:08:43,408 - INFO - [13:08:43] Iniciando a consulta
+2026-04-02 13:08:43,408 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 13:08:43,408 - INFO - [13:08:43] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 13:14:16,787 - INFO - ================================================================================
+2026-04-02 13:14:16,825 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 13:14:16.787605
+2026-04-02 13:14:18,839 - INFO - ================================================================================
+2026-04-02 13:14:18,843 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 13:14:18,845 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 13:14:20,068 - INFO - Status atualizado para ::  - id retornado 86 
+2026-04-02 13:15:03,909 - WARNING - [DEBUG SQL] Parâmetros: 2022-9820 
+2026-04-02 13:15:03,913 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 13:15:04,437 - WARNING - [DEBUG SQL] Parâmetros: 2022-9467 
+2026-04-02 13:15:04,438 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 13:15:04,776 - WARNING - [DEBUG SQL] Parâmetros: 2017-188060 
+2026-04-02 13:15:04,777 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 13:15:05,139 - WARNING - [DEBUG SQL] Parâmetros: 2016-78505 
+2026-04-02 13:15:05,140 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 13:15:05,514 - WARNING - [DEBUG SQL] Parâmetros: 2016-78799 
+2026-04-02 13:15:05,514 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 13:15:05,866 - WARNING - [DEBUG SQL] Parâmetros: 2016-78540 
+2026-04-02 13:15:05,866 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 13:15:06,207 - WARNING - [DEBUG SQL] Parâmetros: 2016-73485 
+2026-04-02 13:15:06,208 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 13:15:06,611 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 13:15:06,677 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 13:15:07,031 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 13:15:07,031 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 13:15:07,365 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 13:15:07,366 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 13:15:07,534 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 13:15:07,534 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 13:15:09,238 - INFO - Status atualizado do id 86  com o Status True 02/04/2026 13:15 
+2026-04-02 13:15:09,285 - INFO - minha quantidade de dados processados :  None
+2026-04-02 13:15:09,285 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 13:15:09,287 - INFO - Processamento concluído em 52.50 segundos
+2026-04-02 13:15:09,287 - INFO - Total de registros processados: None
+2026-04-02 13:15:09,288 - ERROR - SAINDO NO FINALIY
+2026-04-02 13:15:09,289 - INFO - [13:15:09] Iniciando a consulta
+2026-04-02 13:15:09,289 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 13:15:09,290 - INFO - [13:15:09] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 13:18:52,474 - INFO - ================================================================================
+2026-04-02 13:18:52,486 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 13:18:52.474669
+2026-04-02 13:18:54,490 - INFO - ================================================================================
+2026-04-02 13:18:54,501 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 13:18:54,505 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 13:18:55,744 - INFO - Status atualizado para ::  - id retornado 87 
+2026-04-02 13:19:37,720 - WARNING - [DEBUG SQL] Parâmetros: 2022-9820 
+2026-04-02 13:19:37,721 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 13:19:38,236 - WARNING - [DEBUG SQL] Parâmetros: 2022-9467 
+2026-04-02 13:19:38,236 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 13:19:38,577 - WARNING - [DEBUG SQL] Parâmetros: 2017-188060 
+2026-04-02 13:19:38,578 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 13:19:38,918 - WARNING - [DEBUG SQL] Parâmetros: 2016-78505 
+2026-04-02 13:19:38,919 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 13:19:39,261 - WARNING - [DEBUG SQL] Parâmetros: 2016-78799 
+2026-04-02 13:19:39,262 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 13:19:39,604 - WARNING - [DEBUG SQL] Parâmetros: 2016-78540 
+2026-04-02 13:19:39,605 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 13:19:39,939 - WARNING - [DEBUG SQL] Parâmetros: 2016-73485 
+2026-04-02 13:19:39,940 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 13:19:40,278 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 13:19:40,278 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 13:19:40,616 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 13:19:40,616 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 13:19:40,956 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 13:19:40,957 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 13:19:41,136 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 13:19:41,136 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 13:19:42,883 - INFO - Status atualizado do id 87  com o Status True 02/04/2026 13:19 
+2026-04-02 13:19:42,917 - INFO - minha quantidade de dados processados :  None
+2026-04-02 13:19:42,918 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 13:19:42,918 - INFO - Processamento concluído em 50.44 segundos
+2026-04-02 13:19:42,918 - INFO - Total de registros processados: None
+2026-04-02 13:19:42,919 - ERROR - SAINDO NO FINALIY
+2026-04-02 13:19:42,919 - INFO - [13:19:42] Iniciando a consulta
+2026-04-02 13:19:42,920 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 13:19:42,920 - INFO - [13:19:42] Erro inesperado: . Continuará em 30 segundos.
+2026-04-02 13:25:39,214 - INFO - ================================================================================
+2026-04-02 13:25:39,235 - INFO - Iniciando Interpol - Consulta Proscore - 2026-04-02 13:25:39.214214
+2026-04-02 13:25:41,277 - INFO - ================================================================================
+2026-04-02 13:25:41,297 - INFO - ESTOU SAINDO AQUI PARA FAZER A CONSULTA 5
+2026-04-02 13:25:41,299 - INFO - Minha Url chamada no Countries: https://ws-public.interpol.int/notices/v1/red?nationality
+2026-04-02 13:25:42,275 - INFO - Status atualizado para ::  - id retornado 88 
+2026-04-02 13:26:25,328 - WARNING - [DEBUG SQL] Parâmetros: 2022-9820 
+2026-04-02 13:26:25,329 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 13:26:25,835 - WARNING - [DEBUG SQL] Parâmetros: 2022-9467 
+2026-04-02 13:26:25,836 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 13:26:26,117 - WARNING - [DEBUG SQL] Parâmetros: 2017-188060 
+2026-04-02 13:26:26,118 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 13:26:26,390 - WARNING - [DEBUG SQL] Parâmetros: 2016-78505 
+2026-04-02 13:26:26,391 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 13:26:26,656 - WARNING - [DEBUG SQL] Parâmetros: 2016-78799 
+2026-04-02 13:26:26,657 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 13:26:26,924 - WARNING - [DEBUG SQL] Parâmetros: 2016-78540 
+2026-04-02 13:26:26,924 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 13:26:27,201 - WARNING - [DEBUG SQL] Parâmetros: 2016-73485 
+2026-04-02 13:26:27,201 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 13:26:27,471 - WARNING - [DEBUG SQL] Parâmetros: 2017-142898 
+2026-04-02 13:26:27,471 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 13:26:27,741 - WARNING - [DEBUG SQL] Parâmetros: 2015-3364 
+2026-04-02 13:26:27,741 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 13:26:28,023 - WARNING - [DEBUG SQL] Parâmetros: 2014-56166 
+2026-04-02 13:26:28,024 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 13:26:28,158 - WARNING - [DEBUG SQL] Parâmetros: 2012-328264 
+2026-04-02 13:26:28,159 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-02 13:26:29,545 - INFO - Status atualizado do id 88  com o Status True 02/04/2026 13:26 
+2026-04-02 13:26:29,586 - INFO - minha quantidade de dados processados :  None
+2026-04-02 13:26:29,586 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-04-02 13:26:29,586 - INFO - Processamento concluído em 50.37 segundos
+2026-04-02 13:26:29,587 - INFO - Total de registros processados: None
+2026-04-02 13:26:29,587 - ERROR - SAINDO NO FINALIY
+2026-04-02 13:26:29,588 - INFO - [13:26:29] Iniciando a consulta
+2026-04-02 13:26:29,588 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-02 13:26:29,589 - INFO - [13:26:29] Erro inesperado: . Continuará em 30 segundos.
