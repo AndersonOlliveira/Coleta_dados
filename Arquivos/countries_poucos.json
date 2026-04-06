@@ -1,18 +1,12 @@
 [
    
+    
     {
-        "name": "Andorra",
-        "value": "AD"
-    },{
-        "name": "Malaysia",
-        "value": "MY"
+        "name": "Paraguay",
+        "value": "PY"
     },
     {
-        "name": "Angola",
-        "value": "AO"
-    },
-    {
-        "name": "Panama",
-        "value": "PA"
+        "name": "Sweden",
+        "value": "SE"
     }
 ]

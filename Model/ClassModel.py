@@ -64,15 +64,9 @@ def insert_interpol(self,registro: Dict, cursor, connection):
 
 
 #inserir o lote dos registos
-def insert_base_interpol(self, registro: dict, conn):
-
-
-
-    # print(registro['nome_completo'])
-    # return 
-
-
-
+# def insert_base_interpol(self, registro: dict, conn, falha_ids):
+def insert_base_interpol(self, registro):
+   
     query = """
            INSERT INTO public.interpol_dados 
                (nome, sexo, nascimento,nacionalidade,idioma,acusacao,foto,data_consulta_fonte,hora_consulta_fonte,nome_buscado)
@@ -106,8 +100,10 @@ def insert_base_interpol(self, registro: dict, conn):
     
     # return
     try:
-       with conn.cursor() as cursor:
-            cursor.execute(query, (
+         
+     with self.db.get_connection() as conn:
+         with conn.cursor() as cursor:
+              cursor.execute(query, (
                 registro['nome_completo'],
                 registro['sexo'],
                 registro['data_nascimento'],
@@ -120,12 +116,30 @@ def insert_base_interpol(self, registro: dict, conn):
                 registro['id_interpol']
             ))
 
-            return cursor.rowcount > 0
+         return {
+                    "id": registro['id_interpol'],
+                    "status": "sucesso"
+                } 
+       
+            # cursor.rowcount > 0
             
-            ClassLogger.logger.info(f"Status atualizado par ")
+         ClassLogger.logger.info(f"INSERIDO ")
     except Exception as e:
-       ClassLogger.logger.error(f"falha em inserir os dados na base  - {repr(e)}")
-       return False
+        # ClassLogger.logger.error(f"falha em inserir os dados na base  - {repr(e)}")
+
+    #    lista_nao_inserido.append({registro['id_interpol']})
+    #    falha_ids.append({
+    #        "id": registro['id_interpol'],
+    #        "erro": str(e)
+    #    })
+        return {
+                "id": registro['id_interpol'],
+                "status": "erro",
+                "person_sigla": registro['person_sigla_unico'],
+                'error': str(e)
+            } 
+
+    #    return False
 
 
 def update_info_process(self,registro: Dict, cursor, connection):

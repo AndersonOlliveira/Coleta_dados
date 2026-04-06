@@ -9,13 +9,20 @@ load_dotenv()
 
 
 def enviar_email_all(corpo):
-    corpo = corpo.replace('\n', '<br>')  # Substitui quebras de linha por <br> para HTML
+    # corpo = corpo.replace('\n', '<br>')  # Substitui quebras de linha por <br> para HTML
+    
+    # corpo_error = corpo_error.replace('\n', '<br>') if corpo_error else ""  # Substitui quebras de linha por <br> para HTML
+   
+    # html_final = f"""
+    # <h2>Resultado da Execução</h2>
+    # {corpo}
+    # <hr>
+    # <h3>Erros</h3>{corpo_error if corpo_error else "<p>Sem erros</p>"}"""
     msg = EmailMessage()
     msg['Subject'] = os.getenv('SMTP_SUBJECT')
     msg['From'] = os.getenv('SMTP_USER')
     msg['To'] = os.getenv('SMTP_DESTINATION')
-    msg.set_content(corpo, subtype='html')  # Define o conteúdo como HTML
-
+    msg.set_content(corpo,subtype='html')  # Define o conteúdo como HTML
     try:
         with smtplib.SMTP(os.getenv('SMTP_HOST'), os.getenv('SMTP_PORT')) as server:
             server.starttls()

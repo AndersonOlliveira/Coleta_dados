@@ -3,7 +3,7 @@ from Logs import ClassLogger
 import os
 import pandas as pd
 from .Request import push_request,push_new_resquests
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import unicodedata
 import re
 from pathlib import Path
@@ -38,9 +38,12 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
     tabela_final = []
     nome_traduzido = set()
     grupos_por_pais = defaultdict(list)
+    id_insert_return_detalhe = []
     contador_por_pais = defaultdict(lambda: {
     "INSERT": 0,
-    "NA": 0
+    "NA": 0,
+    "ERROR":0,
+    "QTINSERT": 0
     })
    
 
@@ -130,21 +133,46 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
 
 
 
-  
+    #  url da busca por id interpol
+    with ConectionClass.DbConnect(self.config, auto_commit=False) as conn_status:
+         cursor_initil = conn_status.cursor()
+         lista_url_interpol = {'periodizacao': self.periodo , 'siglas': 'null', 'url': self.servidor_push_expecifg_id, 'data_captura': datetime.now().strftime("%Y-%m-%d")} 
+         id_insert_return_detalhe.append(insert_interpol(self,lista_url_interpol,cursor_initil,conn_status))
+         conn_status.commit()
+            #  cursor.lastrowid
+         cursor_initil.close()
+          
    
-
+    
     for pessoa in todas_pessoas:
         lista_url = pessoa.get('_links', {}).get('self', {}).get('href')
-        # print(f"Minha lista de url individual primeira chamada {lista_url}")
+
+        print(f"Minha lista de url individual primeira chamada {lista_url}")
     
         if lista_url:
            lista_urls.append(lista_url)
     #CHAMO A API QUE VEM NO RETORNO DA CHAMADA DA PAIS, NELE JA ME ROTANA O LINK COM O ID INDIVIDUAL PARA A PESSOA , COLOCANDO O RESULTANDO DENTRO DE DETALHES PARA POPULAR ABAIXO
+   
     with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
         detalhes = list(executor.map(
         lambda url: push_new_resquests(url, self.time_sleps),
         lista_urls
     ))
+        
+    
+  
+    id_geral_url_interpol = id_insert_return_detalhe[0] if id_insert_return_detalhe else None
+
+            # Percorre a lista e injeta o ID em cada dicionário retornado
+    for item in detalhes:
+        if isinstance(item, dict):
+           item['id_geral_iterpol'] = id_geral_url_interpol
+
+
+    # print(f"ESTOU NO FIM DO FOR DA URL {detalhes}")
+
+    # print(json.dumps(detalhes, indent=4))
+    # return
     
 
 
@@ -199,8 +227,8 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
         print(f"quais sao os sigla_busca apresentados? {sigla_busca} - Total por sigla: {total_por_sigla}") 
         linha_tabela = {
                 'DATA CAPTURA': datetime.now().strftime("%d/%m/%Y %H:%M"),
-                'PAIS BUSCADO': sigla_busca,
-                'TOTAL ENCONTRADO': len(pessoas_do_grupo),
+                'PAIS_BUSCADO': sigla_busca,
+                # 'TOTAL ENCONTRADO': len(pessoas_do_grupo),
                 #'COM DUPLA NACIONALIDADE': total_dupla,
                 # 'PAISES NA LISTA': nome_sigla_traduzido if not paises_encontrados else ", ".join(sorted(paises_encontrados)), 
                 'TOTAL RETORNO API': total_por_sigla
@@ -228,84 +256,88 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
 
     # return
   
-    
-    with self.db.get_connection() as conn:
-        for pessoa, detalhe in zip(todas_pessoas, detalhes):
+    with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
+        with self.db.get_connection() as conn:
+            for pessoa, detalhe in zip(todas_pessoas, detalhes):
 
-            # print()
+                # print()
 
-            entity_id = pessoa.get('entity_id').replace('/','-') if pessoa.get('entity_id') else None
-            name_person = remover_acentos("{} {}".format(pessoa.get('forename'), pessoa.get('name'))).strip()
-            lista_paises_chaves = pessoa.get('nationalities') or []
+                entity_id = pessoa.get('entity_id').replace('/','-') if pessoa.get('entity_id') else None
+                name_person = remover_acentos("{} {}".format(pessoa.get('forename'), pessoa.get('name'))).strip()
+                lista_paises_chaves = pessoa.get('nationalities') or []
 
-            #controlador de status 
-            exist_id = False
-            exist_name = False
-            
-            # print(f"meu nome para busca {name_person}")
-
-            # return
-             #pego os ids da interpol para verificar só que vou ter uma dupla verificacao, pelo o id e pelo o nome
-            person_singla = next((p for p in lista_paises_chaves if p in lista_paises_unicos), 'N/I')
-            # person_singla = list(set(lista_paises_chaves) & set(lista_paises_unicos)) #COM O METODO SET
-            if entity_id:
-            #    dados_busca = search_data_interpol(conn,entity_id)
-                exist_id = search_data_interpol(conn,entity_id)
-                print(f"QUAL E MEU RESULADO AQUI? {exist_id}")
-
-            if not exist_id:
-                print(f"QUAIS OS IDS BUSCADO {entity_id} ||| nome: {name_person}")
-                exist_name = exists_by_name(conn,name_person)
-
-           
-            if not exist_id and not exist_name:
-                print(f"VOU INSEIR O ID {entity_id} | nome: {name_person}")
-                 
-                contador_por_pais[person_singla]["INSERT"] += 1
-                print(f"VOU INSEIR O ID {entity_id} | nome: {name_person} + {person_singla}")
+                #controlador de status 
+                exist_id = False
+                exist_name = False
                 
-                # novos_registros +=1
-                lista_paises = pessoa.get('nationalities') or []
-                print(f"{lista_paises} MEUS DADOSSS")
-                nomes_paises = [mapa.get(pais, pais) for pais in lista_paises]
-                print(f"{nomes_paises} depois do get?")
-                pais_limpo = ','.join(nomes_paises) if nomes_paises else "N/I"
-                sexo = detalhe.get('sex_id') if detalhe else None
-                # crime =  [remover_acentos(warrant.get('charge')).strip() for warrant in detalhe.get('arrest_warrants', [])] if detalhe else None
-                crime_lista = [remover_acentos(warrant.get('charge', '')).strip() for warrant in (detalhe.get('arrest_warrants') or [])]
-                crime = ", ".join(crime_lista) if crime_lista else "N/I"
-                # idiona = [remover_conhetes(lang) for lang in detalhe.get('languages_spoken_ids', [])] if detalhe else None
-                idiona = ", ".join(item.strip("[] ").strip() for item in detalhe.get('languages_spoken_ids', []) or []) if detalhe and detalhe.get('languages_spoken_ids') else "N/I"
+                # print(f"meu nome para busca {name_person}")
+
+                # return
+                #pego os ids da interpol para verificar só que vou ter uma dupla verificacao, pelo o id e pelo o nome
+                person_singla = next((p for p in lista_paises_chaves if p in lista_paises_unicos), 'N/I')
+                # person_singla = list(set(lista_paises_chaves) & set(lista_paises_unicos)) #COM O METODO SET
+                if entity_id:
+                    future_busca = executor.submit(search_data_interpol, conn, entity_id)
+                    exist_id = future_busca.result()
+                    print(f"QUAL E MEU RESULADO AQUI? {exist_id}")
+
+                if not exist_id:
+                    #colocar theads aqui
+                    print(f"QUAIS OS IDS BUSCADO {entity_id} ||| nome: {name_person}")
+                    future_busca_name = executor.submit(exists_by_name,conn,name_person)
+                    exist_name = future_busca_name.result()
+                    # exist_name = exists_by_name(conn,name_person)
+
+            
+                if not exist_id and not exist_name:
+                    print(f"VOU INSEIR O ID {entity_id} | nome: {name_person}")
                     
-                # idiona = ", ".join(item.strip("[] ").strip() for item in detalhe.get('languages_spoken_ids', []) or []) if detalhe else None
-
-
-                #faco uma busca para ver se o id não esta inserido já
+                    contador_por_pais[person_singla]["INSERT"] += 1
+                    print(f"VOU INSEIR O ID {entity_id} | nome: {name_person} + {person_singla}")
                     
+                    # novos_registros +=1
+                    lista_paises = pessoa.get('nationalities') or []
+                    print(f"{lista_paises} MEUS DADOSSS")
+                    nomes_paises = [mapa.get(pais, pais) for pais in lista_paises]
+                    print(f"{nomes_paises} depois do get?")
+                    pais_limpo = ','.join(nomes_paises) if nomes_paises else "N/I"
+                    sexo = detalhe.get('sex_id') if detalhe else None
+                    # crime =  [remover_acentos(warrant.get('charge')).strip() for warrant in detalhe.get('arrest_warrants', [])] if detalhe else None
+                    crime_lista = [remover_acentos(warrant.get('charge', '')).strip() for warrant in (detalhe.get('arrest_warrants') or [])]
+                    crime = ", ".join(crime_lista) if crime_lista else "N/I"
+                    # idiona = [remover_conhetes(lang) for lang in detalhe.get('languages_spoken_ids', [])] if detalhe else None
+                    idiona = ", ".join(item.strip("[] ").strip() for item in detalhe.get('languages_spoken_ids', []) or []) if detalhe and detalhe.get('languages_spoken_ids') else "N/I"
+                    thumbnail = pessoa.get('_links', {}).get('thumbnail', {}).get('href') 
+                    # idiona = ", ".join(item.strip("[] ").strip() for item in detalhe.get('languages_spoken_ids', []) or []) if detalhe else None
 
-                # print(f"crime localizado?: {crime}")
-                # print(type(idiona))
-                lista.append({
-                        # 'primeiro_nome': pessoa.get('name'),
-                        # 'nome_completo': "{} {}".format(pessoa.get('forename'), pessoa.get('name')),
-                        'nome_completo': name_person,
-                        # 'nome_do_meio': pessoa.get('forename'),
-                        'data_nascimento': pessoa.get('date_of_birth').replace('/','-') if pessoa.get('date_of_birth') else None,
-                        'nacionalidade': pais_limpo.upper(),
-                        'id_interpol': entity_id,
-                        'sexo': sexo, 
-                        'acusacao': crime,
-                        'idiona': idiona,
-                        'thumbnail': pessoa.get('_links', {}).get('thumbnail', {}).get('href'), #COMENTEADO PARA NAÓ APRESENTAR EM TELA,
-                        'data_consulta': datetime.now().strftime("%Y-%m-%d"),
-                        'hora_consulta': datetime.now().strftime("%H:%M:%S")
-                })
 
-            else:
-                print(f"vou pular {entity_id} || nome: {name_person}  que pais ???{lista_paises_chaves}")
-                print(f"vou pular {entity_id} | nome: {name_person} + {person_singla}")
-                contador_por_pais[person_singla]["NA"] += 1
-                # registros_pulados +=1
+                    #faco uma busca para ver se o id não esta inserido já
+                        
+
+                    # print(f"crime localizado?: {crime}")
+                    # print(type(idiona))
+                    lista.append({
+                            # 'primeiro_nome': pessoa.get('name'),
+                            # 'nome_completo': "{} {}".format(pessoa.get('forename'), pessoa.get('name')),
+                            'nome_completo': name_person,
+                            # 'nome_do_meio': pessoa.get('forename'),
+                            'data_nascimento': pessoa.get('date_of_birth').replace('/','-') if pessoa.get('date_of_birth') else None,
+                            'nacionalidade': pais_limpo.upper(),
+                            'id_interpol': entity_id,
+                            'sexo': sexo, 
+                            'acusacao': crime,
+                            'idiona': idiona,
+                            'thumbnail': thumbnail if thumbnail else "N/I", #COMENTEADO PARA NAÓ APRESENTAR EM TELA,
+                            'data_consulta': datetime.now().strftime("%Y-%m-%d"),
+                            'hora_consulta': datetime.now().strftime("%H:%M:%S"),
+                            'person_sigla_unico' : person_singla
+                    })
+
+                else:
+                    print(f"vou pular {entity_id} || nome: {name_person}  que pais ???{lista_paises_chaves}")
+                    print(f"vou pular {entity_id} | nome: {name_person} + {person_singla}")
+                    contador_por_pais[person_singla]["NA"] += 1
+                    # registros_pulados +=1
 
     # info_dados_registros = {
     #    "qta_registros_atualizados" :  int(novos_registros),
@@ -314,50 +346,135 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
     
     # tabela_atualizar.append(info_dados_registros)
     for linha in tabela_atualizar:
-        pais = linha['PAIS BUSCADO']
-
-        linha['QTA INSERIDOS'] = contador_por_pais[pais]["INSERT"]
+        pais = linha['PAIS_BUSCADO']
+        #MUNDAR PRA A
+        linha['QTA A INSERIR'] = contador_por_pais[pais]["INSERT"]
         linha['QTA J/N BASE'] = contador_por_pais[pais]["NA"]
         
     print(f"meu contatodor para insercáo de novos registros {novos_registros}")
     print(f"meu contatodor para dados pulados  {registros_pulados}")
+    print(f"ID GERAL DO CONSULTA INDIVIDURAL :: {id_geral_url_interpol}")
+   
+ 
+    # inser_new_registro = 0
+    # falha_ = 0
+    falhas_ids = []
     df = pd.DataFrame(lista)
-    minha_tabela_montada = pd.DataFrame(tabela_atualizar)
-
-    
-    minha_tabela_montada = minha_tabela_montada.fillna(0) 
-
     print(f"Minha quantidade processada {len(df)}")
-    inser_new_registro = 0
+
     if len(df) > 0:
        
-        falha_ = 0
+        
 
         # update_info_process(self, id_insert_return[0])
         alter_status(self, id_insert_return[0])
-        with self.db.get_connection() as conn:
-              conn.autocommit = False
-              for registro in lista:
-                sucesso = insert_base_interpol(self,registro,conn)
-                if sucesso:
-                    inser_new_registro +=1
-                else:
-                    falha_ +=1
+        obs_interpol_success = 'SUCESSO EM CONSULTAR OS IDS INDIVIDUAL INTERPOL'
+        alter_status(self, id_geral_url_interpol,obs_interpol_success)
+
+
+
+        with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
+          
+                futures = [
+                    executor.submit(insert_base_interpol,self,registro)
+                    for registro in lista
+                ]
+                
+                for future in as_completed(futures):
+                    result = future.result()
+
+                    print(f"tenho acesso as siglas {result['person_sigla']}")
+                    
+                    if result['status'] == "sucesso":
+                        # inser_new_registro +=1
+                        contador_por_pais[result['person_sigla']]["QTINSERT"] += 1
+                    else:
+                        falhas_ids.append(result)
+                        # falha_ +=1
+                        contador_por_pais[result['person_sigla']]["ERROR"] += 1
+
+
+         #funcao que esta funcioanndo 
+        # with self.db.get_connection() as conn:
+        #       conn.autocommit = False
+        #       for registro in lista:
+        #         sucesso = insert_base_interpol(self,registro,conn, falhas_ids)
+        #         if sucesso:
+        #             inser_new_registro +=1
+        #         else:
+        #             falha_ +=1
+
 
 
     
-                conn.commit()
+        #         conn.commit()
     else:
         obs = f"SEM ALTERACAO NOS DADOS {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}"
+        obs_interpol = f"SEM CONSULTA INDIVIDUAL {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}"
         alter_status(self, id_insert_return[0],obs)
+        alter_status(self, id_geral_url_interpol,obs_interpol)
     # print(df)
 
     # print(f"{minha_tabela_montada}")
-    print(f"TOTAL DE REGISTROS INSERIDOS :::::{inser_new_registro}")
+    # print(f"MINHA QUANTIDADE COM ERRO {falha_}")
+    # print(f"MINHA LISTA COM OS IDS COM FALAHA PARA INSERIR {falhas_ids}")
+    # print(f"TOTAL DE REGISTROS INSERIDOS :::::{inser_new_registro}")
+    print(f"MEU CONTADORRR :::::{contador_por_pais}")
+
+    
+    
+    
+    
+    
+    for linha in tabela_atualizar:
+        pais = linha['PAIS_BUSCADO']
+        linha['QTA ERROR'] = contador_por_pais[pais]["ERROR"]
+        linha['QTA INSERIDO'] = contador_por_pais[pais]["QTINSERT"]
+
+    
+  
     # if minha_tabela_montada:
-    convertida =  minha_tabela_montada.to_html(index=False, border=1, justify='center')
-    corpo = f"Captura dos dados interpol {datetime.now().strftime("%Y-%m-%d %H:%M:%S")} <br><br> {convertida}"
-    enviar_email_all(corpo)
+
+    #PARA A LISTA
+    
+    minha_tabela_montada = pd.DataFrame(tabela_atualizar)
+    minha_tabela_montada = minha_tabela_montada.fillna(0) 
+
+
+    print(f"MINHA TABELA   :::{minha_tabela_montada}")
+
+    
+    if falhas_ids is not None:
+       tabela_error = pd.DataFrame(falhas_ids)
+       tabela_error = tabela_error.fillna(0) 
+       convertida_error =  tabela_error.to_html(index=False, border=1, justify='center')
+       corpo_error = f"Lista de dados com error :<br> {convertida_error}"
+    
+
+    convertida = minha_tabela_montada.to_html(index=False, border=1, justify='center')
+
+    corpo = f"""
+    <h2 style="color:green;">Captura dos dados interpol</h2>
+    <p>{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</p>
+
+    {convertida}
+    """
+
+    html_final = f"""
+    <html>
+    <body>
+
+    {corpo}
+
+    <hr>
+
+    {corpo_error if corpo_error else "<p>Sem erros encontrados</p>"}
+
+    </body>
+    </html>
+    """
+
+    enviar_email_all(html_final)
 
        
 
@@ -457,7 +574,7 @@ def alter_status(self, id, obs = None):
      with ConectionClass.DbConnect(self.config, auto_commit=False) as conn_status:
              cursor_initil = conn_status.cursor()
              if obs is None:
-                lista_update = {'status': self.true, 'alter_id': id} 
+                lista_update = {'status': self.true, 'alter_id': id ,'obs' : None} 
              else: 
                 lista_update = {'status': self.true, 'alter_id': id, 'obs' : obs}
 

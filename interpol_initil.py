@@ -5,7 +5,7 @@ from Logs import ClassLogger
 import threading
 
 if __name__ == "__main__":
-    instance = Processor(max_workers=2, batch_size=5)
+    instance = Processor(max_workers=3, batch_size=5)
     
     instance.executar_ciclo()
  
