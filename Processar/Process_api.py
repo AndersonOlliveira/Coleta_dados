@@ -44,13 +44,12 @@ def process_api(self):
 
         #      print(dados_decoficados)
         # 
-        lista_retorno = tratar = trata_json(self,caminho_countries,retorno_api,id_insert_return)
+        result_lista = trata_json(self,caminho_countries,retorno_api,id_insert_return)
         
-        
-        # ClassLogger.logger.info(f"minha linhas ....")
+       
+        # if result_lista:
 
-
-        # print(lista_retorno)
+            #mou montar o processo para atualizar os dados e colocar ativo e inativo
  
 
     

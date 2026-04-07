@@ -85,6 +85,9 @@ def push_request(self,countries = None, url_new = None):
         
             if list_siglas:
                 #passando uma letra a mais ele passar por pardao pegar tudo 
+                     
+                #https://ws-public.interpol.int/notices/v1/red?&forename=tha&nationality=BR
+
                 url_completa = f"{url_servidor_nationality}={list_siglas}{params}"
                 links_interpol.append(url_completa)
                 print(f"País: {list_siglas} | Link API: {url_completa}")

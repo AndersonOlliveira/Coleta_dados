@@ -28,6 +28,16 @@ def enviar_email_all(corpo):
             server.starttls()
             server.login(os.getenv('SMTP_USER'), os.getenv('SMTP_PASSWORD'))
             server.send_message(msg)
+
+            return True
+    except smtplib.SMTPException as e:
+          print(f"Erro ao enviar e-mail: {e}") # Captura erros de SMTP
+    
     except Exception as e:
-        print(f"Erro ao enviar email: {e}")
-        raise
+          print(f"Erro inesperado: {e}")
+          raise
+
+    
+    # except Exception as e:
+    #     print(f"Erro ao enviar email: {e}")
+    #     raise

@@ -14,7 +14,7 @@ from urllib.parse import urlparse, parse_qs
 import sys
 # from collections import defaultdict
 from Conexao import ConectionClass,ConectionPool
-from Model.ClassModel import buscar_teste, insert_interpol, update_info_process,search_data_interpol,exists_by_name,insert_base_interpol
+from Model.ClassModel import buscar_teste, insert_interpol, update_info_process,search_data_interpol,exists_by_name,insert_base_interpol,update_data_interpol,update_id_interpol
 
 
 
@@ -252,6 +252,7 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
     registros_pulados = 0
 
     # print(json.dumps(todas_pessoas, indent=4))
+    # ClassLogger.logger.error(json.dumps(todas_pessoas, indent=4))
     # print(grupos_por_pais)
 
     # return
@@ -265,13 +266,14 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
                 entity_id = pessoa.get('entity_id').replace('/','-') if pessoa.get('entity_id') else None
                 name_person = remover_acentos("{} {}".format(pessoa.get('forename'), pessoa.get('name'))).strip()
                 lista_paises_chaves = pessoa.get('nationalities') or []
-
+                naturalidade = (detalhe.get('place_of_birth') or mapa.get(detalhe.get('country_of_birth_id')) or "N/I").upper()
+                thumbnail = pessoa.get('_links', {}).get('thumbnail', {}).get('href') 
+                print(f"dados encontrados: {detalhe.get('place_of_birth')} + NOME PESON {name_person} + naturalidade dois: {naturalidade}  ")
                 #controlador de status 
+                # print(f"ids:: {",".join(entity_id)}")
+                # print(f"Nome:: {",".join(name_person)}")
                 exist_id = False
                 exist_name = False
-                
-                # print(f"meu nome para busca {name_person}")
-
                 # return
                 #pego os ids da interpol para verificar só que vou ter uma dupla verificacao, pelo o id e pelo o nome
                 person_singla = next((p for p in lista_paises_chaves if p in lista_paises_unicos), 'N/I')
@@ -281,11 +283,18 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
                     exist_id = future_busca.result()
                     print(f"QUAL E MEU RESULADO AQUI? {exist_id}")
 
+                    if exist_id: # aqui atualizo sempre que vinher os dados
+                        executor.submit(update_data_interpol, conn, entity_id, naturalidade,thumbnail)
+
                 if not exist_id:
                     #colocar theads aqui
                     print(f"QUAIS OS IDS BUSCADO {entity_id} ||| nome: {name_person}")
                     future_busca_name = executor.submit(exists_by_name,conn,name_person)
                     exist_name = future_busca_name.result()
+                    if exist_name:
+                        #faco o update para o id da interpol para a busca ser mais acertiva 
+                        executor.submit(update_id_interpol, conn, name_person , entity_id)
+
                     # exist_name = exists_by_name(conn,name_person)
 
             
@@ -307,15 +316,9 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
                     crime = ", ".join(crime_lista) if crime_lista else "N/I"
                     # idiona = [remover_conhetes(lang) for lang in detalhe.get('languages_spoken_ids', [])] if detalhe else None
                     idiona = ", ".join(item.strip("[] ").strip() for item in detalhe.get('languages_spoken_ids', []) or []) if detalhe and detalhe.get('languages_spoken_ids') else "N/I"
-                    thumbnail = pessoa.get('_links', {}).get('thumbnail', {}).get('href') 
-                    # idiona = ", ".join(item.strip("[] ").strip() for item in detalhe.get('languages_spoken_ids', []) or []) if detalhe else None
+                    
 
-
-                    #faco uma busca para ver se o id não esta inserido já
-                        
-
-                    # print(f"crime localizado?: {crime}")
-                    # print(type(idiona))
+                   
                     lista.append({
                             # 'primeiro_nome': pessoa.get('name'),
                             # 'nome_completo': "{} {}".format(pessoa.get('forename'), pessoa.get('name')),
@@ -323,10 +326,11 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
                             # 'nome_do_meio': pessoa.get('forename'),
                             'data_nascimento': pessoa.get('date_of_birth').replace('/','-') if pessoa.get('date_of_birth') else None,
                             'nacionalidade': pais_limpo.upper(),
+                            'naturalidade': naturalidade.upper(),
                             'id_interpol': entity_id,
                             'sexo': sexo, 
-                            'acusacao': crime,
-                            'idiona': idiona,
+                            'acusacao': crime.upper(),
+                            'idiona': idiona.upper(),
                             'thumbnail': thumbnail if thumbnail else "N/I", #COMENTEADO PARA NAÓ APRESENTAR EM TELA,
                             'data_consulta': datetime.now().strftime("%Y-%m-%d"),
                             'hora_consulta': datetime.now().strftime("%H:%M:%S"),
@@ -375,23 +379,25 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
 
         with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
           
-                futures = [
-                    executor.submit(insert_base_interpol,self,registro)
-                    for registro in lista
-                ]
-                
-                for future in as_completed(futures):
-                    result = future.result()
-
-                    print(f"tenho acesso as siglas {result['person_sigla']}")
+            futures = [
+                executor.submit(insert_base_interpol,self,registro)
+                      for registro in lista
+             ]
                     
-                    if result['status'] == "sucesso":
-                        # inser_new_registro +=1
-                        contador_por_pais[result['person_sigla']]["QTINSERT"] += 1
-                    else:
-                        falhas_ids.append(result)
-                        # falha_ +=1
-                        contador_por_pais[result['person_sigla']]["ERROR"] += 1
+            for future in as_completed(futures):
+                result = future.result()
+
+
+                print(f"tenho acesso as siglas {result}")
+                # print(f"tenho acesso as siglas {result['person_sigla_unico']}")
+                        
+                if result['status'] == "sucesso":
+                            # inser_new_registro +=1
+                   contador_por_pais[result['person_sigla_unico']]["QTINSERT"] += 1
+                else:
+                   falhas_ids.append(result)
+                            # falha_ +=1
+                   contador_por_pais[result['person_sigla_unico']]["ERROR"] += 1
 
 
          #funcao que esta funcioanndo 
@@ -474,7 +480,13 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
     </html>
     """
 
-    enviar_email_all(html_final)
+    result_email = enviar_email_all(html_final)
+
+    # print(f"Resultado do enviar e-mail {result_email}")
+
+     #envia a quantiade para 
+    return result_email
+
 
        
 
@@ -483,7 +495,7 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
     # for pessoa in tratamento.get('_embedded', {}).get('notices', []):
             
           
-    #     # print(pessoa.get('_links', {}).get('thumbnail',{}).get('href'))
+    #     # print(plenessoa.get('_links', {}).get('thumbnail',{}).get('href'))
     #         # paises = str(pessoa.get('nationalities', "")).strip("[]")
 
     #         lista_paises = pessoa.get('nationalities') or []

@@ -69,8 +69,8 @@ def insert_base_interpol(self, registro):
    
     query = """
            INSERT INTO public.interpol_dados 
-               (nome, sexo, nascimento,nacionalidade,idioma,acusacao,foto,data_consulta_fonte,hora_consulta_fonte,nome_buscado)
-           VALUES  (%s,%s, %s, %s, %s, %s, %s, %s, %s, %s) """
+               (nome, sexo, nascimento,nacionalidade,idioma,acusacao,foto,data_consulta_fonte,hora_consulta_fonte,nome_buscado,naturalidade)
+           VALUES  (%s,%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) """
 
     print(f"Registro a ser inserido: {registro}")
     print(f"{registro['nome_completo']}")
@@ -83,6 +83,8 @@ def insert_base_interpol(self, registro):
     print(f"{registro['data_consulta']}")
     print(f"{registro['hora_consulta']}")
     print(f"{registro['id_interpol']}")
+    print(f"{registro['naturalidade']}")
+    print(f"minha person sigla {registro['person_sigla_unico']}")
 
     print(query)
     print((
@@ -95,7 +97,9 @@ def insert_base_interpol(self, registro):
     registro['thumbnail'],
     registro['data_consulta'],
     registro['hora_consulta'],
-    registro['id_interpol']
+    registro['id_interpol'],
+    registro['naturalidade'],
+    registro['person_sigla_unico']
 ))
     
     # return
@@ -113,12 +117,14 @@ def insert_base_interpol(self, registro):
                 registro['thumbnail'],
                 registro['data_consulta'],
                 registro['hora_consulta'],
-                registro['id_interpol']
+                registro['id_interpol'],
+                registro['naturalidade'],
             ))
 
          return {
                     "id": registro['id_interpol'],
-                    "status": "sucesso"
+                    "status": "sucesso",
+                    "person_sigla_unico": registro['person_sigla_unico']
                 } 
        
             # cursor.rowcount > 0
@@ -135,11 +141,79 @@ def insert_base_interpol(self, registro):
         return {
                 "id": registro['id_interpol'],
                 "status": "erro",
-                "person_sigla": registro['person_sigla_unico'],
+                "person_sigla_unico": registro['person_sigla_unico'],
                 'error': str(e)
             } 
 
     #    return False
+
+def update_data_interpol(conn,id, nat, thumb):
+    
+    query = """UPDATE public.interpol_dados SET 
+                  naturalidade = %s , foto = %s WHERE nome_buscado = %s ;"""
+    
+
+
+    print(f"Registro a ser ida na: {id}")
+    print(f"Registro a ser nat info: {nat}")
+    print(f"Registro a ser nat thumb: {thumb}")
+     
+    try:
+         
+         with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                cursor.execute(query, (nat,thumb,id))
+
+                if cursor.rowcount > 0:
+                    print(f"TIVE SUCESSO EM ATUALIZAR")
+                    return {
+                        "status": "sucesso"
+                    }
+                else:
+                    print(f"TIVE FALHA EM ATUALIZAR")
+                    return {
+                        "status": "erro",
+                        "error": "No rows updated"
+                    }
+    
+    except Exception as e:
+            ClassLogger.logger.error(f"Erro ao atualizar a NATURALIDADE :: {str(e)}")
+           
+            return {
+                    "status": "erro",
+                    "error": str(e)
+                }
+
+       
+def update_id_interpol(conn,name_person, id):
+    
+    query = """UPDATE public.interpol_dados SET 
+                  nome_buscado = %s  WHERE nome = %s ;"""
+
+    print(f"Registro a ser name_person na: {name_person}")
+    print(f"Registro a ser nat info: {id}")
+     
+    try:
+         
+         with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                cursor.execute(query, (id,name_person))
+             
+           
+                return {
+                    "status": "sucesso"
+                }
+    
+    except Exception as e:
+            ClassLogger.logger.error(f"Erro ao atualizar o campo nome Buscado :: {str(e)}")
+           
+            return {
+                    "status": "erro",
+                    "error": str(e)
+                }
+
+       
+              
+
+
 
 
 def update_info_process(self,registro: Dict, cursor, connection):
@@ -147,7 +221,7 @@ def update_info_process(self,registro: Dict, cursor, connection):
 
 
     query = """UPDATE fontes_download.interpol_download  SET 
-                  processado = %s  WHERE id = %s ;"""
+                  naturalidade = %s  WHERE id = %s ;"""
 
     print(f"Registro a ser inserido: {registro}")
     # return
@@ -177,7 +251,7 @@ def update_info_process(self,registro: Dict, cursor, connection):
 
             ClassLogger.logger.info(f"Status atualizado do id {registro['alter_id']}  com o Status {registro['status']} {datetime.now().strftime("%d/%m/%Y %H:%M")} ")
 
-    except Exception as e:
+    except Exception as  e:
      ClassLogger.logger.error(f"Erro ao atualizar status para ::  - {str(e)}")
 
 
@@ -284,3 +358,102 @@ def exists_by_name(conn, person):
             except Exception as e:
                 ClassLogger.logger.error(f"Falha em caputrar os dados o erro vem aqui? - {str(e)}")
                 print(f"que erro foi capturado na busca - {str(e)}")
+
+# PEGOS OS DADOS PARA CHAMAR A API E ATUALIZAR PARA VER ESTA ATIVO E INATIVO
+# def push_data_interpol(conn):
+     
+#             print('PEGO OS DADOS PARA FAZER A PESQUISA POR NOME PARA PEGAR O CPF ONDE E SOMENTE BRALISEIRO')
+          
+
+#             query = """
+#                SELECT UPPER(nome), nascimento, nome_buscado AS ID_INTERPOL, nacionalidade, id as id_tabela FROM public.interpol_dados where nacionalidade  LIKE '%BRAZIL%' AND nome_buscado is not null
+#                GROUP BY nome,nascimento,nome_buscado,nacionalidade,id ORDER BY nome """
+#             try:
+                
+#                 # with self.db.get_connection() as conn:
+#                 with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+#                         cursor.execute(query,)
+#                         resultado = cursor.fetchAll()
+#                         print(f"qual e o resultado {resultado}")
+#                         return resultado
+                                
+#             except Exception as e:
+#                 ClassLogger.logger.error(f"Falha em caputrar os dados o erro vem aqui? - {str(e)}")
+#                 print(f"que erro foi capturado na busca - {str(e)}")
+
+
+
+
+# def get_data_match_name(conn, name,ano):
+     
+     
+#       query = """SELECT UPPER(nome), nascimento, nome_buscado AS ID_INTERPOL, nacionalidade, id as id_tabela FROM public.interpol_dados where nacionalidade  
+#                   LIKE '%BRAZIL%' AND nome_buscado is null
+#                   GROUP BY nome,nascimento,nome_buscado,nacionalidade,id ORDER BY nome"""
+      
+#       try:
+                    
+#             with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+#                             cursor.execute(query, (name,ano))
+#                             resultado = cursor.fetchone()
+#                             print(f"qual e o resultado {resultado}")
+#                             return resultado
+                                    
+#       except Exception as e:
+#                     ClassLogger.logger.error(f"Falha em caputrar os dados o erro vem aqui? - {str(e)}")
+#                     print(f"que erro foi capturado na busca - {str(e)}")
+
+
+
+def get_data_match_name_base(self) -> List[Dict]: 
+     
+     
+      query = """SELECT UPPER(nome) as nome, nascimento, nome_buscado AS ID_INTERPOL, nacionalidade, id as id_tabela FROM public.interpol_dados where nacionalidade  
+                  LIKE '%BRAZIL%' AND nome_buscado is null
+                  GROUP BY nome,nascimento,nome_buscado,nacionalidade,id ORDER BY nome"""
+      
+      try:
+                    
+            with self.db.get_connection() as conn:
+                 with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                      cursor.execute(query,)
+                      registros = cursor.fetchall()
+                
+                      if not registros:
+                        return None
+            
+            
+                
+                 ClassLogger.logger.info(f"Capturados {len(registros)} registros para processamento.")
+                 return [dict(registro) for registro in registros]
+                                    
+      except Exception as e:
+                    ClassLogger.logger.error(f"Falha em caputrar os dados o erro vem aqui?dsdasdas - {str(e)}")
+                    print(f"que erro foi capturado na busca - {str(e)}")
+
+
+# def search_from_name_interpol(self):
+      
+#         query = """SELECT cntcpfcgc as cpf, cntnom as nome,
+#                     cntfisncm as nascimento 
+#                     FROM 
+#                     cnt, cntfis 
+#                     WHERE 
+#                     cntid = cntfiscnt
+#                     AND 
+#                     UPPER(cntnom) = %s  
+#                     AND 
+#                     length(cntcpfcgc) = 11 
+#                     AND cntfisncm = %s"""
+      
+#         try:
+                    
+#             with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+#                             cursor.execute(query, (name,ano))
+#                             resultado = cursor.fetchone()
+#                             print(f"qual e o resultado {resultado}")
+#                             return resultado
+                                    
+#     except Exception as e:
+#                     ClassLogger.logger.error(f"Falha em caputrar os dados o erro vem aqui? - {str(e)}")
+#                     print(f"que erro foi capturado na busca - {str(e)}")
