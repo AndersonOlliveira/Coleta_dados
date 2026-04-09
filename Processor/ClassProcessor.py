@@ -4,6 +4,8 @@ import time
 from Logs import ClassLogger
 from Processar.Process_api import process_api
 from Processar.Process_from_name import process_from_name
+from Processar.Process_verify import process_verify_status
+from Processar.Process_MatchName import process_match_name
 from Conexao import ConectionClass, ConectionPool
 # from db_poll import DbPool
 # from Conexao.ConectionTrheaddeConectionPoll import ConectionClass as t
@@ -22,8 +24,8 @@ class Processor:
         self.batch_size = batch_size
         # self.idProcesso = idProcesso
         self.servidor = 'https://ws-public.interpol.int/notices/v1/red'
-        self.servidor_nationality = 'https://ws-public.interpol.int/notices/v1/red?&forename=JACK&nationality'  #busca por pais gama maior de resultados  o resultado da api mostra no maximo 160 por api 
-        # self.servidor_nationality = 'https://ws-public.interpol.int/notices/v1/red?nationality'  #busca por pais gama maior de resultados  o resultado da api mostra no maximo 160 por api 
+        # self.servidor_nationality = 'https://ws-public.interpol.int/notices/v1/red?&forename=JACK&nationality'  #busca por pais gama maior de resultados  o resultado da api mostra no maximo 160 por api 
+        self.servidor_nationality = 'https://ws-public.interpol.int/notices/v1/red?nationality'  #busca por pais gama maior de resultados  o resultado da api mostra no maximo 160 por api 
         self.servidor_push_expecifg_id= 'https://ws-public.interpol.int/notices/v1/'   # ESTA URL PASSANDO O ID DO DA INTERPOL (entity_id "2026-15452")  ELE TRAZ DADOS ESPECIFICOS EXEMPLO "TIPO DO CRIME, PAIS DE ACUSACAO, LINGUAS QUE FALA,"
         self.servidor_get_from_name= 'https://ws-public.interpol.int/notices/v1/red?&forename'   # ESTA URL PASSANDO O ID DO DA INTERPOL (entity_id "2026-15452")  ELE TRAZ DADOS ESPECIFICOS EXEMPLO "TIPO DO CRIME, PAIS DE ACUSACAO, LINGUAS QUE FALA,"
         self.servidor_headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
@@ -87,6 +89,7 @@ class Processor:
         id_busca = "2012-328264"
         print(f"qual o meu tipo da variavel ? {type(id_busca)}")
         search_data_interpol(self,id_busca)
+        pass
     
     
     def from_name_interpol(self): 
@@ -95,6 +98,17 @@ class Processor:
         # id_busca = "2012-328264"
         # print(f"qual o meu tipo da variavel ? {type(id_busca)}")
         process_from_name(self)
+        pass
+
+    def atualiza_dados_interpol(self):
+        ClassLogger.logger.info('IREI SOLICITAR A PESQUISA PELO O ID PARA SABER SE ESTA ATIVO OU INATIVO')
+
+        process_verify_status(self)
+        
+    def match_name(self):
+        ClassLogger.logger.info('IREI SOLICITAR OS NOME PARA O MATCH NAME , PEGANDO O CPF NA PROSCORE PARA SABER SE ESTA ATIVO OU INATIVO')
+
+        process_match_name(self)
 
 
     def executar_ciclo(self):
@@ -102,5 +116,7 @@ class Processor:
         # self.enviar_email()
         # self.busca_dados()   
         # self.teste_busca_interpol()   
-        self.from_name_interpol()   
+        # self.from_name_interpol()   
+        # self.atualiza_dados_interpol()
+        self.match_name()
         ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] Iniciando a consulta")      

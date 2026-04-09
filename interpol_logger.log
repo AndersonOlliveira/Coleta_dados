@@ -30731,3 +30731,2458 @@ Encerrando loop por comando do usuário (Ctrl+C).
 2026-04-07 17:40:38,231 - INFO - 
 Encerrando loop por comando do usuário (Ctrl+C).
 2026-04-07 17:40:38,231 - INFO - [17:40:38] Erro inesperado: . Continuará em 30 segundos.
+2026-04-07 18:30:10,693 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-07 18:30:11,290 - INFO - Capturados 382 registros para processamento.
+2026-04-07 18:30:11,908 - ERROR - Erro de Conexão: Verifique o host. URL: t
+2026-04-07 18:30:11,949 - ERROR - Erro de Conexão: Verifique o host. URL: t
+2026-04-07 18:30:12,009 - ERROR - Erro de Conexão: Verifique o host. URL: h
+2026-04-07 18:30:14,979 - ERROR - Erro inesperado: Failed to perform, curl: (3) URL rejected: Port number was not a decimal number between 0 and 65535. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-07 18:30:15,079 - ERROR - Erro de Conexão: Verifique o host. URL: p
+2026-04-07 18:30:15,249 - ERROR - Erro de Conexão: Verifique o host. URL: s
+2026-04-07 18:30:16,691 - ERROR - Erro inesperado: Failed to perform, curl: (3) URL rejected: No host part in the URL. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-07 18:30:16,765 - ERROR - Erro inesperado: Failed to perform, curl: (3) URL rejected: No host part in the URL. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-07 18:30:16,938 - ERROR - Erro de Conexão: Verifique o host. URL: w
+2026-04-07 18:30:18,198 - ERROR - Erro de Conexão: Verifique o host. URL: s
+2026-04-07 18:30:18,572 - ERROR - Erro de Conexão: Verifique o host. URL: -
+2026-04-07 18:30:18,683 - ERROR - Erro de Conexão: Verifique o host. URL: p
+2026-04-07 18:30:19,688 - ERROR - Erro de Conexão: Verifique o host. URL: u
+2026-04-07 18:30:20,210 - ERROR - Erro de Conexão: Verifique o host. URL: b
+2026-04-07 18:30:20,400 - ERROR - Erro de Conexão: Verifique o host. URL: l
+2026-04-07 18:30:21,332 - ERROR - Erro de Conexão: Verifique o host. URL: i
+2026-04-07 18:30:22,202 - ERROR - Erro de Conexão: Verifique o host. URL: .
+2026-04-07 18:30:22,250 - ERROR - Erro de Conexão: Verifique o host. URL: c
+2026-04-07 18:30:23,365 - ERROR - Erro de Conexão: Verifique o host. URL: i
+2026-04-07 18:30:23,889 - ERROR - Erro de Conexão: Verifique o host. URL: n
+2026-04-07 18:30:24,094 - ERROR - Erro de Conexão: Verifique o host. URL: t
+2026-04-07 18:30:25,841 - ERROR - Erro de Conexão: Verifique o host. URL: p
+2026-04-07 18:30:25,930 - ERROR - Erro de Conexão: Verifique o host. URL: r
+2026-04-07 18:30:27,248 - ERROR - Erro de Conexão: Verifique o host. URL: e
+2026-04-07 18:30:27,446 - ERROR - Erro de Conexão: Verifique o host. URL: o
+2026-04-07 18:30:27,516 - ERROR - Erro de Conexão: Verifique o host. URL: l
+2026-04-07 18:30:28,994 - ERROR - Erro de Conexão: Verifique o host. URL: .
+2026-04-07 18:30:29,020 - ERROR - Erro de Conexão: Verifique o host. URL: i
+2026-04-07 18:30:29,129 - ERROR - Erro de Conexão: Verifique o host. URL: n
+2026-04-07 18:30:30,649 - ERROR - Erro de Conexão: Verifique o host. URL: t
+2026-04-07 18:30:30,679 - ERROR - Erro inesperado: Failed to perform, curl: (3) URL rejected: No host part in the URL. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-07 18:30:30,882 - ERROR - Erro de Conexão: Verifique o host. URL: n
+2026-04-07 18:30:32,213 - ERROR - Erro de Conexão: Verifique o host. URL: o
+2026-04-07 18:30:32,353 - ERROR - Erro de Conexão: Verifique o host. URL: t
+2026-04-07 18:30:32,398 - ERROR - Erro de Conexão: Verifique o host. URL: i
+2026-04-07 18:30:33,765 - ERROR - Erro de Conexão: Verifique o host. URL: c
+2026-04-07 18:30:33,901 - ERROR - Erro de Conexão: Verifique o host. URL: e
+2026-04-07 18:30:34,057 - ERROR - Erro de Conexão: Verifique o host. URL: s
+2026-04-07 18:30:35,403 - ERROR - Erro inesperado: Failed to perform, curl: (3) URL rejected: No host part in the URL. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-07 18:30:35,717 - ERROR - Erro de Conexão: Verifique o host. URL: 1
+2026-04-07 18:30:35,850 - ERROR - Erro de Conexão: Verifique o host. URL: v
+2026-04-07 18:30:37,113 - ERROR - Erro inesperado: Failed to perform, curl: (3) URL rejected: No host part in the URL. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-07 18:30:37,271 - ERROR - Erro de Conexão: Verifique o host. URL: r
+2026-04-07 18:30:37,586 - ERROR - Erro de Conexão: Verifique o host. URL: e
+2026-04-07 18:30:38,564 - ERROR - Erro de Conexão: Verifique o host. URL: d
+2026-04-07 18:30:38,863 - ERROR - Erro inesperado: Failed to perform, curl: (3) URL rejected: No host part in the URL. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-07 18:30:39,388 - ERROR - Erro inesperado: Failed to perform, curl: (3) URL rejected: Bad hostname. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-07 18:30:40,134 - ERROR - Erro de Conexão: Verifique o host. URL: f
+2026-04-07 18:30:40,713 - ERROR - Erro de Conexão: Verifique o host. URL: o
+2026-04-07 18:30:41,076 - ERROR - Erro de Conexão: Verifique o host. URL: r
+2026-04-07 18:30:41,645 - ERROR - Erro de Conexão: Verifique o host. URL: e
+2026-04-07 18:30:42,324 - ERROR - Erro de Conexão: Verifique o host. URL: n
+2026-04-07 18:30:42,664 - ERROR - Erro de Conexão: Verifique o host. URL: a
+2026-04-07 18:30:43,338 - ERROR - Erro de Conexão: Verifique o host. URL: m
+2026-04-07 18:30:43,902 - ERROR - Erro de Conexão: Verifique o host. URL: e
+2026-04-07 18:30:44,153 - ERROR - Erro inesperado: Failed to perform, curl: (3) URL rejected: Bad hostname. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-07 18:30:45,083 - ERROR - Erro de Conexão: Verifique o host. URL: S
+2026-04-07 18:30:45,420 - ERROR - Erro de Conexão: Verifique o host. URL: I
+2026-04-07 18:30:46,335 - ERROR - Erro de Conexão: Verifique o host. URL: D
+2026-04-07 18:30:47,064 - ERROR - Erro inesperado: Failed to perform, curl: (3) URL rejected: Bad hostname. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-07 18:30:47,524 - ERROR - Erro de Conexão: Verifique o host. URL: r
+2026-04-07 18:30:47,857 - ERROR - Erro de Conexão: Verifique o host. URL: e
+2026-04-07 18:30:48,587 - ERROR - Erro de Conexão: Verifique o host. URL: s
+2026-04-07 18:30:49,016 - ERROR - Erro de Conexão: Verifique o host. URL: u
+2026-04-07 18:30:49,540 - ERROR - Erro de Conexão: Verifique o host. URL: l
+2026-04-07 18:30:50,171 - ERROR - Erro de Conexão: Verifique o host. URL: t
+2026-04-07 18:30:50,641 - ERROR - Erro de Conexão: Verifique o host. URL: P
+2026-04-07 18:30:51,092 - ERROR - Erro de Conexão: Verifique o host. URL: e
+2026-04-07 18:30:51,712 - ERROR - Erro de Conexão: Verifique o host. URL: r
+2026-04-07 18:30:52,323 - ERROR - Erro de Conexão: Verifique o host. URL: P
+2026-04-07 18:30:52,677 - ERROR - Erro de Conexão: Verifique o host. URL: a
+2026-04-07 18:30:53,526 - ERROR - Erro de Conexão: Verifique o host. URL: g
+2026-04-07 18:30:53,860 - ERROR - Erro de Conexão: Verifique o host. URL: e
+2026-04-07 18:30:54,102 - ERROR - Erro inesperado: Failed to perform, curl: (3) URL rejected: Bad hostname. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-07 18:30:55,059 - ERROR - Erro de Conexão: Verifique o host. URL: 1
+2026-04-07 18:30:55,569 - ERROR - Erro de Conexão: Verifique o host. URL: 6
+2026-04-07 18:30:55,605 - ERROR - Erro de Conexão: Verifique o host. URL: 0
+2026-04-07 18:34:12,493 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-07 18:34:13,001 - INFO - Capturados 382 registros para processamento.
+2026-04-07 18:34:13,362 - ERROR - Erro de Conexão: Verifique o host. URL: h
+2026-04-07 18:34:13,391 - ERROR - Erro de Conexão: Verifique o host. URL: t
+2026-04-07 18:34:13,414 - ERROR - Erro de Conexão: Verifique o host. URL: t
+2026-04-07 18:34:15,370 - ERROR - Erro de Conexão: Verifique o host. URL: p
+2026-04-07 18:34:15,435 - ERROR - Erro de Conexão: Verifique o host. URL: s
+2026-04-07 18:34:16,017 - ERROR - Erro inesperado: Failed to perform, curl: (3) URL rejected: Port number was not a decimal number between 0 and 65535. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-07 18:34:16,875 - ERROR - Erro inesperado: Failed to perform, curl: (3) URL rejected: No host part in the URL. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-07 18:34:16,954 - ERROR - Erro inesperado: Failed to perform, curl: (3) URL rejected: No host part in the URL. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-07 18:34:17,483 - ERROR - Erro de Conexão: Verifique o host. URL: w
+2026-04-07 18:34:18,165 - ERROR - Erro de Conexão: Verifique o host. URL: s
+2026-04-07 18:34:18,370 - ERROR - Erro de Conexão: Verifique o host. URL: -
+2026-04-07 18:34:19,104 - ERROR - Erro de Conexão: Verifique o host. URL: p
+2026-04-07 18:34:19,672 - ERROR - Erro de Conexão: Verifique o host. URL: u
+2026-04-07 18:34:19,781 - ERROR - Erro de Conexão: Verifique o host. URL: b
+2026-04-07 18:34:20,624 - ERROR - Erro de Conexão: Verifique o host. URL: l
+2026-04-07 18:34:21,261 - ERROR - Erro de Conexão: Verifique o host. URL: i
+2026-04-07 18:34:21,494 - ERROR - Erro de Conexão: Verifique o host. URL: c
+2026-04-07 18:34:22,122 - ERROR - Erro de Conexão: Verifique o host. URL: .
+2026-04-07 18:34:22,927 - ERROR - Erro de Conexão: Verifique o host. URL: i
+2026-04-07 18:34:23,016 - ERROR - Erro de Conexão: Verifique o host. URL: n
+2026-04-07 18:34:23,604 - ERROR - Erro de Conexão: Verifique o host. URL: t
+2026-04-07 18:34:24,492 - ERROR - Erro de Conexão: Verifique o host. URL: e
+2026-04-07 18:34:24,536 - ERROR - Erro de Conexão: Verifique o host. URL: r
+2026-04-07 18:34:25,184 - ERROR - Erro de Conexão: Verifique o host. URL: p
+2026-04-07 18:34:26,157 - ERROR - Erro de Conexão: Verifique o host. URL: o
+2026-04-07 18:34:26,204 - ERROR - Erro de Conexão: Verifique o host. URL: l
+2026-04-07 18:34:26,804 - ERROR - Erro de Conexão: Verifique o host. URL: .
+2026-04-07 18:34:27,909 - ERROR - Erro de Conexão: Verifique o host. URL: i
+2026-04-07 18:34:27,930 - ERROR - Erro de Conexão: Verifique o host. URL: n
+2026-04-07 18:34:28,402 - ERROR - Erro de Conexão: Verifique o host. URL: t
+2026-04-07 18:34:29,625 - ERROR - Erro inesperado: Failed to perform, curl: (3) URL rejected: No host part in the URL. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-07 18:34:30,703 - ERROR - Erro de Conexão: Verifique o host. URL: n
+2026-04-07 18:34:30,704 - ERROR - Erro de Conexão: Verifique o host. URL: o
+2026-04-07 18:34:31,393 - ERROR - Erro de Conexão: Verifique o host. URL: t
+2026-04-07 18:34:32,366 - ERROR - Erro de Conexão: Verifique o host. URL: c
+2026-04-07 18:34:32,366 - ERROR - Erro de Conexão: Verifique o host. URL: i
+2026-04-07 18:34:33,083 - ERROR - Erro de Conexão: Verifique o host. URL: e
+2026-04-07 18:34:33,896 - ERROR - Erro inesperado: Failed to perform, curl: (3) URL rejected: No host part in the URL. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-07 18:34:33,926 - ERROR - Erro de Conexão: Verifique o host. URL: s
+2026-04-07 18:34:34,599 - ERROR - Erro de Conexão: Verifique o host. URL: v
+2026-04-07 18:34:35,439 - ERROR - Erro de Conexão: Verifique o host. URL: 1
+2026-04-07 18:34:35,478 - ERROR - Erro inesperado: Failed to perform, curl: (3) URL rejected: No host part in the URL. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-07 18:34:36,559 - ERROR - Erro de Conexão: Verifique o host. URL: r
+2026-04-07 18:34:37,433 - ERROR - Erro de Conexão: Verifique o host. URL: e
+2026-04-07 18:34:37,589 - ERROR - Erro de Conexão: Verifique o host. URL: d
+2026-04-07 18:34:38,064 - ERROR - Erro inesperado: Failed to perform, curl: (3) URL rejected: No host part in the URL. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-08 08:44:42,798 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 08:44:43,302 - INFO - Capturados 382 registros para processamento.
+2026-04-08 08:45:40,777 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 08:45:41,224 - INFO - Capturados 382 registros para processamento.
+2026-04-08 08:45:41,396 - INFO - [08:45:41] Iniciando a consulta
+2026-04-08 08:45:41,438 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 08:45:41,497 - INFO - [08:45:41] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 08:47:26,021 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 08:47:26,152 - ERROR - Erro de Conexão: Verifique o host. URL: t
+2026-04-08 08:47:26,154 - ERROR - Erro de Conexão: Verifique o host. URL: t
+2026-04-08 08:47:26,176 - ERROR - Erro de Conexão: Verifique o host. URL: h
+2026-04-08 08:47:29,384 - ERROR - Erro inesperado: Failed to perform, curl: (3) URL rejected: Port number was not a decimal number between 0 and 65535. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-08 08:47:29,427 - ERROR - Erro de Conexão: Verifique o host. URL: s
+2026-04-08 08:47:29,427 - ERROR - Erro de Conexão: Verifique o host. URL: p
+2026-04-08 08:48:53,948 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 08:48:54,087 - ERROR - Erro de Conexão: Verifique o host. URL: t
+2026-04-08 08:48:54,088 - ERROR - Erro de Conexão: Verifique o host. URL: t
+2026-04-08 08:48:54,105 - ERROR - Erro de Conexão: Verifique o host. URL: h
+2026-04-08 08:48:55,458 - ERROR - Erro de Conexão: Verifique o host. URL: p
+2026-04-08 08:48:55,530 - ERROR - Erro inesperado: Failed to perform, curl: (3) URL rejected: Port number was not a decimal number between 0 and 65535. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-08 08:48:55,559 - ERROR - Erro de Conexão: Verifique o host. URL: s
+2026-04-08 08:48:56,709 - ERROR - Erro inesperado: Failed to perform, curl: (3) URL rejected: No host part in the URL. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-08 08:52:36,655 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 08:52:37,088 - ERROR - Falha em caputrar os dados o erro vem aqui?dsdasdas - syntax error at or near "random"
+LINE 3: ...ome_buscado,nacionalidade,id ORDER BY nome limit 1 random() 
+                                                              ^
+
+2026-04-08 08:53:17,958 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 08:53:18,361 - ERROR - Falha em caputrar os dados o erro vem aqui?dsdasdas - syntax error at or near "random"
+LINE 3: ...ome_buscado,nacionalidade,id ORDER BY nome limit 1 random() 
+                                                              ^
+
+2026-04-08 08:56:25,294 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 08:56:25,655 - INFO - Capturados 1 registros para processamento.
+2026-04-08 08:56:25,868 - INFO - [08:56:25] Iniciando a consulta
+2026-04-08 08:56:25,894 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 08:56:25,919 - INFO - [08:56:25] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 08:57:02,730 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 08:57:03,003 - INFO - Capturados 1 registros para processamento.
+2026-04-08 08:57:09,095 - INFO - [08:57:09] Iniciando a consulta
+2026-04-08 08:57:09,095 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 08:57:09,096 - INFO - [08:57:09] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 08:58:01,839 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 08:58:02,113 - INFO - Capturados 1 registros para processamento.
+2026-04-08 08:58:07,764 - INFO - [08:58:07] Iniciando a consulta
+2026-04-08 08:58:07,765 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 08:58:07,766 - INFO - [08:58:07] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 08:58:23,233 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 08:58:23,509 - INFO - Capturados 1 registros para processamento.
+2026-04-08 08:58:29,413 - INFO - [08:58:29] Iniciando a consulta
+2026-04-08 08:58:29,414 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 08:58:29,414 - INFO - [08:58:29] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 09:02:37,778 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 09:02:38,067 - INFO - Capturados 1 registros para processamento.
+2026-04-08 09:02:44,831 - INFO - [09:02:44] Iniciando a consulta
+2026-04-08 09:02:44,831 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 09:02:44,832 - INFO - [09:02:44] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 09:04:30,498 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 09:04:30,839 - INFO - Capturados 1 registros para processamento.
+2026-04-08 09:04:37,464 - INFO - [09:04:37] Iniciando a consulta
+2026-04-08 09:04:37,466 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 09:04:37,469 - INFO - [09:04:37] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 09:05:03,991 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 09:05:04,266 - INFO - Capturados 1 registros para processamento.
+2026-04-08 09:05:10,356 - INFO - [09:05:10] Iniciando a consulta
+2026-04-08 09:05:10,356 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 09:05:10,357 - INFO - [09:05:10] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 09:05:47,528 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 09:05:47,800 - INFO - Capturados 1 registros para processamento.
+2026-04-08 09:05:53,875 - INFO - [09:05:53] Iniciando a consulta
+2026-04-08 09:05:53,875 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 09:05:53,876 - INFO - [09:05:53] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 09:08:17,803 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 09:08:18,094 - INFO - Capturados 1 registros para processamento.
+2026-04-08 09:08:24,327 - INFO - [09:08:24] Iniciando a consulta
+2026-04-08 09:08:24,328 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 09:08:24,328 - INFO - [09:08:24] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 09:09:17,611 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 09:09:17,888 - INFO - Capturados 1 registros para processamento.
+2026-04-08 09:10:19,523 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 09:10:19,799 - INFO - Capturados 1 registros para processamento.
+2026-04-08 09:10:26,311 - INFO - [09:10:26] Iniciando a consulta
+2026-04-08 09:10:26,312 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 09:10:26,312 - INFO - [09:10:26] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 09:16:04,823 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 09:16:05,097 - INFO - Capturados 1 registros para processamento.
+2026-04-08 09:16:10,760 - WARNING - [DEBUG SQL] Parâmetros: 2026-10606 
+2026-04-08 09:16:10,760 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:11,031 - WARNING - [DEBUG SQL] Parâmetros: 2026-12183 
+2026-04-08 09:16:11,032 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:11,306 - WARNING - [DEBUG SQL] Parâmetros: 2025-81680 
+2026-04-08 09:16:11,308 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:11,579 - WARNING - [DEBUG SQL] Parâmetros: 2025-81668 
+2026-04-08 09:16:11,579 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:11,853 - WARNING - [DEBUG SQL] Parâmetros: 2025-81677 
+2026-04-08 09:16:11,853 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:12,137 - WARNING - [DEBUG SQL] Parâmetros: 2025-81693 
+2026-04-08 09:16:12,138 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:12,446 - WARNING - [DEBUG SQL] Parâmetros: 2025-53283 
+2026-04-08 09:16:12,447 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:12,736 - WARNING - [DEBUG SQL] Parâmetros: 2025-27591 
+2026-04-08 09:16:12,738 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:13,028 - WARNING - [DEBUG SQL] Parâmetros: 2023-60112 
+2026-04-08 09:16:13,030 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:13,372 - WARNING - [DEBUG SQL] Parâmetros: 2025-1473 
+2026-04-08 09:16:13,373 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:13,528 - WARNING - [DEBUG SQL] Parâmetros: 2024-79251 
+2026-04-08 09:16:13,529 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:13,849 - WARNING - [DEBUG SQL] Parâmetros: 2024-4308 
+2026-04-08 09:16:13,852 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:14,168 - WARNING - [DEBUG SQL] Parâmetros: 2023-81432 
+2026-04-08 09:16:14,169 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:14,449 - WARNING - [DEBUG SQL] Parâmetros: 2023-80135 
+2026-04-08 09:16:14,449 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:14,731 - WARNING - [DEBUG SQL] Parâmetros: 2023-76110 
+2026-04-08 09:16:14,733 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:15,017 - WARNING - [DEBUG SQL] Parâmetros: 2023-75380 
+2026-04-08 09:16:15,018 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:15,298 - WARNING - [DEBUG SQL] Parâmetros: 2023-70635 
+2026-04-08 09:16:15,298 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:15,636 - WARNING - [DEBUG SQL] Parâmetros: 2023-61799 
+2026-04-08 09:16:15,748 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:16,050 - WARNING - [DEBUG SQL] Parâmetros: 2023-44328 
+2026-04-08 09:16:16,051 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:16,483 - WARNING - [DEBUG SQL] Parâmetros: 2023-42211 
+2026-04-08 09:16:16,484 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:16,784 - WARNING - [DEBUG SQL] Parâmetros: 2023-37945 
+2026-04-08 09:16:16,787 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:17,086 - WARNING - [DEBUG SQL] Parâmetros: 2023-37937 
+2026-04-08 09:16:17,089 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:17,392 - WARNING - [DEBUG SQL] Parâmetros: 2023-25413 
+2026-04-08 09:16:17,400 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:17,695 - WARNING - [DEBUG SQL] Parâmetros: 2023-23225 
+2026-04-08 09:16:17,699 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:18,135 - WARNING - [DEBUG SQL] Parâmetros: 2023-17139 
+2026-04-08 09:16:18,136 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:18,465 - WARNING - [DEBUG SQL] Parâmetros: 2023-12100 
+2026-04-08 09:16:18,466 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:18,627 - WARNING - [DEBUG SQL] Parâmetros: 2022-85800 
+2026-04-08 09:16:18,634 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:18,988 - WARNING - [DEBUG SQL] Parâmetros: 2016-11446 
+2026-04-08 09:16:18,998 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:19,346 - WARNING - [DEBUG SQL] Parâmetros: 2022-70900 
+2026-04-08 09:16:19,385 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:19,730 - WARNING - [DEBUG SQL] Parâmetros: 2022-67244 
+2026-04-08 09:16:19,746 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:20,121 - WARNING - [DEBUG SQL] Parâmetros: 2022-41269 
+2026-04-08 09:16:20,122 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:20,422 - WARNING - [DEBUG SQL] Parâmetros: 2022-26400 
+2026-04-08 09:16:20,423 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:20,718 - WARNING - [DEBUG SQL] Parâmetros: 2022-23166 
+2026-04-08 09:16:20,719 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:21,016 - WARNING - [DEBUG SQL] Parâmetros: 2022-10583 
+2026-04-08 09:16:21,016 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:21,714 - WARNING - [DEBUG SQL] Parâmetros: 2022-6411 
+2026-04-08 09:16:21,715 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:21,997 - WARNING - [DEBUG SQL] Parâmetros: 2022-4739 
+2026-04-08 09:16:21,997 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:22,283 - WARNING - [DEBUG SQL] Parâmetros: 2021-75211 
+2026-04-08 09:16:22,284 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:22,595 - WARNING - [DEBUG SQL] Parâmetros: 2021-69577 
+2026-04-08 09:16:22,596 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:22,882 - WARNING - [DEBUG SQL] Parâmetros: 2021-70012 
+2026-04-08 09:16:22,886 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:23,195 - WARNING - [DEBUG SQL] Parâmetros: 2021-66961 
+2026-04-08 09:16:23,195 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:23,494 - WARNING - [DEBUG SQL] Parâmetros: 2021-64469 
+2026-04-08 09:16:23,497 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:23,962 - WARNING - [DEBUG SQL] Parâmetros: 2021-54617 
+2026-04-08 09:16:23,963 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:24,317 - WARNING - [DEBUG SQL] Parâmetros: 2021-56446 
+2026-04-08 09:16:24,333 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:24,470 - WARNING - [DEBUG SQL] Parâmetros: 2021-42322 
+2026-04-08 09:16:24,471 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:24,777 - WARNING - [DEBUG SQL] Parâmetros: 2021-37445 
+2026-04-08 09:16:24,779 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:25,098 - WARNING - [DEBUG SQL] Parâmetros: 2021-29398 
+2026-04-08 09:16:25,108 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:25,261 - WARNING - [DEBUG SQL] Parâmetros: 2021-27893 
+2026-04-08 09:16:25,264 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:25,561 - WARNING - [DEBUG SQL] Parâmetros: 2021-11727 
+2026-04-08 09:16:25,566 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:25,734 - WARNING - [DEBUG SQL] Parâmetros: 2020-84759 
+2026-04-08 09:16:25,741 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:26,045 - WARNING - [DEBUG SQL] Parâmetros: 2020-78976 
+2026-04-08 09:16:26,047 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:26,328 - WARNING - [DEBUG SQL] Parâmetros: 2020-78663 
+2026-04-08 09:16:26,329 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:26,611 - WARNING - [DEBUG SQL] Parâmetros: 2020-73968 
+2026-04-08 09:16:26,617 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:26,893 - WARNING - [DEBUG SQL] Parâmetros: 2020-20417 
+2026-04-08 09:16:26,894 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:27,177 - WARNING - [DEBUG SQL] Parâmetros: 2020-13935 
+2026-04-08 09:16:27,179 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:27,469 - WARNING - [DEBUG SQL] Parâmetros: 2020-5693 
+2026-04-08 09:16:27,471 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:27,758 - WARNING - [DEBUG SQL] Parâmetros: 2020-2589 
+2026-04-08 09:16:27,763 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:28,055 - WARNING - [DEBUG SQL] Parâmetros: 2019-124014 
+2026-04-08 09:16:28,059 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:28,203 - WARNING - [DEBUG SQL] Parâmetros: 2019-103170 
+2026-04-08 09:16:28,205 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:28,491 - WARNING - [DEBUG SQL] Parâmetros: 2019-97520 
+2026-04-08 09:16:28,496 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:28,790 - WARNING - [DEBUG SQL] Parâmetros: 2019-84525 
+2026-04-08 09:16:28,793 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:29,164 - WARNING - [DEBUG SQL] Parâmetros: 2019-53994 
+2026-04-08 09:16:29,165 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:29,567 - WARNING - [DEBUG SQL] Parâmetros: 2019-45904 
+2026-04-08 09:16:29,569 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:29,859 - WARNING - [DEBUG SQL] Parâmetros: 2019-38494 
+2026-04-08 09:16:29,864 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:30,168 - WARNING - [DEBUG SQL] Parâmetros: 2014-54474 
+2026-04-08 09:16:30,178 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:30,494 - WARNING - [DEBUG SQL] Parâmetros: 2019-37426 
+2026-04-08 09:16:30,497 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:30,784 - WARNING - [DEBUG SQL] Parâmetros: 2019-37002 
+2026-04-08 09:16:30,785 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:31,073 - WARNING - [DEBUG SQL] Parâmetros: 2019-32582 
+2026-04-08 09:16:31,074 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:31,351 - WARNING - [DEBUG SQL] Parâmetros: 2019-31265 
+2026-04-08 09:16:31,356 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:31,651 - WARNING - [DEBUG SQL] Parâmetros: 2019-31310 
+2026-04-08 09:16:31,657 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:31,991 - WARNING - [DEBUG SQL] Parâmetros: 2019-31314 
+2026-04-08 09:16:31,992 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:32,273 - WARNING - [DEBUG SQL] Parâmetros: 2019-31287 
+2026-04-08 09:16:32,275 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:32,568 - WARNING - [DEBUG SQL] Parâmetros: 2019-31207 
+2026-04-08 09:16:32,570 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:32,871 - WARNING - [DEBUG SQL] Parâmetros: 2019-24625 
+2026-04-08 09:16:32,873 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:33,160 - WARNING - [DEBUG SQL] Parâmetros: 2019-24670 
+2026-04-08 09:16:33,161 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:33,453 - WARNING - [DEBUG SQL] Parâmetros: 2019-25670 
+2026-04-08 09:16:33,460 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:33,750 - WARNING - [DEBUG SQL] Parâmetros: 2019-22063 
+2026-04-08 09:16:33,752 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:34,038 - WARNING - [DEBUG SQL] Parâmetros: 2019-22059 
+2026-04-08 09:16:34,040 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:34,352 - WARNING - [DEBUG SQL] Parâmetros: 2019-21543 
+2026-04-08 09:16:34,358 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:34,633 - WARNING - [DEBUG SQL] Parâmetros: 2019-21569 
+2026-04-08 09:16:34,634 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:35,100 - WARNING - [DEBUG SQL] Parâmetros: 2019-20522 
+2026-04-08 09:16:35,120 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:35,482 - WARNING - [DEBUG SQL] Parâmetros: 2019-17157 
+2026-04-08 09:16:35,484 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:35,840 - WARNING - [DEBUG SQL] Parâmetros: 2019-15418 
+2026-04-08 09:16:35,840 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:36,128 - WARNING - [DEBUG SQL] Parâmetros: 2019-14340 
+2026-04-08 09:16:36,128 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:36,418 - WARNING - [DEBUG SQL] Parâmetros: 2018-92763 
+2026-04-08 09:16:36,426 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:36,765 - WARNING - [DEBUG SQL] Parâmetros: 2018-93604 
+2026-04-08 09:16:36,783 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:37,112 - WARNING - [DEBUG SQL] Parâmetros: 2018-90843 
+2026-04-08 09:16:37,113 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:37,406 - WARNING - [DEBUG SQL] Parâmetros: 2018-79949 
+2026-04-08 09:16:37,407 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:37,699 - WARNING - [DEBUG SQL] Parâmetros: 2018-76211 
+2026-04-08 09:16:37,729 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:38,034 - WARNING - [DEBUG SQL] Parâmetros: 2018-66704 
+2026-04-08 09:16:38,055 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:38,353 - WARNING - [DEBUG SQL] Parâmetros: 2018-70252 
+2026-04-08 09:16:38,356 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:38,647 - WARNING - [DEBUG SQL] Parâmetros: 2018-69013 
+2026-04-08 09:16:38,648 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:38,948 - WARNING - [DEBUG SQL] Parâmetros: 2018-67820 
+2026-04-08 09:16:38,950 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:39,241 - WARNING - [DEBUG SQL] Parâmetros: 2018-67318 
+2026-04-08 09:16:39,246 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:39,526 - WARNING - [DEBUG SQL] Parâmetros: 2018-67796 
+2026-04-08 09:16:39,526 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:39,816 - WARNING - [DEBUG SQL] Parâmetros: 2018-67064 
+2026-04-08 09:16:39,818 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:40,104 - WARNING - [DEBUG SQL] Parâmetros: 2018-67018 
+2026-04-08 09:16:40,104 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:40,405 - WARNING - [DEBUG SQL] Parâmetros: 2018-66676 
+2026-04-08 09:16:40,406 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:40,698 - WARNING - [DEBUG SQL] Parâmetros: 2018-66036 
+2026-04-08 09:16:40,705 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:40,990 - WARNING - [DEBUG SQL] Parâmetros: 2018-63409 
+2026-04-08 09:16:40,991 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:41,275 - WARNING - [DEBUG SQL] Parâmetros: 2018-61788 
+2026-04-08 09:16:41,277 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:41,562 - WARNING - [DEBUG SQL] Parâmetros: 2018-59823 
+2026-04-08 09:16:41,564 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:41,872 - WARNING - [DEBUG SQL] Parâmetros: 2015-79344 
+2026-04-08 09:16:41,873 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:42,169 - WARNING - [DEBUG SQL] Parâmetros: 2018-44005 
+2026-04-08 09:16:42,171 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:42,459 - WARNING - [DEBUG SQL] Parâmetros: 2018-40688 
+2026-04-08 09:16:42,461 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:42,755 - WARNING - [DEBUG SQL] Parâmetros: 2018-40917 
+2026-04-08 09:16:42,757 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:43,088 - WARNING - [DEBUG SQL] Parâmetros: 2018-39517 
+2026-04-08 09:16:43,088 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:43,381 - WARNING - [DEBUG SQL] Parâmetros: 2018-38189 
+2026-04-08 09:16:43,387 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:43,679 - WARNING - [DEBUG SQL] Parâmetros: 2018-38183 
+2026-04-08 09:16:43,681 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:43,830 - WARNING - [DEBUG SQL] Parâmetros: 2018-38179 
+2026-04-08 09:16:43,834 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:44,122 - WARNING - [DEBUG SQL] Parâmetros: 2018-37354 
+2026-04-08 09:16:44,126 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:44,476 - WARNING - [DEBUG SQL] Parâmetros: 2018-36558 
+2026-04-08 09:16:44,478 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:44,624 - WARNING - [DEBUG SQL] Parâmetros: 2018-30329 
+2026-04-08 09:16:44,625 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:44,910 - WARNING - [DEBUG SQL] Parâmetros: 2018-21716 
+2026-04-08 09:16:44,914 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:45,206 - WARNING - [DEBUG SQL] Parâmetros: 2018-18391 
+2026-04-08 09:16:45,208 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:45,492 - WARNING - [DEBUG SQL] Parâmetros: 2018-16264 
+2026-04-08 09:16:45,494 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:45,781 - WARNING - [DEBUG SQL] Parâmetros: 2018-12076 
+2026-04-08 09:16:45,784 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:46,109 - WARNING - [DEBUG SQL] Parâmetros: 2018-7779 
+2026-04-08 09:16:46,114 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:46,411 - WARNING - [DEBUG SQL] Parâmetros: 2018-8900 
+2026-04-08 09:16:46,417 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:46,722 - WARNING - [DEBUG SQL] Parâmetros: 2018-7155 
+2026-04-08 09:16:46,747 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:47,048 - WARNING - [DEBUG SQL] Parâmetros: 2017-290264 
+2026-04-08 09:16:47,049 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:47,346 - WARNING - [DEBUG SQL] Parâmetros: 2017-285634 
+2026-04-08 09:16:47,349 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:47,658 - WARNING - [DEBUG SQL] Parâmetros: 2017-284093 
+2026-04-08 09:16:47,661 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:47,952 - WARNING - [DEBUG SQL] Parâmetros: 2017-283053 
+2026-04-08 09:16:47,955 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:48,240 - WARNING - [DEBUG SQL] Parâmetros: 2017-283011 
+2026-04-08 09:16:48,243 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:48,546 - WARNING - [DEBUG SQL] Parâmetros: 2017-283438 
+2026-04-08 09:16:48,551 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:48,872 - WARNING - [DEBUG SQL] Parâmetros: 2017-283101 
+2026-04-08 09:16:48,872 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:49,151 - WARNING - [DEBUG SQL] Parâmetros: 2017-281761 
+2026-04-08 09:16:49,153 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:49,435 - WARNING - [DEBUG SQL] Parâmetros: 2017-281759 
+2026-04-08 09:16:49,437 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:49,719 - WARNING - [DEBUG SQL] Parâmetros: 2017-279302 
+2026-04-08 09:16:49,722 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:50,016 - WARNING - [DEBUG SQL] Parâmetros: 2017-277970 
+2026-04-08 09:16:50,019 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:50,168 - WARNING - [DEBUG SQL] Parâmetros: 2017-271902 
+2026-04-08 09:16:50,170 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:50,456 - WARNING - [DEBUG SQL] Parâmetros: 2017-256838 
+2026-04-08 09:16:50,461 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:50,751 - WARNING - [DEBUG SQL] Parâmetros: 2017-234876 
+2026-04-08 09:16:50,752 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:51,043 - WARNING - [DEBUG SQL] Parâmetros: 2017-234836 
+2026-04-08 09:16:51,044 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:51,317 - WARNING - [DEBUG SQL] Parâmetros: 2017-234532 
+2026-04-08 09:16:51,318 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:51,628 - WARNING - [DEBUG SQL] Parâmetros: 2017-235197 
+2026-04-08 09:16:51,674 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:51,952 - WARNING - [DEBUG SQL] Parâmetros: 2017-204158 
+2026-04-08 09:16:51,953 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:52,242 - WARNING - [DEBUG SQL] Parâmetros: 2017-199322 
+2026-04-08 09:16:52,246 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:52,627 - WARNING - [DEBUG SQL] Parâmetros: 2017-195372 
+2026-04-08 09:16:52,644 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:53,026 - WARNING - [DEBUG SQL] Parâmetros: 2017-191840 
+2026-04-08 09:16:53,028 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:53,321 - WARNING - [DEBUG SQL] Parâmetros: 2017-187823 
+2026-04-08 09:16:53,327 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:53,607 - WARNING - [DEBUG SQL] Parâmetros: 2017-131907 
+2026-04-08 09:16:53,610 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:53,896 - WARNING - [DEBUG SQL] Parâmetros: 2017-16355 
+2026-04-08 09:16:53,898 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:54,228 - WARNING - [DEBUG SQL] Parâmetros: 2017-129060 
+2026-04-08 09:16:54,229 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:54,514 - WARNING - [DEBUG SQL] Parâmetros: 2017-10136 
+2026-04-08 09:16:54,518 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:54,804 - WARNING - [DEBUG SQL] Parâmetros: 2017-2727 
+2026-04-08 09:16:54,806 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:55,103 - WARNING - [DEBUG SQL] Parâmetros: 2017-4505 
+2026-04-08 09:16:55,105 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:55,393 - WARNING - [DEBUG SQL] Parâmetros: 2017-3408 
+2026-04-08 09:16:55,395 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:55,682 - WARNING - [DEBUG SQL] Parâmetros: 2016-53271 
+2026-04-08 09:16:55,685 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:55,988 - WARNING - [DEBUG SQL] Parâmetros: 2016-49370 
+2026-04-08 09:16:55,990 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:56,310 - WARNING - [DEBUG SQL] Parâmetros: 2016-17154 
+2026-04-08 09:16:56,314 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:56,606 - WARNING - [DEBUG SQL] Parâmetros: 2016-5032 
+2026-04-08 09:16:56,609 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:56,765 - WARNING - [DEBUG SQL] Parâmetros: 2015-80140 
+2026-04-08 09:16:56,766 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:57,049 - WARNING - [DEBUG SQL] Parâmetros: 2015-42000 
+2026-04-08 09:16:57,055 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:57,356 - WARNING - [DEBUG SQL] Parâmetros: 2015-960 
+2026-04-08 09:16:57,359 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:57,647 - WARNING - [DEBUG SQL] Parâmetros: 2014-70800 
+2026-04-08 09:16:57,649 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:57,935 - WARNING - [DEBUG SQL] Parâmetros: 2014-41155 
+2026-04-08 09:16:57,937 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:58,237 - WARNING - [DEBUG SQL] Parâmetros: 2014-31820 
+2026-04-08 09:16:58,239 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:58,542 - WARNING - [DEBUG SQL] Parâmetros: 2014-4740 
+2026-04-08 09:16:58,546 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:58,837 - WARNING - [DEBUG SQL] Parâmetros: 2014-4205 
+2026-04-08 09:16:58,839 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:16:59,407 - INFO - [09:16:59] Iniciando a consulta
+2026-04-08 09:16:59,407 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 09:16:59,408 - INFO - [09:16:59] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 09:19:56,853 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 09:19:57,127 - INFO - Capturados 1 registros para processamento.
+2026-04-08 09:21:50,395 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 09:21:51,155 - INFO - Capturados 1 registros para processamento.
+2026-04-08 09:21:57,234 - INFO - [09:21:57] Iniciando a consulta
+2026-04-08 09:21:57,235 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 09:21:57,235 - INFO - [09:21:57] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 09:24:08,181 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 09:24:08,463 - INFO - Capturados 1 registros para processamento.
+2026-04-08 09:24:14,136 - WARNING - [DEBUG SQL] Parâmetros: 2021-46260 
+2026-04-08 09:24:14,137 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:24:14,655 - WARNING - [DEBUG SQL] Parâmetros: 2021-35749 
+2026-04-08 09:24:14,657 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:24:14,967 - WARNING - [DEBUG SQL] Parâmetros: 2019-122218 
+2026-04-08 09:24:14,970 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:24:15,265 - WARNING - [DEBUG SQL] Parâmetros: 2018-67062 
+2026-04-08 09:24:15,268 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:24:15,561 - WARNING - [DEBUG SQL] Parâmetros: 1999-37979 
+2026-04-08 09:24:15,564 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:24:16,057 - INFO - [09:24:16] Iniciando a consulta
+2026-04-08 09:24:16,057 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 09:24:16,058 - INFO - [09:24:16] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 09:32:25,700 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 09:32:25,984 - INFO - Capturados 1 registros para processamento.
+2026-04-08 09:32:31,792 - WARNING - [DEBUG SQL] Parâmetros: 2025-81647 
+2026-04-08 09:32:31,804 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:32,255 - WARNING - [DEBUG SQL] Parâmetros: 2025-81681 
+2026-04-08 09:32:32,257 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:32,558 - WARNING - [DEBUG SQL] Parâmetros: 2025-80858 
+2026-04-08 09:32:32,561 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:32,858 - WARNING - [DEBUG SQL] Parâmetros: 2024-79715 
+2026-04-08 09:32:32,860 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:33,154 - WARNING - [DEBUG SQL] Parâmetros: 2024-12115 
+2026-04-08 09:32:33,156 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:33,476 - WARNING - [DEBUG SQL] Parâmetros: 2023-83873 
+2026-04-08 09:32:33,480 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:33,803 - WARNING - [DEBUG SQL] Parâmetros: 2023-809 
+2026-04-08 09:32:33,806 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:34,115 - WARNING - [DEBUG SQL] Parâmetros: 2022-77600 
+2026-04-08 09:32:34,116 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:34,418 - WARNING - [DEBUG SQL] Parâmetros: 2022-16938 
+2026-04-08 09:32:34,419 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:34,706 - WARNING - [DEBUG SQL] Parâmetros: 2021-83806 
+2026-04-08 09:32:34,710 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:35,001 - WARNING - [DEBUG SQL] Parâmetros: 2021-71104 
+2026-04-08 09:32:35,042 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:35,346 - WARNING - [DEBUG SQL] Parâmetros: 2021-41631 
+2026-04-08 09:32:35,347 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:35,649 - WARNING - [DEBUG SQL] Parâmetros: 2021-27893 
+2026-04-08 09:32:35,651 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:35,963 - WARNING - [DEBUG SQL] Parâmetros: 2020-81295 
+2026-04-08 09:32:35,965 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:36,275 - WARNING - [DEBUG SQL] Parâmetros: 1991-15958 
+2026-04-08 09:32:36,278 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:36,591 - WARNING - [DEBUG SQL] Parâmetros: 2020-22565 
+2026-04-08 09:32:36,594 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:36,900 - WARNING - [DEBUG SQL] Parâmetros: 2020-18510 
+2026-04-08 09:32:36,901 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:37,192 - WARNING - [DEBUG SQL] Parâmetros: 2020-1871 
+2026-04-08 09:32:37,194 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:37,494 - WARNING - [DEBUG SQL] Parâmetros: 2010-5887 
+2026-04-08 09:32:37,495 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:37,786 - WARNING - [DEBUG SQL] Parâmetros: 2019-105966 
+2026-04-08 09:32:37,789 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:38,094 - WARNING - [DEBUG SQL] Parâmetros: 2013-63508 
+2026-04-08 09:32:38,096 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:38,433 - WARNING - [DEBUG SQL] Parâmetros: 2019-45870 
+2026-04-08 09:32:38,451 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:38,765 - WARNING - [DEBUG SQL] Parâmetros: 2019-20520 
+2026-04-08 09:32:38,774 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:39,106 - WARNING - [DEBUG SQL] Parâmetros: 2019-15734 
+2026-04-08 09:32:39,112 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:39,393 - WARNING - [DEBUG SQL] Parâmetros: 2018-83406 
+2026-04-08 09:32:39,393 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:39,755 - WARNING - [DEBUG SQL] Parâmetros: 2018-73926 
+2026-04-08 09:32:39,794 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:40,104 - WARNING - [DEBUG SQL] Parâmetros: 2018-77020 
+2026-04-08 09:32:40,105 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:40,405 - WARNING - [DEBUG SQL] Parâmetros: 2018-52680 
+2026-04-08 09:32:40,406 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:40,698 - WARNING - [DEBUG SQL] Parâmetros: 2018-52277 
+2026-04-08 09:32:40,702 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:40,999 - WARNING - [DEBUG SQL] Parâmetros: 2018-14538 
+2026-04-08 09:32:41,002 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:41,363 - WARNING - [DEBUG SQL] Parâmetros: 2018-3918 
+2026-04-08 09:32:41,372 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:41,689 - WARNING - [DEBUG SQL] Parâmetros: 2017-282250 
+2026-04-08 09:32:41,693 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:41,983 - WARNING - [DEBUG SQL] Parâmetros: 2017-271877 
+2026-04-08 09:32:41,986 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:42,302 - WARNING - [DEBUG SQL] Parâmetros: 2017-271879 
+2026-04-08 09:32:42,314 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:42,620 - WARNING - [DEBUG SQL] Parâmetros: 2017-198429 
+2026-04-08 09:32:42,621 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:42,914 - WARNING - [DEBUG SQL] Parâmetros: 2017-198475 
+2026-04-08 09:32:42,918 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:43,201 - WARNING - [DEBUG SQL] Parâmetros: 2014-58818 
+2026-04-08 09:32:43,203 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:43,502 - WARNING - [DEBUG SQL] Parâmetros: 2016-41045 
+2026-04-08 09:32:43,503 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:43,964 - WARNING - [DEBUG SQL] Parâmetros: 2016-38119 
+2026-04-08 09:32:43,968 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:44,254 - WARNING - [DEBUG SQL] Parâmetros: 2015-51318 
+2026-04-08 09:32:44,256 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:44,541 - WARNING - [DEBUG SQL] Parâmetros: 1976-371 
+2026-04-08 09:32:44,544 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:44,840 - WARNING - [DEBUG SQL] Parâmetros: 2011-41758 
+2026-04-08 09:32:44,842 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:45,195 - WARNING - [DEBUG SQL] Parâmetros: 2011-41779 
+2026-04-08 09:32:45,211 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:45,513 - WARNING - [DEBUG SQL] Parâmetros: 2010-57120 
+2026-04-08 09:32:45,515 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:45,809 - WARNING - [DEBUG SQL] Parâmetros: 2002-3398 
+2026-04-08 09:32:45,810 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:32:46,314 - INFO - [09:32:46] Iniciando a consulta
+2026-04-08 09:32:46,315 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 09:32:46,315 - INFO - [09:32:46] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 09:39:49,354 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 09:39:49,633 - INFO - Capturados 1 registros para processamento.
+2026-04-08 09:39:55,164 - WARNING - [DEBUG SQL] Parâmetros: 2021-55405 
+2026-04-08 09:39:55,164 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:39:55,576 - WARNING - [DEBUG SQL] Parâmetros: 2014-1590 
+2026-04-08 09:39:55,576 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:39:55,865 - WARNING - [DEBUG SQL] Parâmetros: 2007-30266 
+2026-04-08 09:39:55,867 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:39:56,346 - INFO - [09:39:56] Iniciando a consulta
+2026-04-08 09:39:56,347 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 09:39:56,347 - INFO - [09:39:56] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 09:43:44,938 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 09:43:45,212 - INFO - Capturados 1 registros para processamento.
+2026-04-08 09:44:04,705 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 09:44:04,972 - INFO - Capturados 1 registros para processamento.
+2026-04-08 09:44:10,683 - INFO - [09:44:10] Iniciando a consulta
+2026-04-08 09:44:10,684 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 09:44:10,684 - INFO - [09:44:10] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 09:45:12,217 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 09:45:12,503 - INFO - Capturados 1 registros para processamento.
+2026-04-08 09:45:18,032 - INFO - [09:45:18] Iniciando a consulta
+2026-04-08 09:45:18,033 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 09:45:18,033 - INFO - [09:45:18] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 09:45:40,333 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 09:45:40,610 - INFO - Capturados 1 registros para processamento.
+2026-04-08 09:45:46,144 - INFO - [09:45:46] Iniciando a consulta
+2026-04-08 09:45:46,144 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 09:45:46,145 - INFO - [09:45:46] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 09:46:03,557 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 09:46:03,880 - INFO - Capturados 1 registros para processamento.
+2026-04-08 09:47:14,328 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 09:47:14,610 - INFO - Capturados 1 registros para processamento.
+2026-04-08 09:47:20,094 - WARNING - [DEBUG SQL] Parâmetros: 2024-7375 
+2026-04-08 09:47:20,095 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:47:20,504 - WARNING - [DEBUG SQL] Parâmetros: 2025-32717 
+2026-04-08 09:47:20,504 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:47:20,790 - WARNING - [DEBUG SQL] Parâmetros: 2021-23870 
+2026-04-08 09:47:20,791 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:47:21,070 - WARNING - [DEBUG SQL] Parâmetros: 2020-14358 
+2026-04-08 09:47:21,071 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:47:21,242 - WARNING - [DEBUG SQL] Parâmetros: 2018-77407 
+2026-04-08 09:47:21,243 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:47:21,635 - WARNING - [DEBUG SQL] Parâmetros: 2018-45765 
+2026-04-08 09:47:21,636 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:47:21,922 - WARNING - [DEBUG SQL] Parâmetros: 2018-18389 
+2026-04-08 09:47:21,925 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:47:22,351 - INFO - [09:47:22] Iniciando a consulta
+2026-04-08 09:47:22,351 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 09:47:22,352 - INFO - [09:47:22] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 09:48:52,635 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 09:48:52,941 - INFO - Capturados 1 registros para processamento.
+2026-04-08 09:48:58,634 - WARNING - [DEBUG SQL] Parâmetros: 2026-2774 
+2026-04-08 09:48:58,634 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:48:59,085 - WARNING - [DEBUG SQL] Parâmetros: 2025-97437 
+2026-04-08 09:48:59,087 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:48:59,393 - WARNING - [DEBUG SQL] Parâmetros: 2025-85206 
+2026-04-08 09:48:59,395 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:48:59,682 - WARNING - [DEBUG SQL] Parâmetros: 2025-78529 
+2026-04-08 09:48:59,683 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:48:59,968 - WARNING - [DEBUG SQL] Parâmetros: 2023-72726 
+2026-04-08 09:48:59,969 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:00,107 - WARNING - [DEBUG SQL] Parâmetros: 2025-76872 
+2026-04-08 09:49:00,107 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:00,517 - WARNING - [DEBUG SQL] Parâmetros: 2025-51951 
+2026-04-08 09:49:00,518 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:00,881 - WARNING - [DEBUG SQL] Parâmetros: 2025-51953 
+2026-04-08 09:49:00,882 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:01,218 - WARNING - [DEBUG SQL] Parâmetros: 2025-21881 
+2026-04-08 09:49:01,223 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:01,659 - WARNING - [DEBUG SQL] Parâmetros: 2024-89708 
+2026-04-08 09:49:01,661 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:01,961 - WARNING - [DEBUG SQL] Parâmetros: 2024-74394 
+2026-04-08 09:49:01,962 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:02,276 - WARNING - [DEBUG SQL] Parâmetros: 2024-52074 
+2026-04-08 09:49:02,278 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:02,580 - WARNING - [DEBUG SQL] Parâmetros: 2024-45644 
+2026-04-08 09:49:02,581 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:02,855 - WARNING - [DEBUG SQL] Parâmetros: 2024-29442 
+2026-04-08 09:49:02,861 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:03,156 - WARNING - [DEBUG SQL] Parâmetros: 2024-20494 
+2026-04-08 09:49:03,157 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:03,452 - WARNING - [DEBUG SQL] Parâmetros: 2024-4304 
+2026-04-08 09:49:03,453 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:03,794 - WARNING - [DEBUG SQL] Parâmetros: 2016-92147 
+2026-04-08 09:49:03,797 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:04,126 - WARNING - [DEBUG SQL] Parâmetros: 2023-85773 
+2026-04-08 09:49:04,127 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:04,464 - WARNING - [DEBUG SQL] Parâmetros: 2023-74258 
+2026-04-08 09:49:04,470 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:04,774 - WARNING - [DEBUG SQL] Parâmetros: 2023-62892 
+2026-04-08 09:49:04,774 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:05,045 - WARNING - [DEBUG SQL] Parâmetros: 2023-17741 
+2026-04-08 09:49:05,046 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:05,327 - WARNING - [DEBUG SQL] Parâmetros: 2023-52386 
+2026-04-08 09:49:05,327 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:05,739 - WARNING - [DEBUG SQL] Parâmetros: 2023-29511 
+2026-04-08 09:49:05,740 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:06,065 - WARNING - [DEBUG SQL] Parâmetros: 2023-30311 
+2026-04-08 09:49:06,066 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:06,398 - WARNING - [DEBUG SQL] Parâmetros: 2023-24847 
+2026-04-08 09:49:06,399 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:06,729 - WARNING - [DEBUG SQL] Parâmetros: 2023-17162 
+2026-04-08 09:49:06,731 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:07,389 - WARNING - [DEBUG SQL] Parâmetros: 2023-22785 
+2026-04-08 09:49:07,509 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:08,348 - WARNING - [DEBUG SQL] Parâmetros: 2023-16643 
+2026-04-08 09:49:08,355 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:08,653 - WARNING - [DEBUG SQL] Parâmetros: 2023-7308 
+2026-04-08 09:49:08,653 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:08,945 - WARNING - [DEBUG SQL] Parâmetros: 2023-2346 
+2026-04-08 09:49:08,945 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:09,229 - WARNING - [DEBUG SQL] Parâmetros: 2022-71798 
+2026-04-08 09:49:09,232 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:09,525 - WARNING - [DEBUG SQL] Parâmetros: 2022-86344 
+2026-04-08 09:49:09,526 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:09,899 - WARNING - [DEBUG SQL] Parâmetros: 2022-85065 
+2026-04-08 09:49:09,914 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:10,249 - WARNING - [DEBUG SQL] Parâmetros: 2022-82977 
+2026-04-08 09:49:10,251 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:10,532 - WARNING - [DEBUG SQL] Parâmetros: 2016-64507 
+2026-04-08 09:49:10,533 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:10,835 - WARNING - [DEBUG SQL] Parâmetros: 2022-66846 
+2026-04-08 09:49:10,835 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:11,192 - WARNING - [DEBUG SQL] Parâmetros: 2022-73279 
+2026-04-08 09:49:11,192 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:11,467 - WARNING - [DEBUG SQL] Parâmetros: 2022-73246 
+2026-04-08 09:49:11,468 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:11,752 - WARNING - [DEBUG SQL] Parâmetros: 2022-70900 
+2026-04-08 09:49:11,755 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:12,048 - WARNING - [DEBUG SQL] Parâmetros: 2020-45966 
+2026-04-08 09:49:12,050 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:12,357 - WARNING - [DEBUG SQL] Parâmetros: 2022-69902 
+2026-04-08 09:49:12,360 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:12,665 - WARNING - [DEBUG SQL] Parâmetros: 2022-59604 
+2026-04-08 09:49:12,669 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:12,959 - WARNING - [DEBUG SQL] Parâmetros: 2022-58174 
+2026-04-08 09:49:12,960 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:13,236 - WARNING - [DEBUG SQL] Parâmetros: 2022-58944 
+2026-04-08 09:49:13,236 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:13,517 - WARNING - [DEBUG SQL] Parâmetros: 2022-32933 
+2026-04-08 09:49:13,518 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:13,812 - WARNING - [DEBUG SQL] Parâmetros: 2022-43207 
+2026-04-08 09:49:13,816 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:14,103 - WARNING - [DEBUG SQL] Parâmetros: 2022-21095 
+2026-04-08 09:49:14,103 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:14,394 - WARNING - [DEBUG SQL] Parâmetros: 2022-30281 
+2026-04-08 09:49:14,394 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:14,707 - WARNING - [DEBUG SQL] Parâmetros: 2022-30714 
+2026-04-08 09:49:14,711 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:15,028 - WARNING - [DEBUG SQL] Parâmetros: 2022-29929 
+2026-04-08 09:49:15,028 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:15,313 - WARNING - [DEBUG SQL] Parâmetros: 2022-27705 
+2026-04-08 09:49:15,314 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:15,597 - WARNING - [DEBUG SQL] Parâmetros: 2022-23102 
+2026-04-08 09:49:15,597 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:15,884 - WARNING - [DEBUG SQL] Parâmetros: 2022-10844 
+2026-04-08 09:49:15,884 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:16,163 - WARNING - [DEBUG SQL] Parâmetros: 2022-12542 
+2026-04-08 09:49:16,163 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:16,456 - WARNING - [DEBUG SQL] Parâmetros: 2022-8119 
+2026-04-08 09:49:16,456 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:16,743 - WARNING - [DEBUG SQL] Parâmetros: 2022-4739 
+2026-04-08 09:49:16,745 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:17,021 - WARNING - [DEBUG SQL] Parâmetros: 2021-79958 
+2026-04-08 09:49:17,021 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:17,329 - WARNING - [DEBUG SQL] Parâmetros: 2021-81798 
+2026-04-08 09:49:17,331 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:17,704 - WARNING - [DEBUG SQL] Parâmetros: 2021-75365 
+2026-04-08 09:49:17,706 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:17,999 - WARNING - [DEBUG SQL] Parâmetros: 2021-70012 
+2026-04-08 09:49:17,999 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:18,273 - WARNING - [DEBUG SQL] Parâmetros: 2021-56470 
+2026-04-08 09:49:18,273 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:18,434 - WARNING - [DEBUG SQL] Parâmetros: 2021-52460 
+2026-04-08 09:49:18,436 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:18,851 - WARNING - [DEBUG SQL] Parâmetros: 2021-51730 
+2026-04-08 09:49:18,852 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:19,172 - WARNING - [DEBUG SQL] Parâmetros: 2019-89223 
+2026-04-08 09:49:19,173 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:19,507 - WARNING - [DEBUG SQL] Parâmetros: 2019-89223 
+2026-04-08 09:49:19,509 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:19,785 - WARNING - [DEBUG SQL] Parâmetros: 2021-46555 
+2026-04-08 09:49:19,786 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:20,088 - WARNING - [DEBUG SQL] Parâmetros: 2021-41631 
+2026-04-08 09:49:20,089 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:20,383 - WARNING - [DEBUG SQL] Parâmetros: 2021-43150 
+2026-04-08 09:49:20,385 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:20,722 - WARNING - [DEBUG SQL] Parâmetros: 2021-42367 
+2026-04-08 09:49:20,722 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:21,048 - WARNING - [DEBUG SQL] Parâmetros: 2021-35769 
+2026-04-08 09:49:21,049 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:21,335 - WARNING - [DEBUG SQL] Parâmetros: 2021-29648 
+2026-04-08 09:49:21,336 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:21,626 - WARNING - [DEBUG SQL] Parâmetros: 2021-25251 
+2026-04-08 09:49:21,629 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:21,915 - WARNING - [DEBUG SQL] Parâmetros: 2021-22309 
+2026-04-08 09:49:21,916 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:22,257 - WARNING - [DEBUG SQL] Parâmetros: 2021-21460 
+2026-04-08 09:49:22,257 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:22,548 - WARNING - [DEBUG SQL] Parâmetros: 2021-17735 
+2026-04-08 09:49:22,552 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:22,843 - WARNING - [DEBUG SQL] Parâmetros: 2019-77515 
+2026-04-08 09:49:22,845 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:23,142 - WARNING - [DEBUG SQL] Parâmetros: 2021-9308 
+2026-04-08 09:49:23,142 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:23,426 - WARNING - [DEBUG SQL] Parâmetros: 2021-8689 
+2026-04-08 09:49:23,427 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:23,712 - WARNING - [DEBUG SQL] Parâmetros: 2021-8338 
+2026-04-08 09:49:23,712 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:24,008 - WARNING - [DEBUG SQL] Parâmetros: 2021-7931 
+2026-04-08 09:49:24,009 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:24,285 - WARNING - [DEBUG SQL] Parâmetros: 2019-89678 
+2026-04-08 09:49:24,285 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:24,573 - WARNING - [DEBUG SQL] Parâmetros: 2021-5180 
+2026-04-08 09:49:24,575 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:24,855 - WARNING - [DEBUG SQL] Parâmetros: 2021-2492 
+2026-04-08 09:49:24,855 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:25,131 - WARNING - [DEBUG SQL] Parâmetros: 2020-86670 
+2026-04-08 09:49:25,131 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:25,409 - WARNING - [DEBUG SQL] Parâmetros: 2021-957 
+2026-04-08 09:49:25,410 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:25,689 - WARNING - [DEBUG SQL] Parâmetros: 2020-80910 
+2026-04-08 09:49:25,691 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:25,972 - WARNING - [DEBUG SQL] Parâmetros: 2020-77797 
+2026-04-08 09:49:25,973 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:26,274 - WARNING - [DEBUG SQL] Parâmetros: 2020-77439 
+2026-04-08 09:49:26,275 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:26,590 - WARNING - [DEBUG SQL] Parâmetros: 2020-71772 
+2026-04-08 09:49:26,591 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:26,937 - WARNING - [DEBUG SQL] Parâmetros: 2020-73243 
+2026-04-08 09:49:26,940 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:27,241 - WARNING - [DEBUG SQL] Parâmetros: 2020-64856 
+2026-04-08 09:49:27,242 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:27,533 - WARNING - [DEBUG SQL] Parâmetros: 2020-64202 
+2026-04-08 09:49:27,534 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:27,846 - WARNING - [DEBUG SQL] Parâmetros: 2020-36154 
+2026-04-08 09:49:27,850 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:28,154 - WARNING - [DEBUG SQL] Parâmetros: 2020-52227 
+2026-04-08 09:49:28,157 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:28,649 - WARNING - [DEBUG SQL] Parâmetros: 2020-42728 
+2026-04-08 09:49:28,650 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:28,931 - WARNING - [DEBUG SQL] Parâmetros: 2020-42436 
+2026-04-08 09:49:28,931 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:29,215 - WARNING - [DEBUG SQL] Parâmetros: 2020-40568 
+2026-04-08 09:49:29,215 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:29,528 - WARNING - [DEBUG SQL] Parâmetros: 2020-34940 
+2026-04-08 09:49:29,529 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:29,858 - WARNING - [DEBUG SQL] Parâmetros: 2019-56338 
+2026-04-08 09:49:29,859 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:30,151 - WARNING - [DEBUG SQL] Parâmetros: 2020-28032 
+2026-04-08 09:49:30,151 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:30,455 - WARNING - [DEBUG SQL] Parâmetros: 2020-25861 
+2026-04-08 09:49:30,458 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:30,749 - WARNING - [DEBUG SQL] Parâmetros: 2020-18893 
+2026-04-08 09:49:30,749 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:30,885 - WARNING - [DEBUG SQL] Parâmetros: 2019-51070 
+2026-04-08 09:49:30,885 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:31,354 - WARNING - [DEBUG SQL] Parâmetros: 2020-6241 
+2026-04-08 09:49:31,354 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:31,662 - WARNING - [DEBUG SQL] Parâmetros: 2020-2919 
+2026-04-08 09:49:31,662 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:31,961 - WARNING - [DEBUG SQL] Parâmetros: 2020-2498 
+2026-04-08 09:49:31,962 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:32,271 - WARNING - [DEBUG SQL] Parâmetros: 2011-20073 
+2026-04-08 09:49:32,272 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:32,549 - WARNING - [DEBUG SQL] Parâmetros: 2019-131606 
+2026-04-08 09:49:32,549 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:32,836 - WARNING - [DEBUG SQL] Parâmetros: 2019-126104 
+2026-04-08 09:49:32,836 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:33,291 - WARNING - [DEBUG SQL] Parâmetros: 2019-121669 
+2026-04-08 09:49:33,359 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:33,885 - WARNING - [DEBUG SQL] Parâmetros: 2019-121509 
+2026-04-08 09:49:33,886 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:34,161 - WARNING - [DEBUG SQL] Parâmetros: 2019-111406 
+2026-04-08 09:49:34,162 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:34,436 - WARNING - [DEBUG SQL] Parâmetros: 2018-48372 
+2026-04-08 09:49:34,436 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:34,723 - WARNING - [DEBUG SQL] Parâmetros: 2019-104208 
+2026-04-08 09:49:34,725 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:35,007 - WARNING - [DEBUG SQL] Parâmetros: 2019-89678 
+2026-04-08 09:49:35,008 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:35,280 - WARNING - [DEBUG SQL] Parâmetros: 2019-84909 
+2026-04-08 09:49:35,280 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:35,557 - WARNING - [DEBUG SQL] Parâmetros: 2019-72153 
+2026-04-08 09:49:35,557 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:35,861 - WARNING - [DEBUG SQL] Parâmetros: 2019-77024 
+2026-04-08 09:49:35,863 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:36,150 - WARNING - [DEBUG SQL] Parâmetros: 2019-71287 
+2026-04-08 09:49:36,150 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:36,437 - WARNING - [DEBUG SQL] Parâmetros: 2019-67812 
+2026-04-08 09:49:36,438 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:36,748 - WARNING - [DEBUG SQL] Parâmetros: 2019-51727 
+2026-04-08 09:49:36,748 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:37,040 - WARNING - [DEBUG SQL] Parâmetros: 2019-33787 
+2026-04-08 09:49:37,041 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:37,336 - WARNING - [DEBUG SQL] Parâmetros: 2019-44450 
+2026-04-08 09:49:37,336 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:37,656 - WARNING - [DEBUG SQL] Parâmetros: 2019-29819 
+2026-04-08 09:49:37,660 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:37,974 - WARNING - [DEBUG SQL] Parâmetros: 2019-25058 
+2026-04-08 09:49:37,975 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:38,266 - WARNING - [DEBUG SQL] Parâmetros: 2019-20522 
+2026-04-08 09:49:38,267 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:38,542 - WARNING - [DEBUG SQL] Parâmetros: 2019-20514 
+2026-04-08 09:49:38,542 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:38,816 - WARNING - [DEBUG SQL] Parâmetros: 2019-20508 
+2026-04-08 09:49:38,817 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:39,111 - WARNING - [DEBUG SQL] Parâmetros: 2019-17184 
+2026-04-08 09:49:39,112 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:39,411 - WARNING - [DEBUG SQL] Parâmetros: 2019-17621 
+2026-04-08 09:49:39,412 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:39,702 - WARNING - [DEBUG SQL] Parâmetros: 2019-15714 
+2026-04-08 09:49:39,705 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:39,991 - WARNING - [DEBUG SQL] Parâmetros: 2018-87130 
+2026-04-08 09:49:39,991 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:40,271 - WARNING - [DEBUG SQL] Parâmetros: 2018-85411 
+2026-04-08 09:49:40,271 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:40,550 - WARNING - [DEBUG SQL] Parâmetros: 2018-82975 
+2026-04-08 09:49:40,550 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:40,827 - WARNING - [DEBUG SQL] Parâmetros: 2018-82582 
+2026-04-08 09:49:40,827 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:40,975 - WARNING - [DEBUG SQL] Parâmetros: 2018-73926 
+2026-04-08 09:49:40,976 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:41,394 - WARNING - [DEBUG SQL] Parâmetros: 2018-78461 
+2026-04-08 09:49:41,399 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:41,684 - WARNING - [DEBUG SQL] Parâmetros: 2018-69942 
+2026-04-08 09:49:41,684 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:41,974 - WARNING - [DEBUG SQL] Parâmetros: 2018-67078 
+2026-04-08 09:49:41,974 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:42,259 - WARNING - [DEBUG SQL] Parâmetros: 2018-64298 
+2026-04-08 09:49:42,260 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:42,537 - WARNING - [DEBUG SQL] Parâmetros: 2018-67038 
+2026-04-08 09:49:42,537 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:42,816 - WARNING - [DEBUG SQL] Parâmetros: 2018-66819 
+2026-04-08 09:49:42,817 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:43,088 - WARNING - [DEBUG SQL] Parâmetros: 2018-62920 
+2026-04-08 09:49:43,088 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:43,356 - WARNING - [DEBUG SQL] Parâmetros: 2018-56367 
+2026-04-08 09:49:43,357 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:43,629 - WARNING - [DEBUG SQL] Parâmetros: 2018-53295 
+2026-04-08 09:49:43,630 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:43,901 - WARNING - [DEBUG SQL] Parâmetros: 2018-49354 
+2026-04-08 09:49:43,901 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:44,177 - WARNING - [DEBUG SQL] Parâmetros: 2018-47833 
+2026-04-08 09:49:44,180 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:44,458 - WARNING - [DEBUG SQL] Parâmetros: 2018-45757 
+2026-04-08 09:49:44,458 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:44,749 - WARNING - [DEBUG SQL] Parâmetros: 2018-46058 
+2026-04-08 09:49:44,750 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:45,044 - WARNING - [DEBUG SQL] Parâmetros: 2018-44550 
+2026-04-08 09:49:45,049 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:45,330 - WARNING - [DEBUG SQL] Parâmetros: 2018-39517 
+2026-04-08 09:49:45,331 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:45,626 - WARNING - [DEBUG SQL] Parâmetros: 2018-34027 
+2026-04-08 09:49:45,627 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:45,910 - WARNING - [DEBUG SQL] Parâmetros: 2018-33867 
+2026-04-08 09:49:45,911 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:46,785 - WARNING - [DEBUG SQL] Parâmetros: 2018-32472 
+2026-04-08 09:49:46,822 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:47,500 - WARNING - [DEBUG SQL] Parâmetros: 2018-33282 
+2026-04-08 09:49:47,548 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:47,852 - WARNING - [DEBUG SQL] Parâmetros: 2018-30797 
+2026-04-08 09:49:47,852 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:48,131 - WARNING - [DEBUG SQL] Parâmetros: 2018-20219 
+2026-04-08 09:49:48,131 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:48,407 - WARNING - [DEBUG SQL] Parâmetros: 2018-17815 
+2026-04-08 09:49:48,407 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:48,684 - WARNING - [DEBUG SQL] Parâmetros: 2018-17322 
+2026-04-08 09:49:48,685 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:48,961 - WARNING - [DEBUG SQL] Parâmetros: 2018-16202 
+2026-04-08 09:49:48,961 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 09:49:49,400 - INFO - [09:49:49] Iniciando a consulta
+2026-04-08 09:49:49,401 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 09:49:49,401 - INFO - [09:49:49] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 09:53:59,606 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 09:53:59,886 - INFO - Capturados 1 registros para processamento.
+2026-04-08 09:54:05,404 - INFO - [09:54:05] Iniciando a consulta
+2026-04-08 09:54:05,404 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 09:54:05,405 - INFO - [09:54:05] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 09:56:05,027 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 09:56:05,307 - INFO - Capturados 1 registros para processamento.
+2026-04-08 09:56:10,871 - INFO - [09:56:10] Iniciando a consulta
+2026-04-08 09:56:10,871 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 09:56:10,872 - INFO - [09:56:10] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 09:56:53,647 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 09:56:53,920 - INFO - Capturados 1 registros para processamento.
+2026-04-08 09:56:59,618 - INFO - [09:56:59] Iniciando a consulta
+2026-04-08 09:56:59,618 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 09:56:59,619 - INFO - [09:56:59] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 09:57:55,915 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 09:57:56,199 - INFO - Capturados 1 registros para processamento.
+2026-04-08 09:58:01,779 - INFO - [09:58:01] Iniciando a consulta
+2026-04-08 09:58:01,780 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 09:58:01,782 - INFO - [09:58:01] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 10:00:04,323 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 10:00:04,601 - INFO - Capturados 1 registros para processamento.
+2026-04-08 10:00:10,143 - INFO - [10:00:10] Iniciando a consulta
+2026-04-08 10:00:10,144 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 10:00:10,144 - INFO - [10:00:10] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 10:01:23,786 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 10:01:24,076 - INFO - Capturados 1 registros para processamento.
+2026-04-08 10:01:29,737 - INFO - [10:01:29] Iniciando a consulta
+2026-04-08 10:01:29,738 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 10:01:29,739 - INFO - [10:01:29] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 10:02:48,616 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 10:02:48,889 - INFO - Capturados 1 registros para processamento.
+2026-04-08 10:02:54,612 - INFO - [10:02:54] Iniciando a consulta
+2026-04-08 10:02:54,613 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 10:02:54,616 - INFO - [10:02:54] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 10:03:54,697 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 10:03:54,978 - INFO - Capturados 1 registros para processamento.
+2026-04-08 10:04:00,523 - INFO - [10:04:00] Iniciando a consulta
+2026-04-08 10:04:00,525 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 10:04:00,528 - INFO - [10:04:00] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 10:05:03,000 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 10:05:03,276 - INFO - Capturados 1 registros para processamento.
+2026-04-08 10:05:08,703 - INFO - [10:05:08] Iniciando a consulta
+2026-04-08 10:05:08,704 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 10:05:08,705 - INFO - [10:05:08] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 10:05:26,293 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 10:05:26,565 - INFO - Capturados 1 registros para processamento.
+2026-04-08 10:10:22,757 - INFO - [10:10:22] Iniciando a consulta
+2026-04-08 10:10:22,781 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 10:10:22,803 - INFO - [10:10:22] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 10:10:41,863 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 10:10:42,140 - INFO - Capturados 1 registros para processamento.
+2026-04-08 10:10:47,600 - INFO - [10:10:47] Iniciando a consulta
+2026-04-08 10:10:47,601 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 10:10:47,602 - INFO - [10:10:47] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 10:11:21,988 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 10:11:22,267 - INFO - Capturados 1 registros para processamento.
+2026-04-08 10:11:43,901 - INFO - [10:11:43] Iniciando a consulta
+2026-04-08 10:11:43,901 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 10:11:43,902 - INFO - [10:11:43] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 10:14:40,801 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 10:14:41,079 - INFO - Capturados 1 registros para processamento.
+2026-04-08 10:15:01,665 - WARNING - [DEBUG SQL] Parâmetros: 2022-13693 
+2026-04-08 10:15:01,665 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 10:15:02,087 - WARNING - [DEBUG SQL] Parâmetros: 2017-283430 
+2026-04-08 10:15:02,090 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 10:15:02,370 - WARNING - [DEBUG SQL] Parâmetros: 2017-9361 
+2026-04-08 10:15:02,371 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 10:15:02,658 - WARNING - [DEBUG SQL] Parâmetros: 2014-48896 
+2026-04-08 10:15:02,658 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 10:15:02,958 - WARNING - [DEBUG SQL] Parâmetros: 2013-17447 
+2026-04-08 10:15:02,958 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 10:15:03,243 - WARNING - [DEBUG SQL] Parâmetros: 2012-304195 
+2026-04-08 10:15:03,244 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 10:15:03,529 - WARNING - [DEBUG SQL] Parâmetros: 2008-41243 
+2026-04-08 10:15:03,529 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 10:15:03,962 - INFO - [10:15:03] Iniciando a consulta
+2026-04-08 10:15:03,963 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 10:15:03,964 - INFO - [10:15:03] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 11:00:16,233 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 11:00:16,548 - INFO - Capturados 1 registros para processamento.
+2026-04-08 11:00:38,637 - WARNING - [DEBUG SQL] Parâmetros: 2022-13693 
+2026-04-08 11:00:38,639 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 11:00:39,085 - WARNING - [DEBUG SQL] Parâmetros: 2017-283430 
+2026-04-08 11:00:39,086 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 11:00:39,365 - WARNING - [DEBUG SQL] Parâmetros: 2017-9361 
+2026-04-08 11:00:39,366 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 11:00:39,653 - WARNING - [DEBUG SQL] Parâmetros: 2014-48896 
+2026-04-08 11:00:39,654 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 11:00:39,947 - WARNING - [DEBUG SQL] Parâmetros: 2013-17447 
+2026-04-08 11:00:39,948 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 11:00:40,232 - WARNING - [DEBUG SQL] Parâmetros: 2012-304195 
+2026-04-08 11:00:40,233 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 11:00:40,516 - WARNING - [DEBUG SQL] Parâmetros: 2008-41243 
+2026-04-08 11:00:40,517 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 11:00:41,114 - INFO - [11:00:41] Iniciando a consulta
+2026-04-08 11:00:41,114 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 11:00:41,115 - INFO - [11:00:41] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 11:02:36,483 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 11:02:36,765 - INFO - Capturados 1 registros para processamento.
+2026-04-08 11:02:57,313 - WARNING - [DEBUG SQL] Parâmetros: 2022-13693 
+2026-04-08 11:02:57,316 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 11:02:57,735 - WARNING - [DEBUG SQL] Parâmetros: 2017-283430 
+2026-04-08 11:02:57,736 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 11:02:58,014 - WARNING - [DEBUG SQL] Parâmetros: 2017-9361 
+2026-04-08 11:02:58,015 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 11:02:58,307 - WARNING - [DEBUG SQL] Parâmetros: 2014-48896 
+2026-04-08 11:02:58,309 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 11:02:58,593 - WARNING - [DEBUG SQL] Parâmetros: 2013-17447 
+2026-04-08 11:02:58,593 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 11:02:58,865 - WARNING - [DEBUG SQL] Parâmetros: 2012-304195 
+2026-04-08 11:02:58,865 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 11:02:59,140 - WARNING - [DEBUG SQL] Parâmetros: 2008-41243 
+2026-04-08 11:02:59,141 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 11:02:59,552 - INFO - [11:02:59] Iniciando a consulta
+2026-04-08 11:02:59,552 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 11:02:59,553 - INFO - [11:02:59] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 11:04:54,790 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 11:04:55,065 - INFO - Capturados 1 registros para processamento.
+2026-04-08 11:05:15,856 - WARNING - [DEBUG SQL] Parâmetros: 2022-13693 
+2026-04-08 11:05:15,857 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 11:05:16,276 - WARNING - [DEBUG SQL] Parâmetros: 2017-283430 
+2026-04-08 11:05:16,276 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 11:05:16,547 - WARNING - [DEBUG SQL] Parâmetros: 2017-9361 
+2026-04-08 11:05:16,548 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 11:05:16,822 - WARNING - [DEBUG SQL] Parâmetros: 2014-48896 
+2026-04-08 11:05:16,823 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 11:05:17,098 - WARNING - [DEBUG SQL] Parâmetros: 2013-17447 
+2026-04-08 11:05:17,098 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 11:05:17,366 - WARNING - [DEBUG SQL] Parâmetros: 2012-304195 
+2026-04-08 11:05:17,367 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 11:05:17,653 - WARNING - [DEBUG SQL] Parâmetros: 2008-41243 
+2026-04-08 11:05:17,653 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 11:05:18,075 - INFO - [11:05:18] Iniciando a consulta
+2026-04-08 11:05:18,075 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 11:05:18,076 - INFO - [11:05:18] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 11:05:45,897 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 11:05:46,171 - INFO - Capturados 1 registros para processamento.
+2026-04-08 11:06:06,696 - WARNING - [DEBUG SQL] Parâmetros: 2022-13693 
+2026-04-08 11:06:06,697 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 11:06:07,110 - WARNING - [DEBUG SQL] Parâmetros: 2017-283430 
+2026-04-08 11:06:07,111 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 11:06:07,584 - WARNING - [DEBUG SQL] Parâmetros: 2017-9361 
+2026-04-08 11:06:07,585 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 11:06:07,949 - WARNING - [DEBUG SQL] Parâmetros: 2014-48896 
+2026-04-08 11:06:07,952 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 11:06:08,239 - WARNING - [DEBUG SQL] Parâmetros: 2013-17447 
+2026-04-08 11:06:08,241 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 11:06:08,524 - WARNING - [DEBUG SQL] Parâmetros: 2012-304195 
+2026-04-08 11:06:08,527 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 11:06:08,803 - WARNING - [DEBUG SQL] Parâmetros: 2008-41243 
+2026-04-08 11:06:08,803 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
+                      
+2026-04-08 11:06:09,219 - INFO - [11:06:09] Iniciando a consulta
+2026-04-08 11:06:09,219 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 11:06:09,220 - INFO - [11:06:09] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 11:23:11,562 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 11:23:11,846 - INFO - Capturados 1 registros para processamento.
+2026-04-08 11:23:33,378 - WARNING - [DEBUG SQL] Parâmetros: 2022-13693 
+2026-04-08 11:23:33,379 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados_teste WHERE id_interpol = %s) as exists
+                       
+                      
+2026-04-08 11:23:33,830 - WARNING - [DEBUG SQL] Parâmetros: 2017-283430 
+2026-04-08 11:23:33,834 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados_teste WHERE id_interpol = %s) as exists
+                       
+                      
+2026-04-08 11:23:34,126 - WARNING - [DEBUG SQL] Parâmetros: 2017-9361 
+2026-04-08 11:23:34,127 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados_teste WHERE id_interpol = %s) as exists
+                       
+                      
+2026-04-08 11:23:34,437 - WARNING - [DEBUG SQL] Parâmetros: 2014-48896 
+2026-04-08 11:23:34,444 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados_teste WHERE id_interpol = %s) as exists
+                       
+                      
+2026-04-08 11:23:34,770 - WARNING - [DEBUG SQL] Parâmetros: 2013-17447 
+2026-04-08 11:23:34,776 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados_teste WHERE id_interpol = %s) as exists
+                       
+                      
+2026-04-08 11:23:35,057 - WARNING - [DEBUG SQL] Parâmetros: 2012-304195 
+2026-04-08 11:23:35,060 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados_teste WHERE id_interpol = %s) as exists
+                       
+                      
+2026-04-08 11:23:35,420 - WARNING - [DEBUG SQL] Parâmetros: 2008-41243 
+2026-04-08 11:23:35,422 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados_teste WHERE id_interpol = %s) as exists
+                       
+                      
+2026-04-08 11:25:03,602 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 11:25:04,063 - INFO - Capturados 1 registros para processamento.
+2026-04-08 11:25:25,854 - WARNING - [DEBUG SQL] Parâmetros: 2022-13693 
+2026-04-08 11:25:25,854 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados_teste WHERE id_interpol = %s) as exists
+                       
+                      
+2026-04-08 11:25:26,263 - WARNING - [DEBUG SQL] Parâmetros: 2017-283430 
+2026-04-08 11:25:26,263 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados_teste WHERE id_interpol = %s) as exists
+                       
+                      
+2026-04-08 11:25:26,534 - WARNING - [DEBUG SQL] Parâmetros: 2017-9361 
+2026-04-08 11:25:26,534 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados_teste WHERE id_interpol = %s) as exists
+                       
+                      
+2026-04-08 11:25:26,809 - WARNING - [DEBUG SQL] Parâmetros: 2014-48896 
+2026-04-08 11:25:26,809 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados_teste WHERE id_interpol = %s) as exists
+                       
+                      
+2026-04-08 11:25:27,078 - WARNING - [DEBUG SQL] Parâmetros: 2013-17447 
+2026-04-08 11:25:27,079 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados_teste WHERE id_interpol = %s) as exists
+                       
+                      
+2026-04-08 11:25:27,350 - WARNING - [DEBUG SQL] Parâmetros: 2012-304195 
+2026-04-08 11:25:27,350 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados_teste WHERE id_interpol = %s) as exists
+                       
+                      
+2026-04-08 11:25:27,624 - WARNING - [DEBUG SQL] Parâmetros: 2008-41243 
+2026-04-08 11:25:27,624 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados_teste WHERE id_interpol = %s) as exists
+                       
+                      
+2026-04-08 11:25:30,758 - INFO - [11:25:30] Iniciando a consulta
+2026-04-08 11:25:30,759 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 11:25:30,759 - INFO - [11:25:30] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 11:26:26,016 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 11:26:26,288 - INFO - Capturados 1 registros para processamento.
+2026-04-08 11:26:47,283 - WARNING - [DEBUG SQL] Parâmetros: 2022-13693 
+2026-04-08 11:26:47,284 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados_teste WHERE id_interpol = %s) as exists
+                       
+                      
+2026-04-08 11:26:47,699 - WARNING - [DEBUG SQL] Parâmetros: 2017-283430 
+2026-04-08 11:26:47,699 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados_teste WHERE id_interpol = %s) as exists
+                       
+                      
+2026-04-08 11:26:47,979 - WARNING - [DEBUG SQL] Parâmetros: 2017-9361 
+2026-04-08 11:26:47,980 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados_teste WHERE id_interpol = %s) as exists
+                       
+                      
+2026-04-08 11:26:48,255 - WARNING - [DEBUG SQL] Parâmetros: 2014-48896 
+2026-04-08 11:26:48,258 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados_teste WHERE id_interpol = %s) as exists
+                       
+                      
+2026-04-08 11:26:48,542 - WARNING - [DEBUG SQL] Parâmetros: 2013-17447 
+2026-04-08 11:26:48,542 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados_teste WHERE id_interpol = %s) as exists
+                       
+                      
+2026-04-08 11:26:48,819 - WARNING - [DEBUG SQL] Parâmetros: 2012-304195 
+2026-04-08 11:26:48,819 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados_teste WHERE id_interpol = %s) as exists
+                       
+                      
+2026-04-08 11:26:49,098 - WARNING - [DEBUG SQL] Parâmetros: 2008-41243 
+2026-04-08 11:26:49,098 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados_teste WHERE id_interpol = %s) as exists
+                       
+                      
+2026-04-08 11:26:53,033 - INFO - [11:26:53] Iniciando a consulta
+2026-04-08 11:26:53,034 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 11:26:53,034 - INFO - [11:26:53] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 11:31:40,440 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 11:31:40,743 - INFO - Capturados 1 registros para processamento.
+2026-04-08 11:31:51,569 - WARNING - [DEBUG SQL] Parâmetros: 2016-5486 
+2026-04-08 11:31:51,570 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados_teste WHERE id_interpol = %s) as exists
+                       
+                      
+2026-04-08 11:31:52,137 - INFO - [11:31:52] Iniciando a consulta
+2026-04-08 11:31:52,138 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 11:31:52,138 - INFO - [11:31:52] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 11:33:43,090 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 11:33:43,364 - INFO - Capturados 1 registros para processamento.
+2026-04-08 11:33:53,815 - WARNING - [DEBUG SQL] Parâmetros: 2016-5486 
+2026-04-08 11:33:53,818 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados_teste WHERE id_interpol = %s) as exists
+                       
+                      
+2026-04-08 11:33:54,383 - INFO - [11:33:54] Iniciando a consulta
+2026-04-08 11:33:54,383 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 11:33:54,384 - INFO - [11:33:54] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 11:34:43,729 - INFO - INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API
+2026-04-08 11:34:44,010 - INFO - Capturados 1 registros para processamento.
+2026-04-08 11:34:54,455 - WARNING - [DEBUG SQL] Parâmetros: 2016-5486 
+2026-04-08 11:34:54,455 - WARNING - [DEBUG SQL] query: SELECT EXISTS(
+                        SELECT 1 FROM public.interpol_dados_teste WHERE id_interpol = %s) as exists
+                       
+                      
+2026-04-08 11:34:55,455 - INFO - [11:34:55] Iniciando a consulta
+2026-04-08 11:34:55,456 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 11:34:55,458 - INFO - [11:34:55] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 12:02:18,979 - INFO - IREI SOLICITAR A PESQUISA PELO O ID PARA SABER SE ESTA ATIVO OU INATIVO
+2026-04-08 12:02:19,348 - INFO - Capturados 1 registros para processamento.
+2026-04-08 12:02:19,482 - WARNING - INICIANDO VERIFICARCAO SE ESTA ATIVO OU INATIVO
+2026-04-08 12:02:19,487 - INFO - [12:02:19] Iniciando a consulta
+2026-04-08 12:02:19,492 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 12:02:19,507 - INFO - [12:02:19] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 12:03:03,190 - INFO - IREI SOLICITAR A PESQUISA PELO O ID PARA SABER SE ESTA ATIVO OU INATIVO
+2026-04-08 12:03:03,467 - INFO - Capturados 2 registros para processamento.
+2026-04-08 12:03:03,608 - WARNING - INICIANDO VERIFICARCAO SE ESTA ATIVO OU INATIVO
+2026-04-08 12:03:03,611 - INFO - [12:03:03] Iniciando a consulta
+2026-04-08 12:03:03,612 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 12:03:03,613 - INFO - [12:03:03] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 12:04:33,048 - INFO - IREI SOLICITAR A PESQUISA PELO O ID PARA SABER SE ESTA ATIVO OU INATIVO
+2026-04-08 12:04:33,375 - INFO - Capturados 2 registros para processamento.
+2026-04-08 12:04:33,537 - WARNING - INICIANDO VERIFICARCAO SE ESTA ATIVO OU INATIVO
+2026-04-08 12:04:33,552 - INFO - [12:04:33] Iniciando a consulta
+2026-04-08 12:04:33,561 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 12:04:33,563 - INFO - [12:04:33] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 12:05:13,436 - INFO - IREI SOLICITAR A PESQUISA PELO O ID PARA SABER SE ESTA ATIVO OU INATIVO
+2026-04-08 12:05:13,865 - ERROR - Falha em caputrar os dados o erro vem aqui?dsdasdas - syntax error at or near "NULLORDER"
+LINE 2:                  WHERE id_interpol IS NOT NULLORDER BY  RAND...
+                                                  ^
+
+2026-04-08 12:05:13,868 - INFO - [12:05:13] Iniciando a consulta
+2026-04-08 12:05:13,869 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 12:05:13,870 - INFO - [12:05:13] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 12:05:24,311 - INFO - IREI SOLICITAR A PESQUISA PELO O ID PARA SABER SE ESTA ATIVO OU INATIVO
+2026-04-08 12:05:24,582 - INFO - Capturados 2 registros para processamento.
+2026-04-08 12:05:24,715 - WARNING - INICIANDO VERIFICARCAO SE ESTA ATIVO OU INATIVO
+2026-04-08 12:05:24,717 - INFO - [12:05:24] Iniciando a consulta
+2026-04-08 12:05:24,717 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 12:05:24,718 - INFO - [12:05:24] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 12:07:22,169 - INFO - IREI SOLICITAR A PESQUISA PELO O ID PARA SABER SE ESTA ATIVO OU INATIVO
+2026-04-08 12:07:22,560 - INFO - Capturados 2 registros para processamento.
+2026-04-08 12:07:22,696 - WARNING - INICIANDO VERIFICARCAO SE ESTA ATIVO OU INATIVO
+2026-04-08 12:07:44,471 - INFO - IREI SOLICITAR A PESQUISA PELO O ID PARA SABER SE ESTA ATIVO OU INATIVO
+2026-04-08 12:07:44,781 - INFO - Capturados 2 registros para processamento.
+2026-04-08 12:07:44,923 - WARNING - INICIANDO VERIFICARCAO SE ESTA ATIVO OU INATIVO
+2026-04-08 12:07:57,315 - INFO - IREI SOLICITAR A PESQUISA PELO O ID PARA SABER SE ESTA ATIVO OU INATIVO
+2026-04-08 12:07:57,612 - INFO - Capturados 2 registros para processamento.
+2026-04-08 12:07:57,774 - WARNING - INICIANDO VERIFICARCAO SE ESTA ATIVO OU INATIVO
+2026-04-08 12:07:57,775 - INFO - [12:07:57] Iniciando a consulta
+2026-04-08 12:07:57,776 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 12:07:57,776 - INFO - [12:07:57] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 12:12:05,531 - INFO - IREI SOLICITAR A PESQUISA PELO O ID PARA SABER SE ESTA ATIVO OU INATIVO
+2026-04-08 12:12:05,812 - INFO - Capturados 2 registros para processamento.
+2026-04-08 12:12:05,956 - WARNING - INICIANDO VERIFICARCAO SE ESTA ATIVO OU INATIVO
+2026-04-08 12:12:05,962 - INFO - [12:12:05] Iniciando a consulta
+2026-04-08 12:12:05,968 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 12:12:05,969 - INFO - [12:12:05] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 12:13:19,931 - INFO - IREI SOLICITAR A PESQUISA PELO O ID PARA SABER SE ESTA ATIVO OU INATIVO
+2026-04-08 12:13:20,232 - INFO - Capturados 2 registros para processamento.
+2026-04-08 12:13:20,400 - WARNING - INICIANDO VERIFICARCAO SE ESTA ATIVO OU INATIVO
+2026-04-08 12:13:20,402 - INFO - [12:13:20] Iniciando a consulta
+2026-04-08 12:13:20,403 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 12:13:20,403 - INFO - [12:13:20] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 12:15:46,702 - INFO - IREI SOLICITAR A PESQUISA PELO O ID PARA SABER SE ESTA ATIVO OU INATIVO
+2026-04-08 12:15:46,996 - INFO - Capturados 2 registros para processamento.
+2026-04-08 12:15:47,140 - WARNING - INICIANDO VERIFICARCAO SE ESTA ATIVO OU INATIVO
+2026-04-08 12:15:52,715 - INFO - [12:15:52] Iniciando a consulta
+2026-04-08 12:15:52,716 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 12:15:52,717 - INFO - [12:15:52] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 12:16:07,249 - INFO - IREI SOLICITAR A PESQUISA PELO O ID PARA SABER SE ESTA ATIVO OU INATIVO
+2026-04-08 12:16:07,520 - INFO - Capturados 2 registros para processamento.
+2026-04-08 12:16:07,654 - WARNING - INICIANDO VERIFICARCAO SE ESTA ATIVO OU INATIVO
+2026-04-08 12:16:13,044 - INFO - [12:16:13] Iniciando a consulta
+2026-04-08 12:16:13,045 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 12:16:13,047 - INFO - [12:16:13] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 12:23:41,675 - INFO - IREI SOLICITAR A PESQUISA PELO O ID PARA SABER SE ESTA ATIVO OU INATIVO
+2026-04-08 12:23:42,165 - INFO - Capturados 2 registros para processamento.
+2026-04-08 12:23:42,343 - WARNING - INICIANDO VERIFICARCAO SE ESTA ATIVO OU INATIVO
+2026-04-08 12:23:48,858 - ERROR - Erro na requisição: Recurso não encontrado (404). Verifique a URL: https://ws-public.interpol.int/notices/v1/red/2026-19190
+2026-04-08 12:23:50,846 - INFO - [12:23:50] Iniciando a consulta
+2026-04-08 12:23:50,917 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 12:23:50,935 - INFO - [12:23:50] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 12:28:37,353 - INFO - IREI SOLICITAR A PESQUISA PELO O ID PARA SABER SE ESTA ATIVO OU INATIVO
+2026-04-08 12:28:37,640 - INFO - Capturados 2 registros para processamento.
+2026-04-08 12:28:37,795 - WARNING - INICIANDO VERIFICARCAO SE ESTA ATIVO OU INATIVO
+2026-04-08 12:28:43,227 - ERROR - Erro na requisição: Recurso não encontrado (404). Verifique a URL: https://ws-public.interpol.int/notices/v1/red/2026-19190
+2026-04-08 12:28:45,315 - INFO - [12:28:45] Iniciando a consulta
+2026-04-08 12:28:45,317 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 12:28:45,318 - INFO - [12:28:45] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 12:30:36,046 - INFO - IREI SOLICITAR A PESQUISA PELO O ID PARA SABER SE ESTA ATIVO OU INATIVO
+2026-04-08 12:30:36,328 - INFO - Capturados 2 registros para processamento.
+2026-04-08 12:30:36,471 - WARNING - INICIANDO VERIFICARCAO SE ESTA ATIVO OU INATIVO
+2026-04-08 12:30:42,049 - ERROR - Erro na requisição: Recurso não encontrado (404). Verifique a URL: https://ws-public.interpol.int/notices/v1/red/2026-19190
+2026-04-08 12:30:42,056 - INFO - [12:30:42] Iniciando a consulta
+2026-04-08 12:30:42,057 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 12:30:42,058 - INFO - [12:30:42] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 12:31:34,329 - INFO - IREI SOLICITAR A PESQUISA PELO O ID PARA SABER SE ESTA ATIVO OU INATIVO
+2026-04-08 12:31:34,608 - INFO - Capturados 2 registros para processamento.
+2026-04-08 12:31:34,744 - WARNING - INICIANDO VERIFICARCAO SE ESTA ATIVO OU INATIVO
+2026-04-08 12:31:40,253 - ERROR - Erro na requisição: Recurso não encontrado (404). Verifique a URL: https://ws-public.interpol.int/notices/v1/red/2026-19190
+2026-04-08 12:31:40,258 - INFO - [12:31:40] Iniciando a consulta
+2026-04-08 12:31:40,259 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 12:31:40,263 - INFO - [12:31:40] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 12:35:52,967 - INFO - IREI SOLICITAR A PESQUISA PELO O ID PARA SABER SE ESTA ATIVO OU INATIVO
+2026-04-08 12:35:53,313 - INFO - Capturados 2 registros para processamento.
+2026-04-08 12:35:53,488 - WARNING - INICIANDO VERIFICARCAO SE ESTA ATIVO OU INATIVO
+2026-04-08 12:35:59,242 - ERROR - Erro na requisição: Recurso não encontrado (404). Verifique a URL: https://ws-public.interpol.int/notices/v1/red/2026-19190
+2026-04-08 12:35:59,247 - INFO - [12:35:59] Iniciando a consulta
+2026-04-08 12:35:59,248 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 12:35:59,249 - INFO - [12:35:59] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 12:38:55,974 - INFO - IREI SOLICITAR A PESQUISA PELO O ID PARA SABER SE ESTA ATIVO OU INATIVO
+2026-04-08 12:38:56,326 - INFO - Capturados 2 registros para processamento.
+2026-04-08 12:38:56,498 - WARNING - INICIANDO VERIFICARCAO SE ESTA ATIVO OU INATIVO
+2026-04-08 12:39:01,957 - ERROR - Erro na requisição: Recurso não encontrado (404). Verifique a URL: https://ws-public.interpol.int/notices/v1/red/2026-19190
+2026-04-08 12:39:03,664 - INFO - [12:39:03] Iniciando a consulta
+2026-04-08 12:39:03,664 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 12:39:03,665 - INFO - [12:39:03] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 13:40:06,258 - INFO - IREI SOLICITAR A PESQUISA PELO O ID PARA SABER SE ESTA ATIVO OU INATIVO
+2026-04-08 13:40:06,607 - INFO - Capturados 2 registros para processamento.
+2026-04-08 13:40:06,777 - WARNING - INICIANDO VERIFICARCAO SE ESTA ATIVO OU INATIVO
+2026-04-08 13:40:12,303 - ERROR - Erro na requisição: Erro HTTP 404: {'status': 404, 'name': 'Error', 'message': 'Unable to process your query. Error message have been logged.'}
+2026-04-08 13:40:14,299 - INFO - [13:40:14] Iniciando a consulta
+2026-04-08 13:40:14,299 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 13:40:14,300 - INFO - [13:40:14] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 13:42:16,889 - INFO - IREI SOLICITAR A PESQUISA PELO O ID PARA SABER SE ESTA ATIVO OU INATIVO
+2026-04-08 13:42:17,231 - INFO - Capturados 2 registros para processamento.
+2026-04-08 13:42:17,405 - WARNING - INICIANDO VERIFICARCAO SE ESTA ATIVO OU INATIVO
+2026-04-08 13:42:22,789 - ERROR - Erro na requisição: Erro HTTP 404: {'status': 404, 'name': 'Error', 'message': 'Unable to process your query. Error message have been logged.'}
+2026-04-08 13:42:22,795 - INFO - [13:42:22] Iniciando a consulta
+2026-04-08 13:42:22,796 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 13:42:22,798 - INFO - [13:42:22] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 13:43:37,359 - INFO - IREI SOLICITAR A PESQUISA PELO O ID PARA SABER SE ESTA ATIVO OU INATIVO
+2026-04-08 13:43:37,869 - INFO - Capturados 2 registros para processamento.
+2026-04-08 13:43:38,108 - WARNING - INICIANDO VERIFICARCAO SE ESTA ATIVO OU INATIVO
+2026-04-08 13:43:43,986 - INFO - [13:43:43] Iniciando a consulta
+2026-04-08 13:43:43,987 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 13:43:43,988 - INFO - [13:43:43] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 13:50:27,507 - INFO - IREI SOLICITAR A PESQUISA PELO O ID PARA SABER SE ESTA ATIVO OU INATIVO
+2026-04-08 13:50:27,874 - INFO - Capturados 2 registros para processamento.
+2026-04-08 13:50:28,062 - WARNING - INICIANDO VERIFICARCAO SE ESTA ATIVO OU INATIVO
+2026-04-08 13:50:34,051 - INFO - [13:50:34] Iniciando a consulta
+2026-04-08 13:50:34,052 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 13:50:34,054 - INFO - [13:50:34] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 13:51:01,723 - INFO - IREI SOLICITAR A PESQUISA PELO O ID PARA SABER SE ESTA ATIVO OU INATIVO
+2026-04-08 13:51:02,083 - INFO - Capturados 2 registros para processamento.
+2026-04-08 13:51:02,259 - WARNING - INICIANDO VERIFICARCAO SE ESTA ATIVO OU INATIVO
+2026-04-08 13:51:08,116 - INFO - [13:51:08] Iniciando a consulta
+2026-04-08 13:51:08,116 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 13:51:08,117 - INFO - [13:51:08] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 13:51:28,117 - INFO - IREI SOLICITAR A PESQUISA PELO O ID PARA SABER SE ESTA ATIVO OU INATIVO
+2026-04-08 13:51:28,471 - INFO - Capturados 2 registros para processamento.
+2026-04-08 13:51:28,647 - WARNING - INICIANDO VERIFICARCAO SE ESTA ATIVO OU INATIVO
+2026-04-08 13:51:34,048 - INFO - [13:51:34] Iniciando a consulta
+2026-04-08 13:51:34,051 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 13:51:34,054 - INFO - [13:51:34] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 13:52:02,133 - INFO - IREI SOLICITAR A PESQUISA PELO O ID PARA SABER SE ESTA ATIVO OU INATIVO
+2026-04-08 13:52:02,475 - INFO - Capturados 2 registros para processamento.
+2026-04-08 13:52:02,654 - WARNING - INICIANDO VERIFICARCAO SE ESTA ATIVO OU INATIVO
+2026-04-08 13:52:08,005 - INFO - [13:52:08] Iniciando a consulta
+2026-04-08 13:52:08,011 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 13:52:08,014 - INFO - [13:52:08] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 13:52:35,631 - INFO - IREI SOLICITAR A PESQUISA PELO O ID PARA SABER SE ESTA ATIVO OU INATIVO
+2026-04-08 13:52:35,975 - INFO - Capturados 2 registros para processamento.
+2026-04-08 13:52:36,144 - WARNING - INICIANDO VERIFICARCAO SE ESTA ATIVO OU INATIVO
+2026-04-08 13:52:41,473 - INFO - [13:52:41] Iniciando a consulta
+2026-04-08 13:52:41,474 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 13:52:41,475 - INFO - [13:52:41] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 13:54:28,599 - INFO - IREI SOLICITAR A PESQUISA PELO O ID PARA SABER SE ESTA ATIVO OU INATIVO
+2026-04-08 13:54:28,944 - INFO - Capturados 2 registros para processamento.
+2026-04-08 13:54:29,112 - WARNING - INICIANDO VERIFICARCAO SE ESTA ATIVO OU INATIVO
+2026-04-08 13:54:34,447 - INFO - Vou realizar o processamento dos dados retornados do consumo da api
+2026-04-08 13:54:34,448 - INFO - O registro esta inativo ou nao encontrado na interpol
+2026-04-08 13:54:34,449 - INFO - [13:54:34] Iniciando a consulta
+2026-04-08 13:54:34,449 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 13:54:34,450 - INFO - [13:54:34] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 13:58:18,460 - INFO - IREI SOLICITAR A PESQUISA PELO O ID PARA SABER SE ESTA ATIVO OU INATIVO
+2026-04-08 13:58:18,806 - INFO - Capturados 2 registros para processamento.
+2026-04-08 13:58:18,975 - WARNING - INICIANDO VERIFICARCAO SE ESTA ATIVO OU INATIVO
+2026-04-08 13:58:24,401 - INFO - Vou realizar o processamento dos dados retornados do consumo da api
+2026-04-08 13:58:24,404 - INFO - O registro esta inativo ou nao encontrado na interpol
+2026-04-08 13:58:24,411 - INFO - [13:58:24] Iniciando a consulta
+2026-04-08 13:58:24,412 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 13:58:24,415 - INFO - [13:58:24] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 14:27:11,919 - INFO - IREI SOLICITAR A PESQUISA PELO O ID PARA SABER SE ESTA ATIVO OU INATIVO
+2026-04-08 14:27:12,273 - INFO - Capturados 2 registros para processamento.
+2026-04-08 14:27:12,453 - WARNING - INICIANDO VERIFICARCAO SE ESTA ATIVO OU INATIVO
+2026-04-08 14:27:17,985 - INFO - Vou realizar o processamento dos dados retornados do consumo da api
+2026-04-08 14:27:17,985 - INFO - O registro esta inativo ou nao encontrado na interpol
+2026-04-08 14:28:25,417 - INFO - IREI SOLICITAR A PESQUISA PELO O ID PARA SABER SE ESTA ATIVO OU INATIVO
+2026-04-08 14:28:25,847 - INFO - Capturados 2 registros para processamento.
+2026-04-08 14:28:26,071 - WARNING - INICIANDO VERIFICARCAO SE ESTA ATIVO OU INATIVO
+2026-04-08 14:28:31,514 - INFO - Vou realizar o processamento dos dados retornados do consumo da api
+2026-04-08 14:28:31,514 - INFO - O registro esta inativo ou nao encontrado na interpol
+2026-04-08 14:28:32,043 - INFO - [14:28:32] Iniciando a consulta
+2026-04-08 14:28:32,043 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 14:28:32,044 - INFO - [14:28:32] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 22:08:42,074 - INFO - IREI SOLICITAR A PESQUISA PELO O ID PARA SABER SE ESTA ATIVO OU INATIVO
+2026-04-08 22:08:42,468 - INFO - Capturados 2 registros para processamento.
+2026-04-08 22:08:42,645 - WARNING - INICIANDO VERIFICARCAO SE ESTA ATIVO OU INATIVO
+2026-04-08 22:08:48,315 - INFO - Vou realizar o processamento dos dados retornados do consumo da api
+2026-04-08 22:08:48,316 - INFO - O registro esta ativo na interpol
+2026-04-08 22:08:48,317 - INFO - [22:08:48] Iniciando a consulta
+2026-04-08 22:08:48,317 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 22:08:48,320 - INFO - [22:08:48] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 22:17:23,644 - INFO - IREI SOLICITAR OS NOME PARA O MATCH NAME , PEGANDO O CPF NA PROSCORE PARA SABER SE ESTA ATIVO OU INATIVO
+2026-04-08 22:17:24,029 - INFO - Capturados 1 registros para processamento.
+2026-04-08 22:17:24,203 - WARNING - INICIANDO VERIFICARCAO SE ESTA ATIVO OU INATIVO
+2026-04-08 22:17:24,204 - INFO - [22:17:24] Iniciando a consulta
+2026-04-08 22:17:24,204 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 22:17:24,205 - INFO - [22:17:24] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 22:20:21,386 - INFO - IREI SOLICITAR OS NOME PARA O MATCH NAME , PEGANDO O CPF NA PROSCORE PARA SABER SE ESTA ATIVO OU INATIVO
+2026-04-08 22:20:21,737 - INFO - Capturados 1 registros para processamento.
+2026-04-08 22:20:21,926 - WARNING - INICIANDO VERIFICARCAO SE ESTA ATIVO OU INATIVO
+2026-04-08 22:20:21,931 - INFO - [22:20:21] Iniciando a consulta
+2026-04-08 22:20:21,943 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 22:20:21,946 - INFO - [22:20:21] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 22:24:22,730 - INFO - IREI SOLICITAR OS NOME PARA O MATCH NAME , PEGANDO O CPF NA PROSCORE PARA SABER SE ESTA ATIVO OU INATIVO
+2026-04-08 22:24:23,189 - INFO - Capturados 1 registros para processamento.
+2026-04-08 22:24:23,379 - WARNING - INICIANDO VERIFICARCAO SE ESTA ATIVO OU INATIVO
+2026-04-08 22:24:23,610 - INFO - [22:24:23] Iniciando a consulta
+2026-04-08 22:24:23,703 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 22:24:23,785 - INFO - [22:24:23] Erro inesperado: . Continuará em 30 segundos.
+2026-04-08 22:26:23,312 - INFO - IREI SOLICITAR OS NOME PARA O MATCH NAME , PEGANDO O CPF NA PROSCORE PARA SABER SE ESTA ATIVO OU INATIVO
+2026-04-08 22:26:23,656 - INFO - Capturados 1 registros para processamento.
+2026-04-08 22:26:23,827 - WARNING - INICIANDO VERIFICARCAO SE ESTA ATIVO OU INATIVO
+2026-04-08 22:26:23,931 - INFO - [22:26:23] Iniciando a consulta
+2026-04-08 22:26:23,932 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-04-08 22:26:23,933 - INFO - [22:26:23] Erro inesperado: . Continuará em 30 segundos.

@@ -261,7 +261,7 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
         with self.db.get_connection() as conn:
             for pessoa, detalhe in zip(todas_pessoas, detalhes):
 
-                # print()
+               
 
                 entity_id = pessoa.get('entity_id').replace('/','-') if pessoa.get('entity_id') else None
                 name_person = remover_acentos("{} {}".format(pessoa.get('forename'), pessoa.get('name'))).strip()
@@ -269,6 +269,10 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
                 naturalidade = (detalhe.get('place_of_birth') or mapa.get(detalhe.get('country_of_birth_id')) or "N/I").upper()
                 thumbnail = pessoa.get('_links', {}).get('thumbnail', {}).get('href') 
                 print(f"dados encontrados: {detalhe.get('place_of_birth')} + NOME PESON {name_person} + naturalidade dois: {naturalidade}  ")
+                pais_procurado = [mapa.get(wanted.get('issuing_country_id'),wanted.get('issuing_country_id')) for wanted in detalhe.get('arrest_warrants', [])]
+                pais_procurado = ', '.join(pais_procurado).upper() if pais_procurado else "N/I"
+                print(f'meu pais procurado {pais_procurado}')
+                   
                 #controlador de status 
                 # print(f"ids:: {",".join(entity_id)}")
                 # print(f"Nome:: {",".join(name_person)}")
@@ -284,7 +288,7 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
                     print(f"QUAL E MEU RESULADO AQUI? {exist_id}")
 
                     if exist_id: # aqui atualizo sempre que vinher os dados
-                        executor.submit(update_data_interpol, conn, entity_id, naturalidade,thumbnail)
+                        executor.submit(update_data_interpol, conn, entity_id, naturalidade,thumbnail, pais_procurado)
 
                 if not exist_id:
                     #colocar theads aqui
@@ -334,7 +338,8 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
                             'thumbnail': thumbnail if thumbnail else "N/I", #COMENTEADO PARA NAÓ APRESENTAR EM TELA,
                             'data_consulta': datetime.now().strftime("%Y-%m-%d"),
                             'hora_consulta': datetime.now().strftime("%H:%M:%S"),
-                            'person_sigla_unico' : person_singla
+                            'person_sigla_unico' : person_singla,
+                            'country_wanted': pais_procurado
                     })
 
                 else:

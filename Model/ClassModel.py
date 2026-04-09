@@ -68,9 +68,9 @@ def insert_interpol(self,registro: Dict, cursor, connection):
 def insert_base_interpol(self, registro):
    
     query = """
-           INSERT INTO public.interpol_dados 
-               (nome, sexo, nascimento,nacionalidade,idioma,acusacao,foto,data_consulta_fonte,hora_consulta_fonte,nome_buscado,naturalidade)
-           VALUES  (%s,%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) """
+           INSERT INTO public.interpol_dados_teste 
+               (nome, sexo, nascimento,nacionalidade,idioma,acusacao,foto,data_consulta_fonte,hora_consulta_fonte,id_interpol,naturalidade, pais_procurado,ativo)
+           VALUES  (%s,%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s) """
 
     print(f"Registro a ser inserido: {registro}")
     print(f"{registro['nome_completo']}")
@@ -99,7 +99,8 @@ def insert_base_interpol(self, registro):
     registro['hora_consulta'],
     registro['id_interpol'],
     registro['naturalidade'],
-    registro['person_sigla_unico']
+    registro['person_sigla_unico'],
+     True  #quando inserir recebe true
 ))
     
     # return
@@ -119,6 +120,8 @@ def insert_base_interpol(self, registro):
                 registro['hora_consulta'],
                 registro['id_interpol'],
                 registro['naturalidade'],
+                registro['country_wanted'],
+                True  #quando inserir recebe true
             ))
 
          return {
@@ -147,10 +150,11 @@ def insert_base_interpol(self, registro):
 
     #    return False
 
-def update_data_interpol(conn,id, nat, thumb):
+def update_data_interpol(conn,id, nat, thumb,country_wanted):
     
-    query = """UPDATE public.interpol_dados SET 
-                  naturalidade = %s , foto = %s WHERE nome_buscado = %s ;"""
+    query = """UPDATE public.interpol_dados_teste SET 
+                  naturalidade = %s , foto = %s , pais_procurado = %s WHERE id_interpol = %s ;"""
+                #   naturalidade = %s , foto = %s WHERE nome_buscado = %s ;"""
     
 
 
@@ -161,7 +165,7 @@ def update_data_interpol(conn,id, nat, thumb):
     try:
          
          with conn.cursor(cursor_factory=RealDictCursor) as cursor:
-                cursor.execute(query, (nat,thumb,id))
+                cursor.execute(query, (nat,thumb,country_wanted,id))
 
                 if cursor.rowcount > 0:
                     print(f"TIVE SUCESSO EM ATUALIZAR")
@@ -186,15 +190,16 @@ def update_data_interpol(conn,id, nat, thumb):
        
 def update_id_interpol(conn,name_person, id):
     
-    query = """UPDATE public.interpol_dados SET 
-                  nome_buscado = %s  WHERE nome = %s ;"""
+    query = """UPDATE public.interpol_dados_teste SET 
+                  id_interpol = %s  WHERE nome = %s ;"""
+                #   nome_buscado = %s  WHERE nome = %s ;"""
 
     print(f"Registro a ser name_person na: {name_person}")
     print(f"Registro a ser nat info: {id}")
      
     try:
          
-         with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+          with conn.cursor(cursor_factory=RealDictCursor) as cursor:
                 cursor.execute(query, (id,name_person))
              
            
@@ -208,6 +213,39 @@ def update_id_interpol(conn,name_person, id):
             return {
                     "status": "erro",
                     "error": str(e)
+                }
+
+       
+              
+
+
+      
+def update_id_interpol_status(self,id,new_status,data):
+    
+    query = """UPDATE public.interpol_dados_teste SET 
+                  ativo = %s, data_baixa = %s  WHERE id_interpol = %s ;"""
+                #   nome_buscado = %s  WHERE nome = %s ;"""
+
+    print(f"Registro a ser new_status na: {new_status}")
+    print(f"Registro a ser nat info: {id}")
+    print(f"Registro a ser nat data: {data}")
+     
+    try:
+         with self.db.get_connection() as conn:
+             with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                 cursor.execute(query, (new_status,data,id))
+                 
+                 return {
+                    "status": "sucesso"
+                }
+    
+    except Exception as e:
+            ClassLogger.logger.error(f"Erro ao atualizar Baixa do id {id} :: {str(e)}")
+           
+            return {
+                    "status": "erro",
+                    "error": str(e),
+                    "id_interpol"  : id
                 }
 
        
@@ -304,8 +342,10 @@ def search_data_interpol(conn,idinterpol):
             #retornando um boleano
 #CAMPO VAI SER TROCADO PARA ID INTERPOL
             query = ("""SELECT EXISTS(
-                        SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists
-                     """)
+                        SELECT 1 FROM public.interpol_dados_teste WHERE id_interpol = %s) as exists
+                       
+                     """) 
+              # SELECT 1 FROM public.interpol_dados_teste WHERE nome_buscado = %s) as exists""")
             
             ClassLogger.logger.warn(f"[DEBUG SQL] Parâmetros: {idinterpol} ")
             ClassLogger.logger.warn(f"[DEBUG SQL] query: {query} ")
@@ -343,7 +383,7 @@ def exists_by_name(conn, person):
             query = """
                 SELECT EXISTS(
                     SELECT 1 
-                    FROM public.interpol_dados 
+                    FROM public.interpol_dados_teste 
                     WHERE UPPER(nome) = UPPER(%s)) as exists
             """
             try:
@@ -366,7 +406,7 @@ def exists_by_name(conn, person):
           
 
 #             query = """
-#                SELECT UPPER(nome), nascimento, nome_buscado AS ID_INTERPOL, nacionalidade, id as id_tabela FROM public.interpol_dados where nacionalidade  LIKE '%BRAZIL%' AND nome_buscado is not null
+#                SELECT UPPER(nome), nascimento, nome_buscado AS ID_INTERPOL, nacionalidade, id as id_tabela FROM public.interpol_dados_teste where nacionalidade  LIKE '%BRAZIL%' AND nome_buscado is not null
 #                GROUP BY nome,nascimento,nome_buscado,nacionalidade,id ORDER BY nome """
 #             try:
                 
@@ -387,7 +427,7 @@ def exists_by_name(conn, person):
 # def get_data_match_name(conn, name,ano):
      
      
-#       query = """SELECT UPPER(nome), nascimento, nome_buscado AS ID_INTERPOL, nacionalidade, id as id_tabela FROM public.interpol_dados where nacionalidade  
+#       query = """SELECT UPPER(nome), nascimento, nome_buscado AS ID_INTERPOL, nacionalidade, id as id_tabela FROM public.interpol_dados_teste where nacionalidade  
 #                   LIKE '%BRAZIL%' AND nome_buscado is null
 #                   GROUP BY nome,nascimento,nome_buscado,nacionalidade,id ORDER BY nome"""
       
@@ -408,9 +448,13 @@ def exists_by_name(conn, person):
 def get_data_match_name_base(self) -> List[Dict]: 
      
      
-      query = """SELECT UPPER(nome) as nome, nascimento, nome_buscado AS ID_INTERPOL, nacionalidade, id as id_tabela FROM public.interpol_dados where nacionalidade  
-                  LIKE '%BRAZIL%' AND nome_buscado is null
-                  GROUP BY nome,nascimento,nome_buscado,nacionalidade,id ORDER BY nome"""
+      query = """SELECT UPPER(nome) as nome, to_char(nascimento, 'YYYY-MM-DD') AS data_nascimento , id_interpol AS ID_INTERPOL, nacionalidade, id as id_tabela FROM public.interpol_dados_teste where nacionalidade  
+                  LIKE '%BRAZIL%' AND id_interpol is not null
+                  GROUP BY nome,nascimento,id_interpol,nacionalidade,id ORDER BY  RANDOM() limit 1 """
+      
+    # query = """SELECT UPPER(nome) as nome, nascimento, nome_buscado AS ID_INTERPOL, nacionalidade, id as id_tabela FROM public.interpol_dados_teste where nacionalidade  
+    #               LIKE '%BRAZIL%' AND nome_buscado is null
+    #               GROUP BY nome,nascimento,nome_buscado,nacionalidade,id ORDER BY  RANDOM() limit 1 """
       
       try:
                     
@@ -431,6 +475,30 @@ def get_data_match_name_base(self) -> List[Dict]:
                     ClassLogger.logger.error(f"Falha em caputrar os dados o erro vem aqui?dsdasdas - {str(e)}")
                     print(f"que erro foi capturado na busca - {str(e)}")
 
+#PROCESSO INVERSO PEGANDO OS IDS 
+def list_interpol(self) -> List[Dict]:
+      query = """SELECT id_interpol AS ID_INTERPOL FROM public.interpol_dados_teste
+                 WHERE id_interpol IS NOT NULL ORDER BY  RANDOM() limit 2 """
+      
+      
+      try:
+                    
+            with self.db.get_connection() as conn:
+                 with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                      cursor.execute(query,)
+                      registros = cursor.fetchall()
+                
+                      if not registros:
+                        return None
+            
+            
+                
+                 ClassLogger.logger.info(f"Capturados {len(registros)} registros para processamento.")
+                 return [dict(registro) for registro in registros]
+                                    
+      except Exception as e:
+                    ClassLogger.logger.error(f"Falha em caputrar os dados o erro vem aqui?dsdasdas - {str(e)}")
+                    print(f"que erro foi capturado na busca - {str(e)}")
 
 # def search_from_name_interpol(self):
       

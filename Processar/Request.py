@@ -10,6 +10,7 @@ from concurrent.futures import ThreadPoolExecutor
 from Mail.ClassMail import enviar_email_all
 from Conexao import ConectionClass
 from Model.ClassModel import buscar_teste, insert_interpol
+from urllib.parse import urlparse, parse_qs
 
 
 
@@ -177,10 +178,33 @@ def push_new_resquests(url, time_sleps):
 
             status = e.response.status_code
             msg_custom = f"Erro HTTP {status}: {detalhes_servidor}"
+            print(f"URL BUSCADA? {url}")
+            s = urlparse(url)
+            print(f"meus params {s}")
+                
+            # Extrair a URL base até '/red/'
+            url_base = f"{s.scheme}://{s.netloc}/notices/v1/red/"
+            print(f"URL base extraída: {url_base}")
+            
+            # Extrair o ID após '/red/'
+            path = s.path
+            if '/red/' in path:
+                id_interpol = path.split('/red/')[-1]
+                print(f"ID extraído: {id_interpol}")
+            else:
+                id_interpol = None
             
             if status == 403:
                 msg_custom = f"Acesso Negado (403). Verifique permissões ou Headers. Detalhes: {url}"
-            elif status == 404:
+            elif status == 404 and url_base == "https://ws-public.interpol.int/notices/v1/red/":
+                
+                # if url_base == "https://ws-public.interpol.int/notices/v1/red/":
+                print(f"minha URL BASE E IGUAL VOU ENVIAR COMO SUCESSO NESTE CASO")
+                erro = False
+                resposta = {"message":False,"id_interpol": id_interpol}
+                return resposta
+                
+            else:
                 msg_custom = f"Recurso não encontrado (404). Verifique a URL: {url}"
 
             resposta = f"ERRO: {msg_custom}"
@@ -199,10 +223,11 @@ def push_new_resquests(url, time_sleps):
             ClassLogger.logger.error(f"Erro inesperado: {str(e)}")
 
 
-        # print(f"MINHA RESPOSTA {resposta}") 
-        # print(f"tenho o info do erro {erro}") 
+        print(f"MINHA RESPOSTA {resposta}") 
+        print(f"tenho o info do erro {erro}") 
 
         if erro:
+            #  print('ESTOU SAINDO AQUI')
              enviar_email_all(resposta)
         #  print(f"tenho o info do erro {e}") 
 
