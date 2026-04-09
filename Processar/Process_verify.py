@@ -15,6 +15,8 @@ import sys
 # from collections import defaultdict
 from Conexao import ConectionClass,ConectionPool
 from Model.ClassModel import list_interpol,update_id_interpol_status
+from functions.funcoes import remover_acentos, remover_conhetes, tratar_entrada
+
 
 
 

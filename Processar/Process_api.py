@@ -6,6 +6,8 @@ import json
 from .Tratar_json import trata_json
 import os
 from pathlib import Path
+from functions.funcoes import remover_acentos, remover_conhetes, tratar_entrada
+
 
 
 

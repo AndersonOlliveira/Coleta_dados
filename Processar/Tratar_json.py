@@ -8,14 +8,15 @@ import unicodedata
 import re
 from pathlib import Path
 from collections import Counter, defaultdict
-from datetime import datetime
+from datetime import datetime, date
+
 from Mail.ClassMail import enviar_email_all
 from urllib.parse import urlparse, parse_qs
 import sys
 # from collections import defaultdict
 from Conexao import ConectionClass,ConectionPool
 from Model.ClassModel import buscar_teste, insert_interpol, update_info_process,search_data_interpol,exists_by_name,insert_base_interpol,update_data_interpol,update_id_interpol
-
+from functions.funcoes import remover_acentos, remover_conhetes, tratar_entrada
 
 
 
@@ -272,6 +273,12 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
                 pais_procurado = [mapa.get(wanted.get('issuing_country_id'),wanted.get('issuing_country_id')) for wanted in detalhe.get('arrest_warrants', [])]
                 pais_procurado = ', '.join(pais_procurado).upper() if pais_procurado else "N/I"
                 print(f'meu pais procurado {pais_procurado}')
+
+                # tratar a data que veio a veio quebrada
+                data_ajustada = pessoa.get('date_of_birth').replace('/','-') if pessoa.get('date_of_birth') else None
+                print(f'MINHA DATA PRIMEIRO ESTAGIIO:: data_ajustada {data_ajustada}')
+                data_ajustada = tratar_entrada(data_ajustada)
+                print(f'MINHA DATA:: data_ajustada {data_ajustada}')
                    
                 #controlador de status 
                 # print(f"ids:: {",".join(entity_id)}")
@@ -328,7 +335,7 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
                             # 'nome_completo': "{} {}".format(pessoa.get('forename'), pessoa.get('name')),
                             'nome_completo': name_person,
                             # 'nome_do_meio': pessoa.get('forename'),
-                            'data_nascimento': pessoa.get('date_of_birth').replace('/','-') if pessoa.get('date_of_birth') else None,
+                            'data_nascimento': data_ajustada,
                             'nacionalidade': pais_limpo.upper(),
                             'naturalidade': naturalidade.upper(),
                             'id_interpol': entity_id,
@@ -493,6 +500,23 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
     return result_email
 
 
+
+
+
+def alter_status(self, id, obs = None):
+
+
+     with ConectionClass.DbConnect(self.config, auto_commit=False) as conn_status:
+             cursor_initil = conn_status.cursor()
+             if obs is None:
+                lista_update = {'status': self.true, 'alter_id': id ,'obs' : None} 
+             else: 
+                lista_update = {'status': self.true, 'alter_id': id, 'obs' : obs}
+
+             update_info_process(self,lista_update,cursor_initil,conn_status)
+             conn_status.commit()
+             cursor_initil.close()
+
        
 
 
@@ -562,42 +586,6 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
     # print(dados_tratamento)
     # print(dados_tratamento['_links.thumbnail.href'])
     # print(dados_tratamento['_links.images.href'])
-
-
-
-
-def remover_acentos(texto):
-    
-    if texto is None:
-        texto = ''
-    else:
-        texto = str(texto)
-    # Normaliza o texto para NFD
-    texto_normalizado = unicodedata.normalize('NFD', texto)
-    # Codifica para ascii, ignora erros e decodifica de volta para utf-8
-    texto_normalizado =  texto_normalizado.encode('ascii', 'ignore').decode('utf-8')
-
-    return re.sub(r'\s+', ' ',texto_normalizado).strip()
-
-def remover_conhetes(texto):
-   
-   return  re.sub(r'[\[\]]', '', texto)
-
-
-
-def alter_status(self, id, obs = None):
-
-
-     with ConectionClass.DbConnect(self.config, auto_commit=False) as conn_status:
-             cursor_initil = conn_status.cursor()
-             if obs is None:
-                lista_update = {'status': self.true, 'alter_id': id ,'obs' : None} 
-             else: 
-                lista_update = {'status': self.true, 'alter_id': id, 'obs' : obs}
-
-             update_info_process(self,lista_update,cursor_initil,conn_status)
-             conn_status.commit()
-             cursor_initil.close()
 
 # def busca_singlas(links):
 #         grupos_por_pais

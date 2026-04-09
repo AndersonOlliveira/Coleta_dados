@@ -15,7 +15,9 @@ import sys
 # from collections import defaultdict
 from Conexao import ConectionClass,ConectionPool
 from Model.ClassModel import get_data_match_name_base
-from Model.ClassModel import buscar_teste, insert_interpol, update_info_process,search_data_interpol,exists_by_name,insert_base_interpol,update_data_interpol,update_id_interpol
+from Model.ClassModel import buscar_teste, insert_interpol, update_info_process,search_data_interpol,exists_by_name,insert_base_interpol,update_data_interpol,update_id_interpol,get_lista_name_base_interpol
+from functions.funcoes import remover_acentos, remover_conhetes, tratar_entrada
+
 
 
 
@@ -30,10 +32,12 @@ def process_from_name(self):
     lista = []
     falhas_ids =[]
     siglas = []
+    ids_sucesso = []
 
     lista_paises_unicos = []
     nome_traduzido = set()
     todas_pessoas =[]
+    tabela_atualizar = []
     lista_urls_pesquisa = []
     lista_paises_total_api = {}
     grupos_por_pais = defaultdict(list)
@@ -60,43 +64,27 @@ def process_from_name(self):
     # lista_get_name = dict
 
     with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
-          future_busca = executor.submit(get_data_match_name_base, self)
+          future_busca = executor.submit(get_lista_name_base_interpol, self)
           lista_get_name = future_busca.result()
         #  print(f"MINHA LISTA DO GET {lista_get_name}")
           for lista_name in lista_get_name:
                 nome = lista_name.get('nome', '')
                 
-                # if nome:
-                #     tres_primeiras = nome[:3].upper()
-                #     params = f"&resultPerPage={self.qtPage}&page={self.indicePage}"
-                #     lista_singlas_name = f"{self.servidor_get_from_name}='SID'{params}"
-                #     siglas.append(lista_singlas_name)
+                if nome:
+                    tres_primeiras = nome[:3].upper()
+                    params = f"&resultPerPage={self.qtPage}&page={self.indicePage}"
+                    lista_singlas_name = f"{self.servidor_get_from_name}={tres_primeiras}{params}"
+                    siglas.append(lista_singlas_name)
 
-    params = f"&resultPerPage={self.qtPage}&page={self.indicePage}"
-    lista_singlas_name = f"{self.servidor_get_from_name}=KAB{params}"
-    siglas.append(lista_singlas_name)                    
+    # params = f"&resultPerPage={self.qtPage}&page={self.indicePage}"
+    # lista_singlas_name = f"{self.servidor_get_from_name}=KAB{params}"
+    # siglas.append(lista_singlas_name)                    
 
     # remove duplicados
     siglas_unicas = list(set(siglas))
 
-    print(f"QUAL E MINHA SIGLA {siglas_unicas}")
-    # print(f"MINHA QUANTIDADE A SER PROCESSADO {len(siglas_unicas)})"
-    # return
-
-
-   
     
-
-
-
-
-  
-  
-    # siglas_unicas = 'https://ws-public.interpol.int/notices/v1/red?&forename=SID&resultPerPage=160'
-
-
-    # # print(f"MINHA SINGLAS PARA CHAMADA {siglas_unicas}")
-    # # return 
+   
     with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
         des = list(executor.map(
         lambda url: push_new_resquests(url, self.time_sleps),
@@ -105,17 +93,24 @@ def process_from_name(self):
     
     
     
-   
-    # return 
-    for bloco in des:
-        pessoas_detalhes = bloco.get('_embedded', {}).get('notices', [])
-      
-    todas_pessoas.extend(pessoas_detalhes)
+    try:
 
-    # print(f"MINHA todas_pessoas PARA CHAMADA {json.dumps(todas_pessoas, indent=4)}")
-
-    # return
+        # return 
+        for bloco in des:
+            # if isinstance(bloco, str):
+            #    bloco = json.loads(bloco)
+               pessoas_detalhes = bloco.get('_embedded', {}).get('notices', [])
+        
+        todas_pessoas.extend(pessoas_detalhes)
+    except Exception as e:
+           
+           ClassLogger.logger.error(f"Erro ao processar os Dados : {str(e)} ::: DADOS ERROS{des}")
     
+    
+    # print(f"minha lisata {len(todas_pessoas)}")
+    # print(f"MINHA SINGLAS PARA pessoas_detalhes {pessoas_detalhes}")
+    # return 
+    # return
     for pessoa in todas_pessoas:
         lista_url = pessoa.get('_links', {}).get('self', {}).get('href')
 
@@ -148,6 +143,11 @@ def process_from_name(self):
                     print(f"meu resultado do for?{de}")
                     print(f"meu resultado do list_url_person?{list_url_person}")
                     lista_paises_chaves = de.get('nationalities') or []
+                      # tratar a data que veio a veio quebrada
+                    data_ajustada = de.get('date_of_birth').replace('/','-') if de.get('date_of_birth') else None
+                    print(f'MINHA DATA PRIMEIRO ESTAGIIO:: data_ajustada {data_ajustada}')
+                    data_ajustada = tratar_entrada(data_ajustada)
+                    print(f'MINHA DATA:: data_ajustada {data_ajustada}')
                     # lista_paises_unicos.append(lista_paises_chaves)
                     print(f"meu resultado do lista_paises_chaves?{lista_paises_chaves}")
                     person_singla = lista_paises_chaves[0] if lista_paises_chaves else 'N/I'
@@ -155,12 +155,12 @@ def process_from_name(self):
                             
                     entity_id = de.get('entity_id').replace('/','-') if de.get('entity_id') else None
                     name_person = remover_acentos("{} {}".format(de.get('forename'), de.get('name'))).strip()
-                    naturalidade = (de.get('place_of_birth') or mapa.get(de.get('country_of_birth_id')) or "N/I").upper()
+                    naturalidade = (list_url_person.get('place_of_birth') or mapa.get(list_url_person.get('country_of_birth_id')) or "N/I").upper()
                     thumbnail = de.get('_links', {}).get('thumbnail', {}).get('href') 
                     print(f"dados encontrados: {de.get('place_of_birth')} + NOME PESON {name_person} + naturalidade dois: {naturalidade}  ")
                     pais_procurado = [mapa.get(wanted.get('issuing_country_id'),wanted.get('issuing_country_id')) for wanted in list_url_person.get('arrest_warrants', [])]
                     pais_procurado = ', '.join(pais_procurado).upper() if pais_procurado else "N/I"
-                    print(f'meu pais procurado {pais_procurado}')    
+                    print(f'meu pais procurado {pais_procurado}')
                     exist_id = False
                     exist_name = False
                             # return
@@ -172,6 +172,7 @@ def process_from_name(self):
                         print(f"QUAL E MEU RESULADO AQUI? {exist_id}")
 
                         if exist_id: # aqui atualizo sempre que vinher os dados
+                           print(f"MEU ID EXISTE NA BASE {entity_id} || nome: {name_person}  vou atualizar os dados COM A NACIONALIDE ALTERADA PARA {naturalidade}  E O PAIS PROCURADO {pais_procurado}")
                            executor.submit(update_data_interpol, conn, entity_id, naturalidade,thumbnail,pais_procurado)
 
                     if not exist_id:
@@ -209,7 +210,7 @@ def process_from_name(self):
                        lista.append({
                                       
                                         'nome_completo': name_person,
-                                        'data_nascimento': de.get('date_of_birth').replace('/','-') if de.get('date_of_birth') else None,
+                                        'data_nascimento': data_ajustada,
                                         'nacionalidade': pais_limpo.upper(),
                                         'naturalidade': naturalidade.upper(),
                                         'id_interpol': entity_id,
@@ -242,20 +243,12 @@ def process_from_name(self):
     print(f"{df}")
     print(f"Minha lista do contador {len(df)}")
     print(f"{contador_por_pais}")
+    # ClassLogger.logger.info(f"MINHA LISTA DO DF json {json.dumps(lista, indent=4)}")
+    # ClassLogger.logger.info(f"MINHA LISTA DO DF {df.to_dict(orient='records')}")
 
     # return
 
     if len(df) > 0:
-       
-        
-
-        # update_info_process(self, id_insert_return[0])
-        #alter_status(self, id_insert_return[0])
-        obs_interpol_success = 'SUCESSO EM CONSULTAR OS IDS INDIVIDUAL INTERPOL'
-        #alter_status(self, id_geral_url_interpol,obs_interpol_success)
-
-
-
         with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
           
             futures = [
@@ -273,55 +266,58 @@ def process_from_name(self):
                 if result['status'] == "sucesso":
                             # inser_new_registro +=1
                    contador_por_pais[result['person_sigla_unico']]["QTINSERT"] += 1
+                   ids_sucesso.append(result)
                 else:
                    falhas_ids.append(result)
                             # falha_ +=1
                    contador_por_pais[result['person_sigla_unico']]["ERROR"] += 1
 
 
-         #funcao que esta funcioanndo 
-        # with self.db.get_connection() as conn:
-        #       conn.autocommit = False
-        #       for registro in lista:
-        #         sucesso = insert_base_interpol(self,registro,conn, falhas_ids)
-        #         if sucesso:
-        #             inser_new_registro +=1
-        #         else:
-        #             falha_ +=1
-
-
-
-    
-        #         conn.commit()
     else:
         obs = f"SEM ALTERACAO NOS DADOS {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}"
         obs_interpol = f"SEM CONSULTA INDIVIDUAL {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}"
-      #  alter_status(self, id_insert_return[0],obs)
-       # alter_status(self, id_geral_url_interpol,obs_interpol)
+      
 
-
-
-
-
-
-              
-
-
-
-def remover_acentos(texto):
+    print(f"MINHA TABELA   :::{ids_sucesso}") 
     
-    if texto is None:
-        texto = ''
-    else:
-        texto = str(texto)
-    # Normaliza o texto para NFD
-    texto_normalizado = unicodedata.normalize('NFD', texto)
-    # Codifica para ascii, ignora erros e decodifica de volta para utf-8
-    texto_normalizado =  texto_normalizado.encode('ascii', 'ignore').decode('utf-8')
+    minha_tabela_montada = pd.DataFrame(ids_sucesso)
+    
+    print(f"MINHA TABELA   :::{minha_tabela_montada}") 
+    
+    
+    if falhas_ids is not None:
+        tabela_error = pd.DataFrame(falhas_ids)
+        tabela_error = tabela_error.fillna(0) 
+        convertida_error =  tabela_error.to_html(index=False, border=1, justify='center')
+        corpo_error = f"Lista de dados com error :<br> {convertida_error}"
 
-    return re.sub(r'\s+', ' ',texto_normalizado).strip()
 
-def remover_conhetes(texto):
-   
-   return  re.sub(r'[\[\]]', '', texto)
+    
 
+    convertida = minha_tabela_montada.to_html(index=False, border=1, justify='center')
+
+    corpo = f"""
+       <h2 style="color:green;">Busca dados por nome por 3 primeiras letras </h2>
+        <p>{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</p>
+
+        {convertida}
+        """
+
+    html_final = f"""
+        <html>
+        <body>
+
+        {corpo}
+
+        <hr>
+
+        {corpo_error if corpo_error else "<p>Sem erros encontrados</p>"}
+
+        </body>
+        </html>
+        """
+
+
+    result_email = enviar_email_all(html_final)
+
+            

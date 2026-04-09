@@ -449,12 +449,35 @@ def get_data_match_name_base(self) -> List[Dict]:
      
      
       query = """SELECT UPPER(nome) as nome, to_char(nascimento, 'YYYY-MM-DD') AS data_nascimento , id_interpol AS ID_INTERPOL, nacionalidade, id as id_tabela FROM public.interpol_dados_teste where nacionalidade  
-                  LIKE '%BRAZIL%' AND id_interpol is not null
-                  GROUP BY nome,nascimento,id_interpol,nacionalidade,id ORDER BY  RANDOM() limit 1 """
+                  LIKE '%BRAZIL%' and cpf is null 
+                  GROUP BY nome,nascimento,id_interpol,nacionalidade,id ORDER BY nome"""
       
-    # query = """SELECT UPPER(nome) as nome, nascimento, nome_buscado AS ID_INTERPOL, nacionalidade, id as id_tabela FROM public.interpol_dados_teste where nacionalidade  
-    #               LIKE '%BRAZIL%' AND nome_buscado is null
-    #               GROUP BY nome,nascimento,nome_buscado,nacionalidade,id ORDER BY  RANDOM() limit 1 """
+      
+      try:
+                    
+            with self.db.get_connection() as conn:
+                 with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                      cursor.execute(query,)
+                      registros = cursor.fetchall()
+                
+                      if not registros:
+                        return None
+            
+            
+                
+                 ClassLogger.logger.info(f"Capturados {len(registros)} registros para processamento.")
+                 return [dict(registro) for registro in registros]
+                                    
+      except Exception as e:
+                    ClassLogger.logger.error(f"Falha em caputrar os dados o erro vem aqui?dsdasdas - {str(e)}")
+                    print(f"que erro foi capturado na busca - {str(e)}")
+
+def get_lista_name_base_interpol(self) -> List[Dict]: 
+     
+     
+      query = """SELECT UPPER(nome) as nome FROM public.interpol_dados_teste 
+                  ORDER BY nome  limit 1 """
+      
       
       try:
                     
@@ -478,7 +501,7 @@ def get_data_match_name_base(self) -> List[Dict]:
 #PROCESSO INVERSO PEGANDO OS IDS 
 def list_interpol(self) -> List[Dict]:
       query = """SELECT id_interpol AS ID_INTERPOL FROM public.interpol_dados_teste
-                 WHERE id_interpol IS NOT NULL ORDER BY  RANDOM() limit 2 """
+                 WHERE id_interpol IS NOT NULL ORDER BY  RANDOM()"""
       
       
       try:
@@ -500,28 +523,92 @@ def list_interpol(self) -> List[Dict]:
                     ClassLogger.logger.error(f"Falha em caputrar os dados o erro vem aqui?dsdasdas - {str(e)}")
                     print(f"que erro foi capturado na busca - {str(e)}")
 
-# def search_from_name_interpol(self):
+
+
+def search_from_name_interpol(self, nome_busca, idade_busca, idi_interpol,id_tabela):
+
+        ClassLogger.logger.warn(f"[DEBUG SQL] MEU NOME ENVIADO: {nome_busca} ")
+        ClassLogger.logger.warn(f"[DEBUG SQL] ANO DE NASCIMENTO ENVIADO {idade_busca} ")
+        
       
-#         query = """SELECT cntcpfcgc as cpf, cntnom as nome,
-#                     cntfisncm as nascimento 
-#                     FROM 
-#                     cnt, cntfis 
-#                     WHERE 
-#                     cntid = cntfiscnt
-#                     AND 
-#                     UPPER(cntnom) = %s  
-#                     AND 
-#                     length(cntcpfcgc) = 11 
-#                     AND cntfisncm = %s"""
+        query = """SELECT cntcpfcgc as cpf FROM 
+                    cnt, cntfis 
+                    WHERE 
+                    cntid = cntfiscnt
+                    AND 
+                    UPPER(cntnom) = %s  
+                    AND 
+                    length(cntcpfcgc) = 11 
+                    AND cntfisncm = %s"""
+        
+        try:
+           
+                with self.db.get_connection() as conn:
+                    with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                        cursor.execute(query, (nome_busca,idade_busca))
+                        resultado = cursor.fetchall()
+                            
+                        if cursor.rowcount:
+                            print(f"TIVE SUCESSO EM CONSULTAR OS DADOS")
+                            print(f"MEU RESULTADO {resultado}")
+                            
+                            return {
+                                    "status": "sucesso",
+                                    "CPF": resultado[0]['cpf'],
+                                    "INTERPOL": idi_interpol,
+                                    "ID_COLUNA_INTERPOL": id_tabela
+                                }
+                        else:
+                                print(f"TIVE FALHA EM CONSULTAR OS DADOS")
+                                return {
+                                    "status": "erro",
+                                    "error": "NÁO ENCONTRADO NA BASE DA PROSCORE",
+                                    "INTERPOL": idi_interpol,
+                                    "ID_COLUNA_INTERPOL": id_tabela
+                                }
+            
+                        
+                     
+                                        
+        except Exception as e:
+                ClassLogger.logger.error(f"Falha em caputrar os dados o erro vem aqui? - {str(e)}")
+                print(f"que erro foi capturado na busca - {str(e)}")
+                return {
+                "status": "erro_conexao",
+                "error": str(e),
+                "INTERPOL": idi_interpol,
+                "ID_COLUNA_INTERPOL": id_tabela
+            }
+        # finally:
+        #         if conn:
+        #            self.db.put_connection(conn)
+
+
+
+def push_cpf(self,cpf, idcolunaInterpol):
       
-#         try:
-                    
-#             with conn.cursor(cursor_factory=RealDictCursor) as cursor:
-#                             cursor.execute(query, (name,ano))
-#                             resultado = cursor.fetchone()
-#                             print(f"qual e o resultado {resultado}")
-#                             return resultado
-                                    
-#     except Exception as e:
-#                     ClassLogger.logger.error(f"Falha em caputrar os dados o erro vem aqui? - {str(e)}")
-#                     print(f"que erro foi capturado na busca - {str(e)}")
+    query = """UPDATE public.interpol_dados_teste SET 
+                  cpf = %s  WHERE id = %s ;"""
+            
+
+    print(f"Registro a ser CPF na: {cpf}")
+    print(f"Registro a ser nat idcolunaInterpol: {idcolunaInterpol}")
+    
+     
+    try:
+         with self.db.get_connection() as conn:
+             with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                 cursor.execute(query, (cpf,idcolunaInterpol))
+                 
+                 return {
+                    "status": "sucesso"
+                }
+    
+    except Exception as e:
+            ClassLogger.logger.error(f"Erro ao atualizar Baixa do id {idcolunaInterpol} :: {str(e)}")
+           
+            return {
+                    "status": "erro",
+                    "error": str(e),
+                    "id_interpol"  : idcolunaInterpol
+                }

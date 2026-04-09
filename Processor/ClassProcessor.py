@@ -21,6 +21,7 @@ class Processor:
     def __init__(self, max_workers: int = 10, batch_size: int = 1000):
         self.config = ConectionClass.DbConfig()
         self.max_workers = max_workers
+        self.max_workers_conn = 2
         self.batch_size = batch_size
         # self.idProcesso = idProcesso
         self.servidor = 'https://ws-public.interpol.int/notices/v1/red'
@@ -94,6 +95,7 @@ class Processor:
     
     def from_name_interpol(self): 
         ClassLogger.logger.info('INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API')
+        ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] Iniciando a consulta from_name_interpol")
         # search_data_interpol
         # id_busca = "2012-328264"
         # print(f"qual o meu tipo da variavel ? {type(id_busca)}")
@@ -102,13 +104,17 @@ class Processor:
 
     def atualiza_dados_interpol(self):
         ClassLogger.logger.info('IREI SOLICITAR A PESQUISA PELO O ID PARA SABER SE ESTA ATIVO OU INATIVO')
+        ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] Iniciando a consulta atualiza_dados_interpol")
 
         process_verify_status(self)
+        pass
         
     def match_name(self):
         ClassLogger.logger.info('IREI SOLICITAR OS NOME PARA O MATCH NAME , PEGANDO O CPF NA PROSCORE PARA SABER SE ESTA ATIVO OU INATIVO')
-
+        ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] Iniciando a consulta match_name")
+        # print(f"MINHA THEADS {self.max_workers}")
         process_match_name(self)
+        pass
 
 
     def executar_ciclo(self):
@@ -116,7 +122,7 @@ class Processor:
         # self.enviar_email()
         # self.busca_dados()   
         # self.teste_busca_interpol()   
-        # self.from_name_interpol()   
+        self.from_name_interpol()   
         # self.atualiza_dados_interpol()
-        self.match_name()
+        # self.match_name()
         ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] Iniciando a consulta")      
