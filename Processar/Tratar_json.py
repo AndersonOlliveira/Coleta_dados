@@ -16,7 +16,7 @@ import sys
 # from collections import defaultdict
 from Conexao import ConectionClass,ConectionPool
 from Model.ClassModel import buscar_teste, insert_interpol, update_info_process,search_data_interpol,exists_by_name,insert_base_interpol,update_data_interpol,update_id_interpol
-from functions.funcoes import remover_acentos, remover_conhetes, tratar_entrada
+from functions.funcoes import remover_acentos, remover_conhetes, tratar_entrada, path_arquivo
 
 
 
@@ -25,6 +25,8 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
     # print(json.dumps(caminho_countries,  indent=4))
     tratamento = []
     lista = []
+    falhas_ids = []
+ 
       #imcremetador
     contador_paises = Counter()
     dupla_nacionalidade = 0
@@ -40,6 +42,9 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
     nome_traduzido = set()
     grupos_por_pais = defaultdict(list)
     id_insert_return_detalhe = []
+    result_busca = []
+    novos_registros = 0
+    registros_pulados = 0
     contador_por_pais = defaultdict(lambda: {
     "INSERT": 0,
     "NA": 0,
@@ -50,43 +55,33 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
 
 
 
-    caminho = os.path.join(os.path.dirname(__file__), 'arquivo_registros.json')
-    caminho_countress = Path('Arquivos/countries.json')
+    
+    caminho_countress = path_arquivo()
     
     tratamento = retorno_api
 
-    # print(f"MEU ID DA INSERCAO RETORNADO {id_insert_return[0]}")
-    # print(id_insert_return)
-
-    # return 
-    # lista_coutries = caminho_countries
     lista_coutries = caminho_countress
             
     with open(lista_coutries) as lista_coutrie:
          lista_decodificadas = json.load(lista_coutrie)
-        #  print(lista_decodificadas)
          for pais in lista_decodificadas:
              codigo_pais = pais.get('value')
              nome_pais = pais.get('name')
              mapa[codigo_pais] = nome_pais
 
 
-    print(f"MEU TRATAMENTO RETORNO API {json.dumps(tratamento, indent=4)}")
     for bloco in tratamento:
         pessoas = bloco.get('_embedded', {}).get('notices', [])
         link = bloco.get('_links').get('self', {}).get('href', {})
         total_api = bloco.get('total')
-        # print(f"meu total? {total_api}")
         if pessoas:
             for pessoa in pessoas:
-                # print(f"Minha pessoa : {json.dumps(pessoa, indent=4)}")
                 pessoa['link_busca'] = link
                 pessoa['total_api'] = total_api
                 if link not in lista_paises_unicos:
                    s = urlparse(link)
                    params = parse_qs(s.query)
 
-                #    print(f"meus params {params}")
                 
                    lista_paises_unicos.append(params.get('nationality'))
                    list_teste = params.get('nationality')
@@ -98,41 +93,20 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
             s = urlparse(link)
             params = parse_qs(s.query)
 
-            # print(f"meus params {params}")
                 
             lista_paises_unicos.append(params.get('nationality'))
             list_teste = params.get('nationality')
-            # lista_paises_unicos.append(params.get('nationality'))
 
             for result_pais in list_teste:
                 lista_paises_total_api[result_pais] = total_api
             
-            # lista_paises_total_api[params.get('nationality')] = total_api
-
-            # lista_paises_total_api.append((params.get('nationality'), total_api))
 
         todas_pessoas.extend(pessoas)
             
-   
-    # print(lista_paises_total_api)
-    # print(json.dumps(todas_pessoas,indent=4))
-
-    # alter_status(self, id_insert_return[0])
-
-    # return 
-
    # PEGO OS PAISEIS QUE FORAM SOLITADOS NA BUSCA , REMOVO AS DUPLICATAS PARA REALIZAR A CONTAGEM E APRESENTAR NA TABELA FINAL
     lista_paises_unicos = list(dict.fromkeys(sub[0].strip() for sub in lista_paises_unicos))
-    # lista_paises_total_api = list(dict.fromkeys(info_api.strip() for info_api in lista_paises_total_api))
     nome_traduzido.update([mapa.get(s, s) for s in lista_paises_total_api])
    
-    
-    # lista_urls = set(lista_urls)
-    # print(lista_paises_total_api)
-    # print(json.dumps(todas_pessoas,  indent=4))
-    # return 
-
-
 
     #  url da busca por id interpol
     with ConectionClass.DbConnect(self.config, auto_commit=False) as conn_status:
@@ -140,7 +114,6 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
          lista_url_interpol = {'periodizacao': self.periodo , 'siglas': 'null', 'url': self.servidor_push_expecifg_id, 'data_captura': datetime.now().strftime("%Y-%m-%d")} 
          id_insert_return_detalhe.append(insert_interpol(self,lista_url_interpol,cursor_initil,conn_status))
          conn_status.commit()
-            #  cursor.lastrowid
          cursor_initil.close()
           
    
@@ -148,7 +121,6 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
     for pessoa in todas_pessoas:
         lista_url = pessoa.get('_links', {}).get('self', {}).get('href')
 
-        print(f"Minha lista de url individual primeira chamada {lista_url}")
     
         if lista_url:
            lista_urls.append(lista_url)
@@ -170,27 +142,15 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
            item['id_geral_iterpol'] = id_geral_url_interpol
 
 
-    # print(f"ESTOU NO FIM DO FOR DA URL {detalhes}")
-
-    # print(json.dumps(detalhes, indent=4))
-    # return
-    
-
-
-    # print(f"Minha lista de url individual {detalhes}")
     pd.set_option('display.max_colwidth', None) # PARA VISUALIZAR EM ESCALA GRANDE 
-
-   
-    
     for pessoa in todas_pessoas:
        
         url_busca = pessoa.get('link_busca', "")
         s = urlparse(url_busca)
         params = parse_qs(s.query)
-            #  sigla (ex: 'AM') ou 'Desconhecido'
         sigla_buscas = params.get('nationality', ['Desconhecido'])[0]
             
-            # Guarda a pessoa no grupo desse país
+        # Guarda a pessoa no grupo desse país
         grupos_por_pais[sigla_buscas].append(pessoa)
 
       
@@ -201,10 +161,7 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
         pessoas_do_grupo = grupos_por_pais.get(sigla_busca, [])
         total_dupla = 0
             
-            # print(f"quais sao os sigla_busca apresentados? {sigla_busca} ")
-            # print(f"quais sao os pessoas_do_grupo apresentados? {pessoas_do_grupo} ")
-            # print(grupos_por_pais)
-
+    
 
 
         for p in pessoas_do_grupo:
@@ -223,9 +180,6 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
         total_por_sigla =  lista_paises_total_api.get(sigla_busca, 0)
         nome_sigla_traduzido = mapa.get(sigla_busca, sigla_busca)
        
-        print(f"minha lista totals {nome_traduzido}")
-
-        print(f"quais sao os sigla_busca apresentados? {sigla_busca} - Total por sigla: {total_por_sigla}") 
         linha_tabela = {
                 'DATA CAPTURA': datetime.now().strftime("%d/%m/%Y %H:%M"),
                 'PAIS_BUSCADO': sigla_busca,
@@ -236,53 +190,21 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
                 }
 
         tabela_atualizar.append(linha_tabela)
-
-    # minha_tabela_montada = pd.DataFrame(tabela_atualizar)
-
-    # # print(f"Minha quantidade processada {len(df)}")
-    # # print(df)
-
-    # print(f"MINHA TABELA MONTADA")
-    # print(f"{minha_tabela_montada}")
- 
-     ## PARA DEBUG
-     
-    # return
-    result_busca = []
-    novos_registros = 0
-    registros_pulados = 0
-
-    # print(json.dumps(todas_pessoas, indent=4))
-    # ClassLogger.logger.error(json.dumps(todas_pessoas, indent=4))
-    # print(grupos_por_pais)
-
-    # return
-  
+    
     with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
         with self.db.get_connection() as conn:
             for pessoa, detalhe in zip(todas_pessoas, detalhes):
-
-               
 
                 entity_id = pessoa.get('entity_id').replace('/','-') if pessoa.get('entity_id') else None
                 name_person = remover_acentos("{} {}".format(pessoa.get('forename'), pessoa.get('name'))).strip()
                 lista_paises_chaves = pessoa.get('nationalities') or []
                 naturalidade = (detalhe.get('place_of_birth') or mapa.get(detalhe.get('country_of_birth_id')) or "N/I").upper()
                 thumbnail = pessoa.get('_links', {}).get('thumbnail', {}).get('href') 
-                print(f"dados encontrados: {detalhe.get('place_of_birth')} + NOME PESON {name_person} + naturalidade dois: {naturalidade}  ")
                 pais_procurado = [mapa.get(wanted.get('issuing_country_id'),wanted.get('issuing_country_id')) for wanted in detalhe.get('arrest_warrants', [])]
                 pais_procurado = ', '.join(pais_procurado).upper() if pais_procurado else "N/I"
-                print(f'meu pais procurado {pais_procurado}')
-
                 # tratar a data que veio a veio quebrada
                 data_ajustada = pessoa.get('date_of_birth').replace('/','-') if pessoa.get('date_of_birth') else None
-                print(f'MINHA DATA PRIMEIRO ESTAGIIO:: data_ajustada {data_ajustada}')
                 data_ajustada = tratar_entrada(data_ajustada)
-                print(f'MINHA DATA:: data_ajustada {data_ajustada}')
-                   
-                #controlador de status 
-                # print(f"ids:: {",".join(entity_id)}")
-                # print(f"Nome:: {",".join(name_person)}")
                 exist_id = False
                 exist_name = False
                 # return
@@ -292,14 +214,12 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
                 if entity_id:
                     future_busca = executor.submit(search_data_interpol, conn, entity_id)
                     exist_id = future_busca.result()
-                    print(f"QUAL E MEU RESULADO AQUI? {exist_id}")
 
                     if exist_id: # aqui atualizo sempre que vinher os dados
                         executor.submit(update_data_interpol, conn, entity_id, naturalidade,thumbnail, pais_procurado)
 
                 if not exist_id:
                     #colocar theads aqui
-                    print(f"QUAIS OS IDS BUSCADO {entity_id} ||| nome: {name_person}")
                     future_busca_name = executor.submit(exists_by_name,conn,name_person)
                     exist_name = future_busca_name.result()
                     if exist_name:
@@ -310,16 +230,12 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
 
             
                 if not exist_id and not exist_name:
-                    print(f"VOU INSEIR O ID {entity_id} | nome: {name_person}")
                     
                     contador_por_pais[person_singla]["INSERT"] += 1
-                    print(f"VOU INSEIR O ID {entity_id} | nome: {name_person} + {person_singla}")
                     
                     # novos_registros +=1
                     lista_paises = pessoa.get('nationalities') or []
-                    print(f"{lista_paises} MEUS DADOSSS")
                     nomes_paises = [mapa.get(pais, pais) for pais in lista_paises]
-                    print(f"{nomes_paises} depois do get?")
                     pais_limpo = ','.join(nomes_paises) if nomes_paises else "N/I"
                     sexo = detalhe.get('sex_id') if detalhe else None
                     # crime =  [remover_acentos(warrant.get('charge')).strip() for warrant in detalhe.get('arrest_warrants', [])] if detalhe else None
@@ -331,10 +247,7 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
 
                    
                     lista.append({
-                            # 'primeiro_nome': pessoa.get('name'),
-                            # 'nome_completo': "{} {}".format(pessoa.get('forename'), pessoa.get('name')),
                             'nome_completo': name_person,
-                            # 'nome_do_meio': pessoa.get('forename'),
                             'data_nascimento': data_ajustada,
                             'nacionalidade': pais_limpo.upper(),
                             'naturalidade': naturalidade.upper(),
@@ -367,16 +280,8 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
         linha['QTA A INSERIR'] = contador_por_pais[pais]["INSERT"]
         linha['QTA J/N BASE'] = contador_por_pais[pais]["NA"]
         
-    print(f"meu contatodor para insercáo de novos registros {novos_registros}")
-    print(f"meu contatodor para dados pulados  {registros_pulados}")
-    print(f"ID GERAL DO CONSULTA INDIVIDURAL :: {id_geral_url_interpol}")
-   
- 
-    # inser_new_registro = 0
-    # falha_ = 0
-    falhas_ids = []
     df = pd.DataFrame(lista)
-    print(f"Minha quantidade processada {len(df)}")
+
 
     if len(df) > 0:
        
@@ -398,11 +303,8 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
                     
             for future in as_completed(futures):
                 result = future.result()
-
-
-                print(f"tenho acesso as siglas {result}")
-                # print(f"tenho acesso as siglas {result['person_sigla_unico']}")
-                        
+                
+                
                 if result['status'] == "sucesso":
                             # inser_new_registro +=1
                    contador_por_pais[result['person_sigla_unico']]["QTINSERT"] += 1
@@ -412,37 +314,11 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
                    contador_por_pais[result['person_sigla_unico']]["ERROR"] += 1
 
 
-         #funcao que esta funcioanndo 
-        # with self.db.get_connection() as conn:
-        #       conn.autocommit = False
-        #       for registro in lista:
-        #         sucesso = insert_base_interpol(self,registro,conn, falhas_ids)
-        #         if sucesso:
-        #             inser_new_registro +=1
-        #         else:
-        #             falha_ +=1
-
-
-
-    
-        #         conn.commit()
     else:
         obs = f"SEM ALTERACAO NOS DADOS {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}"
         obs_interpol = f"SEM CONSULTA INDIVIDUAL {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}"
         alter_status(self, id_insert_return[0],obs)
         alter_status(self, id_geral_url_interpol,obs_interpol)
-    # print(df)
-
-    # print(f"{minha_tabela_montada}")
-    # print(f"MINHA QUANTIDADE COM ERRO {falha_}")
-    # print(f"MINHA LISTA COM OS IDS COM FALAHA PARA INSERIR {falhas_ids}")
-    # print(f"TOTAL DE REGISTROS INSERIDOS :::::{inser_new_registro}")
-    print(f"MEU CONTADORRR :::::{contador_por_pais}")
-
-    
-    
-    
-    
     
     for linha in tabela_atualizar:
         pais = linha['PAIS_BUSCADO']
@@ -451,17 +327,11 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
 
     
   
-    # if minha_tabela_montada:
-
-    #PARA A LISTA
     
     minha_tabela_montada = pd.DataFrame(tabela_atualizar)
     minha_tabela_montada = minha_tabela_montada.fillna(0) 
 
-
-    print(f"MINHA TABELA   :::{minha_tabela_montada}")
-
-    
+  
     if falhas_ids is not None:
        tabela_error = pd.DataFrame(falhas_ids)
        tabela_error = tabela_error.fillna(0) 

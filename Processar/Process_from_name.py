@@ -16,7 +16,7 @@ import sys
 from Conexao import ConectionClass,ConectionPool
 from Model.ClassModel import get_data_match_name_base
 from Model.ClassModel import buscar_teste, insert_interpol, update_info_process,search_data_interpol,exists_by_name,insert_base_interpol,update_data_interpol,update_id_interpol,get_lista_name_base_interpol
-from functions.funcoes import remover_acentos, remover_conhetes, tratar_entrada
+from functions.funcoes import remover_acentos, remover_conhetes, tratar_entrada, path_arquivo
 
 
 
@@ -27,21 +27,16 @@ from functions.funcoes import remover_acentos, remover_conhetes, tratar_entrada
 
 def process_from_name(self):
     #pego os dados e faco a busca
-    print(f'ESTOU CHAMANDO AQUI')
+    ClassLogger.logger.info(f"INIICIANDO A BUSCA E ATUALIZACAO DOS DADOS POR NOME")
     mapa = {}
     lista = []
     falhas_ids =[]
     siglas = []
     ids_sucesso = []
-
-    lista_paises_unicos = []
-    nome_traduzido = set()
     todas_pessoas =[]
     tabela_atualizar = []
     lista_urls_pesquisa = []
-    lista_paises_total_api = {}
-    grupos_por_pais = defaultdict(list)
-    id_insert_return_detalhe = []
+    unificados = {}
     contador_por_pais = defaultdict(lambda: {
     "INSERT": 0,
     "NA": 0,
@@ -50,8 +45,9 @@ def process_from_name(self):
     })
 
     
+    #MONTO SIGLAS UNICAS
+    caminho_countress = path_arquivo() 
 
-    caminho_countress = Path('Arquivos/countries.json')
     lista_coutries = caminho_countress
                 
     with open(lista_coutries) as lista_coutrie:
@@ -152,6 +148,13 @@ def process_from_name(self):
                     print(f"meu resultado do lista_paises_chaves?{lista_paises_chaves}")
                     person_singla = lista_paises_chaves[0] if lista_paises_chaves else 'N/I'
 
+                    linha_tabela = {
+                    'DATA CAPTURA': datetime.now().strftime("%d/%m/%Y %H:%M"),
+                    'PAIS_BUSCADO': person_singla.upper(),
+                   
+                    }
+                    tabela_atualizar.append(linha_tabela)
+
                             
                     entity_id = de.get('entity_id').replace('/','-') if de.get('entity_id') else None
                     name_person = remover_acentos("{} {}".format(de.get('forename'), de.get('name'))).strip()
@@ -229,9 +232,17 @@ def process_from_name(self):
                         print(f"vou pular {entity_id} | nome: {name_person} + {person_singla}")
                         contador_por_pais[person_singla]["NA"] +=1
 
-
+    
     except Exception as e:
            ClassLogger.logger.error(f"Erro ao processar entidade: {str(contador_por_pais)}")
+
+
+    for linha in tabela_atualizar:
+            pais = linha['PAIS_BUSCADO']
+            #MUNDAR PRA A
+            linha['QTA A INSERIR'] = contador_por_pais[pais]["INSERT"]
+            linha['QTA J/N BASE'] = contador_por_pais[pais]["NA"]
+
 
     pd.set_option('display.max_rows', 100)
     pd.set_option('display.max_columns', None)
@@ -242,7 +253,7 @@ def process_from_name(self):
     print(f"Minha quantidade a ser processada {len(df)}")
     print(f"{df}")
     print(f"Minha lista do contador {len(df)}")
-    print(f"{contador_por_pais}")
+    
     # ClassLogger.logger.info(f"MINHA LISTA DO DF json {json.dumps(lista, indent=4)}")
     # ClassLogger.logger.info(f"MINHA LISTA DO DF {df.to_dict(orient='records')}")
 
@@ -274,22 +285,38 @@ def process_from_name(self):
 
 
     else:
-        obs = f"SEM ALTERACAO NOS DADOS {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}"
-        obs_interpol = f"SEM CONSULTA INDIVIDUAL {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}"
-      
+        ClassLogger.logger.info(f"SEM ALTERACAO NOS DADOS {datetime.now().strftime("%Y-%m-%d %H:%M:%S")})")
 
-    print(f"MINHA TABELA   :::{ids_sucesso}") 
+        ClassLogger.logger.info(f"SEM CONSULTA INDIVIDUAL {datetime.now().strftime("%Y-%m-%d %H:%M:%S")})")
+
+    new_tabel = []
+
+    for pais, totais in contador_por_pais.items():
+       
+        nova_linha = {
+            'DATA CAPTURA': datetime.now().strftime("%d/%m/%Y %H:%M"), 
+            'PAIS_BUSCADO': pais,
+            'QTA A INSERIR': totais["INSERT"],
+            'QTA J/N BASE':  totais["NA"],
+            'QTA ERROR':     totais["ERROR"],
+            'QTA INSERIDO':  totais["QTINSERT"]
+        }
+        
+        new_tabel.append(nova_linha)
+
     
-    minha_tabela_montada = pd.DataFrame(ids_sucesso)
+    tabela_atualizar = new_tabel
+    ClassLogger.logger.info(f"TABELA DE RESUMO POR PAIS 'SIGLAS' {tabela_atualizar}")
+    minha_tabela_montada = pd.DataFrame(tabela_atualizar)
     
-    print(f"MINHA TABELA   :::{minha_tabela_montada}") 
-    
-    
-    if falhas_ids is not None:
+    # return
+    corpo_error = ""
+    if falhas_ids:
         tabela_error = pd.DataFrame(falhas_ids)
         tabela_error = tabela_error.fillna(0) 
         convertida_error =  tabela_error.to_html(index=False, border=1, justify='center')
         corpo_error = f"Lista de dados com error :<br> {convertida_error}"
+        print(f"Lista de dados com error :<br> {convertida_error}")
 
 
     
@@ -297,25 +324,18 @@ def process_from_name(self):
     convertida = minha_tabela_montada.to_html(index=False, border=1, justify='center')
 
     corpo = f"""
-       <h2 style="color:green;">Busca dados por nome por 3 primeiras letras </h2>
-        <p>{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</p>
-
-        {convertida}
-        """
-
+    <h2 style="color:green;">Busca dados por nome por 3 primeiras letras </h2>
+    <p>{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</p>
+    {convertida}"""
     html_final = f"""
-        <html>
-        <body>
+    <html>
+    <body>
+    {corpo}
+    <hr>{corpo_error if corpo_error else "<p>Sem erros encontrados</p>"}
 
-        {corpo}
-
-        <hr>
-
-        {corpo_error if corpo_error else "<p>Sem erros encontrados</p>"}
-
-        </body>
-        </html>
-        """
+    </body>
+    </html>
+    """
 
 
     result_email = enviar_email_all(html_final)

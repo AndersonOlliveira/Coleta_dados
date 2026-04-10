@@ -2,8 +2,11 @@
 from datetime import datetime, date
 import unicodedata
 import re
+import os
+
 # from collections import defaultdict
 from Conexao import ConectionClass,ConectionPool
+from pathlib import Path
 
 
 
@@ -38,4 +41,12 @@ def remover_conhetes(texto):
    return  re.sub(r'[\[\]]', '', texto)
 
 
+def path_arquivo():
+    caminho_countress = Path('Arquivos/countries.json')
+    return caminho_countress
 
+
+def path_arquivo_auxiliar():
+    caminho = os.path.join(os.path.dirname(__file__), 'arquivo_registros.json')
+  
+    return caminho
