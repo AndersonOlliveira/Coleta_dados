@@ -37,6 +37,8 @@ def process_from_name(self):
     tabela_atualizar = []
     lista_urls_pesquisa = []
     unificados = {}
+    lista_detalhes_pesquisa =[]
+    des = []
     contador_por_pais = defaultdict(lambda: {
     "INSERT": 0,
     "NA": 0,
@@ -82,10 +84,20 @@ def process_from_name(self):
     
    
     with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
-        des = list(executor.map(
-        lambda url: push_new_resquests(url, self.time_sleps),
-        siglas_unicas
-    ))
+    #     des = list(executor.map(
+    #     lambda url: push_new_resquests(url, self.time_sleps),
+    #     siglas_unicas
+    # ))
+        futures = [
+            executor.submit(push_new_resquests, url, self.time_sleps)
+            for url in siglas_unicas
+        ]
+        for future in as_completed(futures):
+            try:
+                result = future.result()
+                des.append(result)
+            except Exception as e:
+                ClassLogger.logger.error(f"Erro ao processar a URL: {str(e)}")
     
     
     
@@ -121,12 +133,22 @@ def process_from_name(self):
     # print(f"Minha lista de url {json.dumps(lista_urls_pesquisa, indent=4)}")
     # return 
     with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
-        lista_detalhes_pesquisa = list(executor.map(
-        lambda url: push_new_resquests(url, self.time_sleps),
-        lista_urls_pesquisa
-    ))
+    #     lista_detalhes_pesquisa = list(executor.map(
+    #     lambda url: push_new_resquests(url, self.time_sleps),
+    #     lista_urls_pesquisa
+    # ))
+            futures = [
+                executor.submit(push_new_resquests, url, self.time_sleps)
+                for url in lista_urls_pesquisa
+            ] 
+            for future in as_completed(futures):
+                    try:
+                        result = future.result()
+                        lista_detalhes_pesquisa.append(result)
+                    except Exception as e:
+                        ClassLogger.logger.error(f"Erro ao processar a URL: {str(e)}")
+                    
         
-    
     # print(f"Detalhes das pessoas: {json.dumps(lista_detalhes_pesquisa, indent=4)}")
 
     # return
@@ -140,7 +162,7 @@ def process_from_name(self):
                     print(f"meu resultado do list_url_person?{list_url_person}")
                     lista_paises_chaves = de.get('nationalities') or []
                       # tratar a data que veio a veio quebrada
-                    data_ajustada = de.get('date_of_birth').replace('/','-') if de.get('date_of_birth') else None
+                    data_ajustada = de.get('date_of_birth') if de.get('date_of_birth') else None
                     print(f'MINHA DATA PRIMEIRO ESTAGIIO:: data_ajustada {data_ajustada}')
                     data_ajustada = tratar_entrada(data_ajustada)
                     print(f'MINHA DATA:: data_ajustada {data_ajustada}')

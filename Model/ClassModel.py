@@ -57,19 +57,19 @@ def insert_base_interpol(self, registro):
                (nome, sexo, nascimento,nacionalidade,idioma,acusacao,foto,data_consulta_fonte,hora_consulta_fonte,id_interpol,naturalidade, pais_procurado,ativo)
            VALUES  (%s,%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s) """
 
-    # print(f"Registro a ser inserido: {registro}")
-    # print(f"{registro['nome_completo']}")
-    # print(f"{registro['sexo']}")
-    # print(f"{registro['data_nascimento']}")
-    # print(f"{registro['nacionalidade']}")
-    # print(f"{registro['idiona']}")
-    # print(f"{registro['acusacao']}")
-    # print(f"{registro['thumbnail']}")
-    # print(f"{registro['data_consulta']}")
-    # print(f"{registro['hora_consulta']}")
-    # print(f"{registro['id_interpol']}")
-    # print(f"{registro['naturalidade']}")
-    # print(f"minha person sigla {registro['person_sigla_unico']}")
+    print(f"Registro a ser inserido: {registro}")
+    print(f"{registro['nome_completo']}")
+    print(f"{registro['sexo']}")
+    print(f"{registro['data_nascimento']}")
+    print(f"{registro['nacionalidade']}")
+    print(f"{registro['idiona']}")
+    print(f"{registro['acusacao']}")
+    print(f"{registro['thumbnail']}")
+    print(f"{registro['data_consulta']}")
+    print(f"{registro['hora_consulta']}")
+    print(f"{registro['id_interpol']}")
+    print(f"{registro['naturalidade']}")
+    print(f"minha person sigla {registro['person_sigla_unico']}")
 
     print(query)
     print((
@@ -407,7 +407,7 @@ def get_lista_name_base_interpol(self) -> List[Dict]:
      
      
       query = """SELECT UPPER(nome) as nome FROM public.interpol_dados_teste 
-                  ORDER BY nome  limit 2 """
+                  ORDER BY nome"""
       
       
       try:
@@ -430,8 +430,8 @@ def get_lista_name_base_interpol(self) -> List[Dict]:
                  
 #PROCESSO INVERSO PEGANDO OS IDS 
 def list_interpol(self) -> List[Dict]:
-      query = """SELECT id_interpol AS ID_INTERPOL FROM public.interpol_dados_teste
-                 WHERE id_interpol IS NOT NULL ORDER BY  RANDOM()"""
+      query = """SELECT id_interpol AS ID_INTERPOL FROM public.interpol_dados_teste 
+                 WHERE id_interpol IS NOT NULL AND ativo = true ORDER BY id_interpol desc"""
       
       
       try:

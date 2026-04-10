@@ -35,7 +35,7 @@ class Processor:
         self.batch_counter_status4 = 0
         self.qtPage = 160 # resultado na tela e apresentado somente 160 registros 
         self.indicePage = 1
-        self.time_sleps = 5
+        self.time_sleps = 10
         self.periodo = 'SEMANAL'
         self.true = True
         self.false =False
@@ -122,7 +122,7 @@ class Processor:
         # self.enviar_email()
         # self.busca_dados()   
         # self.teste_busca_interpol()   
-        self.from_name_interpol()   
-        self.atualiza_dados_interpol()
-        self.match_name()
+        # self.from_name_interpol()   
+        # self.atualiza_dados_interpol()
+        # self.match_name()
         ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] Iniciando a consulta")      

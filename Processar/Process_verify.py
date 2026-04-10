@@ -24,8 +24,9 @@ def process_verify_status(self):
       lista_pesquisa_url =[]
       new_tabel =[]
       tabela_atualizar= []
+      result_pesquisa = []
       contador_inativos = defaultdict(lambda: {
-      "INSERT": 0,
+      "UPATVIO": 0,
       "NA": 0,
       "ERROR":0,
       "QTINSERT": 0
@@ -60,10 +61,18 @@ def process_verify_status(self):
           
           #REALIZAO O RESQUEST 
           with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
-               result_pesquisa = list(executor.map(
-               lambda url: push_new_resquests(url, self.time_sleps),
-               lista_pesquisa_url
-               ))
+               # result_pesquisa = list(executor.map(
+               # lambda url: push_new_resquests(url, self.time_sleps),
+               # lista_pesquisa_url
+               # ))
+               futures = [
+                    executor.submit(push_new_resquests, url, self.time_sleps)
+                    for url in lista_pesquisa_url
+                ]
+                
+               for future in as_completed(futures):
+                    result = future.result()
+                    result_pesquisa.append(result)
 
 
           print(f"DADOS RETORNADOS {result_pesquisa}")
@@ -74,7 +83,7 @@ def process_verify_status(self):
                    print(f"resultado do processamento {resultado}")
                    if resultado.get('message') == False:
                         ClassLogger.logger.info('O registro esta inativo ou nao encontrado na interpol')
-                        contador_inativos[resultado.get('id_interpol')]["INSERT"] += 1
+                        contador_inativos[resultado.get('id_interpol')]["UPATVIO"] += 1
 
                         with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
                              future_interpol = executor.submit(update_id_interpol_status, self, resultado.get('id_interpol'), False, datetime.now().strftime("%Y-%m-%d %H:%M:%S") )
@@ -84,6 +93,7 @@ def process_verify_status(self):
 
                    else:
                         ClassLogger.logger.info('O registro esta ativo na interpol')
+                        contador_inativos[resultado.get('id_interpol')]["NA"] += 1
 
      
 
@@ -92,7 +102,8 @@ def process_verify_status(self):
                nova_linha = {
                     'DATA CAPTURA': datetime.now().strftime("%d/%m/%Y %H:%M"), 
                     'PAIS_BUSCADO': pais,
-                    'QTA INATIVOS': totais["INSERT"],
+                    'QTA INATIVOS': totais["UPATVIO"],
+                    'QTA ATIVOS': totais["NA"],
                     
                }
                
@@ -107,7 +118,7 @@ def process_verify_status(self):
           convertida = minha_tabela_montada.to_html(index=False, border=1, justify='center')
 
           corpo = f"""
-          <h2 style="color:green;">Busca dados por nome por 3 primeiras letras </h2>
+          <h2 style="color:green;">Verificação de Status inativos interpol </h2>
           <p>{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</p>
           {convertida}"""
           html_final = f"""

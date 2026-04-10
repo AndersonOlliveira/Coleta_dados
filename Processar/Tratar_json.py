@@ -45,6 +45,7 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
     result_busca = []
     novos_registros = 0
     registros_pulados = 0
+    detalhes = []
     contador_por_pais = defaultdict(lambda: {
     "INSERT": 0,
     "NA": 0,
@@ -125,12 +126,28 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
         if lista_url:
            lista_urls.append(lista_url)
     #CHAMO A API QUE VEM NO RETORNO DA CHAMADA DA PAIS, NELE JA ME ROTANA O LINK COM O ID INDIVIDUAL PARA A PESSOA , COLOCANDO O RESULTANDO DENTRO DE DETALHES PARA POPULAR ABAIXO
-   
+    
     with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
-        detalhes = list(executor.map(
-        lambda url: push_new_resquests(url, self.time_sleps),
-        lista_urls
-    ))
+    #     detalhes = list(executor.map(
+    #     lambda url: push_new_resquests(url, self.time_sleps),
+    #     lista_urls
+    # ))
+          futures = [
+        executor.submit(push_new_resquests, url, self.time_sleps)
+        for url in lista_urls
+      ]
+
+    for future in as_completed(futures):
+        try:
+            result = future.result()
+            detalhes.append(result)
+
+            print("✔ Detalhe recebido")
+
+       
+
+        except Exception as e:
+             ClassLogger.logger.error(f"Erro ao processar a URL: {e}", exc_info=True)
         
     
   
@@ -194,6 +211,7 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
     with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
         with self.db.get_connection() as conn:
             for pessoa, detalhe in zip(todas_pessoas, detalhes):
+                print(f"ESTOU SAINDO AQUI? DEPOIS DO MEU ATUALIZAR? ")
 
                 entity_id = pessoa.get('entity_id').replace('/','-') if pessoa.get('entity_id') else None
                 name_person = remover_acentos("{} {}".format(pessoa.get('forename'), pessoa.get('name'))).strip()
@@ -203,7 +221,7 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
                 pais_procurado = [mapa.get(wanted.get('issuing_country_id'),wanted.get('issuing_country_id')) for wanted in detalhe.get('arrest_warrants', [])]
                 pais_procurado = ', '.join(pais_procurado).upper() if pais_procurado else "N/I"
                 # tratar a data que veio a veio quebrada
-                data_ajustada = pessoa.get('date_of_birth').replace('/','-') if pessoa.get('date_of_birth') else None
+                data_ajustada = pessoa.get('date_of_birth') if pessoa.get('date_of_birth') else None
                 data_ajustada = tratar_entrada(data_ajustada)
                 exist_id = False
                 exist_name = False

@@ -20,6 +20,7 @@ def push_request(self,countries = None, url_new = None):
     url_completa = []
     tempo_chamada = self.time_sleps
     id_insert_return = []
+    resultados = []  
 
     # print(f"ESTOU ACESSANDO OS DADOS")
     # print(f"tipo: {type(countries)}")
@@ -102,21 +103,36 @@ def push_request(self,countries = None, url_new = None):
     if links_interpol:
         print(f" minha quantidade de url : {len(links_interpol)}")
         print(f"Link API: {links_interpol}")
-            
+          
         with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
-            resultados = list(executor.map(
-                lambda url: push_new_resquests(url, self.time_sleps),
-                links_interpol
-            ))
-
+            #TROCANDO PARA MELHORIA DO PROCESSO 
+            # resultados = list(executor.map(
+            #     lambda url: push_new_resquests(url, self.time_sleps),
+            #     links_interpol
+            # ))
+            futures = [
+            executor.submit(push_new_resquests, url, self.time_sleps)
+            for url in links_interpol
+            ]
             print(f"meu id geral {id_insert_return}")
 
             id_pai = id_insert_return[0] if id_insert_return else None
+            for future in futures:
+                 try:
+                      result = future.result()
+                      if isinstance(result, dict):
+                            result['id_geral_'] = id_pai
+                      
+                      resultados.append(result)
+                 except Exception as e:
+                    print(f"Erro ao processar a URL: {e}")
+                    # Você pode optar por adicionar um resultado de erro à lista ou simplesmente ignorar
+                    ClassLogger.logger.error(f"Erro ao processar a URL: {e}", exc_info=True)
 
             # Percorre a lista e injeta o ID em cada dicionário retornado
-            for item in resultados:
-                if isinstance(item, dict):
-                    item['id_geral_'] = id_pai
+            # for item in resultados:
+                # if isinstance(item, dict):
+                #     item['id_geral_'] = id_pai
 
         # print(f"Finalizado : {resultados}")
         # return
@@ -149,7 +165,7 @@ def push_new_resquests(url, time_sleps):
 
         try:
                 
-                response = requests.get(url, impersonate="chrome110", timeout=(30))
+                response = requests.get(url, impersonate="chrome110", timeout=(50))
                 # response = requests.get(url, headers=servidor_headers, timeout=(30))
                 agora = datetime.now()
                 print(f"Agora: {agora}")

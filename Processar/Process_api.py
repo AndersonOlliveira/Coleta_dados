@@ -20,6 +20,7 @@ def process_api(self):
     caminho_countries = Path('Arquivos/countries_poucos.json')
 
     print(f"meu caminho : {caminho_countries}")
+    # print(f"meu caminho : {len(caminho_countries)}")
 
     if caminho_countries.is_file():
         print(f"ARQUIVO COM A LISTA DE PAISES EXISTE DENTRO DO PROJETO POSSO DAR SEGUIMENTO COM O PROCESSO!")

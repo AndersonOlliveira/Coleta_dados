@@ -11,9 +11,11 @@ from pathlib import Path
 
 
 def tratar_entrada(valor):
+    
+    valor_limpo = str(valor).replace('-', '/').strip()
     try:
         # Tenta tratar como data completa primeiro
-        return datetime.strptime(str(valor), "%Y/%m/%d").date()
+        return datetime.strptime(str(valor_limpo), "%Y/%m/%d").date()
     except ValueError:
         try:
             # Se falhar, tenta tratar apenas como o ano
