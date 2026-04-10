@@ -6,7 +6,7 @@ import time
 import json
 from curl_cffi import requests
 from datetime import datetime
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from Mail.ClassMail import enviar_email_all
 from Conexao import ConectionClass
 from Model.ClassModel import buscar_teste, insert_interpol
@@ -110,32 +110,33 @@ def push_request(self,countries = None, url_new = None):
             #     lambda url: push_new_resquests(url, self.time_sleps),
             #     links_interpol
             # ))
-            futures = [
-            executor.submit(push_new_resquests, url, self.time_sleps)
-            for url in links_interpol
-            ]
-            print(f"meu id geral {id_insert_return}")
+                futures_dados = [
+                executor.submit(push_new_resquests, url, self.time_sleps)
+                for url in links_interpol
+                ]
+                print(f"meu id geral {id_insert_return}")
 
-            id_pai = id_insert_return[0] if id_insert_return else None
-            for future in futures:
-                 try:
-                      result = future.result()
-                      if isinstance(result, dict):
-                            result['id_geral_'] = id_pai
-                      
-                      resultados.append(result)
-                 except Exception as e:
-                    print(f"Erro ao processar a URL: {e}")
-                    # Você pode optar por adicionar um resultado de erro à lista ou simplesmente ignorar
-                    ClassLogger.logger.error(f"Erro ao processar a URL: {e}", exc_info=True)
+                id_pai = id_insert_return[0] if id_insert_return else None
+                
+                for future in as_completed(futures_dados):
+                    try:
+                        result = future.result()
+                        if isinstance(result, dict):
+                                result['id_geral_'] = id_pai
+                        
+                        resultados.append(result)
+                    except Exception as e:
+                        print(f"Erro ao processar a URL: {e}")
+                        # Você pode optar por adicionar um resultado de erro à lista ou simplesmente ignorar
+                        ClassLogger.logger.error(f"Erro ao processar a URL: {e}", exc_info=True)
 
-            # Percorre a lista e injeta o ID em cada dicionário retornado
-            # for item in resultados:
-                # if isinstance(item, dict):
-                #     item['id_geral_'] = id_pai
+                # Percorre a lista e injeta o ID em cada dicionário retornado
+                # for item in resultados:
+                    # if isinstance(item, dict):
+                    #     item['id_geral_'] = id_pai
 
-        # print(f"Finalizado : {resultados}")
-        # return
+            # print(f"Finalizado : {resultados}")
+            # return
 
         return resultados, id_insert_return
 
@@ -156,25 +157,27 @@ def push_new_resquest(url, time_sleps):
         print(f"Erro: {e}")
 
 
-def push_new_resquests(url, time_sleps):
+def push_new_resquests(url,max_retries=3):
     
+        session = requests.Session()
         servidor_headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
         resposta = ""
         erro = False
 
 
         try:
-                
-                response = requests.get(url, impersonate="chrome110", timeout=(50))
-                # response = requests.get(url, headers=servidor_headers, timeout=(30))
                 agora = datetime.now()
                 print(f"Agora: {agora}")
                 print(f" Chamada a cada  X TEMPO: {agora}")
-                print(f" Tempo de parada a cada chamada:  {time_sleps}")
-                time.sleep(time_sleps)
+
+                response = session.get(
+                    url,
+                    impersonate="chrome110",
+                    timeout=50
+                )
+
                 response.raise_for_status()
                 resposta = response.json()
-
 
 
                 # if isinstance(resposta, list):
@@ -243,12 +246,13 @@ def push_new_resquests(url, time_sleps):
         print(f"tenho o info do erro {erro}") 
 
         if erro:
-            #  print('ESTOU SAINDO AQUI')
-             enviar_email_all(resposta)
-        #  print(f"tenho o info do erro {e}") 
+            print(f"ESTOU SAINDO AQUI {erro}")
+            #  enviar_email_all(resposta)
+            print(f"tenho o info do erro") 
 
 
-        # print(f"Resposta da API: {resposta}")
+        print(f"Resposta da API: {resposta}")
+        # return
         return resposta
 
 def rest_interpol_id(url):

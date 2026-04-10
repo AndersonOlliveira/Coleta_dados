@@ -1,3 +1,5 @@
+# import aiohttp
+# import asyncio
 import json
 from Logs import ClassLogger
 import os
@@ -72,6 +74,21 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
 
 
     for bloco in tratamento:
+        print(f"DEBUG BLOCO: {bloco} | tipo: {type(bloco)}")
+        # print(f"DEBUG BLOCO: {bloco} | tipo: {type(bloco)}")
+        # return
+        if not isinstance(bloco, dict):
+                print(f"Bloco inválido: {bloco}")
+                # link = bloco.get('_links').get('self', {}).get('href', {})
+                # s = urlparse(link)
+                # params = parse_qs(s.query)
+                # lista_paises_unicos.append(params.get('nationality'))
+                # list_teste = params.get('nationality')
+
+                # contador_por_pais[list_teste]["NA"] += 1
+                continue  #  pula sem quebrar nada
+              
+        
         pessoas = bloco.get('_embedded', {}).get('notices', [])
         link = bloco.get('_links').get('self', {}).get('href', {})
         total_api = bloco.get('total')
@@ -132,24 +149,22 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
     #     lambda url: push_new_resquests(url, self.time_sleps),
     #     lista_urls
     # ))
-          futures = [
-        executor.submit(push_new_resquests, url, self.time_sleps)
-        for url in lista_urls
-      ]
+            futures = [
+            executor.submit(push_new_resquests, url, self.time_sleps)for url in lista_urls]
 
-    for future in as_completed(futures):
-        try:
-            result = future.result()
-            detalhes.append(result)
+            for future in as_completed(futures):
+                try:
+                    result = future.result()
+                    detalhes.append(result)
 
-            print("✔ Detalhe recebido")
+                    print("✔ Detalhe recebido")
 
-       
+            
 
-        except Exception as e:
-             ClassLogger.logger.error(f"Erro ao processar a URL: {e}", exc_info=True)
+                except Exception as e:
+                    ClassLogger.logger.error(f"Erro ao processar a URL: {e}", exc_info=True)
+                
         
-    
   
     id_geral_url_interpol = id_insert_return_detalhe[0] if id_insert_return_detalhe else None
 

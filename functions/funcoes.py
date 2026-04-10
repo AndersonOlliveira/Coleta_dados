@@ -19,10 +19,12 @@ def tratar_entrada(valor):
     except ValueError:
         try:
             # Se falhar, tenta tratar apenas como o ano
+            if valor is None:
+                return "0000-00-00"
             ano = int(valor)
             return date(ano, 1, 1)
-        except ValueError:
-            return "Valor inválido"
+        except (ValueError, TypeError):
+            return "0000-00-00"
 
 
 def remover_acentos(texto):

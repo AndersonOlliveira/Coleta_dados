@@ -35,7 +35,7 @@ class Processor:
         self.batch_counter_status4 = 0
         self.qtPage = 160 # resultado na tela e apresentado somente 160 registros 
         self.indicePage = 1
-        self.time_sleps = 10
+        self.time_sleps = 2
         self.periodo = 'SEMANAL'
         self.true = True
         self.false =False
