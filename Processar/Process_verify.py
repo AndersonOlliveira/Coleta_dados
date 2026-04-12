@@ -92,7 +92,7 @@ def process_verify_status(self):
                          
 
                    else:
-                        ClassLogger.logger.info('O registro esta ativo na interpol')
+                        print(f'O registro esta ativo na interpol')
                         contador_inativos[resultado.get('id_interpol')]["NA"] += 1
 
      

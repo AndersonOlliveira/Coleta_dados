@@ -5,20 +5,21 @@ from Logs import ClassLogger
 import threading
 
 if __name__ == "__main__":
-    instance = Processor(max_workers=4, batch_size=5)
+    instance = Processor(max_workers=3, batch_size=5)
     
     instance.executar_ciclo()
  
     # Loop Infinito
     # while True:
-    #     try:
-       
+    try:
+    
+            ClassLogger.logger.info("\nIniciando Processo")
              
-        # except KeyboardInterrupt:
+    except KeyboardInterrupt:
             # Permite parar o script com Ctrl+C no terminal
-    ClassLogger.logger.info("\nEncerrando loop por comando do usuário (Ctrl+C).")
-            # break
-        # except Exception as e:
-            # Lida com erros inesperados e continua o loop
-    ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] Erro inesperado: . Continuará em 30 segundos.")
-            
+           ClassLogger.logger.info("\nEncerrando loop por comando do usuário (Ctrl+C).")
+                # break
+    except Exception as e:
+                # Lida com erros inesperados e continua o loop
+            ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] Erro inesperado: {e}. Continuará em 30 segundos.")
+                

@@ -28,7 +28,8 @@ class DbConnect:
             port=self.config.PORT,
             database=self.config.DATABASE,
             user=self.config.USER,
-            password=self.config.PASSWORD
+            password=self.config.PASSWORD,
+            options='-c client_encoding=UTF8'
         )
         return self.connection
         

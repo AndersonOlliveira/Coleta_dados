@@ -407,7 +407,7 @@ def get_lista_name_base_interpol(self) -> List[Dict]:
      
      
       query = """SELECT UPPER(nome) as nome FROM public.interpol_dados_teste 
-                  ORDER BY nome"""
+                  ORDER BY RANDOM () limit 2"""
       
       
       try:

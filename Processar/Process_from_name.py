@@ -78,9 +78,12 @@ def process_from_name(self):
     # lista_singlas_name = f"{self.servidor_get_from_name}=KAB{params}"
     # siglas.append(lista_singlas_name)                    
 
-    # remove duplicados
-    siglas_unicas = list(set(siglas))
+            # remove duplicados
+          siglas_unicas = list(set(siglas))
 
+    # print(f"MINHA LISTA DE URL PARA BUSCA POR NOME {len(siglas_unicas)}")
+    
+    # return
     
    
     with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
@@ -89,7 +92,7 @@ def process_from_name(self):
     #     siglas_unicas
     # ))
         futures = [
-            executor.submit(push_new_resquests, url, self.time_sleps)
+            executor.submit(push_new_resquests, url, max_retries=3)
             for url in siglas_unicas
         ]
         for future in as_completed(futures):
@@ -105,14 +108,18 @@ def process_from_name(self):
 
         # return 
         for bloco in des:
+             print(f"DEBUG BLOCO: {bloco} | tipo: {type(bloco)}")
+             if not isinstance(bloco, dict):
+                print(f"Bloco inválido: {bloco}")
+               
             # if isinstance(bloco, str):
             #    bloco = json.loads(bloco)
-               pessoas_detalhes = bloco.get('_embedded', {}).get('notices', [])
+             pessoas_detalhes = bloco.get('_embedded', {}).get('notices', [])
         
         todas_pessoas.extend(pessoas_detalhes)
     except Exception as e:
            
-           ClassLogger.logger.error(f"Erro ao processar os Dados : {str(e)} ::: DADOS ERROS{des}")
+           ClassLogger.logger.error(f"Erro ao processar os Dados BUSCA POR 3 PRIMEIRA LETRAS : {str(e)} ::: DADOS ERROS{des}")
     
     
     # print(f"minha lisata {len(todas_pessoas)}")
@@ -344,22 +351,22 @@ def process_from_name(self):
     
 
     convertida = minha_tabela_montada.to_html(index=False, border=1, justify='center')
+    if len(df) > 0:
+        corpo = f"""
+        <h2 style="color:green;">Busca dados por nome por 3 primeiras letras </h2>
+        <p>{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</p>
+        {convertida}"""
+        html_final = f"""
+        <html>
+        <body>
+        {corpo}
+        <hr>{corpo_error if corpo_error else "<p>Sem erros encontrados</p>"}
 
-    corpo = f"""
-    <h2 style="color:green;">Busca dados por nome por 3 primeiras letras </h2>
-    <p>{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</p>
-    {convertida}"""
-    html_final = f"""
-    <html>
-    <body>
-    {corpo}
-    <hr>{corpo_error if corpo_error else "<p>Sem erros encontrados</p>"}
-
-    </body>
-    </html>
-    """
+        </body>
+        </html>
+        """
 
 
-    result_email = enviar_email_all(html_final)
+        result_email = enviar_email_all(html_final)
 
             
