@@ -8,6 +8,7 @@ from curl_cffi import requests
 from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from Mail.ClassMail import enviar_email_all
+from functions.funcoes import dividir_lotes
 from Conexao import ConectionClass
 from Model.ClassModel import buscar_teste, insert_interpol
 from urllib.parse import urlparse, parse_qs
@@ -32,14 +33,14 @@ class RateLimiter:
 
             if elapsed < delay:
                 sleep_time = delay - elapsed
-                print(f"⏳ Aguardando {sleep_time:.2f}s")
+                print(f" Aguardando {sleep_time:.2f}s")
                 time.sleep(sleep_time)
 
             self.last_request = time.time()
 
     def increase_penalty(self):
         self.penalty += 1
-        print(f"🚨 Aumentando penalidade: {self.penalty}")
+        print(f" Aumentando penalidade: {self.penalty}")
 
     def decrease_penalty(self):
         if self.penalty > 0:
@@ -136,40 +137,41 @@ def push_request(self,countries = None, url_new = None):
     if links_interpol:
         print(f" minha quantidade de url : {len(links_interpol)}")
         print(f"Link API: {links_interpol}")
-          
-        with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
-            #TROCANDO PARA MELHORIA DO PROCESSO 
-            # resultados = list(executor.map(
-            #     lambda url: push_new_resquests(url, self.time_sleps),
-            #     links_interpol
-            # ))
-                futures_dados = [
-                executor.submit(push_new_resquests, url, self.time_sleps)
-                for url in links_interpol
-                ]
-                print(f"meu id geral {id_insert_return}")
 
-                id_pai = id_insert_return[0] if id_insert_return else None
-                
-                for future in as_completed(futures_dados):
-                    try:
-                        result = future.result()
-                        if isinstance(result, dict):
-                                result['id_geral_'] = id_pai
-                        
-                        resultados.append(result)
-                    except Exception as e:
-                        print(f"Erro ao processar a URL: {e}")
-                        # Você pode optar por adicionar um resultado de erro à lista ou simplesmente ignorar
-                        ClassLogger.logger.error(f"Erro ao processar a URL: {e}", exc_info=True)
+        for lote in dividir_lotes(links_interpol , self.batch_size_verify):
+            with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
+                #TROCANDO PARA MELHORIA DO PROCESSO 
+                # resultados = list(executor.map(
+                #     lambda url: push_new_resquests(url, self.time_sleps),
+                #     links_interpol
+                # ))
+                    futures_dados = [
+                    executor.submit(push_new_resquests, url, self.max_workers)
+                    for url in links_interpol
+                    ]
+                    print(f"meu id geral {id_insert_return}")
 
-                # Percorre a lista e injeta o ID em cada dicionário retornado
-                # for item in resultados:
-                    # if isinstance(item, dict):
-                    #     item['id_geral_'] = id_pai
+                    id_pai = id_insert_return[0] if id_insert_return else None
+                    
+                    for future in as_completed(futures_dados):
+                        try:
+                            result = future.result()
+                            if isinstance(result, dict):
+                                    result['id_geral_'] = id_pai
+                            
+                            resultados.append(result)
+                        except Exception as e:
+                            print(f"Erro ao processar a URL: {e}")
+                            # Você pode optar por adicionar um resultado de erro à lista ou simplesmente ignorar
+                            ClassLogger.logger.error(f"Erro ao processar a URL: {e}", exc_info=True)
 
-            # print(f"Finalizado : {resultados}")
-            # return
+                    # Percorre a lista e injeta o ID em cada dicionário retornado
+                    # for item in resultados:
+                        # if isinstance(item, dict):
+                        #     item['id_geral_'] = id_pai
+
+                # print(f"Finalizado : {resultados}")
+                # return
 
         return resultados, id_insert_return
 
@@ -190,8 +192,16 @@ def push_new_resquest(url, time_sleps):
         print(f"Erro: {e}")
 
 
-def push_new_resquests(url,max_retries=3):
+buffer_mensagens_emails =[]
+timer_ativo = False
+lock_error = threading.Lock()
+
+def push_new_resquests(url,max_retries):
+        global buffer_mensagens_emails, timer_ativo, lock_error 
         # acumulo_erros = []
+        JANELA_COLETA_SEGUNDOS = 30
+        resposta = ""
+        erro = False
         lock_erros = threading.Lock()
         acumulo_erros = defaultdict(lambda: {
         "ERROR":0,
@@ -206,8 +216,7 @@ def push_new_resquests(url,max_retries=3):
         "Accept": "application/json",
         "Connection": "keep-alive"
         })
-        resposta = ""
-        erro = False
+      
 
         for tentativa in range(max_retries):
             try:
@@ -219,7 +228,7 @@ def push_new_resquests(url,max_retries=3):
                             # "edge101"
                         ])
 
-                print(f"🌐 [{datetime.now()}] {url} | {navegador}")
+                print(f" [{datetime.now()}] {url} | {navegador}")
                 
                 response = session.get(
                         url,
@@ -231,11 +240,19 @@ def push_new_resquests(url,max_retries=3):
                 if response.status_code == 403:
                     print(f"🚫 403 detectado (tentativa {tentativa+1})")
                     msg_custom = f"Acesso Negado (403). Verifique permissões ou Headers. Detalhes: {url}"
-
+                    
                     with lock_erros:
-                          acumulo_erros[url]["ERROR"] += 1
+                        erro = True
+                        acumulo_erros[url]["ERROR"] += 1
+                        buffer_mensagens_emails.append(f"[{datetime.now().strftime('%H:%M:%S')}] {msg_custom}")
 
-                    ClassLogger.logger.error(f"Erro 403: {msg_custom}")
+                    # Se não houver um timer rodando, inicia um agora
+                        if not timer_ativo:
+                            timer_ativo = True
+                                 # Inicia uma thread separada que vai esperar X segundos antes de enviar tudo
+                            threading.Timer(JANELA_COLETA_SEGUNDOS, disparar_email_agrupado).start()
+
+                    ClassLogger.logger_urls.error(f"Erro 403: {msg_custom}")
 
                     rate_limiter.increase_penalty()
                     time.sleep(2)
@@ -320,13 +337,13 @@ def push_new_resquests(url,max_retries=3):
             
             print(f"MEU CORPO {corpo_email}")
 
-            enviar_email_all(corpo_email)
+            # enviar_email_all(corpo_email)
 
         if erro:
-            print(f"ESTOU SAINDO AQUI {erro}")
-            print(f"ESTOU SAINDO AQUI {acumulo_erros}")
-            # enviar_email_all(resposta)
-            print(f"tenho o info do erro") 
+            # print(f"ESTOU SAINDO AQUI {erro}")
+            # print(f"ESTOU SAINDO AQUI {acumulo_erros}")
+            enviar_email_all(resposta)
+            # print(f"tenho o info do erro") 
 
 
         print(f"Resposta da API: {resposta}")
@@ -346,3 +363,21 @@ def montar_email_erros(acumulo_erros):
         # linhas.append(f"  → {dados['ERROR']} erros\n")
 
     return "\n".join(linhas)
+
+
+
+
+def disparar_email_agrupado():
+         with lock_error:
+                if buffer_mensagens_emails:
+                    qtd = len(buffer_mensagens_emails)
+                    corpo = "\n".join(buffer_mensagens_emails)
+                    print(f"MEU CORPO DO E-MAIL {corpo}")
+                
+            # CHAME SUA FUNÇÃO DE E-MAIL AQUI
+                print(f"📧 Enviando e-mail com {qtd} erros acumulados...")
+                
+                enviar_email_all(f"<h2>Resumo de erros 403</h2><p>{corpo.replace('\n', '<br>')}</p>")
+                
+                buffer_mensagens_emails.clear() # Limpa para o próximo lote
+         timer_ativo = False

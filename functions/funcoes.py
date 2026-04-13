@@ -20,11 +20,13 @@ def tratar_entrada(valor):
         try:
             # Se falhar, tenta tratar apenas como o ano
             if valor is None:
+                return None
                 return "0000-00-00"
             ano = int(valor)
             return date(ano, 1, 1)
         except (ValueError, TypeError):
-            return "0000-00-00"
+            return None
+            # return "0000-00-00"
 
 
 def remover_acentos(texto):
@@ -54,3 +56,13 @@ def path_arquivo_auxiliar():
     caminho = os.path.join(os.path.dirname(__file__), 'arquivo_registros.json')
   
     return caminho
+
+
+def dividir_lotes(lista, tamanho):
+    for i in range(0, len(lista), tamanho):
+        yield lista[i:i + tamanho]
+
+
+def dividir_lotes_tratar(lista1, lista2, tamanho):
+    for i in range(0, len(lista1), tamanho):
+        yield lista1[i:i+tamanho], lista2[i:i+tamanho]

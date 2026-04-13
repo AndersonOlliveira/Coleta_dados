@@ -7,13 +7,16 @@ import threading
 if __name__ == "__main__":
     instance = Processor(max_workers=3, batch_size=5)
     
-    instance.executar_ciclo()
+    resultado_fluxo = instance.executar_ciclo()
  
     # Loop Infinito
     # while True:
     try:
     
             ClassLogger.logger.info("\nIniciando Processo")
+            print(f"Resultado do fluxo: {resultado_fluxo}")
+
+              
              
     except KeyboardInterrupt:
             # Permite parar o script com Ctrl+C no terminal

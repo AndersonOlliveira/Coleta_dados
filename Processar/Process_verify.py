@@ -15,7 +15,7 @@ import sys
 # from collections import defaultdict
 from Conexao import ConectionClass,ConectionPool
 from Model.ClassModel import list_interpol,update_id_interpol_status
-from functions.funcoes import remover_acentos, remover_conhetes, tratar_entrada
+from functions.funcoes import remover_acentos, remover_conhetes, tratar_entrada,dividir_lotes
 
 
 
@@ -57,25 +57,31 @@ def process_verify_status(self):
         
         
         
-
-          
-          #REALIZAO O RESQUEST 
-          with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
-               # result_pesquisa = list(executor.map(
-               # lambda url: push_new_resquests(url, self.time_sleps),
-               # lista_pesquisa_url
-               # ))
+         
+          for lote in dividir_lotes(lista_pesquisa_url, self.batch_size_verify):
+             futures = []
+               #REALIZAO O RESQUEST 
+             with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
+                    # result_pesquisa = list(executor.map(
+                    # lambda url: push_new_resquests(url, self.time_sleps),
+                    # lista_pesquisa_url
+                    # ))
                futures = [
-                    executor.submit(push_new_resquests, url, self.time_sleps)
-                    for url in lista_pesquisa_url
+                         executor.submit(push_new_resquests, url, self.time_sleps)
+                         for url in lote
+                         # for url in lista_pesquisa_url
                 ]
-                
+                    
                for future in as_completed(futures):
-                    result = future.result()
-                    result_pesquisa.append(result)
+                    try:
+                         result = future.result()
+                         result_pesquisa.append(result)
+                    except Exception as e:
+                         print(f"Erro ao processar a requisação {str(e)}")
 
 
           print(f"DADOS RETORNADOS {result_pesquisa}")
+          print(f"MINHA QUANTIDADE VINDA:: {len(result_pesquisa)}")
 
           if result_pesquisa is not None:
               ClassLogger.logger.info('Vou realizar o processamento dos dados retornados do consumo da api')
@@ -128,7 +134,7 @@ def process_verify_status(self):
           </body>
           </html>
           """
-          result_email = enviar_email_all(html_final)
+          return enviar_email_all(html_final)
 
 
 

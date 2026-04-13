@@ -39,6 +39,7 @@ class Processor:
         self.periodo = 'SEMANAL'
         self.true = True
         self.false =False
+        self.batch_size_verify = 50
         self.lock = threading.Lock()
         self.db = ConectionPool.DbPool(maxconn=self.max_workers)
 
@@ -99,15 +100,29 @@ class Processor:
         # search_data_interpol
         # id_busca = "2012-328264"
         # print(f"qual o meu tipo da variavel ? {type(id_busca)}")
-        process_from_name(self)
-        pass
+        # process_from_name(self)
+        try:
+           result =  process_from_name(self)
+          
+        except Exception as e:
+                ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] Finalizado o processo de busca por nome dados_interpol")
+        finally:
+            return result
+    pass
 
     def atualiza_dados_interpol(self):
         ClassLogger.logger.info('IREI SOLICITAR A PESQUISA PELO O ID PARA SABER SE ESTA ATIVO OU INATIVO')
         ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] Iniciando a consulta atualiza_dados_interpol")
-
-        process_verify_status(self)
-        pass
+        
+        try:
+           result =  process_verify_status(self)
+          
+        except Exception as e:
+                ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] erro {str(e)}")
+        finally:
+             ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] Finalizado o processo de busca por nome dados_interpol")
+            
+    pass
         
     def match_name(self):
         ClassLogger.logger.info('IREI SOLICITAR OS NOME PARA O MATCH NAME , PEGANDO O CPF NA PROSCORE PARA SABER SE ESTA ATIVO OU INATIVO')
@@ -118,11 +133,14 @@ class Processor:
 
 
     def executar_ciclo(self):
-        # self.executar()   
+        self.executar()   
         # self.enviar_email()
         # self.busca_dados()   
         # self.teste_busca_interpol()   
-        self.from_name_interpol()   
+        # self.from_name_interpol()   
         # self.atualiza_dados_interpol()
         # self.match_name()
         ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] Iniciando a consulta")      
+    def executar_ciclo_name(self):
+        ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] Iniciando a consulta From Name Primeira letras")     
+        self.from_name_interpol()

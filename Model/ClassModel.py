@@ -127,16 +127,16 @@ def insert_base_interpol(self, registro):
 
 
 
-def update_data_interpol(conn,id, nat, thumb,country_wanted):
+def update_data_interpol(conn,id, nat, thumb,country_wanted,data_captura):
     
     query = """UPDATE public.interpol_dados_teste SET 
-                  naturalidade = %s , foto = %s , pais_procurado = %s WHERE id_interpol = %s ;"""
+                  naturalidade = %s , foto = %s , pais_procurado = %s , data_atualizacao = %s WHERE id_interpol = trim(%s) ;"""
                 #   naturalidade = %s , foto = %s WHERE nome_buscado = %s ;"""
      
     try:
          
          with conn.cursor(cursor_factory=RealDictCursor) as cursor:
-                cursor.execute(query, (nat,thumb,country_wanted,id))
+                cursor.execute(query, (nat,thumb,country_wanted,data_captura,id))
 
                 if cursor.rowcount > 0:
                     print(f"TIVE SUCESSO EM ATUALIZAR")
@@ -286,10 +286,7 @@ def search_data_interpol(conn,idinterpol):
             
             #retornando um boleano
 #CAMPO VAI SER TROCADO PARA ID INTERPOL
-            query = ("""SELECT EXISTS(
-                        SELECT 1 FROM public.interpol_dados_teste WHERE id_interpol = %s) as exists
-                       
-                     """) 
+            query = ("""SELECT EXISTS(SELECT 1 FROM public.interpol_dados_teste WHERE id_interpol = trim(%s)) as exists""") 
               # SELECT 1 FROM public.interpol_dados_teste WHERE nome_buscado = %s) as exists""")
             
             
@@ -312,12 +309,7 @@ def search_data_interpol(conn,idinterpol):
 def exists_by_name(conn, person):
             
            
-            query = """
-                SELECT EXISTS(
-                    SELECT 1 
-                    FROM public.interpol_dados_teste 
-                    WHERE UPPER(nome) = UPPER(%s)) as exists
-            """
+            query = """SELECT EXISTS(SELECT 1 FROM public.interpol_dados_teste WHERE UPPER(nome) = UPPER(%s)) as exists"""
             try:
                 
                 with conn.cursor(cursor_factory=RealDictCursor) as cursor:
@@ -406,15 +398,18 @@ def get_data_match_name_base(self) -> List[Dict]:
 def get_lista_name_base_interpol(self) -> List[Dict]: 
      
      
-      query = """SELECT UPPER(nome) as nome FROM public.interpol_dados_teste 
-                  ORDER BY RANDOM () limit 2"""
+      query = """SELECT UPPER(nome) as nome FROM public.interpol_dados_teste
+                where to_char(data_atualizacao, 'YYYY-MM-DD') != %s or data_atualizacao is null
+                ORDER BY RANDOM() limit 10 """
       
       
+
+      params = (datetime.now().strftime("%Y-%m-%d"),)
       try:
                     
             with self.db.get_connection() as conn:
                  with conn.cursor(cursor_factory=RealDictCursor) as cursor:
-                      cursor.execute(query,)
+                      cursor.execute(query,params)
                       registros = cursor.fetchall()
                 
                       if not registros:
@@ -431,7 +426,7 @@ def get_lista_name_base_interpol(self) -> List[Dict]:
 #PROCESSO INVERSO PEGANDO OS IDS 
 def list_interpol(self) -> List[Dict]:
       query = """SELECT id_interpol AS ID_INTERPOL FROM public.interpol_dados_teste 
-                 WHERE id_interpol IS NOT NULL AND ativo = true ORDER BY id_interpol desc"""
+                 WHERE id_interpol IS NOT NULL AND ativo = true ORDER BY id_interpol desc limit 101"""
       
       
       try:
