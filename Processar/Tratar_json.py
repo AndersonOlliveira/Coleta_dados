@@ -312,7 +312,7 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
     #     "qta_registro_nao_atualizados" : int(registros_pulados) 
     #  }
     
-    tabela_atualizar.append(info_dados_registros)
+    # tabela_atualizar.append(info_dados_registros)
     for linha in tabela_atualizar:
         pais = linha['PAIS_BUSCADO']
         #MUNDAR PRA A
