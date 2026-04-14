@@ -65,9 +65,13 @@ class Processor:
 
         except Exception as e:
             ClassLogger.logger.error(f"Erro fatal na execução: {str(e)}", exc_info=True)
+            ClassLogger.logger.error(f"Erro fatal na execução: {str(e)}")
+            enviar_email_all("falha processamento")
 
         finally:
+             
              ClassLogger.logger.error(f"SAINDO NO FINALIY")
+             enviar_email_all("falha processamento")
              pass
 
     def enviar_email(self):
@@ -133,14 +137,14 @@ class Processor:
 
 
     def executar_ciclo(self):
-        self.executar()   
+        # self.executar()   
         # self.enviar_email()
         # self.busca_dados()   
         # self.teste_busca_interpol()   
-        # self.from_name_interpol()   
+        self.from_name_interpol()   
         # self.atualiza_dados_interpol()
         # self.match_name()
         ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] Iniciando a consulta")      
     def executar_ciclo_name(self):
         ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] Iniciando a consulta From Name Primeira letras")     
-        self.from_name_interpol()
+        # self.from_name_interpol()

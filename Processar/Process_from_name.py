@@ -100,17 +100,17 @@ def process_from_name(self):
         #     lambda url: push_new_resquests(url, self.time_sleps),
         #     siglas_unicas
         # ))
-            futures = [
-                executor.submit(push_new_resquests, url, max_retries=4)
-                for url in lote
-            ]
+                futures = [
+                    executor.submit(push_new_resquests, url,  self.max_workers)
+                    for url in lote
+                ]
 
-            for future in as_completed(futures):
-                try:
-                    result = future.result()
-                    des.append(result)
-                except Exception as e:
-                    ClassLogger.logger.error(f"Erro ao processar a URL: {str(e)}")
+                for future in as_completed(futures):
+                    try:
+                        result = future.result()
+                        des.append(result)
+                    except Exception as e:
+                        ClassLogger.logger.error(f"Erro ao processar a URL: {str(e)}")
     
     
     

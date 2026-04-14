@@ -59,25 +59,25 @@ def process_verify_status(self):
         
          
           for lote in dividir_lotes(lista_pesquisa_url, self.batch_size_verify):
-             futures = []
-               #REALIZAO O RESQUEST 
-             with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
-                    # result_pesquisa = list(executor.map(
-                    # lambda url: push_new_resquests(url, self.time_sleps),
-                    # lista_pesquisa_url
-                    # ))
-               futures = [
-                         executor.submit(push_new_resquests, url, self.time_sleps)
-                         for url in lote
-                         # for url in lista_pesquisa_url
-                ]
-                    
-               for future in as_completed(futures):
-                    try:
-                         result = future.result()
-                         result_pesquisa.append(result)
-                    except Exception as e:
-                         print(f"Erro ao processar a requisação {str(e)}")
+               futures = []
+                    #REALIZAO O RESQUEST 
+               with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
+                         # result_pesquisa = list(executor.map(
+                         # lambda url: push_new_resquests(url, self.time_sleps),
+                         # lista_pesquisa_url
+                         # ))
+                    futures = [
+                              executor.submit(push_new_resquests, url, self.max_workers)
+                              for url in lote
+                              # for url in lista_pesquisa_url
+                    ]
+                         
+                    for future in as_completed(futures):
+                         try:
+                              result = future.result()
+                              result_pesquisa.append(result)
+                         except Exception as e:
+                              print(f"Erro ao processar a requisação {str(e)}")
 
 
           print(f"DADOS RETORNADOS {result_pesquisa}")

@@ -148,26 +148,26 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
     
 
     for lote in dividir_lotes(lista_urls , self.batch_size_verify):
-        futures = []
-        with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
-        #     detalhes = list(executor.map(
-        #     lambda url: push_new_resquests(url, self.time_sleps),
-        #     lista_urls
-        # ))
-                futures = [
-                executor.submit(push_new_resquests, url, self.max_workers) for url in lote]
+            futures = []
+            with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
+            #     detalhes = list(executor.map(
+            #     lambda url: push_new_resquests(url, self.time_sleps),
+            #     lista_urls
+            # ))
+                    futures = [
+                    executor.submit(push_new_resquests, url,  self.max_workers) for url in lote]
 
-                for future in as_completed(futures):
-                    try:
-                        result = future.result()
-                        detalhes.append(result)
+                    for future in as_completed(futures):
+                        try:
+                            result = future.result()
+                            detalhes.append(result)
 
-                        print("✔ Detalhe recebido")
+                            print("✔ Detalhe recebido")
 
-                
+                    
 
-                    except Exception as e:
-                        ClassLogger.logger.error(f"Erro ao processar a URL: {e}", exc_info=True)
+                        except Exception as e:
+                            ClassLogger.logger.error(f"Erro ao processar a URL: {e}", exc_info=True)
                     
             
   
@@ -320,6 +320,9 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
         linha['QTA J/N BASE'] = contador_por_pais[pais]["NA"]
         
     df = pd.DataFrame(lista)
+
+
+    # print(df)
 
 
     if len(df) > 0:

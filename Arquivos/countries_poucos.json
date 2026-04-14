@@ -1,6 +1,54 @@
 [
-   {
-        "name": "Uzbekistan",
-        "value": "UZ"
+    {
+        "name": "Togo",
+        "value": "TG"
+    },
+    {
+        "name": "Tonga",
+        "value": "TO"
+    },
+    {
+        "name": "Trinidad and Tobago",
+        "value": "TT"
+    },
+    {
+        "name": "Tunisia",
+        "value": "TN"
+    },
+    {
+        "name": "Turkmenistan",
+        "value": "TM"
+    },
+    {
+        "name": "Turks and Caicos (Islands), United Kingdom",
+        "value": "TC"
+    },
+    {
+        "name": "Tuvalu",
+        "value": "TV"
+    },
+    {
+        "name": "T\u00fcrkiye",
+        "value": "TR"
+    },
+    {
+        "name": "UN IRMCT (United Nations International Residual Mechanism for Criminal Tribunals) ",
+        "value": 922
+    },
+    {
+        "name": "Uganda",
+        "value": "UG"
+    },
+    {
+        "name": "Ukraine",
+        "value": "UA"
+    },
+    {
+        "name": "United Arab Emirates",
+        "value": "AE"
+    },
+    {
+        "name": "United Kingdom",
+        "value": "GB"
     }
 ]

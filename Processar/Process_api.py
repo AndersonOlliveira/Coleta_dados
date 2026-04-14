@@ -35,7 +35,7 @@ def process_api(self):
 
 
         # print(json.dumps(retorno_api , indent=4))
-        # print(id_insert_return )
+        # # print(id_insert_return )
 
         # return
 

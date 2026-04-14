@@ -17,7 +17,7 @@ import threading
 from collections import Counter, defaultdict
 
 class RateLimiter:
-    def __init__(self, min_delay=1.0, max_delay=2.0):
+    def __init__(self, min_delay=1.0, max_delay=3.0):
         self.min_delay = min_delay
         self.max_delay = max_delay
         self.lock = threading.Lock()
@@ -39,7 +39,7 @@ class RateLimiter:
             self.last_request = time.time()
 
     def increase_penalty(self):
-        self.penalty += 1
+        self.penalty = min(self.penalty + 1, 10)  # limite
         print(f" Aumentando penalidade: {self.penalty}")
 
     def decrease_penalty(self):
@@ -139,31 +139,32 @@ def push_request(self,countries = None, url_new = None):
         print(f"Link API: {links_interpol}")
 
         for lote in dividir_lotes(links_interpol , self.batch_size_verify):
-            with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
-                #TROCANDO PARA MELHORIA DO PROCESSO 
-                # resultados = list(executor.map(
-                #     lambda url: push_new_resquests(url, self.time_sleps),
-                #     links_interpol
-                # ))
-                    futures_dados = [
-                    executor.submit(push_new_resquests, url, self.max_workers)
-                    for url in links_interpol
-                    ]
-                    print(f"meu id geral {id_insert_return}")
+                
+                with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
+                    #TROCANDO PARA MELHORIA DO PROCESSO 
+                    # resultados = list(executor.map(
+                    #     lambda url: push_new_resquests(url, self.time_sleps),
+                    #     links_interpol
+                    # ))
+                        futures_dados = [
+                        executor.submit(push_new_resquests, url, self.max_workers)
+                        for url in lote
+                        ]
+                        print(f"meu id geral {id_insert_return}")
 
-                    id_pai = id_insert_return[0] if id_insert_return else None
-                    
-                    for future in as_completed(futures_dados):
-                        try:
-                            result = future.result()
-                            if isinstance(result, dict):
-                                    result['id_geral_'] = id_pai
-                            
-                            resultados.append(result)
-                        except Exception as e:
-                            print(f"Erro ao processar a URL: {e}")
-                            # Você pode optar por adicionar um resultado de erro à lista ou simplesmente ignorar
-                            ClassLogger.logger.error(f"Erro ao processar a URL: {e}", exc_info=True)
+                        id_pai = id_insert_return[0] if id_insert_return else None
+                        
+                        for future in as_completed(futures_dados):
+                            try:
+                                result = future.result()
+                                if isinstance(result, dict):
+                                        result['id_geral_'] = id_pai
+                                
+                                resultados.append(result)
+                            except Exception as e:
+                                print(f"Erro ao processar a URL: {e}")
+                                # Você pode optar por adicionar um resultado de erro à lista ou simplesmente ignorar
+                                ClassLogger.logger.error(f"Erro ao processar a URL: {e}", exc_info=True)
 
                     # Percorre a lista e injeta o ID em cada dicionário retornado
                     # for item in resultados:
@@ -209,7 +210,7 @@ def push_new_resquests(url,max_retries):
     
         session = requests.Session()
         rate_limiter = RateLimiter()
-        servidor_headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
+        # servidor_headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
 
         session.headers.update({
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36",
@@ -233,7 +234,7 @@ def push_new_resquests(url,max_retries):
                 response = session.get(
                         url,
                         impersonate="chrome110",
-                        timeout=30
+                        timeout=15
                 )
 
             
