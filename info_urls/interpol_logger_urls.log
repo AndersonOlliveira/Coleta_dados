@@ -1,76 +1,77 @@
-2026-04-13 09:59:53,954 - ERROR - ERROS Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=NON&resultPerPage=160&page=1
-2026-04-13 09:59:53,965 - ERROR - ERROS Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=IVA&resultPerPage=160&page=1
-2026-04-13 09:59:53,966 - INFO - ERROS Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=NON&resultPerPage=160&page=1
-2026-04-13 09:59:53,968 - INFO - ERROS Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=IVA&resultPerPage=160&page=1
-2026-04-13 09:59:53,975 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=NON&resultPerPage=160&page=1
-2026-04-13 09:59:53,981 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=IVA&resultPerPage=160&page=1
-2026-04-13 09:59:56,667 - ERROR - ERROS Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=IVA&resultPerPage=160&page=1
-2026-04-13 09:59:56,668 - INFO - ERROS Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=IVA&resultPerPage=160&page=1
-2026-04-13 09:59:56,669 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=IVA&resultPerPage=160&page=1
-2026-04-13 09:59:56,789 - ERROR - ERROS Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=NON&resultPerPage=160&page=1
-2026-04-13 09:59:56,791 - INFO - ERROS Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=NON&resultPerPage=160&page=1
-2026-04-13 09:59:56,791 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=NON&resultPerPage=160&page=1
-2026-04-13 09:59:59,695 - ERROR - ERROS Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=IVA&resultPerPage=160&page=1
-2026-04-13 09:59:59,696 - INFO - ERROS Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=IVA&resultPerPage=160&page=1
-2026-04-13 09:59:59,697 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=IVA&resultPerPage=160&page=1
-2026-04-13 10:00:00,760 - ERROR - ERROS Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=NON&resultPerPage=160&page=1
-2026-04-13 10:00:00,761 - INFO - ERROS Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=NON&resultPerPage=160&page=1
-2026-04-13 10:00:00,761 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=NON&resultPerPage=160&page=1
-2026-04-13 10:01:26,255 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=JOS&resultPerPage=160&page=1
-2026-04-13 10:01:26,258 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=SAM&resultPerPage=160&page=1
-2026-04-13 10:01:28,317 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=JOS&resultPerPage=160&page=1
-2026-04-13 10:01:28,685 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=SAM&resultPerPage=160&page=1
-2026-04-13 10:01:32,102 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=SAM&resultPerPage=160&page=1
-2026-04-13 10:01:32,201 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=JOS&resultPerPage=160&page=1
-2026-04-13 10:02:18,685 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=NAS&resultPerPage=160&page=1
-2026-04-13 10:02:18,704 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=WER&resultPerPage=160&page=1
-2026-04-13 10:02:21,076 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=NAS&resultPerPage=160&page=1
-2026-04-13 10:02:21,457 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=WER&resultPerPage=160&page=1
-2026-04-13 10:02:24,296 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=NAS&resultPerPage=160&page=1
-2026-04-13 10:02:24,681 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=WER&resultPerPage=160&page=1
-2026-04-13 10:03:23,588 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=ALG&resultPerPage=160&page=1
-2026-04-13 10:03:23,618 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=SYL&resultPerPage=160&page=1
-2026-04-13 10:03:25,703 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=SYL&resultPerPage=160&page=1
-2026-04-13 10:03:26,022 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=ALG&resultPerPage=160&page=1
-2026-04-13 10:03:29,260 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=SYL&resultPerPage=160&page=1
-2026-04-13 10:03:29,802 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=ALG&resultPerPage=160&page=1
-2026-04-13 10:05:04,962 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=SAR&resultPerPage=160&page=1
-2026-04-13 10:05:04,962 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=OUA&resultPerPage=160&page=1
-2026-04-13 10:05:07,179 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=OUA&resultPerPage=160&page=1
-2026-04-13 10:05:07,707 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=SAR&resultPerPage=160&page=1
-2026-04-13 10:05:10,576 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=OUA&resultPerPage=160&page=1
-2026-04-13 10:05:11,210 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=SAR&resultPerPage=160&page=1
-2026-04-13 10:07:17,658 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=FER&resultPerPage=160&page=1
-2026-04-13 10:07:17,661 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=SEB&resultPerPage=160&page=1
-2026-04-13 10:07:20,196 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=FER&resultPerPage=160&page=1
-2026-04-13 10:07:20,509 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=SEB&resultPerPage=160&page=1
-2026-04-13 10:07:23,545 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=FER&resultPerPage=160&page=1
-2026-04-13 10:07:23,793 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=SEB&resultPerPage=160&page=1
-2026-04-13 10:18:04,644 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=WIL&resultPerPage=160&page=1
-2026-04-13 10:18:04,655 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=MAY&resultPerPage=160&page=1
-2026-04-13 10:18:06,952 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=WIL&resultPerPage=160&page=1
-2026-04-13 10:18:07,526 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=MAY&resultPerPage=160&page=1
-2026-04-13 10:18:09,986 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=WIL&resultPerPage=160&page=1
-2026-04-13 10:18:11,173 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=MAY&resultPerPage=160&page=1
-2026-04-13 10:19:01,160 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=CAR&resultPerPage=160&page=1
-2026-04-13 10:19:01,240 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=MOH&resultPerPage=160&page=1
-2026-04-13 10:19:03,748 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=CAR&resultPerPage=160&page=1
-2026-04-13 10:19:03,830 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=MOH&resultPerPage=160&page=1
-2026-04-13 10:19:07,320 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=MOH&resultPerPage=160&page=1
-2026-04-13 10:19:07,653 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=CAR&resultPerPage=160&page=1
-2026-04-13 10:21:05,769 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=D'A&resultPerPage=160&page=1
-2026-04-13 10:21:05,794 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=VIC&resultPerPage=160&page=1
-2026-04-13 10:21:08,075 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=VIC&resultPerPage=160&page=1
-2026-04-13 10:21:08,173 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=D'A&resultPerPage=160&page=1
-2026-04-13 10:21:11,176 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=D'A&resultPerPage=160&page=1
-2026-04-13 10:21:11,382 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=VIC&resultPerPage=160&page=1
-2026-04-13 10:28:05,096 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=CRI&resultPerPage=160&page=1
-2026-04-13 10:28:05,101 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=FAB&resultPerPage=160&page=1
-2026-04-13 10:28:07,615 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=CRI&resultPerPage=160&page=1
-2026-04-13 10:28:07,920 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=FAB&resultPerPage=160&page=1
-2026-04-13 10:28:11,131 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=FAB&resultPerPage=160&page=1
-2026-04-13 10:28:11,407 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=CRI&resultPerPage=160&page=1
-2026-04-13 10:35:05,716 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?nationality=FJ&resultPerPage=160&page=1
-2026-04-13 10:35:05,735 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?nationality=FM&resultPerPage=160&page=1
-2026-04-13 10:35:07,791 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?nationality=FJ&resultPerPage=160&page=1
-2026-04-13 10:35:08,609 - ERROR - Erro 403: Acesso Negado (403). Verifique permissões ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?nationality=FM&resultPerPage=160&page=1
+2026-04-13 09:59:53,954 - ERROR - ERROS Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=NON&resultPerPage=160&page=1
+2026-04-13 09:59:53,965 - ERROR - ERROS Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=IVA&resultPerPage=160&page=1
+2026-04-13 09:59:53,966 - INFO - ERROS Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=NON&resultPerPage=160&page=1
+2026-04-13 09:59:53,968 - INFO - ERROS Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=IVA&resultPerPage=160&page=1
+2026-04-13 09:59:53,975 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=NON&resultPerPage=160&page=1
+2026-04-13 09:59:53,981 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=IVA&resultPerPage=160&page=1
+2026-04-13 09:59:56,667 - ERROR - ERROS Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=IVA&resultPerPage=160&page=1
+2026-04-13 09:59:56,668 - INFO - ERROS Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=IVA&resultPerPage=160&page=1
+2026-04-13 09:59:56,669 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=IVA&resultPerPage=160&page=1
+2026-04-13 09:59:56,789 - ERROR - ERROS Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=NON&resultPerPage=160&page=1
+2026-04-13 09:59:56,791 - INFO - ERROS Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=NON&resultPerPage=160&page=1
+2026-04-13 09:59:56,791 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=NON&resultPerPage=160&page=1
+2026-04-13 09:59:59,695 - ERROR - ERROS Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=IVA&resultPerPage=160&page=1
+2026-04-13 09:59:59,696 - INFO - ERROS Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=IVA&resultPerPage=160&page=1
+2026-04-13 09:59:59,697 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=IVA&resultPerPage=160&page=1
+2026-04-13 10:00:00,760 - ERROR - ERROS Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=NON&resultPerPage=160&page=1
+2026-04-13 10:00:00,761 - INFO - ERROS Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=NON&resultPerPage=160&page=1
+2026-04-13 10:00:00,761 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=NON&resultPerPage=160&page=1
+2026-04-13 10:01:26,255 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=JOS&resultPerPage=160&page=1
+2026-04-13 10:01:26,258 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=SAM&resultPerPage=160&page=1
+2026-04-13 10:01:28,317 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=JOS&resultPerPage=160&page=1
+2026-04-13 10:01:28,685 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=SAM&resultPerPage=160&page=1
+2026-04-13 10:01:32,102 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=SAM&resultPerPage=160&page=1
+2026-04-13 10:01:32,201 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=JOS&resultPerPage=160&page=1
+2026-04-13 10:02:18,685 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=NAS&resultPerPage=160&page=1
+2026-04-13 10:02:18,704 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=WER&resultPerPage=160&page=1
+2026-04-13 10:02:21,076 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=NAS&resultPerPage=160&page=1
+2026-04-13 10:02:21,457 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=WER&resultPerPage=160&page=1
+2026-04-13 10:02:24,296 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=NAS&resultPerPage=160&page=1
+2026-04-13 10:02:24,681 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=WER&resultPerPage=160&page=1
+2026-04-13 10:03:23,588 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=ALG&resultPerPage=160&page=1
+2026-04-13 10:03:23,618 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=SYL&resultPerPage=160&page=1
+2026-04-13 10:03:25,703 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=SYL&resultPerPage=160&page=1
+2026-04-13 10:03:26,022 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=ALG&resultPerPage=160&page=1
+2026-04-13 10:03:29,260 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=SYL&resultPerPage=160&page=1
+2026-04-13 10:03:29,802 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=ALG&resultPerPage=160&page=1
+2026-04-13 10:05:04,962 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=SAR&resultPerPage=160&page=1
+2026-04-13 10:05:04,962 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=OUA&resultPerPage=160&page=1
+2026-04-13 10:05:07,179 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=OUA&resultPerPage=160&page=1
+2026-04-13 10:05:07,707 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=SAR&resultPerPage=160&page=1
+2026-04-13 10:05:10,576 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=OUA&resultPerPage=160&page=1
+2026-04-13 10:05:11,210 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=SAR&resultPerPage=160&page=1
+2026-04-13 10:07:17,658 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=FER&resultPerPage=160&page=1
+2026-04-13 10:07:17,661 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=SEB&resultPerPage=160&page=1
+2026-04-13 10:07:20,196 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=FER&resultPerPage=160&page=1
+2026-04-13 10:07:20,509 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=SEB&resultPerPage=160&page=1
+2026-04-13 10:07:23,545 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=FER&resultPerPage=160&page=1
+2026-04-13 10:07:23,793 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=SEB&resultPerPage=160&page=1
+2026-04-13 10:18:04,644 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=WIL&resultPerPage=160&page=1
+2026-04-13 10:18:04,655 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=MAY&resultPerPage=160&page=1
+2026-04-13 10:18:06,952 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=WIL&resultPerPage=160&page=1
+2026-04-13 10:18:07,526 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=MAY&resultPerPage=160&page=1
+2026-04-13 10:18:09,986 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=WIL&resultPerPage=160&page=1
+2026-04-13 10:18:11,173 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=MAY&resultPerPage=160&page=1
+2026-04-13 10:19:01,160 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=CAR&resultPerPage=160&page=1
+2026-04-13 10:19:01,240 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=MOH&resultPerPage=160&page=1
+2026-04-13 10:19:03,748 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=CAR&resultPerPage=160&page=1
+2026-04-13 10:19:03,830 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=MOH&resultPerPage=160&page=1
+2026-04-13 10:19:07,320 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=MOH&resultPerPage=160&page=1
+2026-04-13 10:19:07,653 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=CAR&resultPerPage=160&page=1
+2026-04-13 10:21:05,769 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=D'A&resultPerPage=160&page=1
+2026-04-13 10:21:05,794 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=VIC&resultPerPage=160&page=1
+2026-04-13 10:21:08,075 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=VIC&resultPerPage=160&page=1
+2026-04-13 10:21:08,173 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=D'A&resultPerPage=160&page=1
+2026-04-13 10:21:11,176 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=D'A&resultPerPage=160&page=1
+2026-04-13 10:21:11,382 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=VIC&resultPerPage=160&page=1
+2026-04-13 10:28:05,096 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=CRI&resultPerPage=160&page=1
+2026-04-13 10:28:05,101 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=FAB&resultPerPage=160&page=1
+2026-04-13 10:28:07,615 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=CRI&resultPerPage=160&page=1
+2026-04-13 10:28:07,920 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=FAB&resultPerPage=160&page=1
+2026-04-13 10:28:11,131 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=FAB&resultPerPage=160&page=1
+2026-04-13 10:28:11,407 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?&forename=CRI&resultPerPage=160&page=1
+2026-04-13 10:35:05,716 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?nationality=FJ&resultPerPage=160&page=1
+2026-04-13 10:35:05,735 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?nationality=FM&resultPerPage=160&page=1
+2026-04-13 10:35:07,791 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?nationality=FJ&resultPerPage=160&page=1
+2026-04-13 10:35:08,609 - ERROR - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?nationality=FM&resultPerPage=160&page=1
+2026-04-14 10:25:08,609 - INFO - Erro 403: Acesso Negado (403). Verifique permissï¿½es ou Headers. Detalhes: https://ws-public.interpol.int/notices/v1/red?nationality=FM&resultPerPage=160&page=1as
