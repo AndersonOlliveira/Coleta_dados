@@ -280,7 +280,7 @@ def buscar_teste(self):
 
 
 # def search_data_interpol(self,idinterpol, cursor,conection):
-def search_data_interpol(conn,idinterpol):
+def search_data_interpol(self,idinterpol):
 
            
             
@@ -292,27 +292,21 @@ def search_data_interpol(conn,idinterpol):
             
 
             try:
-        
-                     with conn.cursor(cursor_factory=RealDictCursor) as cursor:
-                    
-                        cursor.execute(query,(idinterpol,))
-
-                        
-                        retorno = cursor.fetchone()['exists']
-                        return retorno
-                      
-                    
+                with self.db.get_connection() as conn:
+                  with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                    cursor.execute(query, (idinterpol.strip(),))
+                    return cursor.fetchone()['exists']
             except Exception as e:
                      ClassLogger.logger.error(f"Falha em caputrar os dados o erro search_data_interpol {str(e)}")
            
 
-def exists_by_name(conn, person):
+def exists_by_name(self, person):
             
            
             query = """SELECT EXISTS(SELECT 1 FROM public.interpol_dados_teste WHERE UPPER(nome) = UPPER(%s)) as exists"""
             try:
-                
-                with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                with self.db.get_connection() as conn:
+                    with conn.cursor(cursor_factory=RealDictCursor) as cursor:
                         cursor.execute(query, (person,))
                         resultado = cursor.fetchone()['exists']
                         print(f"qual e o resultado {resultado}")
@@ -426,7 +420,7 @@ def get_lista_name_base_interpol(self) -> List[Dict]:
 #PROCESSO INVERSO PEGANDO OS IDS 
 def list_interpol(self) -> List[Dict]:
       query = """SELECT id_interpol AS ID_INTERPOL FROM public.interpol_dados_teste 
-                 WHERE id_interpol IS NOT NULL AND ativo = true ORDER BY id_interpol desc limit 101"""
+                 WHERE id_interpol IS NOT NULL AND ativo = true ORDER BY id_interpol desc limit 10"""
       
       
       try:

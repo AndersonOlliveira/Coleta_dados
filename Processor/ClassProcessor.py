@@ -7,12 +7,14 @@ from Processar.Process_from_name import process_from_name
 from Processar.Process_verify import process_verify_status
 from Processar.Process_MatchName import process_match_name
 from Conexao import ConectionClass, ConectionPool
+from concurrent.futures import ThreadPoolExecutor, as_completed
 # from db_poll import DbPool
 # from Conexao.ConectionTrheaddeConectionPoll import ConectionClass as t
 from Mail.ClassMail import enviar_email_all
 from Model.ClassModel import buscar_teste, search_data_interpol
-from psycopg2.pool import ThreadedConnectionPool
-from dataclasses import asdict
+import pandas as pd
+from pathlib import Path
+import csv
 
 
 
@@ -58,20 +60,19 @@ class Processor:
           
             fim = datetime.now()
             duracao = (fim - inicio).total_seconds()
-
             ClassLogger.logger.info("---" * 80)
-            ClassLogger.logger.info(f"Processamento concluído em {duracao:.2f} segundos")
-            ClassLogger.logger.info(f"Total de registros processados: {total_processados}")
+          
 
         except Exception as e:
-            ClassLogger.logger.error(f"Erro fatal na execução: {str(e)}", exc_info=True)
             ClassLogger.logger.error(f"Erro fatal na execução: {str(e)}")
-            enviar_email_all("falha processamento")
+            error = f"Erro fatal na execução: {str(e)}"
+            corpo = f"""<h2 style="color:red;">Falha no processo de Captura e tratamento dos dados</h2> <p>{datetime.now().strftime("%Y-%m-%d %H:%M:%S")} Mensagem:: {error}</p>"""
+            enviar_email_all(corpo)
 
         finally:
              
              ClassLogger.logger.error(f"SAINDO NO FINALIY")
-             enviar_email_all("falha processamento")
+             
              pass
 
     def enviar_email(self):
@@ -90,26 +91,52 @@ class Processor:
         pass
         
     def teste_busca_interpol(self): 
+        lista = []
+        exist_id = False
+        exist_name = False
         ClassLogger.logger.info('busca dados')
+        caminho_arquivo_csv = Path('Arquivos/dados_unique.csv')
+
+        # df = pd.read_csv(caminho_arquivo_csv)
+        df = pd.read_csv(caminho_arquivo_csv, sep=';')
+        coluna_id = df['id']
+        lista = df['id'].tolist()
+        # lista.append(coluna_id)
+
+
+        # print(f" MINHA LISTA {lista}")
+
+        # with open(caminho_arquivo_csv, mode='r', encoding='utf-8') as arquivo_csv:
+        #         leitor = csv.reader(arquivo_csv)
+        #         for linha in leitor:
+        #             print(linha)
         # search_data_interpol
-        id_busca = "2012-328264"
-        print(f"qual o meu tipo da variavel ? {type(id_busca)}")
-        search_data_interpol(self,id_busca)
+        with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
+          with self.db.get_connection() as conn:
+            for teste in lista:
+                print(f"DADOS NO FOR {teste}")
+                future_busca = executor.submit(search_data_interpol, self, teste)
+                exist_id = future_busca.result()
+                
+                # retorno = search_data_interpol(self,conn,teste)
+                print(f"MEU RETORNO DA PESQUISA :: do id {teste} , {exist_id}")
+            
+        
         pass
     
     
     def from_name_interpol(self): 
         ClassLogger.logger.info('INICIO A CHAMADA PARA A BUSCA POR NOME DENTRO DA API')
         ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] Iniciando a consulta from_name_interpol")
-        # search_data_interpol
-        # id_busca = "2012-328264"
-        # print(f"qual o meu tipo da variavel ? {type(id_busca)}")
-        # process_from_name(self)
+       
         try:
            result =  process_from_name(self)
           
         except Exception as e:
                 ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] Finalizado o processo de busca por nome dados_interpol")
+                error = f"Erro fatal na execução: {str(e)}"
+                corpo = f"""<h2 style="color:red;"> Finalizado o processo de busca por nome dados interpol</h2> <p>{datetime.now().strftime("%Y-%m-%d %H:%M:%S")} Mensagem:: {error}</p>"""
+                enviar_email_all(corpo)
         finally:
             return result
     pass
@@ -122,7 +149,11 @@ class Processor:
            result =  process_verify_status(self)
           
         except Exception as e:
-                ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] erro {str(e)}")
+                ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] erro na verificação de ativo e inativo {str(e)}")
+                error = f"Erro fatal na execução: {str(e)}"
+                corpo = f"""<h2 style="color:red;"> erro na verificação de ativo e inativo dados interpol</h2> <p>{datetime.now().strftime("%Y-%m-%d %H:%M:%S")} Mensagem:: {error}</p>"""
+                enviar_email_all(corpo)
+
         finally:
              ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] Finalizado o processo de busca por nome dados_interpol")
             
@@ -130,18 +161,30 @@ class Processor:
         
     def match_name(self):
         ClassLogger.logger.info('IREI SOLICITAR OS NOME PARA O MATCH NAME , PEGANDO O CPF NA PROSCORE PARA SABER SE ESTA ATIVO OU INATIVO')
-        ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] Iniciando a consulta match_name")
+      
         # print(f"MINHA THEADS {self.max_workers}")
-        process_match_name(self)
+       
+        try:
+            process_match_name(self)
+            ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] Iniciando a consulta match_name")
+        
+        except Exception as e:
+                ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] erro na verificação do match name proscore {str(e)}")
+                error = f"Erro fatal na execução: {str(e)}"
+                corpo = f"""<h2 style="color:red;"> erro na verificação match name proscore</h2> <p>{datetime.now().strftime("%Y-%m-%d %H:%M:%S")} Mensagem:: {error}</p>"""
+                enviar_email_all(corpo)
+
+        finally:
+             ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] Finalizado o processo de busca por match name")
         pass
 
 
     def executar_ciclo(self):
-        # self.executar()   
+        self.executar()   
         # self.enviar_email()
         # self.busca_dados()   
         # self.teste_busca_interpol()   
-        self.from_name_interpol()   
+        # self.from_name_interpol()   
         # self.atualiza_dados_interpol()
         # self.match_name()
         ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] Iniciando a consulta")      

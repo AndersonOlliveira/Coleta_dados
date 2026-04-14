@@ -56,18 +56,13 @@ def push_request(self,countries = None, url_new = None):
     id_insert_return = []
     resultados = []  
 
-    # print(f"ESTOU ACESSANDO OS DADOS")
-    # print(f"tipo: {type(countries)}")
-    # print(f"MEU LINK tipo: {url_new}")
-
     if url_new is not None:
-         print(f"ESTOU ACESSANDO OS DADOS dentro do if")
          print(f"MEU LINK tipo dentro do if: {url_new}")
          links_interpol.append(url_new)
 
     elif countries is not None:
-        print(f"PASSO AQUI NESTE IF PARA VER SE O PROBLEMA É A URL NOVA")
-        url = self.servidor
+        
+       
         url_servidor_nationality = self.servidor_nationality
         
         params = f"&resultPerPage={self.qtPage}&page={self.indicePage}"
@@ -210,7 +205,7 @@ def push_new_resquests(url,max_retries):
     
         session = requests.Session()
         rate_limiter = RateLimiter()
-        # servidor_headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
+       
 
         session.headers.update({
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36",

@@ -1,0 +1,382 @@
+{
+  "total": 6454,
+  "query": { "page": 1, "resultPerPage": 20 },
+  "_embedded": {
+    "notices": [
+      {
+        "date_of_birth": "1999/03/14",
+        "nationalities": ["DZ"],
+        "entity_id": "2026/20532",
+        "forename": "HOSAYN",
+        "name": "BOUAFIA",
+        "_links": {
+          "self": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-20532"
+          },
+          "images": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-20532/images"
+          },
+          "thumbnail": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-20532/images/63850936"
+          }
+        }
+      },
+      {
+        "date_of_birth": "1980/12/25",
+        "nationalities": ["IN"],
+        "entity_id": "2026/13563",
+        "forename": "FAISAL",
+        "name": "MUHAMMED KUNJU",
+        "_links": {
+          "self": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-13563"
+          },
+          "images": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-13563/images"
+          },
+          "thumbnail": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-13563/images/63824071"
+          }
+        }
+      },
+      {
+        "date_of_birth": "1986/10/10",
+        "nationalities": ["RU"],
+        "entity_id": "2026/15462",
+        "forename": "SERGEI",
+        "name": "MOISEEV",
+        "_links": {
+          "self": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-15462"
+          },
+          "images": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-15462/images"
+          },
+          "thumbnail": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-15462/images/63830312"
+          }
+        }
+      },
+      {
+        "date_of_birth": "1991/09/20",
+        "nationalities": ["UA"],
+        "entity_id": "2026/15460",
+        "forename": "DENYS",
+        "name": "HALUSHKO",
+        "_links": {
+          "self": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-15460"
+          },
+          "images": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-15460/images"
+          },
+          "thumbnail": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-15460/images/63830301"
+          }
+        }
+      },
+      {
+        "date_of_birth": "1998/02/04",
+        "nationalities": ["UA"],
+        "entity_id": "2026/15452",
+        "forename": "ROMAN",
+        "name": "MELNYK",
+        "_links": {
+          "self": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-15452"
+          },
+          "images": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-15452/images"
+          },
+          "thumbnail": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-15452/images/63830291"
+          }
+        }
+      },
+      {
+        "date_of_birth": "1997/03/17",
+        "nationalities": ["RU"],
+        "entity_id": "2026/15454",
+        "forename": "NIKOLAI",
+        "name": "PETRIK",
+        "_links": {
+          "self": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-15454"
+          },
+          "images": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-15454/images"
+          },
+          "thumbnail": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-15454/images/63830297"
+          }
+        }
+      },
+      {
+        "date_of_birth": "1998/04/29",
+        "nationalities": ["KZ"],
+        "entity_id": "2026/15466",
+        "forename": "VLADISLAV",
+        "name": "AKHANOV",
+        "_links": {
+          "self": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-15466"
+          },
+          "images": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-15466/images"
+          },
+          "thumbnail": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-15466/images/63830330"
+          }
+        }
+      },
+      {
+        "date_of_birth": "1983/05/05",
+        "nationalities": ["UA"],
+        "entity_id": "2026/15464",
+        "forename": "VASYL",
+        "name": "NEMESH",
+        "_links": {
+          "self": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-15464"
+          },
+          "images": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-15464/images"
+          },
+          "thumbnail": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-15464/images/63830321"
+          }
+        }
+      },
+      {
+        "date_of_birth": "1976/03/11",
+        "nationalities": ["GT"],
+        "entity_id": "2026/19190",
+        "forename": "VICTOR ADAN",
+        "name": "GALEANO DELGADO",
+        "_links": {
+          "self": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-19190"
+          },
+          "images": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-19190/images"
+          },
+          "thumbnail": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-19190/images/63845787"
+          }
+        }
+      },
+      {
+        "date_of_birth": "1994/04/26",
+        "nationalities": ["UA"],
+        "entity_id": "2025/102375",
+        "forename": "YURII",
+        "name": "PROKOPISHYN",
+        "_links": {
+          "self": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2025-102375"
+          },
+          "images": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2025-102375/images"
+          },
+          "thumbnail": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2025-102375/images/63765753"
+          }
+        }
+      },
+      {
+        "date_of_birth": "1990/12/28",
+        "nationalities": ["FR","BR"],
+        "entity_id": "2026/15322",
+        "forename": "BEMBA",
+        "name": "TOURE",
+        "_links": {
+          "self": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-15322"
+          },
+          "images": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-15322/images"
+          },
+          "thumbnail": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-15322/images/63829810"
+          }
+        }
+      },
+      {
+        "date_of_birth": "1988/07/22",
+        "nationalities": ["UZ"],
+        "entity_id": "2026/11370",
+        "forename": "RAVSHAN",
+        "name": "MUKHITDINOV",
+        "_links": {
+          "self": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-11370"
+          },
+          "images": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-11370/images"
+          },
+          "thumbnail": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-11370/images/63813682"
+          }
+        }
+      },
+      {
+        "date_of_birth": "1997/02/16",
+        "nationalities": ["IN"],
+        "entity_id": "2025/68228",
+        "forename": "MAGANDEEP",
+        "name": "SINGH",
+        "_links": {
+          "self": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2025-68228"
+          },
+          "images": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2025-68228/images"
+          },
+          "thumbnail": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2025-68228/images/63626999"
+          }
+        }
+      },
+      {
+        "date_of_birth": "1990/02/01",
+        "nationalities": ["IN"],
+        "entity_id": "2026/10847",
+        "forename": null,
+        "name": "SAMSHUDDIN",
+        "_links": {
+          "self": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-10847"
+          },
+          "images": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-10847/images"
+          },
+          "thumbnail": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-10847/images/63811265"
+          }
+        }
+      },
+      {
+        "date_of_birth": "1953/11/28",
+        "nationalities": ["DO"],
+        "entity_id": "2026/13401",
+        "forename": "GILBERTO ANTONIO",
+        "name": "PAULINO DISLA",
+        "_links": {
+          "self": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-13401"
+          },
+          "images": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-13401/images"
+          },
+          "thumbnail": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-13401/images/63822150"
+          }
+        }
+      },
+      {
+        "date_of_birth": "1973/11/29",
+        "nationalities": ["UY"],
+        "entity_id": "2026/12183",
+        "forename": "CARLOS DAMIAN",
+        "name": "ARAUJO",
+        "_links": {
+          "self": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-12183"
+          },
+          "images": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-12183/images"
+          },
+          "thumbnail": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-12183/images/63823459"
+          }
+        }
+      },
+      {
+        "date_of_birth": "2000/09/27",
+        "nationalities": null,
+        "entity_id": "2026/13403",
+        "forename": "JONATHAN MANUEL",
+        "name": "TOURIS RODRIGUEZ",
+        "_links": {
+          "self": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-13403"
+          },
+          "images": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-13403/images"
+          },
+          "thumbnail": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-13403/images/63822160"
+          }
+        }
+      },
+      {
+        "date_of_birth": "1985/10/21",
+        "nationalities": ["GT"],
+        "entity_id": "2026/12636",
+        "forename": "ANICETO",
+        "name": "PEREZ ALVARADO",
+        "_links": {
+          "self": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-12636"
+          },
+          "images": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-12636/images"
+          },
+          "thumbnail": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-12636/images/63819101"
+          }
+        }
+      },
+      {
+        "date_of_birth": "1967/03/02",
+        "nationalities": ["SV"],
+        "entity_id": "2026/12664",
+        "forename": "JOSE ANTONIO",
+        "name": "CHAVEZ",
+        "_links": {
+          "self": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-12664"
+          },
+          "images": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-12664/images"
+          },
+          "thumbnail": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-12664/images/63819235"
+          }
+        }
+      },
+      {
+        "date_of_birth": "2004/08/05",
+        "nationalities": ["GT"],
+        "entity_id": "2026/10267",
+        "forename": "BRAYAN JERSON",
+        "name": "AJANEL CAVINAL",
+        "_links": {
+          "self": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-10267"
+          },
+          "images": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-10267/images"
+          },
+          "thumbnail": {
+            "href": "https://ws-public.interpol.int/notices/v1/red/2026-10267/images/63808914"
+          }
+        }
+      }
+    ]
+  },
+  "_links": {
+    "self": {
+      "href": "https://ws-public.interpol.int/notices/v1/red?&resultPerPage=20&page=1"
+    },
+    "first": {
+      "href": "https://ws-public.interpol.int/notices/v1/red?&resultPerPage=20&page=1"
+    },
+    "next": {
+      "href": "https://ws-public.interpol.int/notices/v1/red?&resultPerPage=20&page=2"
+    },
+    "last": {
+      "href": "https://ws-public.interpol.int/notices/v1/red?&resultPerPage=20&page=8"
+    }
+  }
+}

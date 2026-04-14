@@ -1,54 +1,34 @@
 [
-    {
-        "name": "Togo",
-        "value": "TG"
+     {
+        "name": "Vanuatu",
+        "value": "VU"
     },
     {
-        "name": "Tonga",
-        "value": "TO"
+        "name": "Vatican City State",
+        "value": "VA"
     },
     {
-        "name": "Trinidad and Tobago",
-        "value": "TT"
+        "name": "Venezuela",
+        "value": "VE"
     },
     {
-        "name": "Tunisia",
-        "value": "TN"
+        "name": "Viet Nam",
+        "value": "VN"
     },
     {
-        "name": "Turkmenistan",
-        "value": "TM"
+        "name": "Yemen",
+        "value": "YE"
     },
     {
-        "name": "Turks and Caicos (Islands), United Kingdom",
-        "value": "TC"
+        "name": "Zambia",
+        "value": "ZM"
     },
     {
-        "name": "Tuvalu",
-        "value": "TV"
+        "name": "Zimbabwe",
+        "value": "ZW"
     },
     {
-        "name": "T\u00fcrkiye",
-        "value": "TR"
-    },
-    {
-        "name": "UN IRMCT (United Nations International Residual Mechanism for Criminal Tribunals) ",
-        "value": 922
-    },
-    {
-        "name": "Uganda",
-        "value": "UG"
-    },
-    {
-        "name": "Ukraine",
-        "value": "UA"
-    },
-    {
-        "name": "United Arab Emirates",
-        "value": "AE"
-    },
-    {
-        "name": "United Kingdom",
-        "value": "GB"
+        "name": "under UNMIK mandate (Kosovo)",
+        "value": "UNK"
     }
 ]

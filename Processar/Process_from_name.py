@@ -214,7 +214,8 @@ def process_from_name(self):
                                 #pego os ids da interpol para verificar só que vou ter uma dupla verificacao, pelo o id e pelo o nome
                                 # person_singla = list(set(lista_paises_chaves) & set(lista_paises_unicos)) #COM O METODO SET
                         if entity_id:
-                            future_busca = executor.submit(search_data_interpol, conn, entity_id)
+                            # future_busca = executor.submit(search_data_interpol, conn, entity_id)
+                            future_busca = executor.submit(search_data_interpol, self, entity_id)
                             exist_id = future_busca.result()
                             print(f"QUAL E MEU RESULADO AQUI? {exist_id}")
 
