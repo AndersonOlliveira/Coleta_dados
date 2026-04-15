@@ -28,17 +28,16 @@ from functions.funcoes import remover_acentos, remover_conhetes, tratar_entrada,
 def process_from_name(self):
     #pego os dados e faco a busca
     ClassLogger.logger.info(f"INIICIANDO A BUSCA E ATUALIZACAO DOS DADOS POR NOME")
+    des = []
     mapa = {}
     lista = []
-    falhas_ids =[]
     siglas = []
+    falhas_ids =[]
     ids_sucesso = []
     todas_pessoas =[]
     tabela_atualizar = []
     lista_urls_pesquisa = []
-    unificados = {}
     lista_detalhes_pesquisa =[]
-    des = []
     contador_por_pais = defaultdict(lambda: {
     "INSERT": 0,
     "NA": 0,

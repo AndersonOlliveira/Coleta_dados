@@ -15,22 +15,16 @@ from pathlib import Path
 
 def process_api(self):
     
-    #envio a lista de paises para busca
-    # caminho_countres = os.path.join(os.path.dirname(__file__), 'Arquivos/countries.json')
+    # caminho do arquivos para envio dos paises
     caminho_countries = Path('Arquivos/countries_poucos.json')
 
-    print(f"meu caminho : {caminho_countries}")
-    # print(f"meu caminho : {len(caminho_countries)}")
-
+    
+    
+    # lista com os paises precisar existir para realizar a busca e trazer os dados
     if caminho_countries.is_file():
-        print(f"Arquivo com a lista de paises para a busca na api")
-        ClassLogger.logger.info(f"ESTOU SAINDO AQUI PARA FAZER A CONSULTA {self.batch_size}")
-            
-            #para chamar a api e exeturar os dados
+         #para chamar a api e exeturar os dados
         retorno_api , id_insert_return = push_request(self,caminho_countries)
-
-
-       
+        
         result_lista = trata_json(self,caminho_countries,retorno_api,id_insert_return)
         
     

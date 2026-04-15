@@ -1,34 +1,10 @@
 [
      {
-        "name": "Vanuatu",
-        "value": "VU"
+        "name": "Uganda",
+        "value": "UG"
     },
     {
-        "name": "Vatican City State",
-        "value": "VA"
-    },
-    {
-        "name": "Venezuela",
-        "value": "VE"
-    },
-    {
-        "name": "Viet Nam",
-        "value": "VN"
-    },
-    {
-        "name": "Yemen",
-        "value": "YE"
-    },
-    {
-        "name": "Zambia",
-        "value": "ZM"
-    },
-    {
-        "name": "Zimbabwe",
-        "value": "ZW"
-    },
-    {
-        "name": "under UNMIK mandate (Kosovo)",
-        "value": "UNK"
+        "name": "Ukraine",
+        "value": "UA"
     }
 ]

@@ -22,37 +22,34 @@ from functions.funcoes import remover_acentos, remover_conhetes, tratar_entrada,
 
 
 
-# def trata_json(dados):
+
 def trata_json(self,caminho_countries, retorno_api,id_insert_return):
-    # print(json.dumps(caminho_countries,  indent=4))
-    tratamento = []
-    lista = []
-    falhas_ids = []
- 
     mapa = {}
+    lista = []
+    detalhes = []
+    tratamento = []
+    falhas_ids = []
     lista_urls = []
+    todas_pessoas = []
+    tabela_atualizar =[]
+    nome_traduzido = set()
     lista_paises_unicos = []
     lista_paises_total_api = {}
-    tabela_atualizar =[]
-    todas_pessoas = []
-    nome_traduzido = set()
-    grupos_por_pais = defaultdict(list)
     id_insert_return_detalhe = []
-    registros_pulados = 0
-    detalhes = []
+    grupos_por_pais = defaultdict(list)
     contador_por_pais = defaultdict(lambda: {
     "INSERT": 0,
     "NA": 0,
     "ERROR":0,
     "QTINSERT": 0
     })
-    
+    # PEGO PAISES NOMES E SIGLAS
     caminho_countress = path_arquivo()
     
-    tratamento = retorno_api
+    tratamento = retorno_api #RETORNO DO CONSUMO DA API
     
     lista_coutries = caminho_countress
-            
+    # ADICIONO DENTRO DA VARIAVEL MAPA PARA ASSOCIAR SIGLAS E NOMES PARA PEGAR OS NOMES DOS PAISES PARA SALVAR NA BASE     
     with open(lista_coutries) as lista_coutrie:
          lista_decodificadas = json.load(lista_coutrie)
          for pais in lista_decodificadas:
@@ -60,14 +57,10 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
              nome_pais = pais.get('name')
              mapa[codigo_pais] = nome_pais
 
-
+    #PERCORRO A LISTA PARA PARA PULAR DADOS INVALIDOS E NO CASO COM RETORNOS VAZIOS, E PEGO LINKS PARA CONSULTAS INDIVIDUAIS
     for bloco in tratamento:
-        print(f"DEBUG BLOCO: {bloco} | tipo: {type(bloco)}")
-       
         if not isinstance(bloco, dict):
-                print(f"Bloco inválido: {bloco}")
-            
-                continue  #  pula sem quebrar nada
+            continue  #  pula sem quebrar nada
               
         
         pessoas = bloco.get('_embedded', {}).get('notices', [])
@@ -80,22 +73,15 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
                 if link not in lista_paises_unicos:
                    s = urlparse(link)
                    params = parse_qs(s.query)
-
-                
                    lista_paises_unicos.append(params.get('nationality'))
                    list_teste = params.get('nationality')
-        
-
                 for result_pais in list_teste:
                     lista_paises_total_api[result_pais] = total_api
         else: 
             s = urlparse(link)
             params = parse_qs(s.query)
-
-                
             lista_paises_unicos.append(params.get('nationality'))
             list_teste = params.get('nationality')
-
             for result_pais in list_teste:
                 lista_paises_total_api[result_pais] = total_api
             
@@ -135,9 +121,8 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
                  for future in as_completed(futures):
                         try:
                             result = future.result()
-                            detalhes.append(result)
-
-                            print("✔ Detalhe recebido")
+                            detalhes.append(result) # FAZ AS CONSULTAS INDIVIDUAIS E ADICIONA DENTRO DE DETALHE
+                            print("✔ Detalhe recebido") 
                         except Exception as e:
                               ClassLogger.logger.error(f"Erro ao processar a URL: {e}", exc_info=True)
                     
@@ -197,7 +182,7 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
         with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
             with self.db.get_connection() as conn:
                 for pessoa, detalhe in zip(todas_pessoas, detalhes):
-                    print(f"INICIANDO O PRCCESSAMENTO DOS DADOS")
+                    print(f"INICIANDO O PRCCESSAMENTO DOS DADOS PESSOAS E DETALHES")
 
                     entity_id = pessoa.get('entity_id').replace('/','-') if pessoa.get('entity_id') else None
                     name_person = remover_acentos("{} {}".format(pessoa.get('forename'), pessoa.get('name'))).strip()

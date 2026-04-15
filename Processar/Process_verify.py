@@ -21,10 +21,10 @@ from functions.funcoes import remover_acentos, remover_conhetes, tratar_entrada,
 
 
 def process_verify_status(self):
-      lista_pesquisa_url =[]
       new_tabel =[]
       tabela_atualizar= []
       result_pesquisa = []
+      lista_pesquisa_url =[]
       contador_inativos = defaultdict(lambda: {
       "UPATVIO": 0,
       "NA": 0,
@@ -38,19 +38,13 @@ def process_verify_status(self):
           lista_ids_interpol = future_interpol.result()
 
           if lista_ids_interpol:
-             ClassLogger.logger.warning('INICIANDO VERIFICARCAO SE ESTA ATIVO OU INATIVO')
+             ClassLogger.logger.info('INICIANDO VERIFICARCAO SE ESTA ATIVO OU INATIVO')
 
              
              for dados in lista_ids_interpol:
                   interpol = dados.get('id_interpol', '')
                   lista_singlas_name = f"{self.servidor}/{interpol}"
-
-                  print(f"TENHO O ID?{interpol}")
-                #   params = f"&resultPerPage={self.qtPage}&page={self.indicePage}"
-                
-               #    lista_singlas_name = f"{self.servidor}/2026-19190"
-                 
-
+                  
                   if interpol:
                      lista_pesquisa_url.append(lista_singlas_name)
 
@@ -80,13 +74,12 @@ def process_verify_status(self):
                               print(f"Erro ao processar a requisação {str(e)}")
 
 
-          print(f"DADOS RETORNADOS {result_pesquisa}")
-          print(f"MINHA QUANTIDADE VINDA:: {len(result_pesquisa)}")
+          
 
           if result_pesquisa is not None:
-              ClassLogger.logger.info('Vou realizar o processamento dos dados retornados do consumo da api')
+              
               for resultado in result_pesquisa:
-                   print(f"resultado do processamento {resultado}")
+                   ClassLogger.logger.info(f"resultado do processamento {resultado}")
                    if resultado.get('message') == False:
                         ClassLogger.logger.info('O registro esta inativo ou nao encontrado na interpol')
                         contador_inativos[resultado.get('id_interpol')]["UPATVIO"] += 1

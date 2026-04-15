@@ -1,29 +1,19 @@
-import json
-from Logs import ClassLogger
-import os
 import pandas as pd
-from .Request import push_request,push_new_resquests
 from concurrent.futures import ThreadPoolExecutor, as_completed
-import unicodedata
-import re
-from pathlib import Path
 from collections import Counter, defaultdict
 from datetime import datetime
 from Mail.ClassMail import enviar_email_all
-from urllib.parse import urlparse, parse_qs
-import sys
-# from collections import defaultdict
-from Conexao import ConectionClass,ConectionPool
+
+
 from Model.ClassModel import get_data_match_name_base,search_from_name_interpol,push_cpf
 from Mail.ClassMail import enviar_email_all
-from functions.funcoes import remover_acentos, remover_conhetes, tratar_entrada
 
 
 
 
 def process_match_name(self):
   
-    lista_pesquisa_name =[]
+    
     contador_por_matchName = defaultdict(lambda: {"QTUPDATE": 0, "ERROR": 0})
     falhas_ids = []
    
@@ -45,8 +35,7 @@ def process_match_name(self):
                 result = future.result()
 
                             
-                print(f"MEU RETORNO DO RESULT O QUE VEM AQUI? {result}")
-                                # print(f"tenho acesso as siglas {result['person_sigla_unico']}")
+                
                                 
                 if result['status'] == "sucesso":
                                           
@@ -56,15 +45,15 @@ def process_match_name(self):
                    print(f"MINHA ATUALIZAÇÃO DO CPF {udpate_match_name}")
                 else:
                     falhas_ids.append(result)
-                                                    # falha_ +=1
+                                                   
                     contador_por_matchName[result['ID_COLUNA_INTERPOL']]["ERROR"] += 1
 
-                #    print(f"LISTA DE RETONRO:: {retorno_lista}")
+                
 
 
                 
             
-        print(f"MINHA LISTA PARA PESQUISA PELO O NOME {falhas_ids}")
+        
         if falhas_ids:
                 tabela_error = pd.DataFrame(falhas_ids)
                 tabela_error = tabela_error.fillna(0) 
@@ -82,7 +71,5 @@ def process_match_name(self):
                 
                 result_email = enviar_email_all(html_final)
 
-            # print(f"Resultado do enviar e-mail {result_email}")
-
-            #envia a quantiade para 
+            
                 return result_email
