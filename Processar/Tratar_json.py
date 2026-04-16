@@ -290,8 +290,8 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
 
 
     else:
-        obs = f"SEM ALTERACAO NOS DADOS {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}"
-        obs_interpol = f"SEM CONSULTA INDIVIDUAL {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}"
+        obs = f"SEM ALTERACAO NOS DADOS {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+        obs_interpol = f"SEM CONSULTA INDIVIDUAL {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
         alter_status(self, id_insert_return[0],obs)
         alter_status(self, id_geral_url_interpol,obs_interpol)
     
@@ -319,7 +319,7 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
     
     corpo = f"""
         <h2 style="color:green;">Captura dos dados interpol</h2>
-        <p>{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</p>
+        <p>{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}</p>
 
         {convertida}
         """

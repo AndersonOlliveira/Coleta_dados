@@ -355,12 +355,12 @@ def process_from_name(self):
 
 
     else:
-        obs = f"SEM ALTERACAO NOS DADOS {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}"
-        obs_interpol = f"SEM ALTERACAO NOS DADOS TRES PRIMEIRA LETRAS  {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}"
+        obs = f"SEM ALTERACAO NOS DADOS {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+        obs_interpol = f"SEM ALTERACAO NOS DADOS TRES PRIMEIRA LETRAS  {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
             # alter_status(self, id_insert_return[0],obs)
         alter_status(self, id_insert_return[0],obs_interpol)
-        ClassLogger.logger.info(f"SEM ALTERACAO NOS DADOS {datetime.now().strftime("%Y-%m-%d %H:%M:%S")})")
-        ClassLogger.logger.info(f"SEM CONSULTA INDIVIDUAL {datetime.now().strftime("%Y-%m-%d %H:%M:%S")})")
+        ClassLogger.logger.info(f"SEM ALTERACAO NOS DADOS {datetime.now().strftime('%Y-%m-%d %H:%M:%S')})")
+        ClassLogger.logger.info(f"SEM CONSULTA INDIVIDUAL {datetime.now().strftime('%Y-%m-%d %H:%M:%S')})")
 
     new_tabel = []
 
@@ -399,7 +399,7 @@ def process_from_name(self):
         
     corpo = f"""
             <h2 style="color:green;">Busca dados por nome por 3 primeiras letras </h2>
-            <p>{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</p>
+            <p>{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}</p>
             {convertida}"""
     html_final = f"""
             <html>

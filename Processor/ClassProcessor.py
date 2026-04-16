@@ -66,7 +66,7 @@ class Processor:
         except Exception as e:
             ClassLogger.logger.error(f"Erro fatal na execução: {str(e)}")
             error = f"Erro fatal na execução: {str(e)}"
-            corpo = f"""<h2 style="color:red;">Falha no processo de Captura e tratamento dos dados</h2> <p>{datetime.now().strftime("%Y-%m-%d %H:%M:%S")} Mensagem:: {error}</p>"""
+            corpo = f"""<h2 style="color:red;">Falha no processo de Captura e tratamento dos dados</h2> <p>{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} Mensagem:: {error}</p>"""
             enviar_email_all(corpo)
 
         finally:
@@ -78,7 +78,7 @@ class Processor:
     def enviar_email(self):
         desti = 'anderson@proscore.com.br'
         assunto = 'Teste de Envio de Email'
-        corpo = f"atualizacao da base da interpol,processo finaliazado  {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}"
+        corpo = f"atualizacao da base da interpol,processo finaliazado  {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
         result_email = enviar_email_all(corpo)
         ClassLogger.logger.info(f"ENVIANDO EMAIL DE TESTE PARA VER SE O SERVIÇO DE EMAIL ESTA FUNCIONANDO")
         pass
@@ -135,7 +135,7 @@ class Processor:
         except Exception as e:
                 ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] Finalizado o processo de busca por nome dados_interpol")
                 error = f"Erro fatal na execução: {str(e)}"
-                corpo = f"""<h2 style="color:red;"> Finalizado o processo de busca por nome dados interpol</h2> <p>{datetime.now().strftime("%Y-%m-%d %H:%M:%S")} Mensagem:: {error}</p>"""
+                corpo = f"""<h2 style="color:red;"> Finalizado o processo de busca por nome dados interpol</h2> <p>{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} Mensagem:: {error}</p>"""
                 enviar_email_all(corpo)
         finally:
             return result
@@ -151,7 +151,7 @@ class Processor:
         except Exception as e:
                 ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] erro na verificação de ativo e inativo {str(e)}")
                 error = f"Erro fatal na execução: {str(e)}"
-                corpo = f"""<h2 style="color:red;"> erro na verificação de ativo e inativo dados interpol</h2> <p>{datetime.now().strftime("%Y-%m-%d %H:%M:%S")} Mensagem:: {error}</p>"""
+                corpo = f"""<h2 style="color:red;"> erro na verificação de ativo e inativo dados interpol</h2> <p>{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} Mensagem:: {error}</p>"""
                 enviar_email_all(corpo)
 
         finally:
@@ -171,7 +171,7 @@ class Processor:
         except Exception as e:
                 ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] erro na verificação do match name proscore {str(e)}")
                 error = f"Erro fatal na execução: {str(e)}"
-                corpo = f"""<h2 style="color:red;"> erro na verificação match name proscore</h2> <p>{datetime.now().strftime("%Y-%m-%d %H:%M:%S")} Mensagem:: {error}</p>"""
+                corpo = f"""<h2 style="color:red;"> erro na verificação match name proscore</h2> <p>{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} Mensagem:: {error}</p>"""
                 enviar_email_all(corpo)
 
         finally:

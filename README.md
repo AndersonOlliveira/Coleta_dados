@@ -18,7 +18,7 @@ To deploy this project run
    acessar projeto na pasta rotina_interpol
    RODAR python -m venv venv # para criar ambiente virtual no python
    OU CRIA VENV JÁ COM A VERSÃO COMANDO :: python3.13 -m venv venv (.venv/)
-   AMBIENTE LINUX COMANDO PRECISA FICAR ASSIM .venv/bin/
+   AMBIENTE LINUX COMANDO PRECISA FICAR ASSIM .venv/bin/ # rodar comando no terminasl source .venv/bin/activate
    RODAR O AMBIENTE VIRTUAL (ATIVAR) usuando cd .\venv\Scripts\activate ou activate e para desativar deactivate na raiz do projeto /acessar o diretorio para venv\Scripts Rodar o activate ou deactivate (desativar)
    AMBIENTE funcionando e instalar o requirements.txt
    requirements.TXT "bibliotecas do projeto"

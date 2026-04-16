@@ -85,7 +85,7 @@ def process_verify_status(self):
                         contador_inativos[resultado.get('id_interpol')]["UPATVIO"] += 1
 
                         with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
-                             future_interpol = executor.submit(update_id_interpol_status, self, resultado.get('id_interpol'), False, datetime.now().strftime("%Y-%m-%d %H:%M:%S") )
+                             future_interpol = executor.submit(update_id_interpol_status, self, resultado.get('id_interpol'), False, datetime.now().strftime('%Y-%m-%d %H:%M:%S') )
                              result_update = future_interpol.result()
                              print(f"Resultado Baixa : {result_update}")
                          
@@ -118,7 +118,7 @@ def process_verify_status(self):
 
           corpo = f"""
           <h2 style="color:green;">Verificação de Status inativos interpol </h2>
-          <p>{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</p>
+          <p>{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}</p>
           {convertida}"""
           html_final = f"""
           <html>

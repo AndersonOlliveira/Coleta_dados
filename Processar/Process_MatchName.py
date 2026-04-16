@@ -61,7 +61,7 @@ def process_match_name(self):
                 corpo_error = f"Lista de dados com error :<br> {convertida_error}"
                 corpo = f"""
                 <h2 style="color:green;">Match Names Não Encontrados Base ProScore</h2>
-                <p>{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</p>"""
+                <p>{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}</p>"""
                 html_final = f"""<html><body> {corpo}
                 <hr>
                 {corpo_error if corpo_error else "<p>Sem erros encontrados</p>"}

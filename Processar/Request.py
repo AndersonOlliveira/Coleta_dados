@@ -296,13 +296,13 @@ def disparar_email_agrupado():
          with lock_error:
                 if buffer_mensagens_emails:
                     qtd = len(buffer_mensagens_emails)
-                    corpo = "\n".join(buffer_mensagens_emails)
+                    corpo = "\\n".join(buffer_mensagens_emails)
                     
                 
             
                 
                 
-                enviar_email_all(f"<h2>Resumo de erros 403</h2><p>{corpo.replace('\n', '<br>')}</p>")
+                enviar_email_all(f"<h2>Resumo de erros 403</h2><p>{corpo.replace('', '<br>')}</p>")
                 
                 buffer_mensagens_emails.clear() # Limpa para o próximo lote
          timer_ativo = False

@@ -250,7 +250,7 @@ def update_info_process(self,registro: Dict, cursor, connection):
                connection.commit()
                self.batch_counter_status1 = 0
 
-            ClassLogger.logger.info(f"Status atualizado do id {registro['alter_id']}  com o Status {registro['status']} {datetime.now().strftime("%d/%m/%Y %H:%M")} ")
+            ClassLogger.logger.info(f"Status atualizado do id {registro['alter_id']}  com o Status {registro['status']} {datetime.now().strftime('%d/%m/%Y %H:%M')} ")
 
     except Exception as  e:
      ClassLogger.logger.error(f"Erro ao atualizar status para :: update_info_process  - {str(e)}")
@@ -400,7 +400,7 @@ def get_lista_name_base_interpol(self) -> List[Dict]:
      
       query = """SELECT UPPER(nome) as nome FROM public.interpol_dados_teste
                 where to_char(data_atualizacao, 'YYYY-MM-DD') != %s or data_atualizacao is null
-                ORDER BY RANDOM() limit 2"""
+                ORDER BY RANDOM() limit 1"""
       
       
 
