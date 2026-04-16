@@ -23,8 +23,9 @@ To deploy this project run
    AMBIENTE funcionando e instalar o requirements.txt
    requirements.TXT "bibliotecas do projeto"
     # comentar o no requiriments
-    # psycopg2==2.9.11
+    # psycopg2==2.9.11 
     # psycopg2-binary==2.9.11
+    # p
    rodar o pip install -r  requiriments.txt para instalar as bibliotecas
     # rodar no proprio terminal o pip install psycopg2-binary (lembrando que precisa esta funcionando o .venv)
     # pip install psycopg2-binary
