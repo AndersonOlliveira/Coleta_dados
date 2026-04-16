@@ -1,6 +1,7 @@
 import json
 from Logs import ClassLogger
 import os
+import time
 import pandas as pd
 from .Request import push_request,push_new_resquests
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -14,7 +15,6 @@ from urllib.parse import urlparse, parse_qs
 import sys
 # from collections import defaultdict
 from Conexao import ConectionClass,ConectionPool
-from Model.ClassModel import get_data_match_name_base
 from Model.ClassModel import buscar_teste, insert_interpol, update_info_process,search_data_interpol,exists_by_name,insert_base_interpol,update_data_interpol,update_id_interpol,get_lista_name_base_interpol
 from functions.funcoes import remover_acentos, remover_conhetes, tratar_entrada, path_arquivo, dividir_lotes
 
@@ -33,11 +33,13 @@ def process_from_name(self):
     lista = []
     siglas = []
     falhas_ids =[]
+    id_insert_return =[]
     ids_sucesso = []
     todas_pessoas =[]
     tabela_atualizar = []
     lista_urls_pesquisa = []
     lista_detalhes_pesquisa =[]
+    lista_tres_primera_letras =[]
     contador_por_pais = defaultdict(lambda: {
     "INSERT": 0,
     "NA": 0,
@@ -71,6 +73,7 @@ def process_from_name(self):
                 
                 if nome:
                     tres_primeiras = nome[:3].upper()
+                    lista_tres_primera_letras.append(tres_primeiras)
                     params = f"&resultPerPage={self.qtPage}&page={self.indicePage}"
                     lista_singlas_name = f"{self.servidor_get_from_name}={tres_primeiras}{params}"
                     siglas.append(lista_singlas_name)
@@ -81,6 +84,21 @@ def process_from_name(self):
 
             # remove duplicados
           siglas_unicas = list(set(siglas))
+          letras_unicas = list(set(lista_tres_primera_letras))
+
+          
+    with ConectionClass.DbConnect(self.config, auto_commit=False) as conn_status:
+         cursor_initil = conn_status.cursor()
+         lista_insert = {'periodizacao': self.periodo ,'siglas' : (', '.join(letras_unicas)) , 'url': self.servidor_get_from_name, 'data_captura': datetime.now().strftime("%Y-%m-%d")} 
+         print(f"minha lista para insert {lista_insert}")
+         id_insert_return.append(insert_interpol(self,lista_insert,cursor_initil,conn_status))
+             
+           
+
+         conn_status.commit()
+            
+         cursor_initil.close()
+         time.sleep(0.5)
 
     # print(f"MINHA LISTA DE URL PARA BUSCA POR NOME {len(siglas_unicas)}")
     
@@ -99,12 +117,12 @@ def process_from_name(self):
         #     lambda url: push_new_resquests(url, self.time_sleps),
         #     siglas_unicas
         # ))
-                futures = [
+            futures = [
                     executor.submit(push_new_resquests, url,  self.max_workers)
                     for url in lote
                 ]
 
-                for future in as_completed(futures):
+            for future in as_completed(futures):
                     try:
                         result = future.result()
                         des.append(result)
@@ -129,14 +147,14 @@ def process_from_name(self):
                 #    bloco = json.loads(bloco)
                 pessoas_detalhes = bloco.get('_embedded', {}).get('notices', [])
             
-            todas_pessoas.extend(pessoas_detalhes)
+                todas_pessoas.extend(pessoas_detalhes)
         except Exception as e:
             
             ClassLogger.logger.error(f"Erro ao processar os Dados BUSCA POR 3 PRIMEIRA LETRAS : {str(e)} ::: DADOS ERROS{des}")
         
         
-        # print(f"minha lisata {len(todas_pessoas)}")
-        # print(f"MINHA SINGLAS PARA pessoas_detalhes {pessoas_detalhes}")
+        print(f"minha lisata {len(todas_pessoas)}")
+        print(f"MINHA SINGLAS PARA pessoas_detalhes {pessoas_detalhes}")
         # return 
         # return
         for pessoa in todas_pessoas:
@@ -150,16 +168,19 @@ def process_from_name(self):
         # return
         
     
-        # print(f"Minha lista de url {json.dumps(lista_urls_pesquisa, indent=4)}")
+        print(f"Minha lista de url {json.dumps(lista_urls_pesquisa, indent=4)}")
+        print(f"Minha lista de url {len(lista_urls_pesquisa)}")
         # return 
-        with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
-        #     lista_detalhes_pesquisa = list(executor.map(
-        #     lambda url: push_new_resquests(url, self.time_sleps),
-        #     lista_urls_pesquisa
-        # ))
+    
+        for lote in dividir_lotes(lista_urls_pesquisa , self.batch_size_verify):
+             with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
+            #     lista_detalhes_pesquisa = list(executor.map(
+            #     lambda url: push_new_resquests(url, self.time_sleps),
+            #     lista_urls_pesquisa
+            # ))
                 futures = [
-                    executor.submit(push_new_resquests, url, self.time_sleps)
-                    for url in lista_urls_pesquisa
+                    executor.submit(push_new_resquests, url, self.max_workers)
+                    for url in lote
                 ] 
                 for future in as_completed(futures):
                     try:
@@ -173,7 +194,7 @@ def process_from_name(self):
 
         # return
 
-    
+        
         try:
             with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
                 with self.db.get_connection() as conn:
@@ -189,15 +210,6 @@ def process_from_name(self):
                         # lista_paises_unicos.append(lista_paises_chaves)
                         print(f"meu resultado do lista_paises_chaves?{lista_paises_chaves}")
                         person_singla = lista_paises_chaves[0] if lista_paises_chaves else 'N/I'
-
-                        linha_tabela = {
-                        'DATA CAPTURA': datetime.now().strftime("%d/%m/%Y %H:%M"),
-                        'PAIS_BUSCADO': person_singla.upper(),
-                    
-                        }
-                        tabela_atualizar.append(linha_tabela)
-
-                                
                         entity_id = de.get('entity_id').replace('/','-') if de.get('entity_id') else None
                         name_person = remover_acentos("{} {}".format(de.get('forename'), de.get('name'))).strip()
                         naturalidade = (list_url_person.get('place_of_birth') or mapa.get(list_url_person.get('country_of_birth_id')) or "N/I").upper()
@@ -209,6 +221,7 @@ def process_from_name(self):
                         data_captura = datetime.now().strftime("%Y-%m-%d  %H:%M:%S")
                         exist_id = False
                         exist_name = False
+                       
                                 # return
                                 #pego os ids da interpol para verificar só que vou ter uma dupla verificacao, pelo o id e pelo o nome
                                 # person_singla = list(set(lista_paises_chaves) & set(lista_paises_unicos)) #COM O METODO SET
@@ -225,7 +238,7 @@ def process_from_name(self):
                         if not exist_id:
                             #colocar theads aqui
                             print(f"QUAIS OS IDS BUSCADO {entity_id} ||| nome: {name_person}")
-                            future_busca_name = executor.submit(exists_by_name,conn,name_person)
+                            future_busca_name = executor.submit(exists_by_name,self,name_person)
                             exist_name = future_busca_name.result()
                         if exist_name:
                             #faco o update para o id da interpol para a busca ser mais acertiva 
@@ -255,21 +268,20 @@ def process_from_name(self):
 
                                     
                             lista.append({
-                                            
-                                                'nome_completo': name_person,
-                                                'data_nascimento': data_ajustada,
-                                                'nacionalidade': pais_limpo.upper(),
-                                                'naturalidade': naturalidade.upper(),
-                                                'id_interpol': entity_id,
-                                                'sexo': sexo, 
-                                                'acusacao': crime.upper(),
-                                                'idiona': idiona.upper(),
-                                                'thumbnail': thumbnail if thumbnail else "N/I", #COMENTEADO PARA NÃO APRESENTAR EM TELA,
-                                                'data_consulta': datetime.now().strftime("%Y-%m-%d"),
-                                                'hora_consulta': datetime.now().strftime("%H:%M:%S"),
-                                                'country_wanted': pais_procurado,
-                                                'person_sigla_unico' : ','.join([person_singla])
-                                        })
+                                 'nome_completo': name_person,
+                                 'data_nascimento': data_ajustada,
+                                 'nacionalidade': pais_limpo.upper(),
+                                 'naturalidade': naturalidade.upper(),
+                                 'id_interpol': entity_id,
+                                 'sexo': sexo, 
+                                 'acusacao': crime.upper(),
+                                 'idiona': idiona.upper(),
+                                 'thumbnail': thumbnail if thumbnail else "N/I", #COMENTEADO PARA NÃO APRESENTAR EM TELA,
+                                  'data_consulta': datetime.now().strftime("%Y-%m-%d"),
+                                  'hora_consulta': datetime.now().strftime("%H:%M:%S"),
+                                  'country_wanted': pais_procurado,
+                                  'person_sigla_unico' : ','.join([person_singla])
+                                })
 
                         else:
                             print(f"vou pular {entity_id} || nome: {name_person}  que pais ???{lista_paises_chaves}")
@@ -281,97 +293,115 @@ def process_from_name(self):
             ClassLogger.logger.error(f"Erro ao processar entidade: {str(contador_por_pais)}")
 
 
-        for linha in tabela_atualizar:
-                pais = linha['PAIS_BUSCADO']
+    # Popular tabela_atualizar com os países únicos encontrados
+    for pais_sigla in letras_unicas:
+        tabela_atualizar.append({
+            'PAIS_BUSCADO': pais_sigla,
+            'QTA SINGLAS': 0,
+            'QTA J/N BASE': 0
+        })
+
+    for linha in tabela_atualizar:
+            pais = linha['PAIS_BUSCADO']
                 #MUNDAR PRA A
-                linha['QTA A INSERIR'] = contador_por_pais[pais]["INSERT"]
-                linha['QTA J/N BASE'] = contador_por_pais[pais]["NA"]
+            linha['QTA SINGLAS'] = contador_por_pais[pais]["INSERT"] - contador_por_pais[pais]["NA"]
+            linha['QTA J/N BASE'] = contador_por_pais[pais]["NA"]
 
 
-        pd.set_option('display.max_rows', 100)
-        pd.set_option('display.max_columns', None)
-        pd.set_option('display.max_colwidth', None)
-        df = pd.DataFrame(lista)
+    pd.set_option('display.max_rows', 100)
+    pd.set_option('display.max_columns', None)
+    pd.set_option('display.max_colwidth', None)
+    df = pd.DataFrame(lista)
+    tabela_atualizar_ = pd.DataFrame(tabela_atualizar)
     
     
-        print(f"Minha quantidade a ser processada {len(df)}")
-        print(f"{df}")
-        print(f"Minha lista do contador {len(df)}")
+    print(f"Minha quantidade a ser processada {len(df)}")
+    print(f"MINHA TABELA PARA ATUALIZAR {tabela_atualizar_ }")
+    print(f"Minha lista do contador {len(df)}")
         
-        # ClassLogger.logger.info(f"MINHA LISTA DO DF json {json.dumps(lista, indent=4)}")
-        # ClassLogger.logger.info(f"MINHA LISTA DO DF {df.to_dict(orient='records')}")
+    # ClassLogger.logger.info(f"MINHA LISTA DO DF json {json.dumps(lista, indent=4)}")
+    # ClassLogger.logger.info(f"MINHA LISTA DO DF {tabela_atualizar_.to_dict(orient='records')}")
 
-        # return
+    # return
 
-        if len(df) > 0:
-            with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
+    if len(df) > 0:
+
+            # alter_status(self, id_insert_return[0])
+        obs_interpol_success = 'SUCESSO EM CONSULTAR OS FORENAME INTERPOL'
+        alter_status(self, id_insert_return[0],obs_interpol_success)
             
-                futures = [
+        with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
+            
+            futures = [
                     executor.submit(insert_base_interpol,self,registro)
                         for registro in lista
                 ]
                         
-                for future in as_completed(futures):
-                    result = future.result()
+            for future in as_completed(futures):
+                result = future.result()
 
 
-                    print(f"tenho acesso as siglas {result}")
+                print(f"tenho acesso as siglas {result}")
                     # print(f"tenho acesso as siglas {result['person_sigla_unico']}")
                             
-                    if result['status'] == "sucesso":
+                if result['status'] == "sucesso":
                                 # inser_new_registro +=1
                         contador_por_pais[result['person_sigla_unico']]["QTINSERT"] += 1
                         ids_sucesso.append(result)
-                    else:
+                else:
                         falhas_ids.append(result)
                                     # falha_ +=1
                         contador_por_pais[result['person_sigla_unico']]["ERROR"] += 1
 
 
-        else:
-            ClassLogger.logger.info(f"SEM ALTERACAO NOS DADOS {datetime.now().strftime("%Y-%m-%d %H:%M:%S")})")
+    else:
+        obs = f"SEM ALTERACAO NOS DADOS {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}"
+        obs_interpol = f"SEM ALTERACAO NOS DADOS TRES PRIMEIRA LETRAS  {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}"
+            # alter_status(self, id_insert_return[0],obs)
+        alter_status(self, id_insert_return[0],obs_interpol)
+        ClassLogger.logger.info(f"SEM ALTERACAO NOS DADOS {datetime.now().strftime("%Y-%m-%d %H:%M:%S")})")
+        ClassLogger.logger.info(f"SEM CONSULTA INDIVIDUAL {datetime.now().strftime("%Y-%m-%d %H:%M:%S")})")
 
-            ClassLogger.logger.info(f"SEM CONSULTA INDIVIDUAL {datetime.now().strftime("%Y-%m-%d %H:%M:%S")})")
+    new_tabel = []
 
-        new_tabel = []
-
-        for pais, totais in contador_por_pais.items():
+    for pais, totais in contador_por_pais.items():
         
-            nova_linha = {
+        nova_linha = {
                 'DATA CAPTURA': datetime.now().strftime("%d/%m/%Y %H:%M"), 
                 'PAIS_BUSCADO': pais,
-                'QTA A INSERIR': totais["INSERT"],
+                'QTA SINGLAS': totais["INSERT"],
                 'QTA J/N BASE':  totais["NA"],
-                'QTA ERROR':     totais["ERROR"],
-                'QTA INSERIDO':  totais["QTINSERT"]
+                'QTA ERROR':     totais["ERROR"], 
+                'QTA INSERIDO': max(0, totais["QTINSERT"] - totais["NA"])
             }
             
-            new_tabel.append(nova_linha)
+        new_tabel.append(nova_linha)
 
         
-        tabela_atualizar = new_tabel
-        ClassLogger.logger.info(f"TABELA DE RESUMO POR PAIS 'SIGLAS' {tabela_atualizar}")
-        minha_tabela_montada = pd.DataFrame(tabela_atualizar)
+    tabela_atualizar = new_tabel
+    ClassLogger.logger.info(f"TABELA DE RESUMO POR PAIS 'SIGLAS' {tabela_atualizar}")
+    minha_tabela_montada = pd.DataFrame(tabela_atualizar)
         
         # return
-        corpo_error = ""
-        if falhas_ids:
-            tabela_error = pd.DataFrame(falhas_ids)
-            tabela_error = tabela_error.fillna(0) 
-            convertida_error =  tabela_error.to_html(index=False, border=1, justify='center')
-            corpo_error = f"Lista de dados com error :<br> {convertida_error}"
-            print(f"Lista de dados com error :<br> {convertida_error}")
+    corpo_error = ""
+
+    if falhas_ids:
+        tabela_error = pd.DataFrame(falhas_ids)
+        tabela_error = tabela_error.fillna(0) 
+        convertida_error =  tabela_error.to_html(index=False, border=1, justify='center')
+        corpo_error = f"Lista de dados com error :<br> {convertida_error}"
+        print(f"Lista de dados com error :<br> {convertida_error}")
 
 
         
 
-        convertida = minha_tabela_montada.to_html(index=False, border=1, justify='center')
-        if len(df) > 0:
-            corpo = f"""
+    convertida = minha_tabela_montada.to_html(index=False, border=1, justify='center')
+        
+    corpo = f"""
             <h2 style="color:green;">Busca dados por nome por 3 primeiras letras </h2>
             <p>{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</p>
             {convertida}"""
-            html_final = f"""
+    html_final = f"""
             <html>
             <body>
             {corpo}
@@ -382,6 +412,20 @@ def process_from_name(self):
             """
 
 
-            result_email = enviar_email_all(html_final)
+    result_email = enviar_email_all(html_final)
 
-            
+
+
+
+
+
+def alter_status(self, id, obs = None):
+    with ConectionClass.DbConnect(self.config, auto_commit=False) as conn_status:
+          cursor_initil = conn_status.cursor()
+          if obs is None:
+                lista_update = {'status': self.true, 'alter_id': id ,'obs' : None} 
+          else: 
+                lista_update = {'status': self.true, 'alter_id': id, 'obs' : obs}
+                update_info_process(self,lista_update,cursor_initil,conn_status)
+          conn_status.commit()
+          cursor_initil.close()

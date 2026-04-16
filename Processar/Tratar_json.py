@@ -96,7 +96,7 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
     #  url da busca por id interpol
     with ConectionClass.DbConnect(self.config, auto_commit=False) as conn_status:
          cursor_initil = conn_status.cursor()
-         lista_url_interpol = {'periodizacao': self.periodo , 'siglas': 'null', 'url': self.servidor_push_expecifg_id, 'data_captura': datetime.now().strftime("%Y-%m-%d")} 
+         lista_url_interpol = {'periodizacao': self.periodo , 'siglas': '=PARAMENTO DE BUSCA ID DA INTERPO Exe: /111-222', 'url': self.servidor_push_expecifg_id, 'data_captura': datetime.now().strftime("%Y-%m-%d")} 
          id_insert_return_detalhe.append(insert_interpol(self,lista_url_interpol,cursor_initil,conn_status))
          conn_status.commit()
          cursor_initil.close()

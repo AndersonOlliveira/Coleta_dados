@@ -51,79 +51,85 @@ def insert_interpol(self,registro: Dict, cursor, connection):
 #inserir o lote dos registos
 # def insert_base_interpol(self, registro: dict, conn, falha_ids):
 def insert_base_interpol(self, registro):
+    exits = False
+
+    exits = search_data_interpol(self,registro['id_interpol'])
+
+    if not exits:
    
-    query = """
-           INSERT INTO public.interpol_dados_teste 
-               (nome, sexo, nascimento,nacionalidade,idioma,acusacao,foto,data_consulta_fonte,hora_consulta_fonte,id_interpol,naturalidade, pais_procurado,ativo)
-           VALUES  (%s,%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s) """
+        query = """
+            INSERT INTO public.interpol_dados_teste 
+                (nome, sexo, nascimento,nacionalidade,idioma,acusacao,foto,data_consulta_fonte,hora_consulta_fonte,id_interpol,naturalidade, pais_procurado,ativo)
+            VALUES  (%s,%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s) """
 
-    print(f"Registro a ser inserido: {registro}")
-    print(f"{registro['nome_completo']}")
-    print(f"{registro['sexo']}")
-    print(f"{registro['data_nascimento']}")
-    print(f"{registro['nacionalidade']}")
-    print(f"{registro['idiona']}")
-    print(f"{registro['acusacao']}")
-    print(f"{registro['thumbnail']}")
-    print(f"{registro['data_consulta']}")
-    print(f"{registro['hora_consulta']}")
-    print(f"{registro['id_interpol']}")
-    print(f"{registro['naturalidade']}")
-    print(f"minha person sigla {registro['person_sigla_unico']}")
+        print(f"Registro a ser inserido: {registro}")
+        print(f"{registro['nome_completo']}")
+        print(f"{registro['sexo']}")
+        print(f"{registro['data_nascimento']}")
+        print(f"{registro['nacionalidade']}")
+        print(f"{registro['idiona']}")
+        print(f"{registro['acusacao']}")
+        print(f"{registro['thumbnail']}")
+        print(f"{registro['data_consulta']}")
+        print(f"{registro['hora_consulta']}")
+        print(f"{registro['id_interpol']}")
+        print(f"{registro['naturalidade']}")
+        print(f"minha person sigla {registro['person_sigla_unico']}")
 
-    print(query)
-    print((
-    registro['nome_completo'],
-    registro['sexo'],
-    registro['data_nascimento'],
-    registro['nacionalidade'],
-    registro['idiona'],
-    registro['acusacao'],
-    registro['thumbnail'],
-    registro['data_consulta'],
-    registro['hora_consulta'],
-    registro['id_interpol'],
-    registro['naturalidade'],
-    registro['person_sigla_unico'],
-     True  #quando inserir recebe true
-))
+        print(query)
+        print((
+        registro['nome_completo'],
+        registro['sexo'],
+        registro['data_nascimento'],
+        registro['nacionalidade'],
+        registro['idiona'],
+        registro['acusacao'],
+        registro['thumbnail'],
+        registro['data_consulta'],
+        registro['hora_consulta'],
+        registro['id_interpol'],
+        registro['naturalidade'],
+        registro['person_sigla_unico'],
+        True  #quando inserir recebe true
+    ))
     
-    # return
-    try:
-         
-     with self.db.get_connection() as conn:
-         with conn.cursor() as cursor:
-              cursor.execute(query, (
-                registro['nome_completo'],
-                registro['sexo'],
-                registro['data_nascimento'],
-                registro['nacionalidade'],
-                registro['idiona'],
-                registro['acusacao'],
-                registro['thumbnail'],
-                registro['data_consulta'],
-                registro['hora_consulta'],
-                registro['id_interpol'],
-                registro['naturalidade'],
-                registro['country_wanted'],
-                True  #quando inserir recebe true
-            ))
+        # return
+        try:
+                
+            with self.db.get_connection() as conn:
+                with conn.cursor() as cursor:
+                    cursor.execute(query, (
+                         
+                        registro['nome_completo'],
+                        registro['sexo'],
+                        registro['data_nascimento'],
+                        registro['nacionalidade'],
+                        registro['idiona'],
+                        registro['acusacao'],
+                        registro['thumbnail'],
+                        registro['data_consulta'],
+                        registro['hora_consulta'],
+                        registro['id_interpol'],
+                        registro['naturalidade'],
+                        registro['country_wanted'],
+                        True  #quando inserir recebe true
+                    ))
 
-         return {
+                return {
+                        "id": registro['id_interpol'],
+                        "status": "sucesso",
+                        "person_sigla_unico": registro['person_sigla_unico']
+                    } 
+        
+            
+        except Exception as e:
+            ClassLogger.logger.error(f"falha em inserir os dados na base  insert_base_interpol - {repr(e)}")
+            return {
                     "id": registro['id_interpol'],
-                    "status": "sucesso",
-                    "person_sigla_unico": registro['person_sigla_unico']
+                    "status": "erro",
+                    "person_sigla_unico": registro['person_sigla_unico'],
+                    'error': str(e)
                 } 
-       
-         
-    except Exception as e:
-        ClassLogger.logger.error(f"falha em inserir os dados na base  insert_base_interpol - {repr(e)}")
-        return {
-                "id": registro['id_interpol'],
-                "status": "erro",
-                "person_sigla_unico": registro['person_sigla_unico'],
-                'error': str(e)
-            } 
 
 
 
@@ -394,7 +400,7 @@ def get_lista_name_base_interpol(self) -> List[Dict]:
      
       query = """SELECT UPPER(nome) as nome FROM public.interpol_dados_teste
                 where to_char(data_atualizacao, 'YYYY-MM-DD') != %s or data_atualizacao is null
-                ORDER BY RANDOM() limit 1000"""
+                ORDER BY RANDOM() limit 2"""
       
       
 

@@ -29,7 +29,7 @@ class Processor:
         self.servidor = 'https://ws-public.interpol.int/notices/v1/red'
         # self.servidor_nationality = 'https://ws-public.interpol.int/notices/v1/red?&forename=JACK&nationality'  #busca por pais gama maior de resultados  o resultado da api mostra no maximo 160 por api 
         self.servidor_nationality = 'https://ws-public.interpol.int/notices/v1/red?nationality'  #busca por pais gama maior de resultados  o resultado da api mostra no maximo 160 por api 
-        self.servidor_push_expecifg_id= 'https://ws-public.interpol.int/notices/v1/'   # ESTA URL PASSANDO O ID DO DA INTERPOL (entity_id "2026-15452")  ELE TRAZ DADOS ESPECIFICOS EXEMPLO "TIPO DO CRIME, PAIS DE ACUSACAO, LINGUAS QUE FALA,"
+        self.servidor_push_expecifg_id= 'https://ws-public.interpol.int/notices/v1/red/'   # ESTA URL PASSANDO O ID DO DA INTERPOL (entity_id "2026-15452")  ELE TRAZ DADOS ESPECIFICOS EXEMPLO "TIPO DO CRIME, PAIS DE ACUSACAO, LINGUAS QUE FALA,"
         self.servidor_get_from_name= 'https://ws-public.interpol.int/notices/v1/red?&forename'   # ESTA URL PASSANDO O ID DO DA INTERPOL (entity_id "2026-15452")  ELE TRAZ DADOS ESPECIFICOS EXEMPLO "TIPO DO CRIME, PAIS DE ACUSACAO, LINGUAS QUE FALA,"
         self.servidor_headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
         self.batch_counter_status1 = 0
@@ -180,13 +180,13 @@ class Processor:
 
 
     def executar_ciclo(self):
-        self.executar()   
+        # self.executar()   
         # self.enviar_email()
         # self.busca_dados()   
         # self.teste_busca_interpol()   
         self.from_name_interpol()   
-        self.atualiza_dados_interpol()
-        self.match_name()
+        # self.atualiza_dados_interpol()
+        # self.match_name()
         ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] Iniciando a consulta")      
     def executar_ciclo_name(self):
         ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] Iniciando a consulta From Name Primeira letras")     
