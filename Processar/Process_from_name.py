@@ -220,6 +220,7 @@ def process_from_name(self):
                         pais_procurado = ', '.join(pais_procurado).upper() if pais_procurado else "N/I"
                         print(f'meu pais procurado {pais_procurado}')
                         data_captura = datetime.now().strftime("%Y-%m-%d  %H:%M:%S")
+                        
                         exist_id = False
                         exist_name = False
                        

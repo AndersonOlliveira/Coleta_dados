@@ -140,6 +140,97 @@ def insert_base_interpol(self, registro):
             }
 
 
+def insert_data_interpol_new(conn,nome,
+                nascimento,
+                nacionalidade,
+                naturalidade,
+                id_interpol,
+                sexo,
+                acusacao,
+                idioma,
+                thumbnail,
+                data_consulta,
+                hora_consulta,
+                pais_procurado,person_sigla_unico):
+        
+                query = """
+                    INSERT INTO public.interpol_dados 
+                        (nome, sexo, nascimento,nacionalidade,idioma,acusacao,foto,data_consulta_fonte,hora_consulta_fonte,id_interpol,naturalidade, pais_procurado,situacao)
+                    VALUES  (%s,%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s) """
+
+                # print(f"Registro a ser inserido:")
+                # print(f"{nome}")
+                # print(f"{nacionalidade}")
+                # print(f"{naturalidade}")
+                # print(f"{id_interpol}")
+                # print(f"{sexo}")
+                # print(f"{acusacao}")
+                # print(f"{idioma}")
+                # print(f"{thumbnail}")
+                # print(f"{data_consulta}")
+                # print(f"{pais_procurado}")
+                # print(f"minha person sigla {person_sigla_unico}")
+
+                print(query)
+                print((
+                nome,
+                sexo,
+                nascimento,
+                nacionalidade,
+                idioma,
+                acusacao,
+                thumbnail,
+                data_consulta,
+                hora_consulta,
+                id_interpol,
+                naturalidade,
+                pais_procurado,
+                True  #quando inserir recebe true
+            ))
+        
+        
+            # return
+                try:
+                    with conn.cursor() as cursor:
+                        cursor.execute(query, (
+                           nome,
+                           sexo,
+                           nascimento,
+                           nacionalidade,
+                           idioma,
+                           acusacao,
+                           thumbnail,
+                           data_consulta,
+                           hora_consulta,
+                           id_interpol,
+                           naturalidade,
+                           pais_procurado,
+                           True  #quando inserir recebe true
+                        ))
+
+                        return {
+                            "id": id_interpol,
+                            "status": "sucesso",
+                            "person_sigla_unico": person_sigla_unico
+                        } 
+            
+            
+                except Exception as e:
+                    ClassLogger.logger.error(f"falha em inserir os dados na base  insert_base_interpol - {repr(e)}")
+                    return {
+                            "id": id_interpol,
+                            "status": "erro",
+                            "person_sigla_unico": person_sigla_unico,
+                            'error': str(e)
+                }
+        # except Exception as e:
+        #     return {
+        #         "id": id_interpol,
+        #         "status": "existente", 
+        #         "person_sigla_unico": person_sigla_unico
+        #     }
+
+
 
 def update_data_interpol(conn,id, nat, thumb,country_wanted,data_captura):
     
@@ -294,7 +385,8 @@ def buscar_teste(self):
 
 
 # def search_data_interpol(self,idinterpol, cursor,conection):
-def search_data_interpol(self,idinterpol):
+def search_data_interpol(conn,idinterpol):
+            print('CONSIGO PASSAR O ID')
 
            
             
@@ -306,7 +398,7 @@ def search_data_interpol(self,idinterpol):
             
 
             try:
-                with self.db.get_connection() as conn:
+                # with self.db.get_connection() as conn:
                   with conn.cursor(cursor_factory=RealDictCursor) as cursor:
                     cursor.execute(query, (idinterpol.strip(),))
                     return cursor.fetchone()['exists']
@@ -314,12 +406,12 @@ def search_data_interpol(self,idinterpol):
                      ClassLogger.logger.error(f"Falha em caputrar os dados o erro search_data_interpol {str(e)}")
            
 
-def exists_by_name(self, person):
+def exists_by_name(conn, person):
             
            
             query = """SELECT EXISTS(SELECT 1 FROM public.interpol_dados WHERE UPPER(nome) = UPPER(%s)) as exists"""
             try:
-                with self.db.get_connection() as conn:
+                # with self.db.get_connection() as conn:
                     with conn.cursor(cursor_factory=RealDictCursor) as cursor:
                         cursor.execute(query, (person,))
                         resultado = cursor.fetchone()['exists']

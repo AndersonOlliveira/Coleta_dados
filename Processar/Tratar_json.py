@@ -17,7 +17,7 @@ from urllib.parse import urlparse, parse_qs
 import sys
 # from collections import defaultdict
 from Conexao import ConectionClass,ConectionPool
-from Model.ClassModel import buscar_teste, insert_interpol, update_info_process,search_data_interpol,exists_by_name,insert_base_interpol,update_data_interpol,update_id_interpol
+from Model.ClassModel import buscar_teste, insert_interpol, update_info_process,search_data_interpol,exists_by_name,insert_base_interpol,update_data_interpol,update_id_interpol,insert_data_interpol_new
 from functions.funcoes import remover_acentos, remover_conhetes, tratar_entrada, path_arquivo,dividir_lotes,dividir_lotes_tratar
 
 
@@ -41,7 +41,10 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
     "INSERT": 0,
     "NA": 0,
     "ERROR":0,
-    "QTINSERT": 0
+    "QTINSERT": 0,
+    "UPDATE": 0,
+    "UPDATE_NAME": 0,
+
     })
     # PEGO PAISES NOMES E SIGLAS
     caminho_countress = path_arquivo()
@@ -178,153 +181,87 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
                 }
 
         tabela_atualizar.append(linha_tabela)
-       
-        with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
-            with self.db.get_connection() as conn:
-                for pessoa, detalhe in zip(todas_pessoas, detalhes):
-                    print(f"INICIANDO O PRCCESSAMENTO DOS DADOS PESSOAS E DETALHES")
 
-                    entity_id = pessoa.get('entity_id').replace('/','-') if pessoa.get('entity_id') else None
-                    name_person = remover_acentos("{} {}".format(pessoa.get('forename'), pessoa.get('name'))).strip()
-                    lista_paises_chaves = pessoa.get('nationalities') or []
-                    naturalidade = (detalhe.get('place_of_birth') or mapa.get(detalhe.get('country_of_birth_id')) or "N/I").upper()
-                    thumbnail = pessoa.get('_links', {}).get('thumbnail', {}).get('href') 
-                    pais_procurado = [mapa.get(wanted.get('issuing_country_id'),wanted.get('issuing_country_id')) for wanted in detalhe.get('arrest_warrants', [])]
-                    pais_procurado = ', '.join(pais_procurado).upper() if pais_procurado else "N/I"
-                    # tratar a data que veio a veio quebrada
-                    data_ajustada = pessoa.get('date_of_birth') if pessoa.get('date_of_birth') else None
-                    data_ajustada = tratar_entrada(data_ajustada)
-                    data_captura = datetime.now().strftime("%Y-%m-%d  %H:%M:%S")
-                    exist_id = False
-                    exist_name = False
-                    #pego os ids da interpol para verificar só que vou ter uma dupla verificacao, pelo o id e pelo o nome
-                    person_singla = next((p for p in lista_paises_chaves if p in lista_paises_unicos), 'N/I')
-                    if entity_id:
-                        # future_busca = executor.submit(search_data_interpol, conn, entity_id)
-                        future_busca = executor.submit(search_data_interpol, self, entity_id)
-                        exist_id = future_busca.result()
 
-                        if exist_id: # aqui atualizo sempre que vinher os dados
-                            executor.submit(update_data_interpol, conn, entity_id, naturalidade,thumbnail, pais_procurado,data_captura)
+        executar(self, todas_pessoas, detalhes, mapa, contador_por_pais,tabela_atualizar,lista_paises_unicos,id_insert_return[0],id_geral_url_interpol)
 
-                    if not exist_id:
-                        #colocar theads aqui
-                        future_busca_name = executor.submit(exists_by_name,self,name_person)
-                        # future_busca_name = executor.submit(exists_by_name,conn,name_person)
-                        exist_name = future_busca_name.result()
-                        if exist_name:
-                            #faco o update para o id da interpol para a busca ser mais acertiva 
-                            executor.submit(update_id_interpol, conn, name_person , entity_id)
+def executar(self, todas_pessoas, lista_detalhes_pesquisa, mapa, contador_por_pais,tabela_atualizar,lista_paises_unicos,id_insert_return,id_geral_url_interpol):
 
-                       
-                
-                    if not exist_id and not exist_name:
-                        
-                        
-                        
-                        lista_paises = pessoa.get('nationalities') or []
-                        nomes_paises = [mapa.get(pais, pais) for pais in lista_paises]
-                        pais_limpo = ','.join(nomes_paises) if nomes_paises else "N/I"
-                        sexo = detalhe.get('sex_id') if detalhe else None
-                        crime_lista = [remover_acentos(warrant.get('charge', '')).strip() for warrant in (detalhe.get('arrest_warrants') or [])]
-                        crime = ", ".join(crime_lista) if crime_lista else "N/I"
-                        idiona = ", ".join(item.strip("[] ").strip() for item in detalhe.get('languages_spoken_ids', []) or []) if detalhe and detalhe.get('languages_spoken_ids') else "N/I"
-                        
+    futures = []
+    falhas_ids = []
+    
+    with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
 
-                    
-                        lista.append({
-                                'nome_completo': name_person,
-                                'data_nascimento': data_ajustada,
-                                'nacionalidade': pais_limpo.upper(),
-                                'naturalidade': naturalidade.upper(),
-                                'id_interpol': entity_id,
-                                'sexo': sexo, 
-                                'acusacao': crime.upper(),
-                                'idiona': idiona.upper(),
-                                'thumbnail': thumbnail if thumbnail else "N/I", #COMENTEADO PARA NAÓ APRESENTAR EM TELA,
-                                'data_consulta': datetime.now().strftime("%Y-%m-%d"),
-                                'hora_consulta': datetime.now().strftime("%H:%M:%S"),
-                                'person_sigla_unico' : person_singla,
-                                'country_wanted': pais_procurado
-                        })
-                        contador_por_pais[person_singla]["INSERT"] += 1
+            for de, list_url_person in zip(todas_pessoas, lista_detalhes_pesquisa):
+                futures.append(
+                    executor.submit(
+                        processar_pessoa,self,
+                        de,
+                        list_url_person,
+                        mapa,
+                        lista_paises_unicos,
+                        id_insert_return
+                    )
+                )
 
-                    else:
-                        print(f"Pulo este dado {entity_id} || nome: {name_person}  que pais ???{lista_paises_chaves}")
-                        print(f"Pulo este dado {entity_id} | nome: {name_person} + {person_singla}")
-                        contador_por_pais[person_singla]["NA"] += 1
-                        
+            for future in as_completed(futures):
+                resultado = future.result()
+                 # atualiza contador (thread-safe aqui no main)
+                if resultado:
+                    sigla = resultado.get("sigla", "N/I")
 
+                    match resultado.get("acao"):
+                        case "INSERT":
+                            contador_por_pais[sigla]["INSERT"] += 1
+
+                        case "UPDATE":
+                            contador_por_pais[sigla]["UPDATE"] += 1
+
+                        case "UPDATE_NAME":
+                            contador_por_pais[sigla]["UPDATE_NAME"] += 1
+
+                        case "ERROR":
+                            falhas_ids.append(resultado['dados_error'])
+                            contador_por_pais[sigla]["ERROR"] += 1
+
+                        case _:
+                            contador_por_pais[sigla]["NA"] += 1
+
+
+            print(f"MEU CONTADOR PREENCHDIDO {contador_por_pais}")
+
+    # sem_inset = True        
+    
     for linha in tabela_atualizar:
         pais = linha['PAIS_BUSCADO']
-        #MUNDAR PRA A
+                #MUNDAR PRA A
         linha['QTA A INSERIR'] = contador_por_pais[pais]["INSERT"]
         linha['QTA J/N BASE'] = contador_por_pais[pais]["NA"]
-    
-    pd.set_option('display.max_rows', 100)
-    pd.set_option('display.max_columns', None)
-    pd.set_option('display.max_colwidth', None)  
-    df = pd.DataFrame(lista)
-   
-   
-   
-
-
-
-
-    if len(df) > 0:
-        alter_status(self, id_insert_return[0])
-        obs_interpol_success = 'SUCESSO EM CONSULTAR OS IDS INDIVIDUAL INTERPOL'
-        alter_status(self, id_geral_url_interpol,obs_interpol_success)
-        
-        with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
-          
-            futures = [
-                executor.submit(insert_base_interpol,self,registro)
-                      for registro in lista
-             ]
-                    
-            for future in as_completed(futures):
-                result = future.result()
-
-                print(f"MEU RESULT {result}")
-                if result is None:
-                    continue # Pula para o próximo se for None
-                
-                
-                if result['status'] == "sucesso":
-                            # inser_new_registro +=1
-                   contador_por_pais[result['person_sigla_unico']]["QTINSERT"] += 1
-                else:
-                   falhas_ids.append(result)
-                            # falha_ +=1
-                   contador_por_pais[result['person_sigla_unico']]["ERROR"] += 1
-
-
-    else:
-        obs = f"SEM ALTERACAO NOS DADOS {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
-        obs_interpol = f"SEM CONSULTA INDIVIDUAL {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
-        alter_status(self, id_insert_return[0],obs)
-        alter_status(self, id_geral_url_interpol,obs_interpol)
-    
-
-    
-    for linha in tabela_atualizar:
-        pais = linha['PAIS_BUSCADO']
         linha['QTA ERROR'] = contador_por_pais[pais]["ERROR"]
         linha['QTA INSERIDO'] = contador_por_pais[pais]["QTINSERT"]
 
-    
-  
+        # if contador_por_pais[pais]["INSERT"] > 0:
+        #     sem_inset = False
+    for linha in tabela_atualizar:
+        print(f"minha linhas {linha['QTA A INSERIR']}")
+        print(f"minha linhas {type(linha['QTA A INSERIR'])}")
+        if linha['QTA A INSERIR'] == 0:
+            obs = f"SEM ALTERACAO NOS DADOS {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+            obs_interpol = f"SEM CONSULTA INDIVIDUAL {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+
+            alter_status(self, id_insert_return, obs)
+            alter_status(self, id_geral_url_interpol, obs_interpol)
+
+
+    pd.set_option('display.max_rows', 100)
+    pd.set_option('display.max_columns', None)
+    pd.set_option('display.max_colwidth', None)  
     
     minha_tabela_montada = pd.DataFrame(tabela_atualizar)
     minha_tabela_montada = minha_tabela_montada.fillna(0)
     print(f"Minha quantidade a ser processada {len(minha_tabela_montada)}")
     print(f"MINHA TABELA PARA ATUALIZAR {minha_tabela_montada}")
-
-    # return
-
-  
+    
     if falhas_ids is not None:
        tabela_error = pd.DataFrame(falhas_ids)
        tabela_error = tabela_error.fillna(0) 
@@ -359,10 +296,6 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
 
     result_email = enviar_email_all(html_final)
 
-       
-    return result_email
-
-
 
 
 
@@ -381,4 +314,126 @@ def alter_status(self, id, obs = None):
 
 
   
-   
+def processar_pessoa(self, de, list_url_person, mapa,lista_paises_unicos,id_insert_return):
+    falha_ids =[]
+    
+    
+    with self.db.get_connection() as conn:
+
+        try:
+            lista_paises = de.get('nationalities') or []
+            sigla = lista_paises[0] if lista_paises else "N/I"
+            lista_paises_chaves = de.get('nationalities') or []
+
+            entity_id = de.get('entity_id')
+            entity_id = entity_id.replace('/', '-') if entity_id else None
+
+            name_person = remover_acentos(
+                f"{de.get('forename')} {de.get('name')}"
+            ).strip()
+
+            data_ajustada = tratar_entrada(de.get('date_of_birth'))
+
+            naturalidade = (
+                list_url_person.get('place_of_birth')
+                or mapa.get(list_url_person.get('country_of_birth_id'))
+                or "N/I"
+            ).upper()
+
+            thumbnail = de.get('_links', {}).get('thumbnail', {}).get('href')
+
+            pais_procurado = [
+                mapa.get(w.get('issuing_country_id'), w.get('issuing_country_id'))
+                for w in list_url_person.get('arrest_warrants', [])
+            ]
+
+            pais_procurado = ', '.join(pais_procurado).upper() if pais_procurado else "N/I"
+
+            data_captura = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            person_singla = next((p for p in lista_paises_chaves if p in lista_paises_unicos), 'N/I')
+        
+            # ---------------------------
+            # 🔍 1. BUSCA POR ID
+            # ---------------------------
+            if entity_id:
+                exist_id = search_data_interpol(conn, entity_id)
+                print(f'qual o resultando que tenho aqui {exist_id}')
+
+
+                if exist_id:
+                    update_data_interpol(
+                        conn,
+                        entity_id,
+                        naturalidade,
+                        thumbnail,
+                        pais_procurado,
+                        data_captura
+                    )
+
+                    return {"acao": "UPDATE", "sigla": person_singla}
+
+            # ---------------------------
+            # 🔍 2. BUSCA POR NOME
+            # ---------------------------
+            exist_name = exists_by_name(conn, name_person)
+
+            if exist_name:
+                update_id_interpol(conn, name_person, entity_id)
+                return {"acao": "UPDATE_NAME", "sigla": person_singla}
+
+            # ---------------------------
+            # 💾 3. INSERT
+            # ---------------------------
+            lista_paises_nome = [mapa.get(p, p) for p in lista_paises]
+            pais_limpo = ','.join(lista_paises_nome) if lista_paises_nome else "N/I"
+
+            sexo = list_url_person.get('sex_id')
+
+            crime_lista = [
+                remover_acentos(w.get('charge', '')).strip()
+                for w in (list_url_person.get('arrest_warrants') or [])
+            ]
+            crime = ", ".join(crime_lista) if crime_lista else "N/I"
+
+            idioma = ", ".join(
+                item.strip("[] ").strip()
+                for item in (list_url_person.get('languages_spoken_ids') or [])
+            ) or "N/I"
+
+            result_insert = insert_data_interpol_new(
+                conn,
+                nome=name_person,
+                nascimento=data_ajustada,
+                nacionalidade=pais_limpo.upper(),
+                naturalidade=naturalidade,
+                id_interpol=entity_id,
+                sexo=sexo,
+                acusacao=crime.upper(),
+                idioma=idioma.upper(),
+                thumbnail=thumbnail or "N/I",
+                data_consulta=datetime.now().strftime("%Y-%m-%d"),
+                hora_consulta=datetime.now().strftime("%H:%M:%S"),
+                person_sigla_unico=person_singla,
+                pais_procurado=pais_procurado
+            )
+              
+            if result_insert['status'] == "sucesso":
+
+                alter_status(self, id_insert_return)
+                obs_interpol_success = 'SUCESSO EM CONSULTAR OS IDS INDIVIDUAL INTERPOL'
+                alter_status(self, id_insert_return,obs_interpol_success)
+                                    # inser_new_registro +=1
+                    # contador_por_pais[result_insert['person_sigla_unico']]["QTINSERT"] += 1
+                return {"acao": "INSERT", "sigla": result_insert['person_sigla_unico']}
+            else:
+                falha_ids.append(result_insert)
+                return {"acao": "ERROR", "sigla": result_insert['person_sigla_unico'] ,"dados_error" : falha_ids}
+                                    # falha_ +=1
+                
+           
+
+            # return {"acao": "INSERT", "sigla": person_singla}
+
+        except Exception as e:
+            print(f"Erro ao processar {entity_id}: {e}")
+            return {"acao": "ERRO", "sigla": person_singla}

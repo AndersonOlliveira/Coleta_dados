@@ -1,14 +1,6 @@
 [
-   {
-        "name": "United States",
-        "value": "US"
-    },
-    {
-        "name": "Uruguay",
-        "value": "UY"
-    },
-    {
-        "name": "Uzbekistan",
-        "value": "UZ"
+  {
+        "name": "United Kingdom",
+        "value": "GB"
     }
 ]
