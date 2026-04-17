@@ -353,7 +353,7 @@ def processar_pessoa(self, de, list_url_person, mapa,lista_paises_unicos,id_inse
             person_singla = next((p for p in lista_paises_chaves if p in lista_paises_unicos), 'N/I')
         
             # ---------------------------
-            # 🔍 1. BUSCA POR ID
+            #  1. BUSCA POR ID
             # ---------------------------
             if entity_id:
                 exist_id = search_data_interpol(conn, entity_id)
@@ -373,7 +373,7 @@ def processar_pessoa(self, de, list_url_person, mapa,lista_paises_unicos,id_inse
                     return {"acao": "UPDATE", "sigla": person_singla}
 
             # ---------------------------
-            # 🔍 2. BUSCA POR NOME
+            #  2. BUSCA POR NOME
             # ---------------------------
             exist_name = exists_by_name(conn, name_person)
 
@@ -382,7 +382,7 @@ def processar_pessoa(self, de, list_url_person, mapa,lista_paises_unicos,id_inse
                 return {"acao": "UPDATE_NAME", "sigla": person_singla}
 
             # ---------------------------
-            # 💾 3. INSERT
+            #  3. INSERT
             # ---------------------------
             lista_paises_nome = [mapa.get(p, p) for p in lista_paises]
             pais_limpo = ','.join(lista_paises_nome) if lista_paises_nome else "N/I"
