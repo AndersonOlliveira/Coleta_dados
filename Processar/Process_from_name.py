@@ -30,11 +30,8 @@ def process_from_name(self):
     ClassLogger.logger.info(f"INIICIANDO A BUSCA E ATUALIZACAO DOS DADOS POR NOME")
     des = []
     mapa = {}
-    lista = []
     siglas = []
-    falhas_ids =[]
     id_insert_return =[]
-    ids_sucesso = []
     todas_pessoas =[]
     tabela_atualizar = []
     lista_urls_pesquisa = []
@@ -227,6 +224,8 @@ def executar(self, todas_pessoas, lista_detalhes_pesquisa, mapa, contador_por_pa
                  # atualiza contador (thread-safe aqui no main)
                 if resultado:
                     sigla = resultado.get("sigla", "N/I")
+                    
+                    
 
                     match resultado.get("acao"):
                         case "INSERT":
@@ -251,7 +250,6 @@ def executar(self, todas_pessoas, lista_detalhes_pesquisa, mapa, contador_por_pa
     for pais_sigla in letras_unicas:
         tabela_atualizar.append({
             'PAIS_BUSCADO': pais_sigla,
-            'QTA SINGLAS': 0,
             'QTA J/N BASE': 0
     })
 
