@@ -264,6 +264,7 @@ def executar(self, todas_pessoas, lista_detalhes_pesquisa, mapa, contador_por_pa
                 'PAIS_BUSCADO': pais,
                 'QTA SINGLAS': totais["INSERT"],
                 'QTA J/N BASE':  totais["NA"],
+                'QTA ATUALIZADO':  totais["UPDATE"],
                 'QTA ERROR':     totais["ERROR"], 
                 'QTA INSERIDO': max(0, totais["INSERT"] - totais["NA"])
             }
