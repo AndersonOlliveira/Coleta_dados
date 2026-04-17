@@ -1,18 +1,14 @@
 [
    {
-        "name": "Yemen",
-        "value": "YE"
+        "name": "United States",
+        "value": "US"
     },
     {
-        "name": "Zambia",
-        "value": "ZM"
+        "name": "Uruguay",
+        "value": "UY"
     },
     {
-        "name": "Zimbabwe",
-        "value": "ZW"
-    },
-    {
-        "name": "under UNMIK mandate (Kosovo)",
-        "value": "UNK"
+        "name": "Uzbekistan",
+        "value": "UZ"
     }
 ]

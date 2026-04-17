@@ -250,8 +250,8 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
                         contador_por_pais[person_singla]["INSERT"] += 1
 
                     else:
-                        print(f"Pulo esta dado {entity_id} || nome: {name_person}  que pais ???{lista_paises_chaves}")
-                        print(f"Pulo esta dado {entity_id} | nome: {name_person} + {person_singla}")
+                        print(f"Pulo este dado {entity_id} || nome: {name_person}  que pais ???{lista_paises_chaves}")
+                        print(f"Pulo este dado {entity_id} | nome: {name_person} + {person_singla}")
                         contador_por_pais[person_singla]["NA"] += 1
                         
 
@@ -288,6 +288,8 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
                 result = future.result()
 
                 print(f"MEU RESULT {result}")
+                if result is None:
+                    continue # Pula para o próximo se for None
                 
                 
                 if result['status'] == "sucesso":
