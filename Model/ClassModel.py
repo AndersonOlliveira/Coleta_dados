@@ -58,8 +58,8 @@ def insert_base_interpol(self, registro):
     if not exits:
    
         query = """
-            INSERT INTO public.interpol_dados_teste 
-                (nome, sexo, nascimento,nacionalidade,idioma,acusacao,foto,data_consulta_fonte,hora_consulta_fonte,id_interpol,naturalidade, pais_procurado,ativo)
+            INSERT INTO public.interpol_dados 
+                (nome, sexo, nascimento,nacionalidade,idioma,acusacao,foto,data_consulta_fonte,hora_consulta_fonte,id_interpol,naturalidade, pais_procurado,situacao)
             VALUES  (%s,%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s) """
 
         print(f"Registro a ser inserido: {registro}")
@@ -135,8 +135,8 @@ def insert_base_interpol(self, registro):
 
 def update_data_interpol(conn,id, nat, thumb,country_wanted,data_captura):
     
-    query = """UPDATE public.interpol_dados_teste SET 
-                  naturalidade = %s , foto = %s , pais_procurado = %s , data_atualizacao = %s WHERE id_interpol = trim(%s) ;"""
+    query = """UPDATE public.interpol_dados SET 
+                  naturalidade = %s , foto = %s , pais_procurado = %s , data_hora_consulta = %s WHERE id_interpol = trim(%s) ;"""
                 #   naturalidade = %s , foto = %s WHERE nome_buscado = %s ;"""
      
     try:
@@ -167,7 +167,7 @@ def update_data_interpol(conn,id, nat, thumb,country_wanted,data_captura):
        
 def update_id_interpol(conn,name_person, id):
     
-    query = """UPDATE public.interpol_dados_teste SET 
+    query = """UPDATE public.interpol_dados SET 
                   id_interpol = %s  WHERE nome = %s ;"""
                 #   nome_buscado = %s  WHERE nome = %s ;"""
 
@@ -197,8 +197,8 @@ def update_id_interpol(conn,name_person, id):
       
 def update_id_interpol_status(self,id,new_status,data):
     
-    query = """UPDATE public.interpol_dados_teste SET 
-                  ativo = %s, data_baixa = %s  WHERE id_interpol = %s ;"""
+    query = """UPDATE public.interpol_dados SET 
+                  situacao = %s, data_baixa = %s  WHERE id_interpol = %s ;"""
                 #   nome_buscado = %s  WHERE nome = %s ;"""
      
     try:
@@ -292,8 +292,8 @@ def search_data_interpol(self,idinterpol):
             
             #retornando um boleano
 #CAMPO VAI SER TROCADO PARA ID INTERPOL
-            query = ("""SELECT EXISTS(SELECT 1 FROM public.interpol_dados_teste WHERE id_interpol = trim(%s)) as exists""") 
-              # SELECT 1 FROM public.interpol_dados_teste WHERE nome_buscado = %s) as exists""")
+            query = ("""SELECT EXISTS(SELECT 1 FROM public.interpol_dados WHERE id_interpol = trim(%s)) as exists""") 
+              # SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists""")
             
             
 
@@ -309,7 +309,7 @@ def search_data_interpol(self,idinterpol):
 def exists_by_name(self, person):
             
            
-            query = """SELECT EXISTS(SELECT 1 FROM public.interpol_dados_teste WHERE UPPER(nome) = UPPER(%s)) as exists"""
+            query = """SELECT EXISTS(SELECT 1 FROM public.interpol_dados WHERE UPPER(nome) = UPPER(%s)) as exists"""
             try:
                 with self.db.get_connection() as conn:
                     with conn.cursor(cursor_factory=RealDictCursor) as cursor:
@@ -329,7 +329,7 @@ def exists_by_name(self, person):
           
 
 #             query = """
-#                SELECT UPPER(nome), nascimento, nome_buscado AS ID_INTERPOL, nacionalidade, id as id_tabela FROM public.interpol_dados_teste where nacionalidade  LIKE '%BRAZIL%' AND nome_buscado is not null
+#                SELECT UPPER(nome), nascimento, nome_buscado AS ID_INTERPOL, nacionalidade, id as id_tabela FROM public.interpol_dados where nacionalidade  LIKE '%BRAZIL%' AND nome_buscado is not null
 #                GROUP BY nome,nascimento,nome_buscado,nacionalidade,id ORDER BY nome """
 #             try:
                 
@@ -350,7 +350,7 @@ def exists_by_name(self, person):
 # def get_data_match_name(conn, name,ano):
      
      
-#       query = """SELECT UPPER(nome), nascimento, nome_buscado AS ID_INTERPOL, nacionalidade, id as id_tabela FROM public.interpol_dados_teste where nacionalidade  
+#       query = """SELECT UPPER(nome), nascimento, nome_buscado AS ID_INTERPOL, nacionalidade, id as id_tabela FROM public.interpol_dados where nacionalidade  
 #                   LIKE '%BRAZIL%' AND nome_buscado is null
 #                   GROUP BY nome,nascimento,nome_buscado,nacionalidade,id ORDER BY nome"""
       
@@ -371,7 +371,7 @@ def exists_by_name(self, person):
 def get_data_match_name_base(self) -> List[Dict]: 
      
      
-      query = """SELECT UPPER(nome) as nome, to_char(nascimento, 'YYYY-MM-DD') AS data_nascimento , id_interpol AS ID_INTERPOL, nacionalidade, id as id_tabela FROM public.interpol_dados_teste where nacionalidade  
+      query = """SELECT UPPER(nome) as nome, to_char(nascimento, 'YYYY-MM-DD') AS data_nascimento , id_interpol AS ID_INTERPOL, nacionalidade, id as id_tabela FROM public.interpol_dados where nacionalidade  
                   LIKE '%BRAZIL%' and cpf is null 
                   GROUP BY nome,nascimento,id_interpol,nacionalidade,id ORDER BY nome"""
       
@@ -398,9 +398,8 @@ def get_data_match_name_base(self) -> List[Dict]:
 def get_lista_name_base_interpol(self) -> List[Dict]: 
      
      
-      query = """SELECT UPPER(nome) as nome FROM public.interpol_dados_teste
-                where to_char(data_atualizacao, 'YYYY-MM-DD') != %s or data_atualizacao is null
-                ORDER BY RANDOM() limit 1"""
+      query = """SELECT UPPER(nome) as nome FROM public.interpol_dados
+                where to_char(data_consulta_fonte, 'YYYY-MM-DD') = %s ORDER BY RANDOM() limit 10"""
       
       
 
@@ -425,8 +424,8 @@ def get_lista_name_base_interpol(self) -> List[Dict]:
                  
 #PROCESSO INVERSO PEGANDO OS IDS 
 def list_interpol(self) -> List[Dict]:
-      query = """SELECT id_interpol AS ID_INTERPOL FROM public.interpol_dados_teste 
-                 WHERE id_interpol IS NOT NULL AND ativo = true ORDER BY id_interpol desc"""
+      query = """SELECT id_interpol AS ID_INTERPOL FROM public.interpol_dados 
+                 WHERE id_interpol IS NOT NULL AND situacao = true ORDER BY id_interpol desc limit 10"""
       
       
       try:
@@ -503,7 +502,7 @@ def search_from_name_interpol(self, nome_busca, idade_busca, idi_interpol,id_tab
 
 def push_cpf(self,cpf, idcolunaInterpol):
       
-    query = """UPDATE public.interpol_dados_teste SET 
+    query = """UPDATE public.interpol_dados SET 
                   cpf = %s  WHERE id = %s ;"""
             
 

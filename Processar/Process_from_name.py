@@ -66,17 +66,18 @@ def process_from_name(self):
           future_busca = executor.submit(get_lista_name_base_interpol, self)
           lista_get_name = future_busca.result()
         #  print(f"MINHA LISTA DO GET {lista_get_name}")
-          for lista_name in lista_get_name:
-                nome = remover_acentos(remover_conhetes(lista_name.get('nome', ''))).strip() if lista_name.get('nome') else None
-              
+          if lista_get_name:
+                for lista_name in lista_get_name:
+                    nome = remover_acentos(remover_conhetes(lista_name.get('nome', ''))).strip() if lista_name.get('nome') else None
+                
 
                 
-                if nome:
-                    tres_primeiras = nome[:3].upper()
-                    lista_tres_primera_letras.append(tres_primeiras)
-                    params = f"&resultPerPage={self.qtPage}&page={self.indicePage}"
-                    lista_singlas_name = f"{self.servidor_get_from_name}={tres_primeiras}{params}"
-                    siglas.append(lista_singlas_name)
+                    if nome:
+                        tres_primeiras = nome[:3].upper()
+                        lista_tres_primera_letras.append(tres_primeiras)
+                        params = f"&resultPerPage={self.qtPage}&page={self.indicePage}"
+                        lista_singlas_name = f"{self.servidor_get_from_name}={tres_primeiras}{params}"
+                        siglas.append(lista_singlas_name)
 
     # params = f"&resultPerPage={self.qtPage}&page={self.indicePage}"
     # lista_singlas_name = f"{self.servidor_get_from_name}=KAB{params}"
@@ -86,7 +87,7 @@ def process_from_name(self):
           siglas_unicas = list(set(siglas))
           letras_unicas = list(set(lista_tres_primera_letras))
 
-          
+        
     with ConectionClass.DbConnect(self.config, auto_commit=False) as conn_status:
          cursor_initil = conn_status.cursor()
          lista_insert = {'periodizacao': self.periodo ,'siglas' : (', '.join(letras_unicas)) , 'url': self.servidor_get_from_name, 'data_captura': datetime.now().strftime("%Y-%m-%d")} 

@@ -1,10 +1,18 @@
 [
-     {
-        "name": "Tunisia",
-        "value": "TN"
+   {
+        "name": "Yemen",
+        "value": "YE"
     },
     {
-        "name": "Turkmenistan",
-        "value": "TM"
+        "name": "Zambia",
+        "value": "ZM"
+    },
+    {
+        "name": "Zimbabwe",
+        "value": "ZW"
+    },
+    {
+        "name": "under UNMIK mandate (Kosovo)",
+        "value": "UNK"
     }
 ]

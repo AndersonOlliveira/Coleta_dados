@@ -65,7 +65,7 @@ class Processor:
 
         except Exception as e:
             ClassLogger.logger.error(f"Erro fatal na execução: {str(e)}")
-            error = f"Erro fatal na execução: {str(e)}"
+            error = f"Erro fatal na execução: process_api {str(e)}"
             corpo = f"""<h2 style="color:red;">Falha no processo de Captura e tratamento dos dados</h2> <p>{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} Mensagem:: {error}</p>"""
             enviar_email_all(corpo)
 
@@ -134,7 +134,7 @@ class Processor:
           
         except Exception as e:
                 ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] Finalizado o processo de busca por nome dados_interpol")
-                error = f"Erro fatal na execução: {str(e)}"
+                error = f"Erro fatal na execução Busca por nome: {str(e)}"
                 corpo = f"""<h2 style="color:red;"> Finalizado o processo de busca por nome dados interpol</h2> <p>{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} Mensagem:: {error}</p>"""
                 enviar_email_all(corpo)
         finally:
@@ -184,9 +184,9 @@ class Processor:
         # self.enviar_email()
         # self.busca_dados()   
         # self.teste_busca_interpol()   
-        self.from_name_interpol()   
-        self.atualiza_dados_interpol()
-        self.match_name()
+        # self.from_name_interpol()   
+        # self.atualiza_dados_interpol()
+        # self.match_name()
         ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] Iniciando a consulta")      
     def executar_ciclo_name(self):
         ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] Iniciando a consulta From Name Primeira letras")     

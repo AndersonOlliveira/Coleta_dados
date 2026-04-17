@@ -25,6 +25,8 @@ def process_api(self):
          #para chamar a api e exeturar os dados
         retorno_api , id_insert_return = push_request(self,caminho_countries)
         
-        result_lista = trata_json(self,caminho_countries,retorno_api,id_insert_return)
+        return trata_json(self,caminho_countries,retorno_api,id_insert_return)
+
+
         
     

@@ -220,7 +220,7 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
                 
                     if not exist_id and not exist_name:
                         
-                        contador_por_pais[person_singla]["INSERT"] += 1
+                        
                         
                         lista_paises = pessoa.get('nationalities') or []
                         nomes_paises = [mapa.get(pais, pais) for pais in lista_paises]
@@ -247,6 +247,7 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
                                 'person_sigla_unico' : person_singla,
                                 'country_wanted': pais_procurado
                         })
+                        contador_por_pais[person_singla]["INSERT"] += 1
 
                     else:
                         print(f"Pulo esta dado {entity_id} || nome: {name_person}  que pais ???{lista_paises_chaves}")
@@ -259,8 +260,15 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
         #MUNDAR PRA A
         linha['QTA A INSERIR'] = contador_por_pais[pais]["INSERT"]
         linha['QTA J/N BASE'] = contador_por_pais[pais]["NA"]
-        
+    
+    pd.set_option('display.max_rows', 100)
+    pd.set_option('display.max_columns', None)
+    pd.set_option('display.max_colwidth', None)  
     df = pd.DataFrame(lista)
+   
+   
+   
+
 
 
 
@@ -278,6 +286,8 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
                     
             for future in as_completed(futures):
                 result = future.result()
+
+                print(f"MEU RESULT {result}")
                 
                 
                 if result['status'] == "sucesso":
@@ -295,6 +305,8 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
         alter_status(self, id_insert_return[0],obs)
         alter_status(self, id_geral_url_interpol,obs_interpol)
     
+
+    
     for linha in tabela_atualizar:
         pais = linha['PAIS_BUSCADO']
         linha['QTA ERROR'] = contador_por_pais[pais]["ERROR"]
@@ -304,7 +316,11 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
   
     
     minha_tabela_montada = pd.DataFrame(tabela_atualizar)
-    minha_tabela_montada = minha_tabela_montada.fillna(0) 
+    minha_tabela_montada = minha_tabela_montada.fillna(0)
+    print(f"Minha quantidade a ser processada {len(minha_tabela_montada)}")
+    print(f"MINHA TABELA PARA ATUALIZAR {minha_tabela_montada}")
+
+    # return
 
   
     if falhas_ids is not None:
@@ -313,9 +329,10 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
        convertida_error =  tabela_error.to_html(index=False, border=1, justify='center')
        corpo_error = f"Lista de dados com error :<br> {convertida_error}"
     
+        
 
-    convertida = minha_tabela_montada.to_html(index=False, border=1, justify='center')
     
+    convertida = minha_tabela_montada.to_html(index=False, border=1, justify='center')
     
     corpo = f"""
         <h2 style="color:green;">Captura dos dados interpol</h2>
