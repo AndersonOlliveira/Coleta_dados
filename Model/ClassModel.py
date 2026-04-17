@@ -479,7 +479,7 @@ def search_from_name_interpol(self, nome_busca, idade_busca, idi_interpol,id_tab
                                 print(f"TIVE FALHA EM CONSULTAR OS DADOS")
                                 return {
                                     "status": "erro",
-                                    "error": "NÁO ENCONTRADO NA BASE DA PROSCORE",
+                                    "error": "NÃO ENCONTRADO NA BASE DA PROSCORE",
                                     "INTERPOL": idi_interpol,
                                     "ID_COLUNA_INTERPOL": id_tabela
                                 }
