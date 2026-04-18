@@ -185,7 +185,7 @@ class Processor:
         # self.busca_dados()   
         # self.teste_busca_interpol()   
         self.from_name_interpol()   
-        self.atualiza_dados_interpol()
+        # self.atualiza_dados_interpol()
         self.match_name()
         ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] Iniciando a consulta")      
     def executar_ciclo_name(self):
