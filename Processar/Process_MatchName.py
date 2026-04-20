@@ -18,13 +18,17 @@ def process_match_name(self):
     falhas_ids = []
    
 
-    with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
-          future_interpol = executor.submit(get_data_match_name_base, self)
-          lista_name_braisil = future_interpol.result()
+    # with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
+    #       future_interpol = executor.submit(get_data_match_name_base, self)
+    #       lista_name_braisil = future_interpol.result()
 
+    lista_name_braisil = get_data_match_name_base(self)
+
+   
    
     if lista_name_braisil:  
         #MINHA WORKES
+        lista_sucesso = []
         with ThreadPoolExecutor(max_workers=self.max_workers_conn) as executor:
             futures = [
                  executor.submit(search_from_name_interpol,self,lista_names.get('nome'), lista_names.get('data_nascimento'),lista_names.get('ID_INTERPOL'),lista_names.get('id_tabela'))
@@ -33,21 +37,44 @@ def process_match_name(self):
             
             for future in as_completed(futures):
                 result = future.result()
+                lista_sucesso.append(result)
+
+        
+
+
+
+
+        for result_lista in lista_sucesso:
+                  
+            if result_lista['status'] == "sucesso":
+                print(f"MINHA LISTA DE SUCESSO!")
+                print(f"MINHA LISTA DE SUCESSO! {result_lista['ID_COLUNA_INTERPOL']}")
+
+            
+
+                with ThreadPoolExecutor(max_workers=self.max_workers_conn) as executor:
+                    contador_por_matchName[result_lista['ID_COLUNA_INTERPOL']]["QTUPDATE"] += 1
+                        #SE EXISTIR VOU ATUALIAZR O NOVO REGISTRO COM O ID DA TABELA
+                    future_interpol = executor.submit(push_cpf,self,result_lista['CPF'], result_lista['ID_COLUNA_INTERPOL'])
+                    udpate_match_name = future_interpol.result()
+                    # udpate_match_name = push_cpf(self,result['CPF'], result['ID_COLUNA_INTERPOL'])
+                    print(f"MINHA ATUALIZAÇÃO DO CPF {udpate_match_name}")
+            else:
+                falhas_ids.append(result_lista)
+                                                   
+                contador_por_matchName[result_lista['ID_COLUNA_INTERPOL']]["ERROR"] += 1
+
+            
+
+
+
+
+        #print(contador_por_matchName)
+        # return
+       
 
                             
-                
-                                
-                if result['status'] == "sucesso":
-                                          
-                   contador_por_matchName[result['ID_COLUNA_INTERPOL']]["QTUPDATE"] += 1
-                               #SE EXISTIR VOU ATUALIAZR O NOVO REGISTRO COM O ID DA TABELA
-                   udpate_match_name = push_cpf(self,result['CPF'], result['ID_COLUNA_INTERPOL'])
-                   print(f"MINHA ATUALIZAÇÃO DO CPF {udpate_match_name}")
-                else:
-                    falhas_ids.append(result)
-                                                   
-                    contador_por_matchName[result['ID_COLUNA_INTERPOL']]["ERROR"] += 1
-
+      
                 
 
 

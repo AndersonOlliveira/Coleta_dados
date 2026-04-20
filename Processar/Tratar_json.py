@@ -182,8 +182,8 @@ def trata_json(self,caminho_countries, retorno_api,id_insert_return):
 
         tabela_atualizar.append(linha_tabela)
 
-
-        executar(self, todas_pessoas, detalhes, mapa, contador_por_pais,tabela_atualizar,lista_paises_unicos,id_insert_return[0],id_geral_url_interpol)
+    #remodio do for, pois estava reprocessando depois de conluir
+    executar(self, todas_pessoas, detalhes, mapa, contador_por_pais,tabela_atualizar,lista_paises_unicos,id_insert_return[0],id_geral_url_interpol)
 
 def executar(self, todas_pessoas, lista_detalhes_pesquisa, mapa, contador_por_pais,tabela_atualizar,lista_paises_unicos,id_insert_return,id_geral_url_interpol):
 
@@ -229,6 +229,7 @@ def executar(self, todas_pessoas, lista_detalhes_pesquisa, mapa, contador_por_pa
 
 
             print(f"MEU CONTADOR PREENCHDIDO {contador_por_pais}")
+            ClassLogger.logger.info(f"MEU CONTADOR PREENCHDIDO {contador_por_pais}")
 
     # sem_inset = True        
     
@@ -238,7 +239,7 @@ def executar(self, todas_pessoas, lista_detalhes_pesquisa, mapa, contador_por_pa
         linha['QTA A INSERIR'] = contador_por_pais[pais]["INSERT"]
         linha['QTA J/N BASE'] = contador_por_pais[pais]["NA"]
         linha['QTA ERROR'] = contador_por_pais[pais]["ERROR"]
-        linha['QTA INSERIDO'] = contador_por_pais[pais]["QTINSERT"]
+        linha['QTA INSERIDO'] = contador_por_pais[pais]["INSERT"]
 
         # if contador_por_pais[pais]["INSERT"] > 0:
         #     sem_inset = False
@@ -339,6 +340,9 @@ def processar_pessoa(self, de, list_url_person, mapa,lista_paises_unicos,id_inse
                 or mapa.get(list_url_person.get('country_of_birth_id'))
                 or "N/I"
             ).upper()
+
+            #removo os acentos
+            naturalidade = remover_acentos(naturalidade) 
 
             thumbnail = de.get('_links', {}).get('thumbnail', {}).get('href') if de.get('_links', {}).get('thumbnail', {}).get('href') else "N/I"
 

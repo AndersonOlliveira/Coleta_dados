@@ -194,13 +194,9 @@ def process_from_name(self):
         # print(f"Detalhes das pessoas: {json.dumps(lista_detalhes_pesquisa, indent=4)}")
 
         # return
+    #remodio do for, pois estava reprocessando depois de conluir
+    executar(self, todas_pessoas, lista_detalhes_pesquisa, mapa, contador_por_pais,tabela_atualizar,id_insert_return[0],letras_unicas)
 
-        executar(self, todas_pessoas, lista_detalhes_pesquisa, mapa, contador_por_pais,tabela_atualizar,id_insert_return[0],letras_unicas)
-
-
-
-
- 
 def executar(self, todas_pessoas, lista_detalhes_pesquisa, mapa, contador_por_pais,tabela_atualizar,id_insert_return,letras_unicas):
 
     futures = []
@@ -369,6 +365,9 @@ def processar_pessoa(self, de, list_url_person, mapa,id_insert_return):
                 or mapa.get(list_url_person.get('country_of_birth_id'))
                 or "N/I"
             ).upper()
+            
+            #removo os acentos
+            naturalidade = remover_acentos(naturalidade)
 
             thumbnail = de.get('_links', {}).get('thumbnail', {}).get('href')
 

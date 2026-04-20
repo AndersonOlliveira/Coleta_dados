@@ -359,7 +359,7 @@ def update_info_process(self,registro: Dict, cursor, connection):
 
 def buscar_teste(self):
 
-            query = ("""SELECT * FROM fontes_download.interpol_download """)
+            query = ("""SELECT * FROM fontes_download.interpol_download""")
             
            
 
