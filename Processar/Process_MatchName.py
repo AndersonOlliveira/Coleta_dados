@@ -31,7 +31,7 @@ def process_match_name(self):
         lista_sucesso = []
         with ThreadPoolExecutor(max_workers=self.max_workers_conn) as executor:
             futures = [
-                 executor.submit(search_from_name_interpol,self,lista_names.get('nome'), lista_names.get('data_nascimento'),lista_names.get('ID_INTERPOL'),lista_names.get('id_tabela'))
+                 executor.submit(search_from_name_interpol,self,lista_names.get('nome'), lista_names.get('data_nascimento'),lista_names.get('id_interpol'),lista_names.get('id_tabela'))
                        for lista_names in lista_name_braisil
                     ]
             

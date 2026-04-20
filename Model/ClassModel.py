@@ -471,7 +471,7 @@ def exists_by_name(conn, person):
 def get_data_match_name_base(self) -> List[Dict]: 
      
      
-      query = """SELECT UPPER(nome) as nome, to_char(nascimento, 'YYYY-MM-DD') AS data_nascimento , id_interpol AS ID_INTERPOL, nacionalidade, id as id_tabela FROM public.interpol_dados where nacionalidade  
+      query = """SELECT UPPER(nome) as nome, to_char(nascimento, 'YYYY-MM-DD') AS data_nascimento , id_interpol AS id_interpol, nacionalidade, id as id_tabela FROM public.interpol_dados where nacionalidade  
                   LIKE '%BRAZIL%' and cpf is null 
                   GROUP BY nome,nascimento,id_interpol,nacionalidade,id ORDER BY nome"""
       
