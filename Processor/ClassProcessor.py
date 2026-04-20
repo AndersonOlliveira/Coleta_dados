@@ -6,6 +6,7 @@ from Processar.Process_api import process_api
 from Processar.Process_from_name import process_from_name
 from Processar.Process_verify import process_verify_status
 from Processar.Process_MatchName import process_match_name
+from Processar.Process_limite import process_limite_countrie
 from Conexao import ConectionClass, ConectionPool
 from concurrent.futures import ThreadPoolExecutor, as_completed
 # from db_poll import DbPool
@@ -177,16 +178,36 @@ class Processor:
         finally:
              ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] Finalizado o processo de busca por match name")
         pass
+    
+    def lista_dados_maior_que_limite(self):
+        ClassLogger.logger.info('IREI SOLICITAR OS NOME PARA O MATCH NAME , PEGANDO O lista_dados_maior_que_limite')
+      
+        # print(f"MINHA THEADS {self.max_workers}")
+       
+        try:
+            process_limite_countrie(self)
+            ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] Iniciando a consulta match_name")
+        
+        except Exception as e:
+                ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] erro na verificação do match name proscore {str(e)}")
+                error = f"Erro fatal na execução: {str(e)}"
+                corpo = f"""<h2 style="color:red;"> erro na verificação match name proscore</h2> <p>{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} Mensagem:: {error}</p>"""
+                # enviar_email_all(corpo)
+
+        finally:
+             ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] Finalizado o processo de busca por match name")
+        pass
 
 
     def executar_ciclo(self):
-        self.executar()   
+        # self.executar()   
         # self.enviar_email()
         # self.busca_dados()   
         # self.teste_busca_interpol()   
-        self.from_name_interpol()   
-        self.match_name()
-        self.atualiza_dados_interpol()
+        # self.from_name_interpol()   
+        # self.match_name()
+        # self.atualiza_dados_interpol()
+        self.lista_dados_maior_que_limite()
         ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] Iniciando a consulta")      
     def executar_ciclo_name(self):
         ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] Iniciando a consulta From Name Primeira letras")     

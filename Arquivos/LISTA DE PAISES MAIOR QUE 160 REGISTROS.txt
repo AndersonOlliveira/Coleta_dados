@@ -1,0 +1,6 @@
+[{'LINK_PAIS': 'https://ws-public.interpol.int/notices/v1/red?nationality=AR&resultPerPage=160&page=1', 'total': 170},
+ {'LINK_PAIS': 'https://ws-public.interpol.int/notices/v1/red?nationality=GT&resultPerPage=160&page=1', 'total': 173}, 
+ {'LINK_PAIS': 'https://ws-public.interpol.int/notices/v1/red?nationality=IN&resultPerPage=160&page=1', 'total': 225},
+ {'LINK_PAIS': 'https://ws-public.interpol.int/notices/v1/red?nationality=PK&resultPerPage=160&page=1', 'total': 172},
+ {'LINK_PAIS': 'https://ws-public.interpol.int/notices/v1/red?nationality=RU&resultPerPage=160&page=1', 'total': 3023},
+ {'LINK_PAIS': 'https://ws-public.interpol.int/notices/v1/red?nationality=SV&resultPerPage=160&page=1', 'total': 779}]
