@@ -2,4 +2,5 @@
 .env
 info_urls/*.log
 **/__pycache__/
-.env_copy
+envExemple_copy
+Exemple_copy

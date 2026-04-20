@@ -340,7 +340,7 @@ def processar_pessoa(self, de, list_url_person, mapa,lista_paises_unicos,id_inse
                 or "N/I"
             ).upper()
 
-            thumbnail = de.get('_links', {}).get('thumbnail', {}).get('href')
+            thumbnail = de.get('_links', {}).get('thumbnail', {}).get('href') if de.get('_links', {}).get('thumbnail', {}).get('href') else "N/I"
 
             pais_procurado = [
                 mapa.get(w.get('issuing_country_id'), w.get('issuing_country_id'))
