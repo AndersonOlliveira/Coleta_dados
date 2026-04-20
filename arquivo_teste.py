@@ -6,8 +6,8 @@ import smtplib
 from Mail.ClassMail import enviar_email_all
 
 
-TOTAL_REGISTROS = 100
-MAX_THREADS = 2
+TOTAL_REGISTROS = 1000
+MAX_THREADS = 3
 
 dados = []
 
