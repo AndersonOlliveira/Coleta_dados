@@ -499,7 +499,7 @@ def get_lista_name_base_interpol(self) -> List[Dict]:
      
      
       query = """SELECT UPPER(nome) as nome FROM public.interpol_dados
-                where to_char(data_consulta_fonte, 'YYYY-MM-DD') != %s ORDER BY RANDOM() limit 1000"""
+                where to_char(data_consulta_fonte, 'YYYY-MM-DD') != %s ORDER BY RANDOM() limit 10"""
       
       
 
@@ -525,7 +525,7 @@ def get_lista_name_base_interpol(self) -> List[Dict]:
 #PROCESSO INVERSO PEGANDO OS IDS 
 def list_interpol(self) -> List[Dict]:
       query = """SELECT id_interpol AS ID_INTERPOL FROM public.interpol_dados 
-                 WHERE id_interpol IS NOT NULL AND situacao = true ORDER BY id_interpol desc"""
+                 WHERE id_interpol IS NOT NULL AND situacao = true ORDER BY id_interpol desc limit 10"""
       
       
       try:
