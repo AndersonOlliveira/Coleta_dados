@@ -87,17 +87,14 @@ def process_from_name(self):
           siglas_unicas = list(set(siglas))
           letras_unicas = list(set(lista_tres_primera_letras))
 
+
         
     with ConectionClass.DbConnect(self.config, auto_commit=False) as conn_status:
          cursor_initil = conn_status.cursor()
          lista_insert = {'periodizacao': self.periodo ,'siglas' : (', '.join(letras_unicas)) , 'url': self.servidor_get_from_name, 'data_captura': datetime.now().strftime("%Y-%m-%d")} 
          print(f"minha lista para insert {lista_insert}")
          id_insert_return.append(insert_interpol(self,lista_insert,cursor_initil,conn_status))
-             
-           
-
          conn_status.commit()
-            
          cursor_initil.close()
          time.sleep(0.5)
 

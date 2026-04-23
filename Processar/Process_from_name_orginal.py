@@ -87,6 +87,9 @@ def process_from_name(self):
           siglas_unicas = list(set(siglas))
           letras_unicas = list(set(lista_tres_primera_letras))
 
+          print(letras_unicas)
+          return
+
         
     with ConectionClass.DbConnect(self.config, auto_commit=False) as conn_status:
          cursor_initil = conn_status.cursor()
