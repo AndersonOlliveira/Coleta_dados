@@ -200,13 +200,13 @@ class Processor:
 
 
     def executar_ciclo(self):
-        # self.executar()   
+        self.executar()   
         # self.enviar_email()
         # self.busca_dados()   
         # self.teste_busca_interpol()   
         self.from_name_interpol()   
-        # self.match_name()
-        # self.atualiza_dados_interpol()
+        self.match_name()
+        self.atualiza_dados_interpol()
         # self.lista_dados_maior_que_limite()
         ClassLogger.logger.info(f"[{time.strftime('%H:%M:%S')}] Iniciando a consulta")      
     def executar_ciclo_name(self):
