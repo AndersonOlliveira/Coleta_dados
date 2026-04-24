@@ -23,13 +23,16 @@ To deploy this project run
    AMBIENTE funcionando e instalar o requirements.txt
    requirements.TXT "bibliotecas do projeto"
     # comentar o no requiriments
-    # psycopg2==2.9.11 
+    # psycopg2==2.9.11
     # psycopg2-binary==2.9.11
     # p
    rodar o pip install -r  requiriments.txt para instalar as bibliotecas
     # rodar no proprio terminal o pip install psycopg2-binary (lembrando que precisa esta funcionando o .venv)
     # pip install psycopg2-binary
    Obs:rodar sem comentar da erro.
+   # ROTINA DE PROCESSAMENTO DE CONSUMO API INTERPOL TODA A SEMANA A CADA 7 DIAS AS 2 DA MANHA
+    0 2  * * 1 cd /usr/bas/interpol_rotina && venInterpol/bin/python interpol_initil.py >> /usr/bas/interpol_rotina/Log_interpol.log 2>&1
+
     # rodar aplicação com ambiente virtual python .\interpol_initil.py
     ```
 ````
