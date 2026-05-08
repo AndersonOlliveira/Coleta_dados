@@ -31,7 +31,7 @@ To deploy this project run
     # pip install psycopg2-binary
    Obs:rodar sem comentar da erro.
    # ROTINA DE PROCESSAMENTO DE CONSUMO API INTERPOL TODA A SEMANA A CADA 7 DIAS AS 2 DA MANHA
-    0 2  * * 1 cd /usr/bas/interpol_rotina && venInterpol/bin/python interpol_initil.py >> /usr/bas/interpol_rotina/Log_interpol.log 2>&1
+    3 2  * * 7 cd /usr/bas/interpol_rotina && venInterpol/bin/python interpol_initil.py >> /usr/bas/interpol_rotina/Log_interpol.log 2>&1
 
     # rodar aplicação com ambiente virtual python .\interpol_initil.py
     ```
